@@ -19,6 +19,7 @@ FLAGS=""
 _setup()
 {
 	tar -xvf $DISTFILES/$(basename $SOURCE)
+	cd ${NAME}-${VERSION}
 }
 
 _build()
