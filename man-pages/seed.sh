@@ -8,7 +8,7 @@ FLAGS=""
 
 _setup()
 {
-	tar -xvf $DISTFILES/man-pages-${VERSION}.tar.xz
+	tar -xvf $DISTFILES/$(basename $SOURCE)
 }
 
 _build()
@@ -19,4 +19,9 @@ _build()
 _install()
 {
 	make prefix=$FAKEROOT/usr install
+}
+
+_cleanup()
+{
+	rm -rv "$DISTFILES/man-pages-${VERSION}"
 }

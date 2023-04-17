@@ -18,7 +18,7 @@ FLAGS=""
 
 _setup()
 {
-	# tar -xvf $DISTFILES/some-package-${VERSION}.tar.xz
+	tar -xvf $DISTFILES/$(basename $SOURCE)
 }
 
 _build()
@@ -29,6 +29,11 @@ _build()
 _install()
 {
 	# make prefix=$FAKEROOT/usr install
+}
+
+_cleanup()
+{
+	# rm -rv "$DISTFILES/some-package-${VERSION}"
 }
 EOF
 
