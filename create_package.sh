@@ -29,7 +29,7 @@ _build()
 
 _install()
 {
-	# make prefix=$FAKEROOT/usr install
+	# make prefix=$FAKEROOT/$NAME/usr install
 }
 
 _cleanup()

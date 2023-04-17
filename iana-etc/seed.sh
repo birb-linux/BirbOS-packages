@@ -20,7 +20,7 @@ _build()
 _install()
 {
 	# We only need to copy the files into place
-	cp services protocols $FAKEROOT/etc
+	cp services protocols $FAKEROOT/$NAME/etc
 }
 
 _cleanup()
