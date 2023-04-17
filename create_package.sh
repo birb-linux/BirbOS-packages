@@ -34,3 +34,7 @@ EOF
 
 # Update the package name
 sed -i "s/|PACKAGE_NAME|/$PKG_NAME/g" $PKG_NAME/seed.sh
+
+# Open the package seed.sh file in vim at the end
+# to make life a bit easier
+vim $PKG_NAME/seed.sh
