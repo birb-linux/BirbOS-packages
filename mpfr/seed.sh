@@ -28,7 +28,7 @@ _build()
 	make html
 
 	# Run tests
-	make check
+	make -j$(nproc) check
 }
 
 _install()
