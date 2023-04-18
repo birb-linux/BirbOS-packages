@@ -26,9 +26,6 @@ _install()
 {
 	make install
 
-	# Symlink the documentation to a location more in line with other packages
-	ln -sv ../vim/vim90/doc $FAKEROOT/$NAME/usr/share/doc/vim-9.0.1452
-
 	# Create a default configuration file
 	cat > /etc/vimrc << "EOF"
 " Begin /etc/vimrc
