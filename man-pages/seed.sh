@@ -21,8 +21,3 @@ _install()
 {
 	make prefix=$FAKEROOT/$NAME/usr install
 }
-
-_cleanup()
-{
-	rm -r "$DISTFILES/man-pages-${VERSION}"
-}

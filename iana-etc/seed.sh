@@ -22,8 +22,3 @@ _install()
 	# We only need to copy the files into place
 	cp services protocols $FAKEROOT/$NAME/etc
 }
-
-_cleanup()
-{
-	rm -r "$DISTFILES/iana-etc-${VERSION}"
-}
