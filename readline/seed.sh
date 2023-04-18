@@ -34,6 +34,7 @@ _install()
 	make SHLIB_LIBS="-lncursesw" install
 
 	# Install the documentation
+	mkdir -p $FAKEROOT/$NAME/usr/share/doc/readline-8.2
 	install -v -m644 doc/*.{ps,pdf,html,dvi} $FAKEROOT/$NAME/usr/share/doc/readline-8.2
 }
 
