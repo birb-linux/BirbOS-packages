@@ -14,9 +14,6 @@ _setup()
 
 _build()
 {
-	# Avoid issues with compiling for 32bit
-	ABI=32 ./configure ...
-
 	./configure --prefix=$FAKEROOT/$NAME/usr   \
             --enable-cxx     	\
             --disable-static 	\
