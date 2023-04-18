@@ -30,8 +30,8 @@ _build()
 _install()
 {
 	make DESTDIR=$PWD/dest install
-	install -vm755 dest/usr/lib/libncursesw.so.6.4 $FAKEROOT/$NAME/usr/lib
-	rm -v  dest/usr/lib/libncursesw.so.6.4
+	install -vm755 dest/$FAKEROOT/$NAME/usr/lib/libncursesw.so.6.4 $FAKEROOT/$NAME/usr/lib
+	rm -v  dest/$FAKEROOT/$NAME/usr/lib/libncursesw.so.6.4
 	cp -av dest/* $FAKEROOT/$NAME/
 
 	# Trick applications into linking with wide-character libraries
