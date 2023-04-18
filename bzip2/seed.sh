@@ -51,7 +51,7 @@ _build32()
 
 	sed -e "s/^CC=.*/CC=gcc -m32/" -i Makefile{,-libbz2_so}
 	make -f Makefile-libbz2_so
-	make libbz2.a
+	make -j$(nproc) libbz2.a
 }
 
 _install32()
@@ -69,7 +69,7 @@ _buildx32()
 
 	sed -e "s/^CC=.*/CC=gcc -mx32/" -i Makefile{,-libbz2_so}
 	make -f Makefile-libbz2_so
-	make libbz2.a
+	make -j$(nproc) libbz2.a
 }
 
 _installx32()

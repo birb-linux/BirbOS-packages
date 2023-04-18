@@ -14,7 +14,7 @@ _setup()
 
 _build()
 {
-	make prefix=$FAKEROOT/$NAME/usr
+	make -j$(nproc) prefix=$FAKEROOT/$NAME/usr
 }
 
 _install()
@@ -29,7 +29,7 @@ _build32()
 {
 	make clean
 
-	CC="gcc -m32" make prefix=$FAKEROOT/$NAME/usr
+	CC="gcc -m32" make -j$(nproc) prefix=$FAKEROOT/$NAME/usr
 }
 
 _install32()
@@ -44,7 +44,7 @@ _buildx32()
 {
 	make clean
 
-	CC="gcc -mx32" make prefix=$FAKEROOT/$NAME/usr
+	CC="gcc -mx32" make -j$(nproc) prefix=$FAKEROOT/$NAME/usr
 }
 
 _installx32()
