@@ -23,7 +23,7 @@ _build()
 	make html
 
 	# Run the tests
-	make check -j$(nproc)
+	make -j$(nproc) check
 }
 
 _install()
@@ -52,7 +52,7 @@ _build32()
 	make -j$(nproc)
 
 	# Run the tests
-	make check -j$(nproc)
+	make -j$(nproc) check
 }
 
 _install32()
@@ -82,8 +82,7 @@ _buildx32()
 	sed -i 's/$(exec_prefix)\/include/$\(includedir\)/' Makefile
 	make -j$(nproc)
 
-	# Run the tests
-	make check -j$(nproc)
+	make -j$(nproc) check
 }
 
 _installx32()
