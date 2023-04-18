@@ -22,7 +22,7 @@ _install()
 	make prefix=$FAKEROOT/$NAME/usr install
 
 	# Remove the static library
-	rm -v /usr/lib/libzstd.a
+	rm -v $FAKEROOT/$NAME/usr/lib/libzstd.a
 }
 
 _build32()
