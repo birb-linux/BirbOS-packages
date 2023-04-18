@@ -18,7 +18,7 @@ FLAGS=""
 
 _setup()
 {
-	tar -xvf $DISTFILES/$(basename $SOURCE)
+	tar -xf $DISTFILES/$(basename $SOURCE)
 	cd ${NAME}-${VERSION}
 }
 
@@ -34,7 +34,7 @@ _install()
 
 _cleanup()
 {
-	# rm -rv "$DISTFILES/some-package-${VERSION}"
+	# rm -r "$DISTFILES/some-package-${VERSION}"
 }
 EOF
 

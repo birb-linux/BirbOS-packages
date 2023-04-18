@@ -8,7 +8,7 @@ FLAGS=""
 
 _setup()
 {
-	tar -xvf $DISTFILES/$(basename $SOURCE)
+	tar -xf $DISTFILES/$(basename $SOURCE)
 	cd ${NAME}-${VERSION}
 }
 
@@ -24,5 +24,5 @@ _install()
 
 _cleanup()
 {
-	rm -rv "$DISTFILES/man-pages-${VERSION}"
+	rm -r "$DISTFILES/man-pages-${VERSION}"
 }
