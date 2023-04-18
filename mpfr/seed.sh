@@ -3,7 +3,7 @@ DESC="Functions for multiple precision math"
 VERSION="4.2.0"
 SOURCE="https://ftp.gnu.org/gnu/mpfr/mpfr-${VERSION}.tar.xz"
 CHECKSUM="a25091f337f25830c16d2054d74b5af7"
-DEPS=""
+DEPS="gmp"
 FLAGS=""
 
 _setup()
