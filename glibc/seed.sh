@@ -16,7 +16,7 @@ _build()
 {
 	FAKEROOT_PREFIX="$FAKEROOT/$NAME"
 
-	patch -Np1 -i $DISTFILES/${NAME}-${VERSION}/glibc-2.37-fhs-1.patch
+	patch -Np1 -i /var/db/pkg/${NAME}/glibc-2.37-fhs-1.patch
 
 	# Fix some security issue
 	sed '/width -=/s/workend - string/number_length/' \
