@@ -23,8 +23,7 @@ _build()
 	make html
 
 	# Run the tests
-	make check -j$(nproc) 2>&1 | tee gmp-check-log
-	awk '/# PASS:/{total+=$3} ; END{print total}' gmp-check-log
+	make check -j$(nproc)
 }
 
 _install()
@@ -53,8 +52,7 @@ _build32()
 	make -j$(nproc)
 
 	# Run the tests
-	make check -j$(nproc) 2>&1 | tee gmp-check-log
-	awk '/# PASS:/{total+=$3} ; END{print total}' gmp-check-log
+	make check -j$(nproc)
 }
 
 _install32()
@@ -85,8 +83,7 @@ _buildx32()
 	make -j$(nproc)
 
 	# Run the tests
-	make check -j$(nproc) 2>&1 | tee gmp-check-log
-	awk '/# PASS:/{total+=$3} ; END{print total}' gmp-check-log
+	make check -j$(nproc)
 }
 
 _installx32()
