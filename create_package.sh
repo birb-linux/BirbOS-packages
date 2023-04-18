@@ -31,11 +31,6 @@ _install()
 {
 	# make prefix=$FAKEROOT/$NAME/usr install
 }
-
-_cleanup()
-{
-	# rm -r "$DISTFILES/some-package-${VERSION}"
-}
 EOF
 
 # Update the package name
