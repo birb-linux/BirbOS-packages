@@ -3,7 +3,7 @@ DESC="GNU compiler collection, which includes the C and C++ compilers"
 VERSION="12.2.0"
 SOURCE="https://ftp.gnu.org/gnu/gcc/gcc-12.2.0/gcc-${VERSION}.tar.xz"
 CHECKSUM="73bafd0af874439dcdb9fc063b6fb069"
-DEPS="zlib"
+DEPS="gmp mpfr mpc zlib"
 FLAGS=""
 
 _setup()
