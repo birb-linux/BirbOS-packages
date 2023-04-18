@@ -31,6 +31,28 @@ _install()
 {
 	# make prefix=$FAKEROOT/$NAME/usr install
 }
+
+# These 32 bit functions get called only if the '32bit' flag is set
+# Otherwise they are optional
+_build32()
+{
+
+}
+
+_install32()
+{
+
+}
+
+_buildx32()
+{
+
+}
+
+_installx32()
+{
+
+}
 EOF
 
 # Update the package name
