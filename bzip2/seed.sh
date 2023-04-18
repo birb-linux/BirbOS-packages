@@ -31,8 +31,6 @@ _build()
 
 _install()
 {
-	mkdir $FAKEROOT/$NAME/usr/lib
-
 	make PREFIX=$FAKEROOT/$NAME/usr install
 
 	cp -av libbz2.so.* $FAKEROOT/$NAME/usr/lib
