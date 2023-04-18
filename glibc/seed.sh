@@ -38,6 +38,7 @@ _build()
 	make -j$(nproc)
 
 	# Prevent a warning that might happen during glibc install
+	mkdir -p $FAKEROOT_PREFIX/etc
 	touch $FAKEROOT_PREFIX/etc/ld.so.conf
 
 	# Skip a sanity check that will fail in the partial LFS environment
