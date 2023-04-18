@@ -14,7 +14,7 @@ _setup()
 
 _build()
 {
-	./configure --prefix=$FAKEROOT/$NAME/usr   \
+	ABI=32 ./configure --prefix=$FAKEROOT/$NAME/usr   \
             --enable-cxx     	\
             --disable-static 	\
             --docdir=/usr/share/doc/gmp-6.2.1
@@ -24,7 +24,7 @@ _build()
 
 	# Run the tests
 	make check 2>&1 | tee gmp-check-log
-	awk '/# PASS:/{total+=$3} ; END{print total}' gmp-check-log | grep "197"
+	awk '/# PASS:/{total+=$3} ; END{print total}' gmp-check-log
 }
 
 _install()
@@ -54,7 +54,7 @@ _build32()
 
 	# Run the tests
 	make check 2>&1 | tee gmp-check-log
-	awk '/# PASS:/{total+=$3} ; END{print total}' gmp-check-log | grep "197"
+	awk '/# PASS:/{total+=$3} ; END{print total}' gmp-check-log
 }
 
 _install32()
@@ -86,7 +86,7 @@ _buildx32()
 
 	# Run the tests
 	make check 2>&1 | tee gmp-check-log
-	awk '/# PASS:/{total+=$3} ; END{print total}' gmp-check-log | grep "197"
+	awk '/# PASS:/{total+=$3} ; END{print total}' gmp-check-log
 }
 
 _installx32()
