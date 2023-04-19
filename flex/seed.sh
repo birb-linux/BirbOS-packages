@@ -27,5 +27,5 @@ _install()
 	make install
 
 	# Create a symlink for legacy programs
-	ln -sv flex /usr/bin/lex
+	ln -sv flex $FAKEROOT/$NAME/usr/bin/lex
 }
