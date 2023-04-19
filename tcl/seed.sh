@@ -1,8 +1,8 @@
 NAME="tcl"
 DESC="Tool Command Language, a robust general-purpose scripting language"
 VERSION="8.6.13"
-SOURCE="https://downloads.sourceforge.net/tcl/tcl${VERSION}-html.tar.gz"
-CHECKSUM="4452f2f6d557f5598cca17b786d6eb68"
+SOURCE="https://downloads.sourceforge.net/tcl/tcl8.6.13-src.tar.gz"
+CHECKSUM="0e4358aade2f5db8a8b6f2f6d9481ec2"
 DEPS="zlib"
 FLAGS=""
 
@@ -58,10 +58,4 @@ _install()
 
 	# Avoid a man page name conflict with the perl package
 	mv $FAKEROOT/$NAME/usr/share/man/man3/{Thread,Tcl_Thread}.3
-
-	# Install documentation
-	cd ..
-	tar -xf ../tcl8.6.13-html.tar.gz --strip-components=1
-	mkdir -v -p $FAKEROOT/$NAME/usr/share/doc/tcl-8.6.13
-	cp -v -r  ./html/* $FAKEROOT/$NAME/usr/share/doc/tcl-8.6.13
 }
