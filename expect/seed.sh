@@ -2,7 +2,7 @@ NAME="expect"
 DESC="Tools for automating, via scripted dialogues and interactive applications"
 VERSION="5.45.4"
 SOURCE="https://prdownloads.sourceforge.net/expect/expect${VERSION}.tar.gz"
-CHECKSUM=""
+CHECKSUM="00fce8de158422f5ccd2666512329bd2"
 DEPS="tcl"
 FLAGS=""
 
