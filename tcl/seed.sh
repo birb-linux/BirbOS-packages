@@ -17,7 +17,7 @@ _build()
 	SRCDIR=$(pwd)
 	cd unix
 	./configure --prefix=$FAKEROOT/$NAME/usr \
-				--mandir=/usr/share/man
+				--mandir=$FAKEROOT/$NAME/usr/share/man
 
 	make -j$(nproc)
 
