@@ -1,8 +1,8 @@
 NAME="tcl"
 DESC="Tool Command Language, a robust general-purpose scripting language"
-VERSION="1.2.13"
-SOURCE="https://zlib.net/zlib-${VERSION}.tar.xz"
-CHECKSUM="7d9fc1d78ae2fa3e84fe98b77d006c63"
+VERSION="8.6.13"
+SOURCE="https://downloads.sourceforge.net/tcl/tcl${VERSION}-html.tar.gz"
+CHECKSUM="4452f2f6d557f5598cca17b786d6eb68"
 DEPS="zlib"
 FLAGS=""
 
