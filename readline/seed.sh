@@ -60,24 +60,3 @@ _install32()
 	cp -Rv DESTDIR/usr/lib32/* $FAKEROOT/$NAME/usr/lib32
 	rm -rf DESTDIR
 }
-
-_buildx32()
-{
-	make distclean
-
-	CC="gcc -mx32" ./configure \
-		--host=x86_64-pc-linux-gnux32 \
-		--prefix=$FAKEROOT/$NAME/usr  \
-		--libdir=/usr/libx32          \
-		--disable-static              \
-		--with-curses
-
-	make -j$(nproc) SHLIB_LIBS="-lncursesw"
-}
-
-_installx32()
-{
-	make SHLIB_LIBS="-lncursesw" DESTDIR=$PWD/DESTDIR install
-	cp -Rv DESTDIR/usr/libx32/* $FAKEROOT/$NAME/usr/libx32
-	rm -rf DESTDIR
-}

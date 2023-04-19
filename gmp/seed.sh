@@ -62,33 +62,3 @@ _install32()
 	cp -Rv DESTDIR/usr/include/m32/* $FAKEROOT/$NAME/usr/include/m32/
 	rm -rf DESTDIR
 }
-
-_buildx32()
-{
-	make distclean
-
-	ABI="x32" \
-	CFLAGS="-mx32 -O2 -pedantic -fomit-frame-pointer -mtune=generic -march=x86-64" \
-	CXXFLAGS="$CFLAGS" \
-	PKG_CONFIG_PATH="/usr/libx32/pkgconfig" \
-	./configure                       \
-		--host=x86_64-pc-linux-gnux32 \
-		--prefix=$FAKEROOT/$NAME/usr  \
-		--disable-static              \
-		--enable-cxx                  \
-		--libdir=/usr/libx32          \
-		--includedir=/usr/include/mx32/gmp
-
-	sed -i 's/$(exec_prefix)\/include/$\(includedir\)/' Makefile
-	make -j$(nproc)
-
-	make -j$(nproc) check
-}
-
-_installx32()
-{
-	make DESTDIR=$PWD/DESTDIR install
-	cp -Rv DESTDIR/usr/libx32/* $FAKEROOT/$NAME/usr/libx32
-	cp -Rv DESTDIR/usr/include/mx32/* $FAKEROOT/$NAME/usr/include/mx32/
-	rm -rf DESTDIR
-}

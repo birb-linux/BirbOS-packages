@@ -22,7 +22,7 @@ _build()
 	mkdir -v build
 	cd       build
 
-	mlist=m64,m32,mx32
+	mlist=m64,m32
 	../configure --prefix=$FAKEROOT/$NAME/usr \
 				 LD=ld                        \
 				 --enable-languages=c,c++     \

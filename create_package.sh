@@ -43,16 +43,6 @@ _install32()
 {
 
 }
-
-_buildx32()
-{
-
-}
-
-_installx32()
-{
-
-}
 EOF
 
 # Update the package name

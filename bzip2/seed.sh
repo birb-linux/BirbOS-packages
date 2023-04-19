@@ -62,21 +62,3 @@ _install32()
 	ln -sf libbz2.so.1.0.8 $FAKEROOT/$NAME/usr/lib32/libbz2.so.1.0
 	install -Dm644 libbz2.a $FAKEROOT/$NAME/usr/lib32/libbz2.a
 }
-
-_buildx32()
-{
-	make clean
-
-	sed -e "s/^CC=.*/CC=gcc -mx32/" -i Makefile{,-libbz2_so}
-	make -f Makefile-libbz2_so
-	make -j$(nproc) libbz2.a
-}
-
-_installx32()
-{
-	install -Dm755 libbz2.so.1.0.8 $FAKEROOT/$NAME/usr/libx32/libbz2.so.1.0.8
-	ln -sf libbz2.so.1.0.8 $FAKEROOT/$NAME/usr/libx32/libbz2.so
-	ln -sf libbz2.so.1.0.8 $FAKEROOT/$NAME/usr/libx32/libbz2.so.1
-	ln -sf libbz2.so.1.0.8 $FAKEROOT/$NAME/usr/libx32/libbz2.so.1.0
-	install -Dm644 libbz2.a $FAKEROOT/$NAME/usr/libx32/libbz2.a
-}

@@ -39,18 +39,3 @@ _install32()
 	sed -e "/^libdir/s/lib$/lib32/" -i $FAKEROOT/$NAME/usr/lib32/pkgconfig/libzstd.pc
 	rm -rf $FAKEROOT/$NAME/var
 }
-
-_buildx32()
-{
-	make clean
-
-	CC="gcc -mx32" make -j$(nproc) prefix=$FAKEROOT/$NAME/usr
-}
-
-_installx32()
-{
-	make prefix=$FAKEROOT/$NAME/usr DESTDIR=$FAKEROOT/$NAME install
-	cp -Rv $FAKEROOT/$NAME/usr/lib/* $FAKEROOT/$NAME/usr/libx32/
-	sed -e "/^libdir/s/lib$/libx32/" -i $FAKEROOT/$NAME/usr/libx32/pkgconfig/libzstd.pc
-	rm -rf $FAKEROOT/$NAME/var
-}

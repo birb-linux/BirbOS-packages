@@ -41,22 +41,3 @@ _install32()
 	cp -Rv DESTDIR/usr/lib32/* $FAKEROOT/$NAME/usr/lib32
 	rm -rf DESTDIR
 }
-
-_buildx32()
-{
-	make distclean
-
-	CC="gcc -mx32" ./configure \
-		--prefix=$FAKEROOT/$NAME/usr \
-		--libdir=/usr/libx32   \
-		--host=x86_64-pc-linux-gnux32
-
-	make -j$(nproc)
-}
-
-_installx32()
-{
-	make DESTDIR=$PWD/DESTDIR install
-	cp -Rv DESTDIR/usr/libx32/* $FAKEROOT/$NAME/usr/libx32
-	rm -rf DESTDIR
-}

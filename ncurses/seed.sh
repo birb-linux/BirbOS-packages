@@ -88,38 +88,3 @@ _install32()
 	cp -Rv DESTDIR/usr/lib32/* $FAKEROOT/$NAME/usr/lib32
 	rm -rf DESTDIR
 }
-
-_buildx32()
-{
-	make distclean
-
-	CC="gcc -mx32" CXX="g++ -mx32" \
-	./configure --prefix=$FAKEROOT/$NAME/usr   	\
-				--host=x86_64-pc-linux-gnux32 	\
-				--libdir=/usr/libx32    		\
-				--mandir=/usr/share/man 		\
-				--with-shared           		\
-				--without-debug         		\
-				--without-normal        		\
-				--enable-pc-files       		\
-				--enable-widec          		\
-				--with-pkg-config-libdir=/usr/libx32/pkgconfig
-
-	make -j$(nproc)
-}
-
-_installx32()
-{
-	make DESTDIR=$PWD/DESTDIR install
-	mkdir -p DESTDIR/usr/libx32/pkgconfig
-	for lib in ncurses form panel menu ; do
-		rm -vf                    DESTDIR/usr/libx32/lib${lib}.so
-		echo "INPUT(-l${lib}w)" > DESTDIR/usr/libx32/lib${lib}.so
-		ln -svf ${lib}w.pc        DESTDIR/usr/libx32/pkgconfig/$lib.pc
-	done
-	rm -vf                     DESTDIR/usr/libx32/libcursesw.so
-	echo "INPUT(-lncursesw)" > DESTDIR/usr/libx32/libcursesw.so
-	ln -sfv libncurses.so      DESTDIR/usr/libx32/libcurses.so
-	cp -Rv DESTDIR/usr/libx32/* $FAKEROOT/$NAME/usr/libx32
-	rm -rf DESTDIR
-}
