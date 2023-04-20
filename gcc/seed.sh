@@ -56,7 +56,7 @@ _install()
 	make install
 
 	# Symlink required by the FHS for "historical" reasons
-	ln -svr $FAKEROOT/$NAME/usr/bin/cpp $FAKEROOT/$NAME/usr/lib
+	ln -sfvr $FAKEROOT/$NAME/usr/bin/cpp $FAKEROOT/$NAME/usr/lib
 
 	# Compatibility symlink to enable building programs with LTO
 	ln -sfv ../../libexec/gcc/$(gcc -dumpmachine)/${VERSION}/liblto_plugin.so \
