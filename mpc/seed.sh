@@ -16,7 +16,7 @@ _build()
 {
 	./configure --prefix=$FAKEROOT/$NAME/usr \
             --disable-static \
-            --docdir=/usr/share/doc/mpc-1.3.1
+            --docdir=/usr/share/doc/mpc-${VERSION}
 
 	make -j$(nproc)
 	make html
