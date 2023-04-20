@@ -30,5 +30,5 @@ _install()
 
 	# Move a misplaced file
 	mkdir -pv $FAKEROOT/$NAME/usr/share/gdb/auto-load/usr/lib
-	mv -v /usr/lib/libisl*gdb.py $FAKEROOT/$NAME/usr/share/gdb/auto-load/usr/lib
+	mv -v $FAKEROOT/$NAME/usr/lib/libisl*gdb.py $FAKEROOT/$NAME/usr/share/gdb/auto-load/usr/lib
 }
