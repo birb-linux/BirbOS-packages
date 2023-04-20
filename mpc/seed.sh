@@ -20,8 +20,10 @@ _build()
 
 	make -j$(nproc)
 	make html
+}
 
-	# Run tests
+_test()
+{
 	make -j$(nproc) check
 }
 

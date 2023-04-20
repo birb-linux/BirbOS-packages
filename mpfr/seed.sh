@@ -4,7 +4,7 @@ VERSION="4.2.0"
 SOURCE="https://ftp.gnu.org/gnu/mpfr/mpfr-${VERSION}.tar.xz"
 CHECKSUM="a25091f337f25830c16d2054d74b5af7"
 DEPS="gmp"
-FLAGS=""
+FLAGS="test"
 
 _setup()
 {
@@ -26,8 +26,10 @@ _build()
 
 	make -j$(nproc)
 	make html
+}
 
-	# Run tests
+_test()
+{
 	make -j$(nproc) check
 }
 

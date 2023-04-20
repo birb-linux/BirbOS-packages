@@ -49,6 +49,12 @@ _build32()
 
 }
 
+# This function gets called if the 'test32' flag has been specified
+_test32()
+{
+
+}
+
 _install32()
 {
 

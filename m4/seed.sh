@@ -4,7 +4,7 @@ VERSION="1.4.19"
 SOURCE="https://ftp.gnu.org/gnu/m4/m4-${VERSION}.tar.xz"
 CHECKSUM="0d90823e1426f1da2fd872df0311298d"
 DEPS=""
-FLAGS=""
+FLAGS="test"
 
 _setup()
 {
@@ -17,8 +17,10 @@ _build()
 	./configure --prefix=$FAKEROOT/$NAME/usr
 
 	make -j$(nproc)
+}
 
-	# Run tests
+_test()
+{
 	make -j$(nproc) check
 }
 

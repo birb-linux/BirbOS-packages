@@ -4,7 +4,7 @@ VERSION="2.6.4"
 SOURCE="https://github.com/westes/flex/releases/download/v${VERSION}/flex-${VERSION}.tar.gz"
 CHECKSUM="2882e3179748cc9f9c23ec593d6adc8d"
 DEPS=""
-FLAGS=""
+FLAGS="test"
 
 _setup()
 {
@@ -19,6 +19,10 @@ _build()
             --disable-static
 
 	make -j$(nproc)
+}
+
+_test()
+{
 	make -j$(nproc) check
 }
 

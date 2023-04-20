@@ -4,7 +4,7 @@ VERSION="6.2.1"
 SOURCE="https://ftp.gnu.org/gnu/gmp/gmp-${VERSION}.tar.xz"
 CHECKSUM="0b82665c4a92fd2ade7440c13fcaa42b"
 DEPS="m4 xz"
-FLAGS="32bit"
+FLAGS="32bit test test32"
 
 _setup()
 {
@@ -21,8 +21,10 @@ _build()
 
 	make -j$(nproc)
 	make html
+}
 
-	# Run the tests
+_test()
+{
 	make -j$(nproc) check
 }
 
@@ -50,8 +52,10 @@ _build32()
 
 	sed -i 's/$(exec_prefix)\/include/$\(includedir\)/' Makefile
 	make -j$(nproc)
+}
 
-	# Run the tests
+_test32()
+{
 	make -j$(nproc) check
 }
 

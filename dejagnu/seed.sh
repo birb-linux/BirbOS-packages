@@ -28,6 +28,7 @@ _install()
 	install -v -dm755  $FAKEROOT/$NAME/usr/share/doc/dejagnu-${VERSION}
 	install -v -m644   doc/dejagnu.{html,txt} $FAKEROOT/$NAME/usr/share/doc/dejagnu-${VERSION}
 
-	# Run tests
+	# Run tests (this test cannot be run before installation, so the tests
+	# will always run)
 	make -j$(nproc) check
 }
