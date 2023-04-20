@@ -32,6 +32,16 @@ _install()
 	# make prefix=$FAKEROOT/$NAME/usr install
 }
 
+# If the package has any tests, run them here
+# To enable this function, specify the 'test' flag
+#
+# Also, birb needs to be run with special arguments to run tests
+# when installing packages
+_test()
+{
+
+}
+
 # These 32 bit functions get called only if the '32bit' flag is set
 # Otherwise they are optional
 _build32()
