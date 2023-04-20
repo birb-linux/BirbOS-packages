@@ -4,7 +4,7 @@ VERSION="12.2.0"
 SOURCE="https://ftp.gnu.org/gnu/gcc/gcc-${VERSION}/gcc-${VERSION}.tar.xz"
 CHECKSUM="73bafd0af874439dcdb9fc063b6fb069"
 DEPS="gmp mpfr mpc zlib"
-FLAGS=""
+FLAGS="test"
 
 _setup()
 {
@@ -34,6 +34,21 @@ _build()
 				 --with-system-zlib
 
 	make -j$(nproc)
+}
+
+_test()
+{
+	# Ignore errors during the tests, because there are a few
+	# known to fail for i386 architecture
+	set +e
+
+	ulimit -s 32768
+	chown -Rv tester .
+	su tester -c "PATH=$PATH make -j$(nproc) -k check"
+
+	# Extract summary of the test suite results
+	../contrib/test_summary grep -A7 Summ
+	set -e
 }
 
 _install()
