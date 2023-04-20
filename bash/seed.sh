@@ -4,7 +4,7 @@ VERSION="5.2.15"
 SOURCE="https://ftp.gnu.org/gnu/bash/bash-${VERSION}.tar.gz"
 CHECKSUM="4281bb43497f3905a308430a8d6a30a5"
 DEPS="readline"
-FLAGS="test"
+FLAGS="test important"
 
 _setup()
 {

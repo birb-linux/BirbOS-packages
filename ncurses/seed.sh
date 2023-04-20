@@ -4,7 +4,7 @@ VERSION="6.4"
 SOURCE="https://invisible-mirror.net/archives/ncurses/ncurses-${VERSION}.tar.gz"
 CHECKSUM="5a62487b5d4ac6b132fe2bf9f8fad29b"
 DEPS="pkg-config"
-FLAGS="32bit"
+FLAGS="32bit important"
 
 _setup()
 {

@@ -4,7 +4,7 @@ VERSION="4.9"
 SOURCE="https://ftp.gnu.org/gnu/sed/sed-${VERSION}.tar.xz"
 CHECKSUM="6aac9b2dbafcd5b7a67a8a9bcb8036c3"
 DEPS=""
-FLAGS="test"
+FLAGS="test important"
 
 _setup()
 {

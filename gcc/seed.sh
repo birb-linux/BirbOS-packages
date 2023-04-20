@@ -4,7 +4,7 @@ VERSION="12.2.0"
 SOURCE="https://ftp.gnu.org/gnu/gcc/gcc-${VERSION}/gcc-${VERSION}.tar.xz"
 CHECKSUM="73bafd0af874439dcdb9fc063b6fb069"
 DEPS="gmp mpfr mpc zlib"
-FLAGS="test"
+FLAGS="test important"
 
 _setup()
 {

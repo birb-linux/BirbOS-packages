@@ -4,7 +4,7 @@ VERSION="5.4.2"
 SOURCE="https://tukaani.org/xz/xz-${VERSION}.tar.xz"
 CHECKSUM="1dcdf002d9a69f48ff67be84964af0d8"
 DEPS=""
-FLAGS="32bit"
+FLAGS="32bit important"
 
 _setup()
 {

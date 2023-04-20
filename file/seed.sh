@@ -4,7 +4,7 @@ VERSION="5.44"
 SOURCE="https://astron.com/pub/file/file-${VERSION}.tar.gz"
 CHECKSUM="a60d586d49d015d842b9294864a89c7a"
 DEPS=""
-FLAGS="32bit"
+FLAGS="32bit important"
 
 _setup()
 {
