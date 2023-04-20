@@ -30,3 +30,40 @@ grep "install.* /[A-Za-z]" $PKG_NAME/seed.sh && echo "Possibly misconfigured ins
 # Make sure the version variable is used properly
 VERSION_COUNT="$(grep -F "$VERSION" $PKG_NAME/seed.sh | wc -l)" # This command should only return "1"
 [ "$VERSION_COUNT" != "1" ] && echo "Found some possibly hardcoded version values in the build instructions"
+
+# Args:
+# $1 : function name ( ex. _func() )
+# $2 : flag name ( ex. 32bit )
+match_function_flag()
+{
+	if [ -n "$(grep "$1" $PKG_NAME/seed.sh)" ]
+	then
+		if [ -n "$(echo "$FLAGS" | grep -w "$2")" ]
+		then
+			# The flag was found
+			echo "SUCCESS"
+		else
+			# The flag was missing
+			echo "MISSING"
+		fi
+	fi
+}
+
+# Make sure that the test flag is set if the _test() function is specified
+if [ "$(match_function_flag "_test()" "test")" == "MISSING" ]
+then
+	echo "Testing instructions have been specified, but the 'test' flag is missing"
+fi
+
+# Make sure that the 32bit flag is specified if there are 32bit functions
+if [ "$(match_function_flag "_build32()" "32bit")" == "MISSING" ]
+then
+	echo "32bit installation instructions have been specified, but the '32bit' flag is missing"
+fi
+
+# Make sure that the test32 flag is specified if there is test32 function
+# for 32bit testing
+if [ "$(match_function_flag "_test32()" "test32")" == "MISSING" ]
+then
+	echo "32bit test instructions have been specified, but the 'test32' flag is missing"
+fi
