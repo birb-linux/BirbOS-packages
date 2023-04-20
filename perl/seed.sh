@@ -5,7 +5,7 @@ MAJOR_VERSION="5.36"
 SOURCE="https://www.cpan.org/src/5.0/perl-${VERSION}.tar.xz"
 CHECKSUM="826e42da130011699172fd655e49cfa2"
 DEPS="zlib"
-FLAGS="test"
+FLAGS="test important"
 
 _setup()
 {
@@ -41,6 +41,11 @@ _install()
 {
 	make install
 	unset BUILD_ZLIB BUILD_BZIP2
+
+	# Manually symlink the perl binary to avoid breaking stow
+	# Without stow, birb won't be able to finish installing this packge
+	echo "Manually overwriting the old perl binary to avoid breaking stow"
+	ln -sfv $FAKEROOT/$NAME/usr/bin/perl /usr/bin/perl
 }
 
 _test()
