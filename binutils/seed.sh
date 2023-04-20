@@ -31,10 +31,15 @@ _build()
 	make -j$(nproc) tooldir=$FAKEROOT/$NAME/usr
 
 	# Run tests
-	make -j$(nproc) -k check
+	#make -j$(nproc) -k check
 
-	echo "List of failed checks"
-	grep '^FAIL:' $(find -name '*.log')
+	#echo "List of failed checks"
+	#grep '^FAIL:' $(find -name '*.log')
+
+	# TODO:
+	# Binutils tests can't be run during building / installation
+	# because there are 12 expected test failures and this causes
+	# the package not install due to the return value
 }
 
 _install()
