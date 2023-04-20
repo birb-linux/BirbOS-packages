@@ -34,7 +34,7 @@ _install()
 	make PREFIX=$FAKEROOT/$NAME/usr install
 
 	cp -av libbz2.so.* $FAKEROOT/$NAME/usr/lib
-	ln -sv libbz2.so.1.0.8 $FAKEROOT/$NAME/usr/lib/libbz2.so
+	ln -sv libbz2.so.${VERSION} $FAKEROOT/$NAME/usr/lib/libbz2.so
 
 	cp -v bzip2-shared $FAKEROOT/$NAME/usr/bin/bzip2
 	for i in $FAKEROOT/$NAME/usr/bin/{bzcat,bunzip2}; do
@@ -56,9 +56,9 @@ _build32()
 
 _install32()
 {
-	install -Dm755 libbz2.so.1.0.8 $FAKEROOT/$NAME/usr/lib32/libbz2.so.1.0.8
-	ln -sf libbz2.so.1.0.8 $FAKEROOT/$NAME/usr/lib32/libbz2.so
-	ln -sf libbz2.so.1.0.8 $FAKEROOT/$NAME/usr/lib32/libbz2.so.1
-	ln -sf libbz2.so.1.0.8 $FAKEROOT/$NAME/usr/lib32/libbz2.so.1.0
+	install -Dm755 libbz2.so.${VERSION} $FAKEROOT/$NAME/usr/lib32/libbz2.so.${VERSION}
+	ln -sf libbz2.so.${VERSION} $FAKEROOT/$NAME/usr/lib32/libbz2.so
+	ln -sf libbz2.so.${VERSION} $FAKEROOT/$NAME/usr/lib32/libbz2.so.1
+	ln -sf libbz2.so.${VERSION} $FAKEROOT/$NAME/usr/lib32/libbz2.so.1.0
 	install -Dm644 libbz2.a $FAKEROOT/$NAME/usr/lib32/libbz2.a
 }

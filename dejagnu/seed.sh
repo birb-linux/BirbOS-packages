@@ -25,8 +25,8 @@ _build()
 _install()
 {
 	make install
-	install -v -dm755  $FAKEROOT/$NAME/usr/share/doc/dejagnu-1.6.3
-	install -v -m644   doc/dejagnu.{html,txt} $FAKEROOT/$NAME/usr/share/doc/dejagnu-1.6.3
+	install -v -dm755  $FAKEROOT/$NAME/usr/share/doc/dejagnu-${VERSION}
+	install -v -m644   doc/dejagnu.{html,txt} $FAKEROOT/$NAME/usr/share/doc/dejagnu-${VERSION}
 
 	# Run tests
 	make -j$(nproc) check

@@ -30,8 +30,8 @@ _build()
 _install()
 {
 	make DESTDIR=$PWD/dest install
-	install -vm755 dest/$FAKEROOT/$NAME/usr/lib/libncursesw.so.6.4 $FAKEROOT/$NAME/usr/lib
-	rm -v  dest/$FAKEROOT/$NAME/usr/lib/libncursesw.so.6.4
+	install -vm755 dest/$FAKEROOT/$NAME/usr/lib/libncursesw.so.${VERSION} $FAKEROOT/$NAME/usr/lib
+	rm -v  dest/$FAKEROOT/$NAME/usr/lib/libncursesw.so.${VERSION}
 	cp -av dest/* $FAKEROOT/$NAME/
 
 	# Trick applications into linking with wide-character libraries
@@ -47,8 +47,8 @@ _install()
 	ln -sfv libncurses.so      $FAKEROOT/$NAME/usr/lib/libcurses.so
 
 	# Install the documentation
-	mkdir -pv      $FAKEROOT/$NAME/usr/share/doc/ncurses-6.4
-	cp -v -R doc/* $FAKEROOT/$NAME/usr/share/doc/ncurses-6.4
+	mkdir -pv      $FAKEROOT/$NAME/usr/share/doc/ncurses-${VERSION}
+	cp -v -R doc/* $FAKEROOT/$NAME/usr/share/doc/ncurses-${VERSION}
 }
 
 # These 32 bit functions get called only if the '32bit' flag is set

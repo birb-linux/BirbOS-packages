@@ -16,7 +16,7 @@ _build()
 {
 	./configure --prefix=$FAKEROOT/$NAME/usr    \
             --disable-static \
-            --docdir=/usr/share/doc/xz-5.4.2
+            --docdir=/usr/share/doc/xz-${VERSION}
 
 	make -j$(nproc)
 }

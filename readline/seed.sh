@@ -24,7 +24,7 @@ _build()
 	./configure --prefix=$FAKEROOT/$NAME/usr    \
             --disable-static \
             --with-curses    \
-            --docdir=/usr/share/doc/readline-8.2
+            --docdir=/usr/share/doc/readline-${VERSION}
 
 	make -j$(nproc) SHLIB_LIBS="-lncursesw"
 }
@@ -34,8 +34,8 @@ _install()
 	make SHLIB_LIBS="-lncursesw" install
 
 	# Install the documentation
-	mkdir -p $FAKEROOT/$NAME/usr/share/doc/readline-8.2
-	install -v -m644 doc/*.{ps,pdf,html,dvi} $FAKEROOT/$NAME/usr/share/doc/readline-8.2
+	mkdir -p $FAKEROOT/$NAME/usr/share/doc/readline-${VERSION}
+	install -v -m644 doc/*.{ps,pdf,html,dvi} $FAKEROOT/$NAME/usr/share/doc/readline-${VERSION}
 }
 
 # These 32 bit functions get called only if the '32bit' flag is set

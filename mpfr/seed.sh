@@ -22,7 +22,7 @@ _build()
 	./configure --prefix=$FAKEROOT/$NAME/usr        \
             --disable-static     \
             --enable-thread-safe \
-            --docdir=/usr/share/doc/mpfr-4.2.0
+            --docdir=/usr/share/doc/mpfr-${VERSION}
 
 	make -j$(nproc)
 	make html

@@ -17,7 +17,7 @@ _build()
 	./configure --prefix=$FAKEROOT/$NAME/usr   \
             --enable-cxx     	\
             --disable-static 	\
-            --docdir=/usr/share/doc/gmp-6.2.1
+            --docdir=/usr/share/doc/gmp-${VERSION}
 
 	make -j$(nproc)
 	make html

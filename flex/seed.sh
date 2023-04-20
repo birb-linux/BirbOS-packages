@@ -15,7 +15,7 @@ _setup()
 _build()
 {
 	./configure --prefix=$FAKEROOT/$NAME/usr \
-            --docdir=/usr/share/doc/flex-2.6.4 \
+            --docdir=/usr/share/doc/flex-${VERSION} \
             --disable-static
 
 	make -j$(nproc)

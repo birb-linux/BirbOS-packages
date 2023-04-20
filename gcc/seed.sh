@@ -1,7 +1,7 @@
 NAME="gcc"
 DESC="GNU compiler collection, which includes the C and C++ compilers"
 VERSION="12.2.0"
-SOURCE="https://ftp.gnu.org/gnu/gcc/gcc-12.2.0/gcc-${VERSION}.tar.xz"
+SOURCE="https://ftp.gnu.org/gnu/gcc/gcc-${VERSION}/gcc-${VERSION}.tar.xz"
 CHECKSUM="73bafd0af874439dcdb9fc063b6fb069"
 DEPS="gmp mpfr mpc zlib"
 FLAGS=""
@@ -44,7 +44,7 @@ _install()
 	ln -svr $FAKEROOT/$NAME/usr/bin/cpp $FAKEROOT/$NAME/usr/lib
 
 	# Compatibility symlink to enable building programs with LTO
-	ln -sfv ../../libexec/gcc/$(gcc -dumpmachine)/12.2.0/liblto_plugin.so \
+	ln -sfv ../../libexec/gcc/$(gcc -dumpmachine)/${VERSION}/liblto_plugin.so \
         $FAKEROOT/$NAME/usr/lib/bfd-plugins/
 
 	# Perform a sanity check before proceeding
