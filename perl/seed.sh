@@ -45,7 +45,7 @@ _install()
 	# Manually symlink the perl binary to avoid breaking stow
 	# Without stow, birb won't be able to finish installing this packge
 	echo "Manually overwriting the old perl binary to avoid breaking stow"
-	ln -sfv $FAKEROOT/$NAME/usr/bin/perl /usr/bin/perl
+	ln -srfv $FAKEROOT/$NAME/usr/bin/perl /usr/bin/perl
 }
 
 _test()
