@@ -84,9 +84,6 @@ _install()
 	# Make sure GCC is using the correct dynamic linker
 	grep found dummy.log
 
-	read -p "Hit ENTER if everything looks fine. Ctrl+C if something looks suspicious"
-	rm -v dummy.c a.out dummy.log
-
 	# Move a misplaced file
 	mkdir -pv $FAKEROOT/$NAME/usr/share/gdb/auto-load/usr/lib
 	mv -v $FAKEROOT/$NAME/usr/lib/*gdb.py $FAKEROOT/$NAME/usr/share/gdb/auto-load/usr/lib
