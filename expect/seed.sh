@@ -29,5 +29,10 @@ _build()
 _install()
 {
 	make install
-	ln -svf expect5.45.4/libexpect5.45.4.so $FAKEROOT/$NAME/usr/lib
+	ln -svf expect${VERSION}/libexpect${VERSION}.so $FAKEROOT/$NAME/usr/lib
+
+	# Move the expect binaries into its own fakeroot
+	# For some reason, it wants to install itself into the TCL fakeroot
+	mv $FAKEROOT/tcl/usr/lib/expect${VERSION} $FAKEROOT/$NAME/usr/lib/
+	mv $FAKEROOT/tcl/usr/bin/expect $FAKEROOT/$NAME/usr/bin/
 }
