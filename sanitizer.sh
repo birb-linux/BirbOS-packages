@@ -19,6 +19,7 @@ source $PKG_NAME/seed.sh
 [ -z "$VERSION" ] && echo "Version information is missing"
 [ -z "$SOURCE" ] && echo "Package source url is missing"
 [ -z "$CHECKSUM" ] && echo "Package checksum is missing"
+[ -n "$(echo "$NAME" | grep "[[:space:]]")" ] && echo "Whitespace isn't allowed in package names"
 
 # Prefix mistakes
 grep -i "prefix=/usr" $PKG_NAME/seed.sh && echo "Misconfigured prefix path ^"

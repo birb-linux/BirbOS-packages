@@ -3,6 +3,12 @@
 # Create a template package from a package name
 PKG_NAME="$1"
 
+# Don't accept empty package names
+[ -z "$PKG_NAME" ] && echo "Can't create a package with empty name" && exit 1
+
+# Don't allow packages with whitespace in the name
+[ -n "$(echo "$PKG_NAME" | grep "[[:space:]]")" ] && echo "Whitespace isn't allowed in package names" && exit 1
+
 [ -d $PKG_NAME ] && echo "A package with name [$PKG_NAME] has already been created!" && exit 1
 
 mkdir -pv $PKG_NAME
