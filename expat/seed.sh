@@ -26,6 +26,7 @@ _install()
 	make install
 
 	# Install the documentation
+	mkdir -p $FAKEROOT/$NAME/usr/share/doc/expat-${VERSION}
 	install -v -m644 doc/*.{html,css} $FAKEROOT/$NAME/usr/share/doc/expat-${VERSION}
 }
 
