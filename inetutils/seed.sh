@@ -15,7 +15,7 @@ _setup()
 _build()
 {
 	./configure --prefix=$FAKEROOT/$NAME/usr \
-            --bindir=/usr/bin    \
+            --bindir=$FAKEROOT/$NAME/usr/bin    \
             --localstatedir=/var \
             --disable-logger     \
             --disable-whois      \
