@@ -14,7 +14,7 @@ _setup()
 
 _build()
 {
-	./configure --prefix=/usr    \
+	./configure --prefix=$FAKEROOT/$NAME/usr    \
             --disable-static \
             --docdir=/usr/share/doc/isl-${VERSION}
 
