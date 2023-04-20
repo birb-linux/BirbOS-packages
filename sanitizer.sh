@@ -23,6 +23,7 @@ source $PKG_NAME/seed.sh
 
 # Prefix mistakes
 grep -i "prefix=/usr" $PKG_NAME/seed.sh && echo "Misconfigured prefix path ^"
+grep -i "bindir=/usr" $PKG_NAME/seed.sh && echo "Misconfigured bindir path ^"
 grep "mv.* /[A-Za-z]" $PKG_NAME/seed.sh && echo "Possibly misconfigured mv command ^"
 grep "cp.* /[A-Za-z]" $PKG_NAME/seed.sh && echo "Possibly misconfigured cp command ^"
 grep "ln.* /[A-Za-z]" $PKG_NAME/seed.sh && echo "Possibly misconfigured ln command ^"
