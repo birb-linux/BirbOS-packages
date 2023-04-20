@@ -49,6 +49,4 @@ _install()
 
 	# Enable shadowed group passwords
 	grpconv
-
-	echo "Remember to set a password for the root user with 'passwd root' command"
 }
