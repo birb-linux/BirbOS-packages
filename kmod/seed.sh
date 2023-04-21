@@ -14,7 +14,7 @@ _setup()
 
 _build()
 {
-	./configure --prefix=$FAKEROOT/$NAME/usr \
+	PKG_CONFIG_PATH="/usr/lib/pkgconfig" ./configure --prefix=$FAKEROOT/$NAME/usr \
             --sysconfdir=/etc      \
             --with-openssl         \
             --with-xz              \
@@ -42,7 +42,7 @@ _build32()
 	sed -e "s/^CLEANFILES =.*/CLEANFILES =/" -i man/Makefile
 	make clean
 
-	CC="gcc -m32" ./configure \
+	PKG_CONFIG_PATH="/usr/lib32/pkgconfig" CC="gcc -m32" ./configure \
 		--host=i686-pc-linux-gnu      \
 		--prefix=$FAKEROOT/$NAME/usr  \
 		--libdir=/usr/lib32           \
