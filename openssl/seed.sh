@@ -26,7 +26,7 @@ _build()
 _install()
 {
 	sed -i '/INSTALL_LIBS/s/libcrypto.a libssl.a//' Makefile
-	make MANSUFFIX=ssl install
+	make -j$(nproc) MANSUFFIX=ssl install
 
 	# Add version to the documentation directory name
 	mv -v $FAKEROOT/$NAME/usr/share/doc/openssl $FAKEROOT/$NAME/usr/share/doc/openssl-${VERSION}
