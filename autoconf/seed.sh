@@ -31,5 +31,5 @@ _install()
 
 _test()
 {
-	make -j$(nproc) check
+	TESTSUITEFLAGS=-j$(nproc) make check
 }
