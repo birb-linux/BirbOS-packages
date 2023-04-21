@@ -9,7 +9,7 @@ FLAGS="32bit test"
 _setup()
 {
 	tar -xf $DISTFILES/$(basename $SOURCE)
-	cd ${NAME}-${VERSION}
+	cd elfutils-${VERSION}
 }
 
 _build()
