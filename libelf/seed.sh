@@ -27,6 +27,11 @@ _install()
 	make -C libelf install
 	install -vm644 config/libelf.pc $FAKEROOT/$NAME/usr/lib/pkgconfig
 	rm $FAKEROOT/$NAME/usr/lib/libelf.a
+
+	# Fix an issue with stow
+	mv -v $FAKEROOT/$NAME/usr/lib/pkgconfig $FAKEROOT/$NAME/usr/lib/pkgconfig_
+	mkdir -pv $FAKEROOT/$NAME/usr/lib/pkgconfig
+	mv -v $FAKEROOT/$NAME/usr/lib/pkgconfig_ $FAKEROOT/$NAME/usr/lib/pkgconfig/libelf.pc
 }
 
 _test()
