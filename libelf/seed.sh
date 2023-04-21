@@ -26,7 +26,7 @@ _install()
 	# Only install libelf
 	make -C libelf install
 	install -vm644 config/libelf.pc $FAKEROOT/$NAME/usr/lib/pkgconfig
-	rm /usr/lib/libelf.a
+	rm $FAKEROOT/$NAME/usr/lib/libelf.a
 }
 
 _test()

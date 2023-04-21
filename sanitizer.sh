@@ -25,6 +25,7 @@ source $PKG_NAME/seed.sh
 grep -i "prefix=/usr" $PKG_NAME/seed.sh && echo "Misconfigured prefix path ^"
 grep -i "bindir=/usr" $PKG_NAME/seed.sh && echo "Misconfigured bindir path ^"
 grep "mv.* /[A-Za-z]" $PKG_NAME/seed.sh && echo "Possibly misconfigured mv command ^"
+grep "rm.* /[A-Za-z]" $PKG_NAME/seed.sh && echo "Possibly misconfigured rm command ^"
 grep "cp.* /[A-Za-z]" $PKG_NAME/seed.sh && echo "Possibly misconfigured cp command ^"
 grep "ln.* /[A-Za-z]" $PKG_NAME/seed.sh && echo "Possibly misconfigured ln command ^"
 grep "install.* /[A-Za-z]" $PKG_NAME/seed.sh && echo "Possibly misconfigured install command ^"
