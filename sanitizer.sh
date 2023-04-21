@@ -28,6 +28,7 @@ grep "mv.* /[A-Za-z]" $PKG_NAME/seed.sh && echo "Possibly misconfigured mv comma
 grep "cp.* /[A-Za-z]" $PKG_NAME/seed.sh && echo "Possibly misconfigured cp command ^"
 grep "ln.* /[A-Za-z]" $PKG_NAME/seed.sh && echo "Possibly misconfigured ln command ^"
 grep "install.* /[A-Za-z]" $PKG_NAME/seed.sh && echo "Possibly misconfigured install command ^"
+grep "sed.* /[A-Za-z]" $PKG_NAME/seed.sh && echo "Possibly misconfigured sed command ^"
 
 # Make sure the version variable is used properly
 VERSION_COUNT="$(grep -F "$VERSION" $PKG_NAME/seed.sh | wc -l)" # This command should only return "1"
