@@ -24,6 +24,7 @@ source $PKG_NAME/seed.sh
 # Prefix mistakes
 grep -i "prefix=/usr" $PKG_NAME/seed.sh && echo "Misconfigured prefix path ^"
 grep -i "bindir=/usr" $PKG_NAME/seed.sh && echo "Misconfigured bindir path ^"
+grep -i "docdir=/usr" $PKG_NAME/seed.sh && echo "Misconfigured docdir path ^"
 grep -i "\-w dist" $PKG_NAME/seed.sh && echo "Misconfigured pip3 build command ^"
 grep -i "\--find-links dist" $PKG_NAME/seed.sh && echo "Misconfigured pip3 install command ^"
 grep -i "\--find-links=dist" $PKG_NAME/seed.sh && echo "Misconfigured pip3 install command ^"
