@@ -23,5 +23,5 @@ _build()
 
 _install()
 {
-	make install DESTDIR=$FAKEROOT/$NAME/usr LIBDIR=$FAKEROOT/$NAME/usr/lib
+	make install DESTDIR=$FAKEROOT/$NAME LIBDIR=/usr/lib
 }
