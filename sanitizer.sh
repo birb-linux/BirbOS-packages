@@ -33,6 +33,7 @@ grep "cp.* /[A-Za-z]" $PKG_NAME/seed.sh && echo "Possibly misconfigured cp comma
 grep "ln.* /[A-Za-z]" $PKG_NAME/seed.sh && echo "Possibly misconfigured ln command ^"
 grep "install.* /[A-Za-z]" $PKG_NAME/seed.sh && echo "Possibly misconfigured install command ^"
 grep "sed.* /[A-Za-z]" $PKG_NAME/seed.sh && echo "Possibly misconfigured sed command ^"
+grep "echo.* /[A-Za-z]" $PKG_NAME/seed.sh && echo "Possibly misconfigured echo command ^"
 
 
 # Make sure the version variable is used properly
