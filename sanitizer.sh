@@ -26,6 +26,7 @@ grep -i "prefix=/usr" $PKG_NAME/seed.sh && echo "Misconfigured prefix path ^"
 grep -i "bindir=/usr" $PKG_NAME/seed.sh && echo "Misconfigured bindir path ^"
 grep -i "\-w dist" $PKG_NAME/seed.sh && echo "Misconfigured pip3 build command ^"
 grep -i "\--find-links dist" $PKG_NAME/seed.sh && echo "Misconfigured pip3 install command ^"
+grep -i "\--find-links=dist" $PKG_NAME/seed.sh && echo "Misconfigured pip3 install command ^"
 grep "mv.* /[A-Za-z]" $PKG_NAME/seed.sh && echo "Possibly misconfigured mv command ^"
 grep "rm.* /[A-Za-z]" $PKG_NAME/seed.sh && echo "Possibly misconfigured rm command ^"
 grep "cp.* /[A-Za-z]" $PKG_NAME/seed.sh && echo "Possibly misconfigured cp command ^"
@@ -73,4 +74,11 @@ fi
 if [ "$(match_function_flag "_test32()" "test32")" == "MISSING" ]
 then
 	echo "32bit test instructions have been specified, but the 'test32' flag is missing"
+fi
+
+# Make sure that the python flag is specified if the package is
+# installed with pip3
+if [ "$(match_function_flag "pip3 install" "python")" == "MISSING" ]
+then
+	echo "The package is installed with pip3, but the 'python' flag is missing"
 fi
