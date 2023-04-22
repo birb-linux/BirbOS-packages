@@ -9,7 +9,7 @@ FLAGS="test"
 _setup()
 {
 	tar -xf $DISTFILES/$(basename $SOURCE)
-	cd icu4c-${VERSION}-src
+	cd icu
 }
 
 _build()
