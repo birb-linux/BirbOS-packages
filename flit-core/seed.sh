@@ -14,10 +14,10 @@ _setup()
 
 _build()
 {
-	pip3 wheel -w $FAKEROOT/$NAME/dist --no-build-isolation --no-deps $PWD
+	pip3 wheel -w $FAKEROOT/$NAME/$PYTHON_DIST/$NAME --no-build-isolation --no-deps $PWD
 }
 
 _install()
 {
-	pip3 install --no-index --no-user --find-links $FAKEROOT/$NAME/dist flit_core
+	pip3 install --no-index --no-user --find-links $FAKEROOT/$NAME/$PYTHON_DIST/$NAME flit_core
 }
