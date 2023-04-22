@@ -3,7 +3,7 @@ DESC="Distribution-building parts of Flit (a packaging tool for simple Python mo
 VERSION="3.8.0"
 SOURCE="https://pypi.org/packages/source/f/flit-core/flit_core-${VERSION}.tar.gz"
 CHECKSUM="7c41da13273f7787709a24f74e0f5a99"
-DEPS=""
+DEPS="python3"
 FLAGS="python"
 
 _setup()
