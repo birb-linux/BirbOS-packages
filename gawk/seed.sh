@@ -26,6 +26,10 @@ _install()
 {
 	make LN='ln -f' install
 
+	# Point the awk binary to the fakeroot gawk
+	rm -v $FAKEROOT/$NAME/usr/bin/awk
+	ln -srfv $FAKEROOT/$NAME/usr/bin/gawk /usr/bin/awk
+
 	# Install the documentation
 	mkdir -pv                                   $FAKEROOT/$NAME/usr/share/doc/gawk-${VERSION}
 	cp    -v doc/{awkforai.txt,*.{eps,pdf,jpg}} $FAKEROOT/$NAME/usr/share/doc/gawk-${VERSION}
