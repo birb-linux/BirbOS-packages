@@ -21,4 +21,9 @@ _install()
 {
 	make DESTDIR=$FAKEROOT/$NAME install
 	install -vdm755 $FAKEROOT/$NAME/etc/ssl/local
+
+	# Download the certificate source
+	# This command should be run periodically
+	# TODO: Add a cron job to run this command weekly
+	$FAKEROOT/$NAME/usr/sbin/make-ca -g
 }
