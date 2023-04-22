@@ -33,4 +33,9 @@ _install()
 root-user-action = ignore
 disable-pip-version-check = true
 EOF
+
+	# Create a symlink to the python /usr/bin directory
+	# so that the things installed with pip3 can be executed
+	# via the PATH variable more easily
+	ln -sfrv $FAKEROOT/$NAME/usr/bin /usr/python_bin
 }
