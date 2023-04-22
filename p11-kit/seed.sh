@@ -39,8 +39,8 @@ EOF
 _install()
 {
 	ninja install
-	ln -sfv /usr/libexec/p11-kit/trust-extract-compat \
-			/usr/bin/update-ca-certificates
+	ln -srfv $FAKEROOT/$NAME/usr/libexec/p11-kit/trust-extract-compat \
+			$FAKEROOT/$NAME/usr/bin/update-ca-certificates
 
 	# Use p11-kit trust module as a drop-in replacement for libnssckbi.so
 	ln -sfv ./pkcs11/p11-kit-trust.so $FAKEROOT/$NAME/usr/lib/libnssckbi.so
