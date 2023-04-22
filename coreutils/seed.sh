@@ -33,6 +33,10 @@ _install()
 	mv -v $FAKEROOT/$NAME/usr/bin/chroot $FAKEROOT/$NAME/usr/sbin
 	mv -v $FAKEROOT/$NAME/usr/share/man/man1/chroot.1 $FAKEROOT/$NAME/usr/share/man/man8/chroot.8
 	sed -i 's/"1"/"8"/' $FAKEROOT/$NAME/usr/share/man/man8/chroot.8
+
+	# Copy a few coreutils to /usr/local/bin to avoid breaking the system
+	# during the installation
+	cp -v /bin/{rm,ls,ln,env,cut} /usr/local/bin/
 }
 
 _test()
