@@ -19,6 +19,6 @@ _build()
 
 _install()
 {
-	make DESTDIR=$FAKEROOT/$NAME/usr install
+	make DESTDIR=$FAKEROOT/$NAME install
 	install -vdm755 $FAKEROOT/$NAME/etc/ssl/local
 }
