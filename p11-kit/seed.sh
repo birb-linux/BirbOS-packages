@@ -39,8 +39,8 @@ EOF
 _install()
 {
 	ninja install
-	ln -sfv $FAKEROOT/$NAME/usr/libexec/p11-kit/trust-extract-compat \
-			$FAKEROOT/$NAME/usr/bin/update-ca-certificates
+	ln -sfv /usr/libexec/p11-kit/trust-extract-compat \
+			/usr/bin/update-ca-certificates
 }
 
 _test()
