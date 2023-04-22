@@ -22,7 +22,8 @@ _build()
 				--no-system-jsoncpp  \
 				--no-system-librhash \
 				--docdir=/share/doc/cmake-${VERSION}
-	make
+
+	make -j$(nproc)
 }
 
 _install()
