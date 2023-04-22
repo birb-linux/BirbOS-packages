@@ -4,7 +4,7 @@ VERSION="5.2.1"
 SOURCE="https://ftp.gnu.org/gnu/gawk/gawk-${VERSION}.tar.xz"
 CHECKSUM="02956bc5d117a7437bb4f7039f23b964"
 DEPS=""
-FLAGS="test"
+FLAGS="test important"
 
 _setup()
 {
