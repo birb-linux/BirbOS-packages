@@ -3,7 +3,7 @@ DESC="Modern toolset used for generating Makefiles"
 VERSION="3.26.3"
 SOURCE="https://cmake.org/files/v$(echo $VERSION | awk -F '.' '{print $1 "." $2}')/cmake-${VERSION}.tar.gz"
 CHECKSUM="a99c7c7d5d127834ff3923b4cd4a1612"
-DEPS=""
+DEPS="curl"
 FLAGS="test"
 
 _setup()
