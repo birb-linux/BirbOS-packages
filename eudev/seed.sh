@@ -4,7 +4,8 @@ VERSION="3.2.11"
 SOURCE="https://github.com/eudev-project/eudev/releases/download/v${VERSION}/eudev-${VERSION}.tar.gz"
 CHECKSUM="417ba948335736d4d81874fba47a30f7"
 DEPS=""
-FLAGS="test 32bit"
+FLAGS="test"
+#FLAGS="test 32bit"
 
 _setup()
 {
@@ -42,25 +43,25 @@ _test()
 
 # These 32 bit functions get called only if the '32bit' flag is set
 # Otherwise they are optional
-_build32()
-{
-	make distclean
-
-	CC="gcc -m32" \
-	./configure --host=i686-pc-linux-gnu       \
-				--prefix=$FAKEROOT/$NAME/usr   \
-				--bindir=$FAKEROOT/$NAME/usr/sbin \
-				--libdir=/usr/lib32            \
-				--sysconfdir=/etc              \
-				--disable-manpages             \
-				--disable-static
-
-	make -j$(nproc)
-}
-
-_install32()
-{
-	make DESTDIR=$PWD/DESTDIR install
-	cp -Rv DESTDIR/usr/lib32/* $FAKEROOT/$NAME/usr/lib32
-	rm -rf DESTDIR
-}
+#_build32()
+#{
+#	make distclean
+#
+#	CC="gcc -m32" \
+#	./configure --host=i686-pc-linux-gnu       \
+#				--prefix=$FAKEROOT/$NAME/usr   \
+#				--bindir=$FAKEROOT/$NAME/usr/sbin \
+#				--libdir=/usr/lib32            \
+#				--sysconfdir=/etc              \
+#				--disable-manpages             \
+#				--disable-static
+#
+#	make -j$(nproc)
+#}
+#
+#_install32()
+#{
+#	make DESTDIR=$PWD/DESTDIR install
+#	cp -Rv DESTDIR/usr/lib32/* $FAKEROOT/$NAME/usr/lib32
+#	rm -rf DESTDIR
+#}
