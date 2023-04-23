@@ -3,7 +3,7 @@ DESC="A set of libraries designed to support cross-platform development of secur
 VERSION="3.88.1"
 SOURCE="https://archive.mozilla.org/pub/security/nss/releases/NSS_$(echo $VERSION | sed 's/\./_/g')_RTM/src/nss-${VERSION}.tar.gz"
 CHECKSUM="7ca8ff8ed672d82290c3122f38708579"
-DEPS="nspr zlib"
+DEPS="nspr zlib p11-kit sqlite"
 FLAGS=""
 
 _setup()
