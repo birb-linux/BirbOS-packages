@@ -40,5 +40,11 @@ _install()
 	chmod -v 644                                  $FAKEROOT/$NAME/usr/include/nss/*
 
 	install -v -m755 Linux*/bin/{certutil,nss-config,pk12util} $FAKEROOT/$NAME/usr/bin
+
 	install -v -m644 Linux*/lib/pkgconfig/nss.pc  $FAKEROOT/$NAME/usr/lib/pkgconfig
+
+	# Fix a problem with stow
+	mv -v $FAKEROOT/$NAME/usr/lib/pkgconfig $FAKEROOT/$NAME/usr/lib/pkgconfig_
+	mkdir -pv $FAKEROOT/$NAME/usr/lib/pkgconfig
+	mv -v $FAKEROOT/$NAME/usr/lib/pkgconfig_ $FAKEROOT/$NAME/usr/lib/pkgconfig/nss.pc
 }
