@@ -47,4 +47,7 @@ _install()
 	mv -v $FAKEROOT/$NAME/usr/lib/pkgconfig $FAKEROOT/$NAME/usr/lib/pkgconfig_
 	mkdir -pv $FAKEROOT/$NAME/usr/lib/pkgconfig
 	mv -v $FAKEROOT/$NAME/usr/lib/pkgconfig_ $FAKEROOT/$NAME/usr/lib/pkgconfig/nss.pc
+
+	# Avoid overwriting a library installed by p11-kit
+	rm -fv $FAKEROOT/$NAME/usr/lib/libnssckbi.so
 }
