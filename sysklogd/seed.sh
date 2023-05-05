@@ -24,7 +24,7 @@ _build()
 
 _install()
 {
-	make PREFIX=$FAKEROOT/$NAME/usr BINDIR=$FAKEROOT/$NAME/sbin install
+	make DOCDIR=$FAKEROOT/$NAME/usr BINDIR=$FAKEROOT/$NAME/sbin install
 
 	# Do some basic configuration
 	cat > $FAKEROOT/$NAME/etc/syslog.conf << "EOF"
@@ -40,4 +40,8 @@ user.* -/var/log/user.log
 
 # End /etc/syslog.conf
 EOF
+
+	echo "Note: This package will install documentation outside of the fakeroot"
+	echo "You'll need to uninstall them manually if you want to"
+	echo "uninstall this package for whatever reason"
 }
