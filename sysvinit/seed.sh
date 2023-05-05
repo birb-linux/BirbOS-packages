@@ -4,7 +4,7 @@ VERSION="3.07"
 SOURCE="https://github.com/slicer69/sysvinit/releases/download/${VERSION}/sysvinit-${VERSION}.tar.xz"
 CHECKSUM="190398c660af29c97d892126d2a95e28"
 DEPS=""
-FLAGS=""
+FLAGS="important"
 
 _setup()
 {
