@@ -14,7 +14,7 @@ _setup()
 
 _build()
 {
-	./configure --prefix=$FAKEROOT/$NAME/usr    \
+	./configure --prefix=/usr    \
             --mandir=/usr/share/man 			\
             --with-shared           			\
             --without-debug         			\
@@ -30,8 +30,8 @@ _build()
 _install()
 {
 	make DESTDIR=$PWD/dest install
-	install -vm755 dest/$FAKEROOT/$NAME/usr/lib/libncursesw.so.${VERSION} $FAKEROOT/$NAME/usr/lib
-	rm -v  dest/$FAKEROOT/$NAME/usr/lib/libncursesw.so.${VERSION}
+	install -vm755 dest/usr/lib/libncursesw.so.${VERSION} $FAKEROOT/$NAME/usr/lib
+	rm -v  dest/usr/lib/libncursesw.so.${VERSION}
 	cp -av dest/* $FAKEROOT/$NAME/
 
 	# Trick applications into linking with wide-character libraries
@@ -58,7 +58,7 @@ _build32()
 	make distclean
 
 	CC="gcc -m32" CXX="g++ -m32" \
-	./configure --prefix=$FAKEROOT/$NAME/usr    \
+	./configure --prefix=/usr    \
 				--host=i686-pc-linux-gnu 		\
 				--libdir=/usr/lib32     		\
 				--mandir=/usr/share/man 		\
