@@ -19,7 +19,7 @@ _build()
 	sed -i '/udevdir/a udev_dir=${udevdir}' src/udev/udev.pc.in
 
 	./configure --prefix=$FAKEROOT/$NAME/usr \
-            --bindir=$FAKEROOT/$NAME/usr/sbin \
+            --bindir=$FAKEROOT/$NAME/sbin \
             --sysconfdir=/etc       \
             --enable-manpages       \
             --disable-static
