@@ -18,7 +18,7 @@ _build()
 	./configure ADJTIME_PATH=/var/lib/hwclock/adjtime \
             --bindir=$FAKEROOT/$NAME/usr/bin    \
             --libdir=$FAKEROOT/$NAME/usr/lib    \
-            --sbindir=$FAKEROOT/$NAME/usr/sbin  \
+            --sbindir=$FAKEROOT/$NAME/sbin  \
             --disable-chfn-chsh  \
             --disable-login      \
             --disable-nologin    \
