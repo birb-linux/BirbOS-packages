@@ -34,6 +34,9 @@ _build()
 _install()
 {
 	make install
+
+	# Fix a symlink
+	ln -srfv $FAKEROOT/$NAME/sbin/udevadm $FAKEROOT/$NAME/usr/sbin/udevadm
 }
 
 _test()
