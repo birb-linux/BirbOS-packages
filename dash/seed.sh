@@ -14,7 +14,7 @@ _setup()
 
 _build()
 {
-	./configure --bindir=$FAKEROOT/$NAME/bin --mandir=$FAKEROOT/$NAME/usr/share/man
+	./configure --bindir=$FAKEROOT/$NAME/usr/bin --mandir=$FAKEROOT/$NAME/usr/share/man
 
 	make -j$(nproc)
 }
