@@ -3,7 +3,7 @@ DESC="Message bus system"
 VERSION="1.14.6"
 SOURCE="https://dbus.freedesktop.org/releases/dbus/dbus-${VERSION}.tar.xz"
 CHECKSUM="e809d7aa905ad82adeaf1d59db5445b1"
-DEPS=""
+DEPS="dbus-daemon"
 FLAGS=""
 
 _setup()
