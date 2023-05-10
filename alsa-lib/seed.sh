@@ -6,6 +6,8 @@ CHECKSUM="ab32de4b6054d7ab23723f8d85e50a27"
 DEPS=""
 FLAGS="test"
 
+# TODO: Add checks for required kernel options
+
 _setup()
 {
 	tar -xf $DISTFILES/$(basename $SOURCE)
