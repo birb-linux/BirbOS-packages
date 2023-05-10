@@ -3,7 +3,7 @@ DESC="terminal multiplexer"
 VERSION="3.3a"
 SOURCE="https://github.com/tmux/tmux/releases/download/${VERSION}/tmux-${VERSION}.tar.gz"
 CHECKSUM="8eee5883b9f6550fa4efaad0c9ec38f3"
-DEPS=""
+DEPS="libevent ncurses"
 FLAGS=""
 
 _setup()
