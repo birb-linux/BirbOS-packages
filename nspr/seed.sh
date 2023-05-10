@@ -23,7 +23,7 @@ _build()
 				--with-pthreads \
 				$([ $(uname -m) = x86_64 ] && echo --enable-64bit)
 
-	make -j$(nproc)
+	make -j${MAKEOPTS}
 }
 
 _install()

@@ -34,7 +34,7 @@ _build()
              -Duseshrplib                                 \
              -Dusethreads
 
-	make -j$(nproc)
+	make -j${MAKEOPTS}
 }
 
 _install()
@@ -50,5 +50,5 @@ _install()
 
 _test()
 {
-	make -j$(nproc) test
+	make -j${MAKEOPTS} test
 }

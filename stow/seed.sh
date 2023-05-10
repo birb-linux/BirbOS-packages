@@ -19,7 +19,7 @@ _build()
 
 _install()
 {
-	make -j$(nproc)
+	make -j${MAKEOPTS}
 }
 
 _test()

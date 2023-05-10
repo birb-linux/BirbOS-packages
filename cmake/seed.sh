@@ -23,7 +23,7 @@ _build()
 				--no-system-librhash \
 				--docdir=/share/doc/cmake-${VERSION}
 
-	make -j$(nproc)
+	make -j${MAKEOPTS}
 }
 
 _install()
@@ -35,6 +35,6 @@ _test()
 {
 	# FindBoost test is known to fail
 	set +e
-	LC_ALL=en_US.UTF-8 bin/ctest -j$(nproc) -O cmake-${VERSION}-test.log
+	LC_ALL=en_US.UTF-8 bin/ctest -j${MAKEOPTS} -O cmake-${VERSION}-test.log
 	set -e
 }

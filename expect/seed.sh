@@ -20,10 +20,10 @@ _build()
             --mandir=$FAKEROOT/$NAME/usr/share/man \
             --with-tclinclude=/usr/include
 
-	make -j$(nproc)
+	make -j${MAKEOPTS}
 
 	# Run tests
-	make -j$(nproc) test
+	make -j${MAKEOPTS} test
 }
 
 _install()

@@ -18,7 +18,7 @@ _build()
             --disable-static \
             --docdir=$FAKEROOT/$NAME/usr/share/doc/libogg-${VERSION}
 
-	make -j$(nproc)
+	make -j${MAKEOPTS}
 }
 
 _install()

@@ -20,7 +20,7 @@ _build()
             --with-system-ffi    \
             --enable-optimizations
 
-	make -j$(nproc)
+	make -j${MAKEOPTS}
 }
 
 _install()

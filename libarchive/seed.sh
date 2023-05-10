@@ -16,7 +16,7 @@ _build()
 {
 	./configure --prefix=$FAKEROOT/$NAME/usr --disable-static
 
-	make -j$(nproc)
+	make -j${MAKEOPTS}
 }
 
 _install()
@@ -29,5 +29,5 @@ _install()
 
 _test()
 {
-	LC_ALL=C make -j$(nproc) check
+	LC_ALL=C make -j${MAKEOPTS} check
 }

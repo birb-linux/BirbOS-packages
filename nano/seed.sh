@@ -20,7 +20,7 @@ _build()
             --enable-utf8     \
             --docdir=$FAKEROOT/$NAME/usr/share/doc/nano-${VERSION}
 
-	make -j$(nproc)
+	make -j${MAKEOPTS}
 }
 
 _install()

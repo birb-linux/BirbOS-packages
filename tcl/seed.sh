@@ -19,7 +19,7 @@ _build()
 	./configure --prefix=$FAKEROOT/$NAME/usr \
 				--mandir=$FAKEROOT/$NAME/usr/share/man
 
-	make -j$(nproc)
+	make -j${MAKEOPTS}
 
 	# Remove references to the build directory from the configuration files
 	# and replace them with the install directory
@@ -41,7 +41,7 @@ _build()
 	unset SRCDIR
 
 	# Run the tests
-	make -j$(nproc) test
+	make -j${MAKEOPTS} test
 }
 
 _install()

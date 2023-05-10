@@ -16,7 +16,7 @@ _build()
 {
 	./configure --prefix=$FAKEROOT/$NAME/usr
 
-	make -j$(nproc)
+	make -j${MAKEOPTS}
 }
 
 _install()
@@ -34,7 +34,7 @@ _build32()
 	./configure --prefix=$FAKEROOT/$NAME/usr \
 			--libdir=/usr/lib32
 
-	make -j$(nproc)
+	make -j${MAKEOPTS}
 }
 
 _install32()

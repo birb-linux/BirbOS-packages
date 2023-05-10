@@ -26,7 +26,7 @@ _build()
 	make -f Makefile-libbz2_so
 	make clean
 
-	make -j$(nproc)
+	make -j${MAKEOPTS}
 }
 
 _install()
@@ -51,7 +51,7 @@ _build32()
 
 	sed -e "s/^CC=.*/CC=gcc -m32/" -i Makefile{,-libbz2_so}
 	make -f Makefile-libbz2_so
-	make -j$(nproc) libbz2.a
+	make -j${MAKEOPTS} libbz2.a
 }
 
 _install32()

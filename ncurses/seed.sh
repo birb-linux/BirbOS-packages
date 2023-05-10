@@ -24,7 +24,7 @@ _build()
             --enable-widec          			\
             --with-pkg-config-libdir=/usr/lib/pkgconfig
 
-	make -j$(nproc)
+	make -j${MAKEOPTS}
 }
 
 _install()
@@ -70,7 +70,7 @@ _build32()
 				--enable-widec          		\
 				--with-pkg-config-libdir=/usr/lib32/pkgconfig
 
-	make -j$(nproc)
+	make -j${MAKEOPTS}
 }
 
 _install32()

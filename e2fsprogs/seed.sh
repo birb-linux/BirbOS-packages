@@ -25,7 +25,7 @@ _build()
              --disable-uuidd         \
              --disable-fsck
 
-	make -j$(nproc)
+	make -j${MAKEOPTS}
 }
 
 _install()

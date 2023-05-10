@@ -38,5 +38,5 @@ _install()
 _test()
 {
 	export USER="$(whoami)"
-	make -j$(nproc) test
+	make -j${MAKEOPTS} test
 }

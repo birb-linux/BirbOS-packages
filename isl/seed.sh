@@ -18,7 +18,7 @@ _build()
             --disable-static \
             --docdir=/usr/share/doc/isl-${VERSION}
 
-	make -j$(nproc)
+	make -j${MAKEOPTS}
 }
 
 _install()

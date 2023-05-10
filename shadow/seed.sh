@@ -36,7 +36,7 @@ _build()
 				--disable-static  \
 				--with-group-name-max-length=32
 
-	make -j$(nproc)
+	make -j${MAKEOPTS}
 }
 
 _install()

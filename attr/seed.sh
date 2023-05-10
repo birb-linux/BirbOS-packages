@@ -19,7 +19,7 @@ _build()
             --sysconfdir=/etc \
             --docdir=/usr/share/doc/attr-${VERSION}
 
-	make -j$(nproc)
+	make -j${MAKEOPTS}
 }
 
 _install()
@@ -34,7 +34,7 @@ _install()
 # when installing packages
 _test()
 {
-	make -j$(nproc) check
+	make -j${MAKEOPTS} check
 }
 
 # These 32 bit functions get called only if the '32bit' flag is set
@@ -50,7 +50,7 @@ _build32()
 		--libdir=/usr/lib32   \
 		--host=i686-pc-linux-gnu
 
-	make -j$(nproc)
+	make -j${MAKEOPTS}
 }
 
 _install32()

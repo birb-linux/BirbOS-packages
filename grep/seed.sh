@@ -20,7 +20,7 @@ _build()
 
 	./configure --prefix=$FAKEROOT/$NAME/usr
 
-	make -j$(nproc)
+	make -j${MAKEOPTS}
 }
 
 _install()
@@ -30,5 +30,5 @@ _install()
 
 _test()
 {
-	make -j$(nproc) check
+	make -j${MAKEOPTS} check
 }

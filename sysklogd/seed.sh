@@ -19,7 +19,7 @@ _build()
 	sed -i '/Error loading kernel symbols/{n;n;d}' ksym_mod.c
 	sed -i 's/union wait/int/' syslogd.c
 
-	make -j$(nproc)
+	make -j${MAKEOPTS}
 }
 
 _install()

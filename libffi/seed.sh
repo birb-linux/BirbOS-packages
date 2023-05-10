@@ -18,7 +18,7 @@ _build()
             --disable-static       \
             --with-gcc-arch=native
 
-	make -j$(nproc)
+	make -j${MAKEOPTS}
 }
 
 _install()
@@ -28,7 +28,7 @@ _install()
 
 _test()
 {
-	make -j$(nproc) check
+	make -j${MAKEOPTS} check
 }
 
 # These 32 bit functions get called only if the '32bit' flag is set
@@ -44,13 +44,13 @@ _build32()
 		--disable-static         \
 		--with-gcc-arch=i686
 
-	make -j$(nproc)
+	make -j${MAKEOPTS}
 }
 
 # This function gets called if the 'test32' flag has been specified
 _test32()
 {
-	make -j$(nproc) check
+	make -j${MAKEOPTS} check
 }
 
 _install32()

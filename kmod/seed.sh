@@ -21,7 +21,7 @@ _build()
             --with-zstd            \
             --with-zlib
 
-	make -j$(nproc)
+	make -j${MAKEOPTS}
 }
 
 _install()
@@ -53,7 +53,7 @@ _install()
 #		--with-zlib                   \
 #		--with-rootlibdir=/usr/lib32
 #
-#	make -j$(nproc)
+#	make -j${MAKEOPTS}
 #}
 #
 #_install32()

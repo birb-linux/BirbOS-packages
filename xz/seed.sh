@@ -18,7 +18,7 @@ _build()
             --disable-static \
             --docdir=/usr/share/doc/xz-${VERSION}
 
-	make -j$(nproc)
+	make -j${MAKEOPTS}
 }
 
 _install()
@@ -35,7 +35,7 @@ _build32()
 		--libdir=/usr/lib32           \
 		--disable-static
 
-	make -j$(nproc)
+	make -j${MAKEOPTS}
 }
 
 _install32()

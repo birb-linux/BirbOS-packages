@@ -30,5 +30,5 @@ _install()
 
 	# Run tests (this test cannot be run before installation, so the tests
 	# will always run)
-	make -j$(nproc) check
+	make -j${MAKEOPTS} check
 }

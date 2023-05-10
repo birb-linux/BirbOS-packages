@@ -19,7 +19,7 @@ _build()
             --disable-static \
             --disable-kill
 
-	make -j$(nproc)
+	make -j${MAKEOPTS}
 }
 
 _install()

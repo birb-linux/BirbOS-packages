@@ -22,7 +22,7 @@ _build()
             PYTHON=/usr/bin/python3 \
             --docdir=$FAKEROOT/$NAME/usr/share/doc/libxml2-${VERSION}
 
-	make -j$(nproc)
+	make -j${MAKEOPTS}
 }
 
 _install()

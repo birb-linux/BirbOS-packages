@@ -25,7 +25,7 @@ _build()
             --with-systemdtmpfilesdir=            \
             --with-systemdsystemunitdir=
 
-	make -j$(nproc)
+	make -j${MAKEOPTS}
 }
 
 _install()
@@ -35,5 +35,5 @@ _install()
 
 _test()
 {
-	make -j$(nproc) check
+	make -j${MAKEOPTS} check
 }

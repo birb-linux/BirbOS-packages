@@ -18,7 +18,7 @@ _build()
             --disable-static \
             --enable-libgdbm-compat
 
-	make -j$(nproc)
+	make -j${MAKEOPTS}
 }
 
 _install()
@@ -28,5 +28,5 @@ _install()
 
 _test()
 {
-	make -j$(nproc) check
+	make -j${MAKEOPTS} check
 }

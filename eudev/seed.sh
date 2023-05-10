@@ -24,7 +24,7 @@ _build()
             --enable-manpages       \
             --disable-static
 
-	make -j$(nproc)
+	make -j${MAKEOPTS}
 
 	# Create some directories that are needed for tests (and for the installation)
 	mkdir -pv $FAKEROOT/$NAME/usr/lib/udev/rules.d
@@ -44,7 +44,7 @@ _install()
 
 _test()
 {
-	make -j$(nproc) check
+	make -j${MAKEOPTS} check
 }
 
 # These 32 bit functions get called only if the '32bit' flag is set
@@ -62,7 +62,7 @@ _test()
 #				--disable-manpages             \
 #				--disable-static
 #
-#	make -j$(nproc)
+#	make -j${MAKEOPTS}
 #}
 #
 #_install32()

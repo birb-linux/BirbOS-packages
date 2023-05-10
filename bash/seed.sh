@@ -19,7 +19,7 @@ _build()
             --with-installed-readline \
             --docdir=/usr/share/doc/bash-${VERSION}
 
-	make -j$(nproc)
+	make -j${MAKEOPTS}
 }
 
 _install()

@@ -21,7 +21,7 @@ _build()
 
 	./configure --prefix=$FAKEROOT/$NAME/usr --enable-freetype-config --disable-static
 
-	make -j$(nproc)
+	make -j${MAKEOPTS}
 }
 
 _install()

@@ -18,7 +18,7 @@ _build()
             --sysconfdir=/etc  \
             --with-ssl=openssl
 
-	make -j$(nproc)
+	make -j${MAKEOPTS}
 }
 
 _install()
@@ -28,5 +28,5 @@ _install()
 
 _test()
 {
-	make -j$(nproc) check
+	make -j${MAKEOPTS} check
 }

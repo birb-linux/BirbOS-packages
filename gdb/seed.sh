@@ -21,7 +21,7 @@ _build()
 				 --with-system-readline \
 				 --with-python=/usr/bin/python3
 
-	 make -j$(nproc)
+	 make -j${MAKEOPTS}
 }
 
 _install()

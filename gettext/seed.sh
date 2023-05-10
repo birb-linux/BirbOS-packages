@@ -18,7 +18,7 @@ _build()
             --disable-static \
             --docdir=/usr/share/doc/gettext-${VERSION}
 
-	make -j$(nproc)
+	make -j${MAKEOPTS}
 }
 
 _install()
@@ -29,5 +29,5 @@ _install()
 
 _test()
 {
-	make -j$(nproc) check
+	make -j${MAKEOPTS} check
 }

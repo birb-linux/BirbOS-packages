@@ -40,7 +40,7 @@ EOF
 
 	patch -Np1 -i $PKG_PATH/lua-5.4.4-shared_library-2.patch
 
-	make -j$(nproc) linux
+	make -j${MAKEOPTS} linux
 }
 
 _install()

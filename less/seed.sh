@@ -16,7 +16,7 @@ _build()
 {
 	./configure --prefix=$FAKEROOT/$NAME/usr --sysconfdir=/etc
 
-	make -j$(nproc)
+	make -j${MAKEOPTS}
 }
 
 _install()

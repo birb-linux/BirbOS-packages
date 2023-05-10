@@ -16,7 +16,7 @@ _build()
 {
 	perl Makefile.PL
 
-	make -j$(nproc)
+	make -j${MAKEOPTS}
 }
 
 _install()

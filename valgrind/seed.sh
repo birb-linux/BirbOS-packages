@@ -21,7 +21,7 @@ _build()
 	./configure --prefix=$FAKEROOT/$NAME/usr \
 				--datadir=$FAKEROOT/$NAME/usr/share/doc/valgrind-${VERSION}
 
-	make -j$(nproc)
+	make -j${MAKEOPTS}
 }
 
 _install()

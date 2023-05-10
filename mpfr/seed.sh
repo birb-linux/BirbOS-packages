@@ -24,13 +24,13 @@ _build()
             --enable-thread-safe \
             --docdir=/usr/share/doc/mpfr-${VERSION}
 
-	make -j$(nproc)
+	make -j${MAKEOPTS}
 	make html
 }
 
 _test()
 {
-	make -j$(nproc) check
+	make -j${MAKEOPTS} check
 }
 
 _install()

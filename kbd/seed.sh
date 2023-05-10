@@ -21,7 +21,7 @@ _build()
 	# Build kbd without vlock
 	./configure --prefix=$FAKEROOT/$NAME/usr --disable-vlock
 
-	make -j$(nproc)
+	make -j${MAKEOPTS}
 }
 
 _install()
@@ -35,5 +35,5 @@ _install()
 
 _test()
 {
-	make -j$(nproc) check
+	make -j${MAKEOPTS} check
 }

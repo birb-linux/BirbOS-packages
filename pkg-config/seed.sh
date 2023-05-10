@@ -20,7 +20,7 @@ _build()
 			--with-pc-path="/usr/lib/pkgconfig:/usr/lib32/pkgconfig" \
             --docdir=/usr/share/doc/pkg-config-${VERSION}
 
-	make -j$(nproc)
+	make -j${MAKEOPTS}
 }
 
 _install()
@@ -35,5 +35,5 @@ _install()
 # when installing packages
 _test()
 {
-	make -j$(nproc) check
+	make -j${MAKEOPTS} check
 }

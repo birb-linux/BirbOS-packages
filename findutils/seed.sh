@@ -16,7 +16,7 @@ _build()
 {
 	./configure --prefix=$FAKEROOT/$NAME/usr --localstatedir=/var/lib/locate
 
-	make -j$(nproc)
+	make -j${MAKEOPTS}
 }
 
 _install()

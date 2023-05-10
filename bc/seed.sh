@@ -16,7 +16,7 @@ _build()
 {
 	CC=gcc ./configure --prefix=$FAKEROOT/$NAME/usr -G -O3 -r
 
-	make -j$(nproc)
+	make -j${MAKEOPTS}
 }
 
 _test()

@@ -18,7 +18,7 @@ _build()
             --with-gitconfig=/etc/gitconfig \
             --with-python=python3
 
-	make -j$(nproc)
+	make -j${MAKEOPTS}
 }
 
 _install()

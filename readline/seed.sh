@@ -26,7 +26,7 @@ _build()
             --with-curses    \
             --docdir=/usr/share/doc/readline-${VERSION}
 
-	make -j$(nproc) SHLIB_LIBS="-lncursesw"
+	make -j${MAKEOPTS} SHLIB_LIBS="-lncursesw"
 }
 
 _install()
@@ -51,7 +51,7 @@ _build32()
 		--disable-static              \
 		--with-curses
 
-	make -j$(nproc) SHLIB_LIBS="-lncursesw"
+	make -j${MAKEOPTS} SHLIB_LIBS="-lncursesw"
 }
 
 _install32()

@@ -14,7 +14,7 @@ _setup()
 
 _build()
 {
-	make -j$(nproc) lib
+	make -j${MAKEOPTS} lib
 }
 
 _install()

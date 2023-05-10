@@ -17,7 +17,7 @@ _build()
 	FORCE_UNSAFE_CONFIGURE=1  \
 		./configure --prefix=$FAKEROOT/$NAME/usr
 
-	make -j$(nproc)
+	make -j${MAKEOPTS}
 }
 
 _install()
@@ -30,5 +30,5 @@ _install()
 #{
 #	# This test is considered dangerous to run as root
 #	# but its okay in a partial install
-#	make -j$(nproc) check
+#	make -j${MAKEOPTS} check
 #}

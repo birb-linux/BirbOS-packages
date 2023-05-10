@@ -25,7 +25,7 @@ _build()
             --disable-rsh        \
             --disable-servers
 
-	make -j$(nproc)
+	make -j${MAKEOPTS}
 }
 
 _install()
@@ -38,5 +38,5 @@ _install()
 
 _test()
 {
-	make -j$(nproc) check
+	make -j${MAKEOPTS} check
 }
