@@ -27,5 +27,5 @@ _install()
 
 _test()
 {
-	make check
+	make -j${MAKEOPTS} check
 }
