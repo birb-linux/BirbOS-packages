@@ -1,8 +1,8 @@
 NAME="dhcpcd"
 DESC="Implementation of the DHCP client specified in RFC2131"
-VERSION="9.4.1"
-SOURCE="https://roy.marples.name/downloads/dhcpcd/dhcpcd-${VERSION}.tar.xz"
-CHECKSUM="2b2f46648bc96979f96127f0e0e07d9b"
+VERSION="10.0.1"
+SOURCE="https://github.com/NetworkConfiguration/dhcpcd/releases/download/v${VERSION}/dhcpcd-${VERSION}.tar.xz"
+CHECKSUM="002d3c7bfa057248f23b2b2f33f02f5a"
 DEPS=""
 FLAGS="test"
 
@@ -14,10 +14,6 @@ _setup()
 
 _build()
 {
-	# Fix a runtime error
-	sed '/Deny everything else/i SECCOMP_ALLOW(__NR_getrandom),' \
-		-i src/privsep-linux.c
-
 	./configure --prefix=$FAKEROOT/$NAME/usr \
             --sysconfdir=/etc            \
             --libexecdir=$FAKEROOT/$NAME/usr/lib/dhcpcd \
