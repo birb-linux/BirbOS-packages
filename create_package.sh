@@ -30,7 +30,7 @@ _setup()
 
 _build()
 {
-	# Build the package here
+	# make -j${MAKEOPTS}
 }
 
 _install()
