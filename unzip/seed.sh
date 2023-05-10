@@ -22,6 +22,6 @@ _build()
 
 _install()
 {
-	make prefix=$FAKEROOT/$NAME/usr MANDIR=$FAKEROOT/$NAME/usr/share/man/man1 \
+	make -j$(nproc) prefix=$FAKEROOT/$NAME/usr MANDIR=$FAKEROOT/$NAME/usr/share/man/man1 \
 		 -f unix/Makefile install
 }
