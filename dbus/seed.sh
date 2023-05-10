@@ -36,7 +36,7 @@ _install()
 
 	# Make it possible to compile stuff depending on dbus
 	# whilst in chroot
-	dbus-uuidgen --ensure
+	./tools/dbus-uuidgen --ensure
 
 	# Create a symlink needed for elogind support
 	ln -sfv /var/lib/dbus/machine-id /etc
