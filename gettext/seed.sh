@@ -16,7 +16,7 @@ _build()
 {
 	./configure --prefix=$FAKEROOT/$NAME/usr \
             --disable-static \
-            --docdir=/usr/share/doc/gettext-${VERSION}
+            --docdir=$FAKEROOT/$NAME/usr/share/doc/gettext-${VERSION}
 
 	make -j${MAKEOPTS}
 }
