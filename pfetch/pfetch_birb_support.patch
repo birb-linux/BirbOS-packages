@@ -1,0 +1,10 @@
+--- ./pfetch-0.6.0.orig/pfetch	2020-03-11 22:39:16.000000000 +0200
++++ ./pfetch-0.6.0/pfetch	2023-05-10 03:07:43.468260818 +0300
+@@ -472,6 +472,7 @@
+                 has apk        && apk info
+                 has guix       && guix package --list-installed
+                 has opkg       && opkg list-installed
++                has birb       && birb --list-installed
+ 
+                 # Directories containing packages.
+                 has kiss       && printf '%s\n' /var/db/kiss/installed/*/

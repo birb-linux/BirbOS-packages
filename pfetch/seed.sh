@@ -14,7 +14,8 @@ _setup()
 
 _build()
 {
-	printf ""
+	# Patch in support for the birb package manager
+	patch -i $PKG_PATH/pfetch_birb_support.patch
 }
 
 _install()
