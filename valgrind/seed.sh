@@ -6,7 +6,6 @@ CHECKSUM="e3ca8e03c6c527e80e7da5135a1b6beb"
 DEPS=""
 FLAGS=""
 
-# TODO: Add an option to use lto
 
 _setup()
 {
@@ -19,6 +18,7 @@ _build()
 	sed -i 's|/doc/valgrind||' docs/Makefile.in
 
 	./configure --prefix=$FAKEROOT/$NAME/usr \
+				--enable-lto=$ENABLE_LTO \
 				--datadir=$FAKEROOT/$NAME/usr/share/doc/valgrind-${VERSION}
 
 	make -j${MAKEOPTS}
