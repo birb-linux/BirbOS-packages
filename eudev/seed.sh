@@ -37,6 +37,9 @@ _install()
 
 	# Fix a symlink
 	ln -srfv $FAKEROOT/$NAME/sbin/udevadm $FAKEROOT/$NAME/usr/sbin/udevadm
+
+	# Add symlink for /sbin/udevd
+	ln -srfv $FAKEROOT/$NAME/usr/sbin/udevd $FAKEROOT/$NAME/sbin/udevd
 }
 
 _test()
