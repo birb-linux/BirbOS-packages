@@ -3,8 +3,11 @@ DESC="Server and userspace API for handling multimedia pipelines"
 VERSION="0.3.66"
 SOURCE="https://github.com/PipeWire/pipewire/archive/${VERSION}/pipewire-${VERSION}.tar.gz"
 CHECKSUM="8a85d990c159409578b456f8c8dcf075"
-DEPS="alsa-lib"
+DEPS="alsa-lib dbus"
 FLAGS="test"
+
+# TODO: There are possibly more dependencies required to install pipewire,
+# but those are yet to be figured out
 
 _setup()
 {
