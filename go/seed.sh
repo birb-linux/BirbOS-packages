@@ -25,10 +25,14 @@ _setup()
 _build()
 {
 	cd src
-	PATH="$PATH:$BOOTSTRAP_GO_PATH" GOROOT_FINAL="$FAKEROOT/$NAME/usr" ./make.bash
+	PATH="$PATH:$BOOTSTRAP_GO_PATH" GOROOT_FINAL="/opt/go" ./make.bash
 }
 
 _install()
 {
-	cp /tmp/birb_package_build/go/bin/* $FAKEROOT/$NAME/usr/bin/
+	# Remove any precompiled binaries
+	rm -rf /tmp/birb_package_build/go/go /tmp/birb_package_build/go/go${VERSION}.linux-amd64.tar.gz
+
+	mkdir -p $FAKEROOT/$NAME/opt
+	cp -r /tmp/birb_package_build/go $FAKEROOT/$NAME/opt/go
 }
