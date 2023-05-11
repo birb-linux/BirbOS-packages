@@ -19,5 +19,6 @@ _build()
 
 _install()
 {
-	cp -vf $PWD/fzf $FAKEROOT/$NAME/usr/bin/fzf
+	cp -vf $PWD/fzf         $FAKEROOT/$NAME/usr/bin/fzf
+	cp -vf $PWD/man/man1/*  $FAKEROOT/$NAME/usr/share/man/man1/
 }
