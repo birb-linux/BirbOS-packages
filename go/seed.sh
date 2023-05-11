@@ -30,5 +30,5 @@ _build()
 
 _install()
 {
-	printf ""
+	cp /tmp/birb_package_build/go/bin/* $FAKEROOT/$NAME/usr/bin/
 }
