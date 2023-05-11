@@ -80,6 +80,12 @@ password required    pam_deny.so
 
 # End /etc/pam.d/elogind-user
 EOF
+
+	println "Clawing some escaped elogind files back into the fakeroot..."
+	mv -v /lib/elogind $FAKEROOT/$NAME/lib/
+	mv -v /etc/elogind $FAKEROOT/$NAME/etc/
+	mv -v /usr/lib/libelogind.so* $FAKEROOT/$NAME/lib/
+	mv -v /usr/bin/{elogind-inhibit,loginctl} $FAKEROOT/$NAME/usr/bin/
 }
 
 _test()
