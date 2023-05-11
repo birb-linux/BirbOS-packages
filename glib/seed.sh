@@ -33,7 +33,9 @@ _build()
 
 _install()
 {
+	set +e
 	ninja install
+	set -e
 
 	mkdir -p $FAKEROOT/$NAME/usr/share/doc/glib-${VERSION}
 	cp -r ../docs/reference/{gio,glib,gobject} $FAKEROOT/$NAME/usr/share/doc/glib-${VERSION}
