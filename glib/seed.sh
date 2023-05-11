@@ -23,7 +23,7 @@ _build()
 
 	meson --prefix=$FAKEROOT/$NAME/usr \
 		  --buildtype=release \
-		  -Dman=true          \
+		  -Dman=false          \
 		  ..
 
 	ninja
@@ -36,5 +36,5 @@ _install()
 	ninja install
 
 	mkdir -p $FAKEROOT/$NAME/usr/share/doc/glib-${VERSION}
-	cp -r ../docs/reference/{gio,glib,gobject} $FAKEROOT/$NAME/usr/share/doc/glib-${VERSION}
+	#cp -r ../docs/reference/{gio,glib,gobject} $FAKEROOT/$NAME/usr/share/doc/glib-${VERSION}
 }
