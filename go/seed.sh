@@ -12,7 +12,7 @@ _setup()
 	cd ${NAME}
 
 	# If go isn't installed, download a binary release to help with compiling
-	if [ ! -f /usr/bin/go ]
+	if [ ! -f /opt/go/bin/go ]
 	then
 		println "Downloading go binaries needed for compiling go"
 		wget https://go.dev/dl/go${VERSION}.linux-amd64.tar.gz
