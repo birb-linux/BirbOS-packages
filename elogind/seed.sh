@@ -1,0 +1,80 @@
+NAME="elogind"
+DESC="systemd project's 'logind', extracted to be a standalone daemon"
+VERSION="246.10"
+SOURCE="https://github.com/elogind/elogind/archive/v${VERSION}/elogind-${VERSION}.tar.gz"
+CHECKSUM="32ab2201281f14738d9c045f3669c14d"
+DEPS="dbus linux-pam docbook-xml docbook-xsl-nons libxslt"
+FLAGS="test"
+
+_setup()
+{
+	# Make sure that the kernel is compatible
+	kernel_check "CONFIG_CGROUPS CONFIG_INOTIFY_USER CONFIG_TMPFS_POSIX_ACL CONFIG_CRYPTO CONFIG_CRYPTO_USER CONFIG_CRYPTO_USER_API_HASH"
+
+	tar -xf $DISTFILES/$(basename $SOURCE)
+	cd ${NAME}-${VERSION}
+}
+
+_build()
+{
+	# Polkit is a runtime dependency, so it doesn't have to be installed yet
+	sed -i '/Disable polkit/,+8 d' meson.build
+
+	sed '/request_name/i\
+	r = sd_bus_set_exit_on_disconnect(m->bus, true);\
+	if (r < 0)\
+		return log_error_errno(r, "Failed to set exit on disconnect: %m");' \
+		-i src/login/logind.c &&
+
+	mkdir build
+	cd    build
+
+	meson --prefix=$FAKEROOT/$NAME/usr         \
+		  --buildtype=release                  \
+		  -Dcgroup-controller=elogind          \
+		  -Ddbuspolicydir=/etc/dbus-1/system.d \
+		  -Dman=auto                           \
+		  ..
+	ninja
+}
+
+_install()
+{
+	ninja install
+	ln -sfv  libelogind.pc $FAKEROOT/$NAME/usr/lib/pkgconfig/libsystemd.pc
+	ln -sfvn elogind $FAKEROOT/$NAME/usr/include/systemd
+
+	# Configure pam
+	cat >> /etc/pam.d/system-session << "EOF" &&
+# Begin elogind addition
+
+session  required    pam_loginuid.so
+session  optional    pam_elogind.so
+
+# End elogind addition
+EOF
+
+	cat > $FAKEROOT/$NAME/etc/pam.d/elogind-user << "EOF"
+# Begin /etc/pam.d/elogind-user
+
+account  required    pam_access.so
+account  include     system-account
+
+session  required    pam_env.so
+session  required    pam_limits.so
+session  required    pam_unix.so
+session  required    pam_loginuid.so
+session  optional    pam_keyinit.so force revoke
+session  optional    pam_elogind.so
+
+auth     required    pam_deny.so
+password required    pam_deny.so
+
+# End /etc/pam.d/elogind-user
+EOF
+}
+
+_test()
+{
+	ninja test
+}
