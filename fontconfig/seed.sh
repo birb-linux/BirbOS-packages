@@ -3,7 +3,7 @@ DESC="Library and support programs used for configuring and customizing font acc
 VERSION="2.14.2"
 SOURCE="https://www.freedesktop.org/software/fontconfig/release/fontconfig-${VERSION}.tar.xz"
 CHECKSUM="95261910ea727b5dd116b06fbfd84b1f"
-DEPS="freetype"
+DEPS="freetype harfbuzz"
 FLAGS=""
 
 _setup()
