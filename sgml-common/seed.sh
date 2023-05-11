@@ -29,8 +29,10 @@ _install()
 
 	# TODO: These commands may need to be changed when updating
 	# this package
+	CATALOG_DIR_PATH="/usr/share/sgml/sgml-iso-entities-8879.1986"
+	mkdir -p $CATALOG_DIR_PATH
 	$FAKEROOT/$NAME/usr/bin/install-catalog --add /etc/sgml/sgml-ent.cat \
-		/usr/share/sgml/sgml-iso-entities-8879.1986/catalog
+		$CATALOG_DIR_PATH/catalog
 
 	$FAKEROOT/$NAME/usr/bin/install-catalog --add /etc/sgml/sgml-docbook.cat \
 		/etc/sgml/sgml-ent.cat
