@@ -36,6 +36,7 @@ _build()
 	cd    build
 
 	meson --prefix=$FAKEROOT/$NAME/usr         \
+          --bindir=$FAKEROOT/$NAME/usr/bin     \
 		  --buildtype=release                  \
 		  -Dcgroup-controller=elogind          \
 		  -Ddbuspolicydir=/etc/dbus-1/system.d \
