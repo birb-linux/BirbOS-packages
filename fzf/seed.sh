@@ -14,10 +14,11 @@ _setup()
 
 _build()
 {
-	make
+	go build
 }
 
 _install()
 {
 	make PREFIX=$NAME/$FAKEROOT/usr install
+	cp -vf fzf $NAME/$FAKEROOT/usr/bin/fzf
 }
