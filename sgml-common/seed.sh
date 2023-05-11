@@ -29,9 +29,9 @@ _install()
 
 	# TODO: These commands may need to be changed when updating
 	# this package
-	install-catalog --add /etc/sgml/sgml-ent.cat \
+	$FAKEROOT/$NAME/usr/bin/install-catalog --add /etc/sgml/sgml-ent.cat \
 		/usr/share/sgml/sgml-iso-entities-8879.1986/catalog
 
-	install-catalog --add /etc/sgml/sgml-docbook.cat \
+	$FAKEROOT/$NAME/usr/bin/install-catalog --add /etc/sgml/sgml-docbook.cat \
 		/etc/sgml/sgml-ent.cat
 }
