@@ -35,4 +35,10 @@ _install()
 
 	mkdir -p $FAKEROOT/$NAME/opt
 	cp -r /tmp/birb_package_build/go $FAKEROOT/$NAME/opt/go
+
+	# Make sure that go gets added to $PATH
+	mkdir -p $FAKEROOT/$NAME/etc/profile.d
+	echo 'export PATH="$PATH:/opt/go/bin"' > $FAKEROOT/$NAME/etc/profile.d/go.sh
+
+	echo "Source /etc/profile to update the \$PATH variable"
 }
