@@ -25,7 +25,7 @@ _setup()
 _build()
 {
 	cd src
-	PATH="$PATH:$BOOTSTRAP_GO_PATH" GOROOT_FINAL="$FAKEROOT/$NAME/usr" ./all.bash
+	PATH="$PATH:$BOOTSTRAP_GO_PATH" GOROOT_FINAL="$FAKEROOT/$NAME/usr" ./make.bash
 }
 
 _install()
