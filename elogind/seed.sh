@@ -9,7 +9,13 @@ FLAGS="test"
 _setup()
 {
 	# Make sure that the kernel is compatible
-	kernel_check "CONFIG_CGROUPS CONFIG_INOTIFY_USER CONFIG_TMPFS_POSIX_ACL CONFIG_CRYPTO CONFIG_CRYPTO_USER CONFIG_CRYPTO_USER_API_HASH"
+	kernel_check "CONFIG_CGROUPS CONFIG_INOTIFY_USER CONFIG_TMPFS_POSIX_ACL"
+
+	# Some extra options if running tests
+	if [ "$ENABLE_TESTS" == "yes" ]
+	then
+		kernel_check "CONFIG_CRYPTO CONFIG_CRYPTO_USER CONFIG_CRYPTO_USER_API_HASH"
+	fi
 
 	tar -xf $DISTFILES/$(basename $SOURCE)
 	cd ${NAME}-${VERSION}
