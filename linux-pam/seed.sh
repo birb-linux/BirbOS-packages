@@ -35,6 +35,10 @@ _install()
 	make install
 	chmod -v 4755 $FAKEROOT/$NAME/usr/sbin/unix_chkpwd
 
+	# Some packages expect to find pam headers under /usr/include/security
+	mkdir -p $FAKEROOT/$NAME/usr/include/security
+	ln -srfv $FAKEROOT/$NAME/usr/include/*.h $FAKEROOT/$NAME/usr/include/security/
+
 	# Generate some generic configuration files
 	install -vdm755 /etc/pam.d
 
