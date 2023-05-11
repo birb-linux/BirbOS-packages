@@ -29,7 +29,10 @@ _build()
 _install()
 {
 	make install
-	mkdir -p $FAKEROOT/$NAME/usr/lib/sudo
+
+	# Move the sudo lib directory back into the fakeroot, because
+	# sudo doesn't seem to be fully respecting the --prefix variable
+	mv -vf /usr/lib/sudo $FAKEROOT/$NAME/usr/lib/sudo
 	ln -sfv libsudo_util.so.0.0.0 $FAKEROOT/$NAME/usr/lib/sudo/libsudo_util.so.0
 
 	# Allow the members of the wheel group to run commands as the root user
