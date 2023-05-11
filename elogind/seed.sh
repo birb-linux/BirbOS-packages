@@ -3,7 +3,7 @@ DESC="systemd project's 'logind', extracted to be a standalone daemon"
 VERSION="246.10"
 SOURCE="https://github.com/elogind/elogind/archive/v${VERSION}/elogind-${VERSION}.tar.gz"
 CHECKSUM="32ab2201281f14738d9c045f3669c14d"
-DEPS="dbus linux-pam docbook-xml docbook-xsl-nons libxslt"
+DEPS="dbus linux-pam"
 FLAGS="test"
 
 _setup()
@@ -39,7 +39,7 @@ _build()
 		  --buildtype=release                  \
 		  -Dcgroup-controller=elogind          \
 		  -Ddbuspolicydir=/etc/dbus-1/system.d \
-		  -Dman=auto                           \
+		  -Dman=false                          \
 		  ..
 	ninja
 }
