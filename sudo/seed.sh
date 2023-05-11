@@ -19,6 +19,7 @@ _build()
             --with-secure-path         \
             --with-all-insults         \
             --with-env-editor          \
+            --without-pam              \
             --docdir=$FAKEROOT/$NAME/usr/share/doc/sudo-${VERSION} \
             --with-passprompt="[sudo] password for %p: "
 
