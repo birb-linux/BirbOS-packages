@@ -22,7 +22,6 @@ _build()
 	set +e
 
 	meson --prefix=$FAKEROOT/$NAME/usr \
-          --optimization=2    \
 		  --buildtype=release \
 		  -Dman=true          \
 		  ..
