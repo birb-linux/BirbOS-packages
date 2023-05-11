@@ -25,7 +25,7 @@ _setup()
 _build()
 {
 	cd src
-	PATH="$PATH:$BOOTSTRAP_GO_PATH" GOROOT_FINAL="/opt/go" ./make.bash
+	PATH="$PATH:$BOOTSTRAP_GO_PATH" GOROOT_FINAL="/opt/go" GOROOT_BOOTSTRAP=/opt/go ./make.bash
 }
 
 _install()
