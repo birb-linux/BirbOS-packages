@@ -3,7 +3,7 @@ DESC="Toolkit for defining and handling authorizations"
 VERSION="122"
 SOURCE="https://gitlab.freedesktop.org/polkit/polkit/-/archive/${VERSION}/polkit-${VERSION}.tar.gz"
 CHECKSUM="bbe3e745fc5bc1a41f1b5044f09a0f26"
-DEPS="glib duktape linux-pam"
+DEPS="glib duktape linux-pam gobject-introspection"
 FLAGS=""
 
 _setup()
