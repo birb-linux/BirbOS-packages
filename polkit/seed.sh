@@ -15,9 +15,11 @@ _setup()
 _build()
 {
 	# Polkit needs its own user
+	set +e
 	groupadd -fg 27 polkitd
 	useradd -c "PolicyKit Daemon Owner" -d /etc/polkit-1 -u 27 \
 			-g polkitd -s /bin/false polkitd
+	set -e
 
 	mkdir build
 	cd    build
