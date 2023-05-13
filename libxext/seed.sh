@@ -3,7 +3,7 @@ DESC="Xlib-based library for common extensions to the X11 protocol"
 VERSION="1.3.5"
 SOURCE="https://www.x.org/archive//individual/lib/libXext-${VERSION}.tar.xz"
 CHECKSUM="964942427fcc5a9fa0539661421857c8"
-DEPS="fontconfig libxcb elogind xorgproto"
+DEPS="fontconfig libxcb elogind libx11"
 FLAGS=""
 
 _setup()
