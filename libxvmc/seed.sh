@@ -21,4 +21,7 @@ _build()
 _install()
 {
 	make install
+
+	# Overwrite a file created by xorgproto
+	rm -fv /usr/include/X11/extensions/vldXvMC.h
 }
