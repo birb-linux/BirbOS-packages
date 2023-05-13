@@ -3,7 +3,7 @@ DESC="X.Org Xfont library"
 VERSION="2.0.6"
 SOURCE="https://www.x.org/archive//individual/lib/libXfont2-${VERSION}.tar.xz"
 CHECKSUM="c179daa707f5f432f1bc13977e5bb329"
-DEPS="fontconfig libxcb elogind libx11"
+DEPS="fontconfig libxcb elogind libx11 libfontenc"
 FLAGS=""
 
 _setup()
