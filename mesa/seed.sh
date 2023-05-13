@@ -20,7 +20,7 @@ _build()
 	meson setup                   \
 		  --prefix=$XORG_PREFIX   \
 		  --buildtype=release     \
-		  -Dplatforms=$(expand_use "xorg" "x11")$(expand_use "wayland" ",wayland") \
+		  -Dplatforms=x11$(expand_use "wayland" ",wayland") \
 		  -Dgallium-drivers=auto  \
 		  #-Dvulkan-drivers=""     \
 		  -Dvalgrind=disabled     \
