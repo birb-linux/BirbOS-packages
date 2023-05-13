@@ -20,7 +20,7 @@ _setup()
 	wget https://github.com/llvm/llvm-project/releases/download/llvmorg-${VERSION}/compiler-rt-${VERSION}.src.tar.xz
 	[ "$(md5sum "compiler-rt-${VERSION}.src.tar.xz" | cut -d' ' -f1)" != "12e6777354f0121cbe73ef13342a9302" ] && echo "md5 mismatch with compiler-rt-${VERSION}.src.tar.xz" && exit 1
 
-	cd ${NAME}-${VERSION}
+	cd ${NAME}-${VERSION}.src
 }
 
 _build()
