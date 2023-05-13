@@ -3,7 +3,7 @@ DESC="Xlib library for the X Input Extension"
 VERSION="1.8"
 SOURCE="https://www.x.org/archive//individual/lib/libXi-${VERSION}.tar.bz2"
 CHECKSUM="74055672a111a98ce2841d2ec4057b05"
-DEPS="fontconfig libxcb elogind libx11"
+DEPS="fontconfig libxcb elogind libx11 libxext libxfixes"
 FLAGS=""
 
 _setup()
