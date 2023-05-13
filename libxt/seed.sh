@@ -3,7 +3,7 @@ DESC="X Toolkit Intrinsics library"
 VERSION="1.2.1"
 SOURCE="https://www.x.org/archive//individual/lib/libXt-${VERSION}.tar.bz2"
 CHECKSUM="b122ff9a7ec70c94dbbfd814899fffa5"
-DEPS="fontconfig libxcb elogind libx11"
+DEPS="fontconfig libxcb elogind libx11 libsm libice"
 FLAGS=""
 
 _setup()
