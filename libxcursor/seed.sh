@@ -3,7 +3,7 @@ DESC="Xlib-based Cursor management library"
 VERSION="1.2.1"
 SOURCE="https://www.x.org/archive//individual/lib/libXcursor-${VERSION}.tar.xz"
 CHECKSUM="4cdd1886fe5cce6f68554296edb46db8"
-DEPS="fontconfig libxcb elogind libx11"
+DEPS="fontconfig libxcb elogind libx11 libxrender libxfixes"
 FLAGS=""
 
 _setup()
