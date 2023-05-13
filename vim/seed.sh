@@ -46,6 +46,7 @@ set updatetime=300
 set shortmess+=c
 set noswapfile
 set termguicolors
+colorscheme habamax
 
 
 set nocompatible
