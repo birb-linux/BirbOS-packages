@@ -3,7 +3,7 @@ DESC="X Resize and Rotate library"
 VERSION="1.5.3"
 SOURCE="https://www.x.org/archive//individual/lib/libXrandr-${VERSION}.tar.xz"
 CHECKSUM="850cbc7c921c9d5d0135734b114ff6ac"
-DEPS="fontconfig libxcb elogind libx11"
+DEPS="fontconfig libxcb elogind libx11 libxext libxrender"
 FLAGS=""
 
 _setup()
