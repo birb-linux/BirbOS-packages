@@ -1,4 +1,4 @@
-NAME="libXxf86vm"
+NAME="libxxf86vm"
 DESC="Xlib-based library for the XFree86-VidMode X extension"
 VERSION="1.1.5"
 SOURCE="https://www.x.org/archive//individual/lib/libXxf86vm-${VERSION}.tar.xz"
