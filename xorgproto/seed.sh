@@ -25,4 +25,9 @@ _install()
 {
 	ninja install
 	mv -v $XORG_PREFIX/share/doc/xorgproto{,-${VERSION}}
+
+	# Make sure that this package doesn't take over the
+	# /usr/include/X11/extensions directory
+	mkdir -p /usr/include/X11/extensions
+	touch /usr/include/X11/extensions/.birb_symlink_lock
 }
