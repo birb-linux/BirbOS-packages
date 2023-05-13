@@ -3,7 +3,7 @@ DESC="X FreeType library"
 VERSION="2.3.7"
 SOURCE="https://www.x.org/archive//individual/lib/libXft-${VERSION}.tar.xz"
 CHECKSUM="69dc24ba444a0f6bd99423dbf8fd0260"
-DEPS="fontconfig libxcb elogind libx11"
+DEPS="fontconfig libxcb elogind libx11 libxrender"
 FLAGS=""
 
 _setup()
