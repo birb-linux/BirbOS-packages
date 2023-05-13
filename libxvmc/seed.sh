@@ -3,7 +3,7 @@ DESC="X.Org XvMC library"
 VERSION="1.0.13"
 SOURCE="https://www.x.org/archive//individual/lib/libXvMC-${VERSION}.tar.xz"
 CHECKSUM="11a358e7229fa28dc9801c1e64fe2e18"
-DEPS="fontconfig libxcb elogind libx11"
+DEPS="fontconfig libxcb elogind libx11 libxext libxv"
 FLAGS=""
 
 _setup()
