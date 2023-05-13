@@ -9,7 +9,7 @@ FLAGS=""
 _setup()
 {
 	tar -xf $DISTFILES/$(basename $SOURCE)
-	cd libXext-${VERSION}
+	cd libFS-${VERSION}
 }
 
 _build()
