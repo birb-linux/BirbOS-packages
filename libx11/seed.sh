@@ -21,4 +21,7 @@ _build()
 _install()
 {
 	make install
+
+	# Remove a file installed by xorgproto
+	rm -fv /usr/include/X11/extensions/XKBgeom.h
 }
