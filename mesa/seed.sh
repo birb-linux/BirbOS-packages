@@ -22,7 +22,6 @@ _build()
 		  --buildtype=release     \
 		  -Dplatforms=x11$(expand_use "wayland" ",wayland") \
 		  -Dgallium-drivers=auto  \
-		  #-Dvulkan-drivers=""     \
 		  -Dvalgrind=disabled     \
 		  -Dlibunwind=disabled    \
 		  ..                      &&
