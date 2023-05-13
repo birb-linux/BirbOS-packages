@@ -3,7 +3,7 @@ DESC="Hyperfast and lightweight templating for the Python platform"
 VERSION="1.2.4"
 SOURCE="https://files.pythonhosted.org/packages/source/M/Mako/Mako-${VERSION}.tar.gz"
 CHECKSUM="651f365616611fcd4f2702a9002e2195"
-DEPS=""
+DEPS="markupsafe"
 FLAGS="python"
 
 _setup()
