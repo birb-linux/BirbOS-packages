@@ -3,7 +3,7 @@ DESC="Collection of miscellaneous utility functions that have been useful in bui
 VERSION="1.1.4"
 SOURCE="https://www.x.org/archive//individual/lib/libXmu-${VERSION}.tar.xz"
 CHECKSUM="ed52d396115fbc4d05300762aab79685"
-DEPS="fontconfig libxcb elogind libx11"
+DEPS="fontconfig libxcb elogind libx11 libxt libext"
 FLAGS=""
 
 _setup()
