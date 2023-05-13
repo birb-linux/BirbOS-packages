@@ -3,7 +3,7 @@ DESC="Xlib-based client library for the Composite extension to the X11 protocol"
 VERSION="0.4.6"
 SOURCE="https://www.x.org/archive//individual/lib/libXcomposite-${VERSION}.tar.xz"
 CHECKSUM="af0a5f0abb5b55f8411cd738cf0e5259"
-DEPS="fontconfig libxcb elogind libx11"
+DEPS="fontconfig libxcb elogind libx11 libxfixes"
 FLAGS=""
 
 _setup()
