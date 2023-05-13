@@ -3,7 +3,7 @@ DESC="Xlib-based library for the XFree86-DGA extension"
 VERSION="1.1.6"
 SOURCE="https://www.x.org/archive//individual/lib/libXxf86dga-${VERSION}.tar.xz"
 CHECKSUM="74d1acf93b83abeb0954824da0ec400b"
-DEPS="fontconfig libxcb elogind libx11"
+DEPS="fontconfig libxcb elogind libx11 libxext"
 FLAGS=""
 
 _setup()
