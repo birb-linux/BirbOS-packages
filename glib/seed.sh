@@ -1,5 +1,5 @@
 NAME="glib"
-DESC="Low-level libraries useful for providing data structure handling for C, portability wrappers and interfaces for such runtime functionality as an event loop, threads, dynamic loading and an object system"
+DESC="Bundle of three low-level system libraries written in C"
 VERSION="2.74.5"
 SHORT_VERSION="$(echo "${VERSION}" | awk -F'.' '{print $1 "." $2}')"
 SOURCE="https://download.gnome.org/sources/glib/${SHORT_VERSION}/glib-${VERSION}.tar.xz"
