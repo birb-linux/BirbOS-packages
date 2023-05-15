@@ -3,7 +3,7 @@ DESC="Programs for handling passwords in a secure way"
 VERSION="4.13"
 SOURCE="https://github.com/shadow-maint/shadow/releases/download/${VERSION}/shadow-${VERSION}.tar.xz"
 CHECKSUM="b1ab01b5462ddcf43588374d57bec123"
-DEPS=""
+DEPS="linux-pam"
 FLAGS="important"
 
 _setup()

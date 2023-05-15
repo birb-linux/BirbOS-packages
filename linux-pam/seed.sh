@@ -3,7 +3,7 @@ DESC="Pluggable Authentication Modules"
 VERSION="1.5.2"
 SOURCE="https://github.com/linux-pam/linux-pam/releases/download/v${VERSION}/Linux-PAM-${VERSION}.tar.xz"
 CHECKSUM="895e8adfa14af334f679bbeb28503f66"
-DEPS="shadow"
+DEPS=""
 FLAGS="test"
 
 _setup()
