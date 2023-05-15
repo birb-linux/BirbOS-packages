@@ -30,4 +30,13 @@ _install()
 	make install-ti
 
 	cp -v *.desktop $FAKEROOT/$NAME/usr/share/applications/
+
+	# Create a basic configuration file
+	cat >> $FAKEROOT/$NAME/etc/X11/app-defaults/XTerm << "EOF"
+*VT100*locale: true
+*VT100*faceName: Monospace
+*VT100*faceSize: 10
+*backarrowKeyIsErase: true
+*ptyInitialErase: true
+EOF
 }
