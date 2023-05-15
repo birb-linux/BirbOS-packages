@@ -3,7 +3,7 @@ DESC="Terminal emulator for the X Window System"
 VERSION="379"
 SOURCE="https://invisible-mirror.net/archives/xterm/xterm-${VERSION}.tgz"
 CHECKSUM="5e98e6c74f344b211918bf75d0827831"
-DEPS="iceauth luit mkfontscale sessreg setxkbmap smproxy x11perf xauth xbacklight xcmsdb xcursorgen xdpyinfo xdriinfo xev xgamma xhost xinput xkbcomp xkbevd xkbutils xkill xlsatoms xlsclients xmessage xmodmap xpr xprop xrandr xrdb xrefresh xset xsetroot xvinfo xwd xwininfo xwud dejavu"
+DEPS="xorg-apps dejavu"
 FLAGS=""
 
 _setup()
