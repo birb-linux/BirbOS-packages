@@ -1,0 +1,25 @@
+NAME="xinit"
+DESC="Script that starts the xserver"
+VERSION="1.4.2"
+SOURCE="https://www.x.org/pub/individual/app/xinit-${VERSION}.tar.xz"
+CHECKSUM="0e9a1b9a82b84ab229c709c0f939c113"
+DEPS="xorg-libs"
+FLAGS=""
+
+_setup()
+{
+	tar -xf $DISTFILES/$(basename $SOURCE)
+	cd ${NAME}-${VERSION}
+}
+
+_build()
+{
+	./configure $XORG_CONFIG --with-xinitdir=/etc/X11/app-defaults
+	make -j${MAKEOPTS}
+}
+
+_install()
+{
+	make install
+	ldconfig
+}
