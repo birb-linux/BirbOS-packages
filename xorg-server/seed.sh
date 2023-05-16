@@ -3,7 +3,7 @@ DESC="The core of the X Window system"
 VERSION="21.1.7"
 SOURCE="https://www.x.org/pub/individual/xserver/xorg-server-${VERSION}.tar.xz"
 CHECKSUM="277a842f1e223820a31a9bd7887d2aab"
-DEPS="libxcvt pixman font-util xkeyboard-config elogind polkit libtirpc libepoxy"
+DEPS="libxcvt pixman font-util xkeyboard-config elogind polkit libtirpc libepoxy libinput"
 FLAGS=""
 
 _setup()
