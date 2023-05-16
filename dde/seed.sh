@@ -20,7 +20,7 @@ _build()
 	for i in dmenu dwm dwmblocks slock st
 	do
 		cd $i
-		make -j${MAKEOPTS}
+		CC=gcc make -j${MAKEOPTS}
 		cd $SRC_ROOT
 	done
 }
@@ -31,7 +31,7 @@ _install()
 	for i in dmenu dwm dwmblocks slock st
 	do
 		cd $i
-		make DESTDIR=$FAKEROOT/$NAME/usr install
+		CC=gcc make DESTDIR=$FAKEROOT/$NAME/usr install
 		cd $SRC_ROOT
 	done
 }
