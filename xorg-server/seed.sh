@@ -20,6 +20,7 @@ _build()
 	meson --prefix=$XORG_PREFIX \
 		  --localstatedir=/var  \
 		  -Dxkb_dir=/usr/share/X11/xkb \
+		  -Dmodule_dir=/usr/lib/xorg/modules \
 		  -Dsuid_wrapper=true   \
 		  -Dxkb_output_dir=/var/lib/xkb
 
