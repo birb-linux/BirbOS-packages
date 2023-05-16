@@ -31,7 +31,7 @@ _install()
 	for i in dmenu dwm dwmblocks slock st
 	do
 		cd $i
-		CC=gcc make DESTDIR=$FAKEROOT/$NAME/usr install
+		CC=gcc make PREFIX=$FAKEROOT/$NAME/usr install
 		cd $SRC_ROOT
 	done
 }
