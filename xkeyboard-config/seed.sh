@@ -18,8 +18,7 @@ _build()
 	cd    build
 
 	meson --prefix=$XORG_PREFIX \
-		--buildtype=release \
-		--datadir=/usr/share ..
+		--buildtype=release ..
 
 	ninja
 }
