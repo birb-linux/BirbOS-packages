@@ -19,6 +19,7 @@ _build()
 
 	meson --prefix=$XORG_PREFIX \
 		  --localstatedir=/var  \
+		  -Dxkb_dir=/usr/share/X11/xkb \
 		  -Dsuid_wrapper=true   \
 		  -Dxkb_output_dir=/var/lib/xkb
 
