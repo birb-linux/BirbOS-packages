@@ -9,7 +9,7 @@ FLAGS=""
 _setup()
 {
 	$DISTFILES/$(basename $SOURCE) -x
-	cd NVIDIA-Linux-x86_64-${VERSION}-${VERSION}
+	cd NVIDIA-Linux-x86_64-${VERSION}
 }
 
 _build()
