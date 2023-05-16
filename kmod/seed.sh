@@ -33,6 +33,9 @@ _install()
 	done
 
 	ln -sfv kmod $FAKEROOT/$NAME/usr/bin/lsmod
+
+	# nvidia drivers expect to find modprobe from /sbin/modprobe
+	ln -srfv $FAKEROOT/$NAME/usr/bin/modprobe $FAKEROOT/$NAME/sbin/modprobe
 }
 
 # These 32 bit functions get called only if the '32bit' flag is set
