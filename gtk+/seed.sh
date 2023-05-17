@@ -21,7 +21,7 @@ _build()
 	cd    build
 	meson setup --prefix=/usr \
 				--buildtype=release     \
-				-Dman=true              \
+				-Dman=false             \
 				-Dintrospection=false 	\
 				-Ddemos=false 			\
 				-Dexamples=false 		\
