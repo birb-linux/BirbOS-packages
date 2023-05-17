@@ -26,6 +26,7 @@ _build()
 				-Ddemos=false 			\
 				-Dexamples=false 		\
 				-Dtests=false 			\
+				-Dgtk_doc=true 			\
 				-Dwayland_backend=$(expand_use "wayland" "true" "false") \
 				-Dbroadway_backend=true \
 				..
