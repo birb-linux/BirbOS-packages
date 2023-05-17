@@ -17,12 +17,11 @@ _build()
 	mkdir build
 	cd    build
 
-	meson --prefix=/usr --buildtype=release -Dupdate-mimedb=false ..
+	meson --prefix=/usr --buildtype=release -Dupdate-mimedb=true ..
 	ninja
 }
 
 _install()
 {
 	DESTDIR=$FAKEROOT/$NAME ninja install
-	echo "Remember to update the mimedb after the installation is done!"
 }
