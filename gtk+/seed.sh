@@ -23,6 +23,9 @@ _build()
 				--buildtype=release     \
 				-Dman=true              \
 				-Dintrospection=false 	\
+				-Ddemos=false 			\
+				-Dexamples=false 		\
+				-Dtests=false 			\
 				-Dwayland_backend=$(expand_use "wayland" "true" "false") \
 				-Dbroadway_backend=true \
 				..
