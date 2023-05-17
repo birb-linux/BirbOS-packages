@@ -9,7 +9,7 @@ FLAGS=""
 _setup()
 {
 	tar -xf $DISTFILES/$(basename $SOURCE)
-	cd ${NAME}-${VERSION}
+	cd SDL2-${VERSION}
 }
 
 _build()
