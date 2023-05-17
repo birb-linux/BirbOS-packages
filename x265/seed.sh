@@ -14,8 +14,8 @@ _setup()
 
 _build()
 {
-	mkdir build
-	cd    build
+	mkdir bld
+	cd    bld
 
 	cmake -DCMAKE_INSTALL_PREFIX=$FAKEROOT/$NAME/usr \
 		  -DGIT_ARCHETYPE=1           \
