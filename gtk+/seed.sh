@@ -31,5 +31,5 @@ _install()
 	DESTDIR=$FAKEROOT/$NAME ninja install
 
 	$FAKEROOT/$NAME/usr/bin/gtk-query-immodules-3.0 --update-cache
-	$FAKEROOT/$NAME/usr/bin/glib-compile-schemas /usr/share/glib-2.0/schemas
+	/usr/bin/glib-compile-schemas /usr/share/glib-2.0/schemas
 }
