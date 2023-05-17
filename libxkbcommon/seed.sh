@@ -19,6 +19,7 @@ _build()
 
 	meson --prefix=/usr       \
 		  --buildtype=release \
+		  $(expand_use wayland "-Denable-wayland=false \\")
 		  -Denable-docs=false ..
 	ninja
 }
