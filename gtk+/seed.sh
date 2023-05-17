@@ -6,6 +6,7 @@ SOURCE="https://download.gnome.org/sources/gtk+/${SHORT_VERSION}/gtk+-${VERSION}
 CHECKSUM="fd4571a112ffaa2fbbb9d25de8f5b6c0"
 DEPS="at-spi2-core gdk-pixbuf libepoxy pango sassc libxkbcommon"
 FLAGS=""
+NOTES="Remember to run 'gtk-query-immodules-3.0 --update-cache'"
 
 # TODO: Add gobject-introspection support if GNOME support is needed
 
@@ -37,6 +38,7 @@ _install()
 {
 	DESTDIR=$FAKEROOT/$NAME ninja install
 
-	$FAKEROOT/$NAME/usr/bin/gtk-query-immodules-3.0 --update-cache
+	# Can't do this because gtk+ isn't fully installed yet
+	#$FAKEROOT/$NAME/usr/bin/gtk-query-immodules-3.0 --update-cache
 	/usr/bin/glib-compile-schemas /usr/share/glib-2.0/schemas
 }
