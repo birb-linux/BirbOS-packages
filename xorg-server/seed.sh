@@ -17,7 +17,7 @@ _build()
 	mkdir build
 	cd    build
 
-	meson --prefix=$XORG_PREFIX \
+	meson --prefix=/usr \
 		  --localstatedir=/var  \
 		  -Dxkb_dir=/usr/share/X11/xkb \
 		  -Dmodule_dir=/usr/lib/xorg/modules \
@@ -29,7 +29,7 @@ _build()
 
 _install()
 {
-	ninja install &&
+	DESTDIR=$FAKEROOT/$NAME ninja install &&
 	mkdir -pv /etc/X11/xorg.conf.d
 	cat >> /etc/sysconfig/createfiles << "EOF"
 /tmp/.ICE-unix dir 1777 root root
