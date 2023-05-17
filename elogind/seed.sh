@@ -61,6 +61,9 @@ session  optional    pam_elogind.so
 # End elogind addition
 EOF
 
+	# Remove any existing elogind rules
+	rm -fv /etc/pam.d/elogind-user
+
 	mkdir -p $FAKEROOT/$NAME/etc/pam.d
 	cat > $FAKEROOT/$NAME/etc/pam.d/elogind-user << "EOF"
 # Begin /etc/pam.d/elogind-user
