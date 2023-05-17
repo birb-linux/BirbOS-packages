@@ -14,11 +14,11 @@ _setup()
 
 _build()
 {
-	./configure $XORG_CONFIG
+	./configure --sysconfdir=/etc
 	make -j${MAKEOPTS}
 }
 
 _install()
 {
-	make install
+	DESTDIR=$FAKEROOT/$NAME make install
 }
