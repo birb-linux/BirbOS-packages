@@ -4,7 +4,7 @@ VERSION="3.24.36"
 SHORT_VERSION="$(echo $VERSION | awk -F'.' '{print $1 "." $2}')"
 SOURCE="https://download.gnome.org/sources/gtk+/${SHORT_VERSION}/gtk+-${VERSION}.tar.xz"
 CHECKSUM="fd4571a112ffaa2fbbb9d25de8f5b6c0"
-DEPS="at-spi2-core gdk-pixbuf libepoxy pango sassc gobject-introspection"
+DEPS="at-spi2-core gdk-pixbuf libepoxy pango sassc gobject-introspection libxkbcommon"
 FLAGS=""
 
 
