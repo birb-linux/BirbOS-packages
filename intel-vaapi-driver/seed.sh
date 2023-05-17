@@ -5,6 +5,7 @@ SOURCE="https://github.com/intel/intel-vaapi-driver/releases/download/${VERSION}
 CHECKSUM="073fce0f409559109ad2dd0a6531055d"
 DEPS="libva"
 FLAGS=""
+NOTES="To remove this driver, you need to uninstall libva"
 
 _setup()
 {
@@ -14,11 +15,11 @@ _setup()
 
 _build()
 {
-	./configure --sysconfdir=/etc
+	./configure $XORG_CONFIG
 	make -j${MAKEOPTS}
 }
 
 _install()
 {
-	PREFIX=$FAKEROOT/$NAME make install
+	make install
 }
