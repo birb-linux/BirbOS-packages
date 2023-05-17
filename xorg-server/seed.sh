@@ -30,7 +30,7 @@ _build()
 _install()
 {
 	DESTDIR=$FAKEROOT/$NAME ninja install &&
-	mkdir -pv /etc/X11/xorg.conf.d
+	    mkdir -pv /etc/X11/xorg.conf.d
 	cat >> /etc/sysconfig/createfiles << "EOF"
 /tmp/.ICE-unix dir 1777 root root
 /tmp/.X11-unix dir 1777 root root
