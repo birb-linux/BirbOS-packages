@@ -21,7 +21,7 @@ _build()
 	meson setup --prefix=/usr \
 				--buildtype=release     \
 				-Dman=true              \
-				-Denable-wayland=$(expand_use "wayland" "true" "false") \
+				-Dwayland_backend=$(expand_use "wayland" "true" "false") \
 				-Dbroadway_backend=true \
 				..
 	ninja
