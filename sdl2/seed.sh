@@ -1,4 +1,4 @@
-NAME="SDL2"
+NAME="sdl2"
 DESC="Simple DirectMedia Layer Version 2"
 VERSION="2.26.3"
 SOURCE="https://www.libsdl.org/release/SDL2-${VERSION}.tar.gz"
