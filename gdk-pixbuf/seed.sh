@@ -21,7 +21,7 @@ _build()
 	mkdir build
 	cd    build
 
-	meson --prefix=/usr --buildtype=release --wrap-mode=nofallback ..
+	meson --prefix=/usr --buildtype=release --wrap-mode=nofallback -Dman=false ..
 	ninja
 }
 
