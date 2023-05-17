@@ -3,7 +3,7 @@ DESC="Dynamic Desktop Environment"
 VERSION="1.0.0"
 SOURCE="https://github.com/Toasterbirb/dde/releases/download/${VERSION}/dde-${VERSION}.tar.gz"
 CHECKSUM="8434490227e7d0614b3711b350b6a62f"
-DEPS="xorg-libs pkg-config ncurses fontconfig mononoki"
+DEPS="xorg-apps xorg-libs xorg-server pkg-config ncurses fontconfig mononoki xf86-input-libinput xf86-video-fbdev"
 FLAGS=""
 
 _setup()
