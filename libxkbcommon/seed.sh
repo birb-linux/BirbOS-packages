@@ -17,10 +17,9 @@ _build()
 	mkdir build
 	cd    build
 
-	# TODO: Make it possible to enable wayland via a useflag
 	meson --prefix=/usr       \
 		  --buildtype=release \
-		  -Denable-wayland=false \
+		  -Denable-wayland=$(expand_use "wayland" "true" "false") \
 		  -Denable-docs=false ..
 	ninja
 }
