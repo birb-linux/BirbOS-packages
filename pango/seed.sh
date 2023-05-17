@@ -20,7 +20,15 @@ _build()
 	mkdir build
 	cd    build
 
-	meson --prefix=/usr --buildtype=release --wrap-mode=nofallback -Dintrospection=disabled ..
+	meson --prefix=/usr --buildtype=release \
+		--wrap-mode=nofallback 	\
+		-Dcairo=enabled 		\
+		-Dfontconfig=enabled 	\
+		-Dfreetype=enabled 		\
+		-Dgtk_doc=false 		\
+		-Dinstall-tests=false 	\
+		-Dlibthai=disabled 		\
+		-Dintrospection=disabled ..
 	ninja
 }
 
