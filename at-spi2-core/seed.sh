@@ -27,5 +27,5 @@ _build()
 _install()
 {
 	DESTDIR=$FAKEROOT/$NAME ninja install
-	rm /tmp/at-spi-dbus-bus.service
+	rm -f /tmp/at-spi-dbus-bus.service
 }
