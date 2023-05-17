@@ -5,6 +5,7 @@ SOURCE="https://github.com/linux-pam/linux-pam/releases/download/v${VERSION}/Lin
 CHECKSUM="895e8adfa14af334f679bbeb28503f66"
 DEPS=""
 FLAGS="test"
+NOTES="To finish the installation of linux-pam, you must reinstall the [shadow] package"
 
 _setup()
 {
@@ -109,8 +110,6 @@ session     required        pam_deny.so
 # End /etc/pam.d/other
 EOF
 	fi
-
-	read -p "NOTE: To finish the installation of linux-pam, you must reinstall the [shadow] package! Hit ENTER to continue"
 }
 
 _test()
