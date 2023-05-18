@@ -21,6 +21,7 @@ _build()
 	meson --prefix=/usr       \
 		  --buildtype=release \
 		  -Dgtk_doc=false     \
+		  -Ddocbook_docs=disabled \
 		  -Dman=false ..
 
 	ninja
@@ -29,5 +30,5 @@ _build()
 _install()
 {
 	DESTDIR=$FAKEROOT/$NAME ninja install
-	mv -v $FAKEROOT/$NAME/usr/share/doc/libnotify{,-${VERSION}}
+	#mv -v $FAKEROOT/$NAME/usr/share/doc/libnotify{,-${VERSION}}
 }
