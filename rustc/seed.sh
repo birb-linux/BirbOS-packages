@@ -84,6 +84,7 @@ EOF
 	python3 ./x.py build
 
 	# Make sure that the rust compiler can be found by applications that need it
+	mkdir -p $FAKEROOT/$NAME/etc/profile.d
 	cat > $FAKEROOT/$NAME/etc/profile.d/rustc.sh << "EOF"
 # Begin /etc/profile.d/rustc.sh
 
