@@ -9,7 +9,7 @@ FLAGS="test"
 _setup()
 {
 	tar -xf $DISTFILES/$(basename $SOURCE)
-	cd ${NAME}-${VERSION}
+	cd ${NAME}-v${VERSION}
 }
 
 _build()
