@@ -82,6 +82,20 @@ EOF
 	{ [ ! -e /usr/include/libssh2.h ] ||
 	  export LIBSSH2_SYS_USE_PKG_CONFIG=1; } &&
 	python3 ./x.py build
+
+	# Make sure that the rust compiler can be found by applications that need it
+	cat > $FAKEROOT/$NAME/etc/profile.d/rustc.sh << "EOF"
+# Begin /etc/profile.d/rustc.sh
+
+export PATH="$PATH:/opt/rustc/bin"
+
+# Include /opt/rustc/man in the MANPATH variable to access manual pages
+export MANPATH="$MANPATH:/opt/rustc/share/man"
+
+# End /etc/profile.d/rustc.sh
+EOF
+
+	source $FAKEROOT/$NAME/etc/profile.d/rustc.sh
 }
 
 _install()
