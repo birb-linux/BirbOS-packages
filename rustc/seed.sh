@@ -3,7 +3,7 @@ DESC="Rust compiler"
 VERSION="1.67.1"
 SOURCE="https://static.rust-lang.org/dist/rustc-${VERSION}-src.tar.xz"
 CHECKSUM="e5e47e53c52574ce89ea200e52819f81"
-DEPS="cmake curl libssh llvm"
+DEPS="cmake curl libssh2 llvm"
 FLAGS=""
 
 _setup()
