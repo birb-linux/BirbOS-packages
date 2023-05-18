@@ -29,6 +29,9 @@ _install()
 {
 	DESTDIR=$FAKEROOT/$NAME ninja install
 
+	# Stowing /lib will nuke the system, so use /usr/lib instead
+	mv -v $FAKEROOT/$NAME/lib/udev $FAKEROOT/$NAME/usr/lib/
+
 	# Avoid running pulseaudio as a system-wide daemon
 	rm -fv $FAKEROOT/$NAME/etc/dbus-1/system.d/pulseaudio-system.conf
 }
