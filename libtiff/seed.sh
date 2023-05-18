@@ -1,7 +1,7 @@
 NAME="libtiff"
 DESC="TIFF libraries and associated utilities"
 VERSION="4.5.0"
-SOURCE="https://gitlab.com/libtiff/libtiff/-/archive/v${VERSION}/libtiff-${VERSION}.tar.gz"
+SOURCE="https://gitlab.com/libtiff/libtiff/-/archive/v${VERSION}/libtiff-v${VERSION}.tar.gz"
 CHECKSUM="6e9b613cd83da5024b65fc9b80416833"
 DEPS="cmake"
 FLAGS="test"
