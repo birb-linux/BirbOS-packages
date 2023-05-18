@@ -1,15 +1,15 @@
 NAME="libtiff"
 DESC="TIFF libraries and associated utilities"
 VERSION="4.5.0"
-SOURCE="https://download.osgeo.org/libtiff/tiff-${VERSION}.tar.gz"
-CHECKSUM="db9e220a1971acc64487f1d51a20dcaa"
+SOURCE="https://gitlab.com/libtiff/libtiff/-/archive/v${VERSION}/libtiff-${VERSION}.tar.gz"
+CHECKSUM="6e9b613cd83da5024b65fc9b80416833"
 DEPS="cmake"
 FLAGS="test"
 
 _setup()
 {
 	tar -xf $DISTFILES/$(basename $SOURCE)
-	cd tiff-${VERSION}
+	cd ${NAME}-${VERSION}
 }
 
 _build()
