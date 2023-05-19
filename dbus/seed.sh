@@ -65,6 +65,6 @@ _build32()
 _install32()
 {
 	make DESTDIR=$PWD/DESTDIR install
-	cp -Rv DESTDIR/usr/lib32/* $FAKEROOT/$NAME/usr/lib32
+	cp -Rv DESTDIR/usr/local/lib/* $FAKEROOT/$NAME/usr/lib32
 	rm -rf DESTDIR
 }
