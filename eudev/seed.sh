@@ -51,7 +51,7 @@ _build32()
 {
 	make distclean
 
-	CC="gcc -m32" \
+	LDFLAGS="-L/usr/lib32" CC="gcc -m32" \
 	./configure --host=i686-pc-linux-gnu       \
 				--prefix=$FAKEROOT/$NAME/usr   \
 				--bindir=$FAKEROOT/$NAME/usr/sbin \
