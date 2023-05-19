@@ -32,6 +32,10 @@ _install()
 
 _build32()
 {
+	make distclean
+
+	unset LD_FLAGS
+	unset PKG_CONFIG_PATH
 	./configure --prefix=/usr \
             --sysconfdir=/etc       \
             --disable-static        \
