@@ -4,7 +4,7 @@ VERSION="1.0.11"
 SOURCE="https://www.x.org/pub/individual/lib/libXau-${VERSION}.tar.xz"
 CHECKSUM="7f14ba9c84a81a2b9dd023706febab38"
 DEPS="xorgproto"
-FLAGS="test"
+FLAGS="32bit test"
 
 _setup()
 {
@@ -27,4 +27,23 @@ _install()
 _test()
 {
 	make -j${MAKEOPTS} check
+}
+
+_build32()
+{
+	make distclean
+
+	CC="gcc -m32" ./configure \
+		$XORG_CONFIG \
+		--host=i686-pc-linux-gnu \
+		--libdir=/usr/lib32
+
+	make -j${MAKEOPTS}
+}
+
+_install32()
+{
+	make DESTDIR=$PWD/DESTDIR install
+	cp -Rv DESTDIR/usr/lib32/* $FAKEROOT/$NAME/usr/lib32
+	rm -rf DESTDIR
 }
