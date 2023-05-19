@@ -36,7 +36,7 @@ _build32()
 {
 	make distclean
 
-	CC="gcc -m32" ./configure \
+	LDFLAGS="-L/usr/lib32" CC="gcc -m32" ./configure \
 		$XORG_CONFIG \
 		--without-doxygen \
 		--host=i686-pc-linux-gnu \
