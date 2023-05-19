@@ -45,7 +45,7 @@ _build32()
 				 -Dudev=true           \
 				 -Dtests=false \
 				 -Dcairo-tests=disabled \
-				 -Dintel=disabled \
+				 -Dintel=enabled \
 				 -Dvalgrind=disabled
 	ninja
 }
