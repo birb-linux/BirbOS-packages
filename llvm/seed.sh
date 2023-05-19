@@ -93,13 +93,12 @@ _build32()
 		  -DLLVM_BUILD_LLVM_DYLIB=ON                 \
 		  -DLLVM_LINK_LLVM_DYLIB=ON                  \
 		  -DLLVM_ENABLE_RTTI=ON                      \
-		  -DLLVM_TARGETS_TO_BUILD="host;AMDGPU;BPF"  \
+		  -DLLVM_TARGETS_TO_BUILD="host;AMDGPU;BPF;X86" \
 		  -DLLVM_BINUTILS_INCDIR=/usr/include        \
 		  -DLLVM_INCLUDE_BENCHMARKS=OFF              \
           -DLLVM_ENABLE_PROJECTS="clang-tools-extra" \
 		  -DCLANG_DEFAULT_PIE_ON_LINUX=ON            \
 		  -DLLVM_BUILD_32_BITS=ON                    \
-		  -DLLVM_TARGETS_TO_BUILD="X86"              \
 		  -Wno-dev -G Ninja ..
 	ninja
 }
