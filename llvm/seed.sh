@@ -99,6 +99,7 @@ _build32()
           -DLLVM_ENABLE_PROJECTS="clang-tools-extra" \
 		  -DCLANG_DEFAULT_PIE_ON_LINUX=ON            \
 		  -DLLVM_BUILD_32_BITS=ON                    \
+		  -DLLVM_TARGETS_TO_BUILD="X86"              \
 		  -Wno-dev -G Ninja ..
 	ninja
 }
@@ -108,5 +109,6 @@ _install32()
 	DESTDIR=$PWD/DESTDIR ninja install
 	mkdir -pv $FAKEROOT/$NAME/usr/lib32/pkgconfig
 	cp -Rv DESTDIR/$FAKEROOT/$NAME/usr/lib/* $FAKEROOT/$NAME/usr/lib32
+	cp -Rv DESTDIR/$FAKEROOT/$NAME/usr/bin/llvm-config $FAKEROOT/$NAME/usr/bin/llvm-config32
 	rm -rf DESTDIR
 }
