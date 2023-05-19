@@ -20,6 +20,11 @@ _setup()
 	wget https://github.com/llvm/llvm-project/releases/download/llvmorg-${VERSION}/compiler-rt-${VERSION}.src.tar.xz
 	[ "$(md5sum "compiler-rt-${VERSION}.src.tar.xz" | cut -d' ' -f1)" != "12e6777354f0121cbe73ef13342a9302" ] && echo "md5 mismatch with compiler-rt-${VERSION}.src.tar.xz" && exit 1
 
+	wget https://github.com/llvm/llvm-project/releases/download/llvmorg-${VERSION}/clang-tools-extra-${VERSION}.src.tar.xz
+	[ "$(md5sum "clang-tools-extra-${VERSION}.src.tar.xz" | cut -d' ' -f1)" != "68b76dd37b263aca3a5132b5f8c23f80" ] && echo "md5 mismatch with clang-tools-extra-${VERSION}.src.tar.xz" && exit 1
+	tar -xf clang-tools-extra-${VERSION}.src.tar.xz
+	ln -sv clang-tools-extra-${VERSION}.src clang-tools-extra
+
 	cd ${NAME}-${VERSION}.src
 }
 
@@ -33,6 +38,9 @@ _build()
 	# Install clang into the source tree
 	tar -xf ../clang-${VERSION}.src.tar.xz -C tools
 	mv tools/clang-${VERSION}.src tools/clang
+
+	# This is needed for the clang extra tools
+	ln -srv tools/clang ../clang
 
 	# Install compiler-rt into the source tree
 	tar -xf ../compiler-rt-${VERSION}.src.tar.xz -C projects
@@ -58,6 +66,7 @@ _build()
 		  -DLLVM_TARGETS_TO_BUILD="host;AMDGPU;BPF"  \
 		  -DLLVM_BINUTILS_INCDIR=/usr/include        \
 		  -DLLVM_INCLUDE_BENCHMARKS=OFF              \
+          -DLLVM_ENABLE_PROJECTS="clang;clang-tools-extra" \
 		  -DCLANG_DEFAULT_PIE_ON_LINUX=ON            \
 		  -Wno-dev -G Ninja ..
 	ninja
