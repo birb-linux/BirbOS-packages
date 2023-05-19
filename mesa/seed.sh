@@ -36,6 +36,19 @@ _install()
 	# Install docs
 	install -v -dm755 $FAKEROOT/$NAME/usr/share/doc/mesa-${VERSION}
 	cp -rfv ../docs/* $FAKEROOT/$NAME/usr/share/doc/mesa-${VERSION}
+
+	# If the nvidia drivers have been installed, skip installing some libraries
+	if [ -n "$(package_check "nvidia-drivers")" ]
+	then
+		rm -v $FAKEROOT/$NAME/usr/lib/libEGL.so
+		rm -v $FAKEROOT/$NAME/usr/lib/libEGL.so.1
+		rm -v $FAKEROOT/$NAME/usr/lib/libGL.so
+		rm -v $FAKEROOT/$NAME/usr/lib/libGL.so.1
+		rm -v $FAKEROOT/$NAME/usr/lib/libGLESv1_CM.so
+		rm -v $FAKEROOT/$NAME/usr/lib/libGLESv1_CM.so.1
+		rm -v $FAKEROOT/$NAME/usr/lib/libGLESv2.so
+		rm -v $FAKEROOT/$NAME/usr/lib/libGLESv2.so.2
+	fi
 }
 
 _build32()
@@ -70,4 +83,17 @@ _install32()
 	DESTDIR=$PWD/DESTDIR ninja install
 	cp -Rv DESTDIR/usr/lib32/* $FAKEROOT/$NAME/usr/lib32
 	rm -rf DESTDIR
+
+	# If the nvidia drivers have been installed, skip installing some libraries
+	if [ -n "$(package_check "nvidia-drivers")" ]
+	then
+		rm -v $FAKEROOT/$NAME/usr/lib32/libEGL.so
+		rm -v $FAKEROOT/$NAME/usr/lib32/libEGL.so.1
+		rm -v $FAKEROOT/$NAME/usr/lib32/libGL.so
+		rm -v $FAKEROOT/$NAME/usr/lib32/libGL.so.1
+		rm -v $FAKEROOT/$NAME/usr/lib32/libGLESv1_CM.so
+		rm -v $FAKEROOT/$NAME/usr/lib32/libGLESv1_CM.so.1
+		rm -v $FAKEROOT/$NAME/usr/lib32/libGLESv2.so
+		rm -v $FAKEROOT/$NAME/usr/lib32/libGLESv2.so.2
+	fi
 }
