@@ -44,6 +44,8 @@ _install()
 
 _build32()
 {
+	make distclean
+
 	./configure                                  \
             --sysconfdir=/etc                    \
             --localstatedir=/var                 \
