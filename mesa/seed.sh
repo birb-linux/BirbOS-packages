@@ -57,6 +57,11 @@ _build32()
 				 -Dvalgrind=disabled     \
 				 -Dlibunwind=disabled    \
 				 ..
+
+	# meson is stubborn and doesn't want to link against 32bit
+	# llvm libraries, so lets force it into doing that
+	sed -i 's/\/usr\/lib\//\/usr\/lib32\//g' ./build.ninja
+
 	ninja
 }
 
