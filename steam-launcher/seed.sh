@@ -20,4 +20,8 @@ _build()
 _install()
 {
 	make PREFIX=$FAKEROOT/$NAME/usr install
+
+	# Fix absolute symlinks
+	ln -sfvr $FAKEROOT/$NAME/usr/lib/steam/bin_steam.sh $FAKEROOT/$NAME/usr/bin/steam
+	ln -sfvr $FAKEROOT/$NAME/usr/lib/steam/bin_steamdeps.sh $FAKEROOT/$NAME/usr/bin/steamdeps
 }
