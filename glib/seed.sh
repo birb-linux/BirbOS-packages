@@ -52,6 +52,7 @@ _build32()
 	meson --prefix=$FAKEROOT/$NAME/usr \
 		  --buildtype=release \
 		  -Dman=false          \
+		  -Dtests=false \
 		  ..
 
 	ninja
