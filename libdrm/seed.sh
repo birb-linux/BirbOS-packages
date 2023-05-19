@@ -39,7 +39,7 @@ _build32()
 	mkdir 	build
 	cd 		build
 
-	CC="gcc -m32" CXX="g++ -m32" meson setup  --prefix=$XORG_PREFIX \
+	LDFLAGS="-L/usr/lib32" CC="gcc -m32" CXX="g++ -m32" meson setup  --prefix=$XORG_PREFIX \
                  --libdir=/usr/lib32 \
 				 --buildtype=release   \
 				 -Dudev=true           \
