@@ -49,7 +49,7 @@ _build32()
 	# libxslt will cause some errors, but they are harmless
 	set +e
 
-	meson --prefix=$FAKEROOT/$NAME/usr \
+	meson --prefix=/usr \
 		  --buildtype=release \
 		  -Dman=false          \
 		  -Dtests=false \
@@ -63,6 +63,6 @@ _build32()
 _install32()
 {
 	DESTDIR=$PWD/DESTDIR ninja install
-	cp -Rv DESTDIR/usr/lib32/* $FAKEROOT/$NAME/usr/lib32
+	cp -Rv DESTDIR/usr/lib/* $FAKEROOT/$NAME/usr/lib32
 	rm -rf DESTDIR
 }
