@@ -129,5 +129,5 @@ _install()
 
 	# Fix a symbolic link
 	rm $FAKEROOT/$NAME/usr/bin/firefox
-	ln -srv $FAKEROOT/$NAME/firefox/firefox $FAKEROOT/$NAME/usr/bin/firefox
+	ln -srv $FAKEROOT/$NAME/usr/lib/firefox/firefox $FAKEROOT/$NAME/usr/bin/firefox
 }
