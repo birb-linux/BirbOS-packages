@@ -66,7 +66,7 @@ _build()
 		  -DLLVM_TARGETS_TO_BUILD="host;AMDGPU;BPF"  \
 		  -DLLVM_BINUTILS_INCDIR=/usr/include        \
 		  -DLLVM_INCLUDE_BENCHMARKS=OFF              \
-          -DLLVM_ENABLE_PROJECTS="clang;clang-tools-extra" \
+          -DLLVM_ENABLE_PROJECTS="clang-tools-extra" \
 		  -DCLANG_DEFAULT_PIE_ON_LINUX=ON            \
 		  -Wno-dev -G Ninja ..
 	ninja
