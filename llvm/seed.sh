@@ -4,7 +4,7 @@ VERSION="15.0.7"
 SOURCE="https://github.com/llvm/llvm-project/releases/download/llvmorg-${VERSION}/llvm-${VERSION}.src.tar.xz"
 CHECKSUM="c77db4c71e1eb267358204dffe2c6e10"
 DEPS="cmake"
-FLAGS=""
+FLAGS="32bit"
 
 _setup()
 {
@@ -56,7 +56,7 @@ _build()
 	mkdir -v build
 	cd       build
 
-	CC=gcc CXX=g++                                   \
+	CC=gcc CXX=g++            \
 	cmake -DCMAKE_INSTALL_PREFIX=$FAKEROOT/$NAME/usr \
 		  -DLLVM_ENABLE_FFI=ON                       \
 		  -DCMAKE_BUILD_TYPE=Release                 \
@@ -76,4 +76,37 @@ _install()
 {
 	ninja install
 	cp bin/FileCheck $FAKEROOT/$NAME/usr/bin
+}
+
+_build32()
+{
+	# Get rid of the 64bit build
+	cd ..
+	rm -r build
+	mkdir build
+	cd build
+
+	LDFLAGS="-L/usr/lib32" CC="gcc -m32" CXX="g++ -m32" \
+	cmake -DCMAKE_INSTALL_PREFIX=$FAKEROOT/$NAME/usr \
+		  -DLLVM_ENABLE_FFI=ON                       \
+		  -DCMAKE_BUILD_TYPE=Release                 \
+		  -DLLVM_BUILD_LLVM_DYLIB=ON                 \
+		  -DLLVM_LINK_LLVM_DYLIB=ON                  \
+		  -DLLVM_ENABLE_RTTI=ON                      \
+		  -DLLVM_TARGETS_TO_BUILD="host;AMDGPU;BPF"  \
+		  -DLLVM_BINUTILS_INCDIR=/usr/include        \
+		  -DLLVM_INCLUDE_BENCHMARKS=OFF              \
+          -DLLVM_ENABLE_PROJECTS="clang-tools-extra" \
+		  -DCLANG_DEFAULT_PIE_ON_LINUX=ON            \
+		  -DLLVM_BUILD_32_BITS=ON                    \
+		  -Wno-dev -G Ninja ..
+	ninja
+}
+
+_install32()
+{
+	DESTDIR=$PWD/DESTDIR ninja install
+	mkdir -pv $FAKEROOT/$NAME/usr/lib32/pkgconfig
+	cp -Rv DESTDIR/$FAKEROOT/$NAME/usr/lib/* $FAKEROOT/$NAME/usr/lib32
+	rm -rf DESTDIR
 }
