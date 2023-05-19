@@ -49,7 +49,7 @@ _build32()
 	mkdir build
 	cd    build
 
-	PKG_CONFIG_PATH="/usr/lib32/pkgconfig" LDFLAGS="-L/usr/lib32" LD_LIBRARY_PATH="/usr/lib32" CC="gcc -m32" CXX="g++ -m32" meson setup  --prefix=$XORG_PREFIX \
+	PKG_CONFIG_PATH="/usr/lib32/pkgconfig" CXXFLAGS="-L/usr/lib32" CFLAGS="-L/usr/lib32" LDFLAGS="-L/usr/lib32" LD_LIBRARY_PATH="/usr/lib32" CC="gcc -m32" CXX="g++ -m32" meson setup  --prefix=$XORG_PREFIX \
                  --libdir=/usr/lib32 \
 				 --buildtype=release     \
 				 -Dplatforms=x11$(expand_use "wayland" ",wayland") \
