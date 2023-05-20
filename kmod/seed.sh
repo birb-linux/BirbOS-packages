@@ -4,7 +4,7 @@ VERSION="30"
 SOURCE="https://www.kernel.org/pub/linux/utils/kernel/kmod/kmod-${VERSION}.tar.xz"
 CHECKSUM="85202f0740a75eb52f2163c776f9b564"
 DEPS="openssl zstd zlib xz"
-FLAGS=""
+FLAGS="32bit"
 
 _setup()
 {
@@ -38,30 +38,28 @@ _install()
 	ln -srfv $FAKEROOT/$NAME/usr/sbin/modprobe $FAKEROOT/$NAME/sbin/modprobe
 }
 
-# These 32 bit functions get called only if the '32bit' flag is set
-# Otherwise they are optional
-#_build32()
-#{
-#	sed -e "s/^CLEANFILES =.*/CLEANFILES =/" -i man/Makefile
-#	make clean
-#
-#	CC="gcc -m32" ./configure \
-#		--host=i686-pc-linux-gnu      \
-#		--prefix=$FAKEROOT/$NAME/usr  \
-#		--libdir=/usr/lib32           \
-#		--sysconfdir=/etc             \
-#		--with-openssl                \
-#		--with-xz                     \
-#		--with-zstd                   \
-#		--with-zlib                   \
-#		--with-rootlibdir=/usr/lib32
-#
-#	make -j${MAKEOPTS}
-#}
-#
-#_install32()
-#{
-#	make DESTDIR=$PWD/DESTDIR install
-#	cp -Rv DESTDIR/usr/lib32/* $FAKEROOT/$NAME/usr/lib32
-#	rm -rf DESTDIR
-#}
+_build32()
+{
+	sed -e "s/^CLEANFILES =.*/CLEANFILES =/" -i man/Makefile
+	make clean
+
+	LDFLAGS="-L/usr/lib32" CC="gcc -m32" ./configure \
+		--host=i686-pc-linux-gnu      \
+		--prefix=$FAKEROOT/$NAME/usr  \
+		--libdir=/usr/lib32           \
+		--sysconfdir=/etc             \
+		--with-openssl                \
+		--with-xz                     \
+		--with-zstd                   \
+		--with-zlib                   \
+		--with-rootlibdir=/usr/lib32
+
+	make -j${MAKEOPTS}
+}
+
+_install32()
+{
+	make DESTDIR=$PWD/DESTDIR install
+	cp -Rv DESTDIR/usr/lib32/* $FAKEROOT/$NAME/usr/lib32
+	rm -rf DESTDIR
+}

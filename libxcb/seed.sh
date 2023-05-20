@@ -4,7 +4,7 @@ VERSION="1.15"
 SOURCE="https://xorg.freedesktop.org/archive/individual/lib/libxcb-${VERSION}.tar.xz"
 CHECKSUM="39c0fc337e738ad6c908e7cce90957d0"
 DEPS="libxau xcb-proto libxdmcp"
-FLAGS="test"
+FLAGS="32bit test"
 
 _setup()
 {
@@ -30,4 +30,24 @@ _install()
 _test()
 {
 	make -j${MAKEOPTS} check
+}
+
+_build32()
+{
+	make distclean
+
+	LDFLAGS="-L/usr/lib32" CC="gcc -m32" ./configure \
+		$XORG_CONFIG \
+		--without-doxygen \
+		--host=i686-pc-linux-gnu \
+		--libdir=/usr/lib32
+
+	make -j${MAKEOPTS}
+}
+
+_install32()
+{
+	make DESTDIR=$PWD/DESTDIR install
+	cp -Rv DESTDIR/usr/lib32/* $FAKEROOT/$NAME/usr/lib32
+	rm -rf DESTDIR
 }

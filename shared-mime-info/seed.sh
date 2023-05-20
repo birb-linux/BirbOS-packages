@@ -4,7 +4,7 @@ VERSION="2.2"
 SOURCE="https://gitlab.freedesktop.org/xdg/shared-mime-info/-/archive/${VERSION}/shared-mime-info-${VERSION}.tar.gz"
 CHECKSUM="06cb9e92e4211dc53fd52b7bfd586c78"
 DEPS="glib libxml2"
-FLAGS=""
+FLAGS="32bit"
 
 _setup()
 {
@@ -20,11 +20,31 @@ _build()
 	mkdir build
 	cd    build
 
-	meson --prefix=/usr --buildtype=release -Dupdate-mimedb=true ..
+	meson --prefix=/usr --buildtype=release -Dupdate-mimedb=false ..
 	ninja
 }
 
 _install()
+{
+	DESTDIR=$FAKEROOT/$NAME ninja install
+}
+
+_build32()
+{
+	cd ..
+	rm -r build
+	mkdir build
+	cd    build
+
+	meson --prefix=/usr --buildtype=release -Dupdate-mimedb=false ..
+
+	# meson is stubborn and doesn't want to link against 32bit
+	sed -i 's/\/usr\/lib\//\/usr\/lib32\//g' ./build.ninja
+
+	ninja
+}
+
+_install32()
 {
 	DESTDIR=$FAKEROOT/$NAME ninja install
 }

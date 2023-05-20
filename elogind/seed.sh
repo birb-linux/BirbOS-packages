@@ -4,7 +4,7 @@ VERSION="246.10"
 SOURCE="https://github.com/elogind/elogind/archive/v${VERSION}/elogind-${VERSION}.tar.gz"
 CHECKSUM="32ab2201281f14738d9c045f3669c14d"
 DEPS="dbus linux-pam"
-FLAGS="test"
+FLAGS="32bit test"
 
 _setup()
 {
@@ -94,4 +94,28 @@ EOF
 _test()
 {
 	ninja test
+}
+
+_build32()
+{
+	cd ..
+	rm -r build
+	mkdir build
+	cd    build
+
+	meson --prefix=$FAKEROOT/$NAME/usr         \
+          --bindir=$FAKEROOT/$NAME/usr/bin     \
+		  --buildtype=release                  \
+		  -Dcgroup-controller=elogind          \
+		  -Ddbuspolicydir=/etc/dbus-1/system.d \
+		  -Dman=false                          \
+		  ..
+	ninja
+}
+
+_install32()
+{
+	DESTDIR=$PWD/DESTDIR ninja install
+	cp -Rv DESTDIR/usr/lib/* $FAKEROOT/$NAME/usr/lib32
+	rm -rf DESTDIR
 }

@@ -4,7 +4,7 @@ VERSION="22.3.5"
 SOURCE="https://mesa.freedesktop.org/archive/mesa-${VERSION}.tar.xz"
 CHECKSUM="fdb35ae46968ce517702037710db6a3f"
 DEPS="xorg-libs libdrm mako glslang llvm"
-FLAGS=""
+FLAGS="32bit"
 
 _setup()
 {
@@ -24,7 +24,7 @@ _build()
 		  -Dgallium-drivers=auto  \
 		  -Dvalgrind=disabled     \
 		  -Dlibunwind=disabled    \
-		  ..                      &&
+		  ..
 
 	ninja
 }
@@ -36,4 +36,64 @@ _install()
 	# Install docs
 	install -v -dm755 $FAKEROOT/$NAME/usr/share/doc/mesa-${VERSION}
 	cp -rfv ../docs/* $FAKEROOT/$NAME/usr/share/doc/mesa-${VERSION}
+
+	# If the nvidia drivers have been installed, skip installing some libraries
+	if [ -n "$(package_check "nvidia-drivers")" ]
+	then
+		rm -v $FAKEROOT/$NAME/usr/lib/libEGL.so
+		rm -v $FAKEROOT/$NAME/usr/lib/libEGL.so.1
+		rm -v $FAKEROOT/$NAME/usr/lib/libGL.so
+		rm -v $FAKEROOT/$NAME/usr/lib/libGL.so.1
+		rm -v $FAKEROOT/$NAME/usr/lib/libGLESv1_CM.so
+		rm -v $FAKEROOT/$NAME/usr/lib/libGLESv1_CM.so.1
+		rm -v $FAKEROOT/$NAME/usr/lib/libGLESv2.so
+		rm -v $FAKEROOT/$NAME/usr/lib/libGLESv2.so.2
+	fi
+}
+
+_build32()
+{
+	# Start from a clean source tree
+	cd ../..
+	rm -r ${NAME}-${VERSION}
+	tar -xf $DISTFILES/$(basename $SOURCE)
+	cd ${NAME}-${VERSION}
+
+	mkdir build
+	cd    build
+
+	PKG_CONFIG_PATH="/usr/lib32/pkgconfig" CXXFLAGS="-L/usr/lib32" CFLAGS="-L/usr/lib32" LDFLAGS="-L/usr/lib32" LD_LIBRARY_PATH="/usr/lib32" CC="gcc -m32" CXX="g++ -m32" meson setup  --prefix=$XORG_PREFIX \
+                 --libdir=/usr/lib32 \
+				 --buildtype=release     \
+				 -Dplatforms=x11$(expand_use "wayland" ",wayland") \
+				 -Dgallium-drivers=auto  \
+				 -Dvalgrind=disabled     \
+				 -Dlibunwind=disabled    \
+				 ..
+
+	# meson is stubborn and doesn't want to link against 32bit
+	# llvm libraries, so lets force it into doing that
+	sed -i 's/\/usr\/lib\//\/usr\/lib32\//g' ./build.ninja
+
+	ninja
+}
+
+_install32()
+{
+	DESTDIR=$PWD/DESTDIR ninja install
+	cp -Rv DESTDIR/usr/lib32/* $FAKEROOT/$NAME/usr/lib32
+	rm -rf DESTDIR
+
+	# If the nvidia drivers have been installed, skip installing some libraries
+	if [ -n "$(package_check "nvidia-drivers")" ]
+	then
+		rm -v $FAKEROOT/$NAME/usr/lib32/libEGL.so
+		rm -v $FAKEROOT/$NAME/usr/lib32/libEGL.so.1
+		rm -v $FAKEROOT/$NAME/usr/lib32/libGL.so
+		rm -v $FAKEROOT/$NAME/usr/lib32/libGL.so.1
+		rm -v $FAKEROOT/$NAME/usr/lib32/libGLESv1_CM.so
+		rm -v $FAKEROOT/$NAME/usr/lib32/libGLESv1_CM.so.1
+		rm -v $FAKEROOT/$NAME/usr/lib32/libGLESv2.so
+		rm -v $FAKEROOT/$NAME/usr/lib32/libGLESv2.so.2
+	fi
 }
