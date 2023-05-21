@@ -18,7 +18,7 @@ _build()
 	sed -i /ARPD/d Makefile
 	rm -fv man/man8/arpd.8
 
-	make -j${MAKEOPTS} NETNS_RUN_DIR=/run/netns
+	make -j${BUILD_JOBS} NETNS_RUN_DIR=/run/netns
 }
 
 _install()

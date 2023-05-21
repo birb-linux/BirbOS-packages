@@ -18,7 +18,7 @@ _build()
 	patch -Np1 -i $PKG_PATH/libcanberra-0.30-wayland-1.patch
 
 	./configure --prefix=$FAKEROOT/$NAME/usr --disable-oss
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()

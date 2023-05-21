@@ -14,7 +14,7 @@ _setup()
 
 _build()
 {
-	make -j${MAKEOPTS} EFIDIR=BIRBOS EFI_LOADER=grubx64.efi
+	make -j${BUILD_JOBS} EFIDIR=BIRBOS EFI_LOADER=grubx64.efi
 }
 
 _install()

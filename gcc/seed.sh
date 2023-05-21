@@ -33,7 +33,7 @@ _build()
 				 --disable-bootstrap          \
 				 --with-system-zlib
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _test()
@@ -44,7 +44,7 @@ _test()
 
 	ulimit -s 32768
 	chown -Rv tester .
-	su tester -c "PATH=$PATH make -j${MAKEOPTS} -k check"
+	su tester -c "PATH=$PATH make -j${BUILD_JOBS} -k check"
 
 	# Extract summary of the test suite results
 	../contrib/test_summary grep -A7 Summ

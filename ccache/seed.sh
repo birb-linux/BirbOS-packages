@@ -18,7 +18,7 @@ _build()
 	cd 		build
 
 	cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="$FAKEROOT/$NAME/usr" ..
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()

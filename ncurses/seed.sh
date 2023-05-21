@@ -24,7 +24,7 @@ _build()
             --enable-widec          			\
             --with-pkg-config-libdir=/usr/lib/pkgconfig
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()
@@ -70,7 +70,7 @@ _build32()
 				--enable-widec          		\
 				--with-pkg-config-libdir=/usr/lib32/pkgconfig
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install32()

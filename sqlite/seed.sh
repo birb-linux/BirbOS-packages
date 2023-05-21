@@ -25,7 +25,7 @@ _build()
                       -DSQLITE_SECURE_DELETE=1          \
                       -DSQLITE_ENABLE_FTS3_TOKENIZER=1"
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()

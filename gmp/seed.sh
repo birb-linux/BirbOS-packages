@@ -19,13 +19,13 @@ _build()
             --disable-static 	\
             --docdir=/usr/share/doc/gmp-${VERSION}
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 	make html
 }
 
 _test()
 {
-	make -j${MAKEOPTS} check
+	make -j${BUILD_JOBS} check
 }
 
 _install()
@@ -51,12 +51,12 @@ _build32()
 		--includedir=/usr/include/m32/gmp
 
 	sed -i 's/$(exec_prefix)\/include/$\(includedir\)/' Makefile
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _test32()
 {
-	make -j${MAKEOPTS} check
+	make -j${BUILD_JOBS} check
 }
 
 _install32()

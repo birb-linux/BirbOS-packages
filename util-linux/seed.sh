@@ -32,7 +32,7 @@ _build()
             --without-systemdsystemunitdir \
             --docdir=$FAKEROOT/$NAME/usr/share/doc/util-linux-${VERSION}
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()
@@ -69,7 +69,7 @@ _build32()
 	# Restore the previously moved files back into their correct places
 	mv /usr/bin/ncursesw6-config{.tmp,}
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install32()

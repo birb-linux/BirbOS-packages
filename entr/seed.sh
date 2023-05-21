@@ -15,7 +15,7 @@ _setup()
 _build()
 {
 	./configure
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()

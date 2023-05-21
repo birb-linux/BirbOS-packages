@@ -19,7 +19,7 @@ _build()
 
 _install()
 {
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _test()

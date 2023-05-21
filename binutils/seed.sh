@@ -28,10 +28,10 @@ _build()
              --with-system-zlib  \
              --enable-multilib
 
-	make -j${MAKEOPTS} tooldir=$FAKEROOT/$NAME/usr
+	make -j${BUILD_JOBS} tooldir=$FAKEROOT/$NAME/usr
 
 	# Run tests
-	#make -j${MAKEOPTS} -k check
+	#make -j${BUILD_JOBS} -k check
 
 	#echo "List of failed checks"
 	#grep '^FAIL:' $(find -name '*.log')

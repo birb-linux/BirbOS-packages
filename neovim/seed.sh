@@ -16,7 +16,7 @@ _build()
 {
 	make CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX=$FAKEROOT/$NAME/usr" \
 		CMAKE_BUILD_TYPE=Release \
-		-j${MAKEOPTS}
+		-j${BUILD_JOBS}
 }
 
 _install()

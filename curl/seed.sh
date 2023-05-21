@@ -38,5 +38,5 @@ _install()
 _test()
 {
 	export USER="$(whoami)"
-	make -j${MAKEOPTS} test
+	make -j${BUILD_JOBS} test
 }

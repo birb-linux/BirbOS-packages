@@ -34,7 +34,7 @@ _build()
              -Duseshrplib                                 \
              -Dusethreads
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()
@@ -50,5 +50,5 @@ _install()
 
 _test()
 {
-	make -j${MAKEOPTS} test
+	make -j${BUILD_JOBS} test
 }

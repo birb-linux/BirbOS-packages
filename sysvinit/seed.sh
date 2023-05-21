@@ -18,7 +18,7 @@ _build()
 	# clarify messages and fix a compiler warning
 	patch -Np1 -i $PKG_PATH/sysvinit-3.07-consolidated-1.patch
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()

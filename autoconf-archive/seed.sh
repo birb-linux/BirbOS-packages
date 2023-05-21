@@ -18,7 +18,7 @@ _build()
 		--bindir=$FAKEROOT/$NAME/usr         \
 		--sbindir=$FAKEROOT/$NAME/usr
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()

@@ -18,7 +18,7 @@ _build()
             --disable-static \
             --docdir=/usr/share/doc/isl-${VERSION}
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()

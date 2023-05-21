@@ -17,7 +17,7 @@ _build()
 	autoreconf -fi
 
 	./configure --prefix=$FAKEROOT/$NAME/usr --disable-static
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()

@@ -15,7 +15,7 @@ _setup()
 _build()
 {
 	./configure --prefix=$FAKEROOT/$NAME/usr
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()
@@ -32,7 +32,7 @@ _build32()
 		--libdir=/usr/lib32   \
 		--host=i686-pc-linux-gnu
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install32()

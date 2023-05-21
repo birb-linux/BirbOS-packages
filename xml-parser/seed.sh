@@ -16,7 +16,7 @@ _build()
 {
 	perl Makefile.PL
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()

@@ -25,5 +25,5 @@ _build()
 
 _install()
 {
-	make -j${MAKEOPTS} install
+	make -j${BUILD_JOBS} install
 }

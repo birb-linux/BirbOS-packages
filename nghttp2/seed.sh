@@ -19,7 +19,7 @@ _build()
             --enable-lib-only \
             --docdir=$FAKEROOT/$NAME/usr/share/doc/nghttp2-${VERSION}
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()

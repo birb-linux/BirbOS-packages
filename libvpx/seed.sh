@@ -23,7 +23,7 @@ _build()
 				 --enable-shared  \
 				 --disable-static
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()

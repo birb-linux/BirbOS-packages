@@ -18,7 +18,7 @@ _build()
             --with-gitconfig=/etc/gitconfig \
             --with-python=python3
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()

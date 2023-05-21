@@ -15,7 +15,7 @@ _setup()
 _build()
 {
 	sed -i "s:doc/feh:&-${VERSION}:" config.mk
-	make PREFIX=$FAKEROOT/$NAME/usr -j${MAKEOPTS}
+	make PREFIX=$FAKEROOT/$NAME/usr -j${BUILD_JOBS}
 }
 
 _install()

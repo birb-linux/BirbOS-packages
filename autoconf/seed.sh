@@ -21,7 +21,7 @@ _build()
 
 	./configure --prefix=$FAKEROOT/$NAME/usr
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()
@@ -31,5 +31,5 @@ _install()
 
 _test()
 {
-	TESTSUITEFLAGS=-j${MAKEOPTS} make check
+	TESTSUITEFLAGS=-j${BUILD_JOBS} make check
 }

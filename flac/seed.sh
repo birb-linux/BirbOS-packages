@@ -18,7 +18,7 @@ _build()
             --disable-thorough-tests \
             --docdir=$FAKEROOT/$NAME/usr/share/doc/flac-${VERSION}
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()

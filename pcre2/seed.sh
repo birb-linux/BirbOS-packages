@@ -25,7 +25,7 @@ _build()
             --enable-pcre2test-libreadline      \
             --disable-static
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()
@@ -47,7 +47,7 @@ _build32()
             --enable-pcre2test-libreadline      \
             --disable-static
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install32()

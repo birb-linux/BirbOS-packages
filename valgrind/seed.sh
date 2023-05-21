@@ -21,7 +21,7 @@ _build()
 				--enable-lto=$ENABLE_LTO \
 				--datadir=$FAKEROOT/$NAME/usr/share/doc/valgrind-${VERSION}
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()

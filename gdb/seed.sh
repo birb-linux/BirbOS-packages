@@ -21,7 +21,7 @@ _build()
 				 --with-system-readline \
 				 --with-python=/usr/bin/python3
 
-	 make -j${MAKEOPTS}
+	 make -j${BUILD_JOBS}
 }
 
 _install()

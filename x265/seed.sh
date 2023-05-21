@@ -21,7 +21,7 @@ _build()
 		  -DGIT_ARCHETYPE=1           \
 		  -Wno-dev ../source
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()

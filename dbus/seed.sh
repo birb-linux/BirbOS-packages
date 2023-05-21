@@ -27,7 +27,7 @@ _build()
             --docdir=$FAKEROOT/$NAME/usr/share/doc/dbus-${VERSION} \
             --with-system-socket=/run/dbus/system_bus_socket
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()
@@ -59,7 +59,7 @@ _build32()
             --docdir=$FAKEROOT/$NAME/usr/share/doc/dbus-${VERSION} \
             --with-system-socket=/run/dbus/system_bus_socket
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install32()

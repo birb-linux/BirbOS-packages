@@ -19,7 +19,7 @@ _build()
             --disable-static \
             --disable-kill
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()

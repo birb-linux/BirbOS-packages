@@ -15,7 +15,7 @@ _setup()
 _build()
 {
 	./configure --prefix=$FAKEROOT/$NAME/usr --sysconfdir=/etc
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()

@@ -22,7 +22,7 @@ _build()
 				--prefix=$FAKEROOT/$NAME/usr \
 				--enable-no-install-program=kill,uptime
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()

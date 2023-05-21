@@ -18,13 +18,13 @@ _build()
             --disable-static \
             --docdir=/usr/share/doc/mpc-${VERSION}
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 	make html
 }
 
 _test()
 {
-	make -j${MAKEOPTS} check
+	make -j${BUILD_JOBS} check
 }
 
 _install()

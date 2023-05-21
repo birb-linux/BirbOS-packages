@@ -24,7 +24,7 @@ _build()
 		  -DCMAKE_INSTALL_DEFAULT_LIBDIR=lib  \
 		  ..
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()
@@ -34,5 +34,5 @@ _install()
 
 _test()
 {
-	make -j${MAKEOPTS} test
+	make -j${BUILD_JOBS} test
 }

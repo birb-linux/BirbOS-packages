@@ -23,7 +23,7 @@ _build()
             --docdir=$FAKEROOT/$NAME/usr/share/doc/sudo-${VERSION} \
             --with-passprompt="[sudo] password for %p: "
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()

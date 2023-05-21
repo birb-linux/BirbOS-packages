@@ -15,7 +15,7 @@ _setup()
 _build()
 {
 	PYTHON=/usr/bin/python3 ./configure --prefix=$FAKEROOT/$NAME/usr
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()

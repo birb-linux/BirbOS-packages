@@ -26,7 +26,7 @@ _build()
             --disable-static \
             --enable-tee
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()

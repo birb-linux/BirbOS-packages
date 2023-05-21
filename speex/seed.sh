@@ -18,7 +18,7 @@ _build()
             --disable-static \
             --docdir=$FAKEROOT/$NAME/usr/share/doc/speex-${VERSION}
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()

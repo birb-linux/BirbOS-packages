@@ -39,7 +39,7 @@ _build()
 				--enable-libpulse    \
 				--docdir=$FAKEROOT/$NAME/usr/share/doc/ffmpeg-${VERSION}
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 
 	gcc tools/qt-faststart.c -o tools/qt-faststart
 }

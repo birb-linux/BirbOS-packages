@@ -18,7 +18,7 @@ _build()
             --disable-static  \
             --docdir=/usr/share/doc/acl-${VERSION}
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()
@@ -39,7 +39,7 @@ _build32()
 		--libexecdir=/usr/lib32   \
 		--host=i686-pc-linux-gnu
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install32()

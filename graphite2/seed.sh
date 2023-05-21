@@ -23,7 +23,7 @@ _build()
 
 	cmake -DCMAKE_INSTALL_PREFIX=$FAKEROOT/$NAME/usr ..
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()
@@ -33,5 +33,5 @@ _install()
 
 _test()
 {
-	make -j${MAKEOPTS} test
+	make -j${BUILD_JOBS} test
 }

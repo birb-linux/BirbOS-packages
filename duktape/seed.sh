@@ -15,7 +15,7 @@ _setup()
 _build()
 {
 	sed -i 's/-Os/-O2/' Makefile.sharedlibrary
-	make -j${MAKEOPTS} -f Makefile.sharedlibrary INSTALL_PREFIX=$FAKEROOT/$NAME/usr
+	make -j${BUILD_JOBS} -f Makefile.sharedlibrary INSTALL_PREFIX=$FAKEROOT/$NAME/usr
 }
 
 _install()

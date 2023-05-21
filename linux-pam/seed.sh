@@ -28,7 +28,7 @@ _build()
             --enable-securedir=/usr/lib/security \
             --docdir=$FAKEROOT/$NAME/usr/share/doc/Linux-PAM-${VERSION}
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()
@@ -126,11 +126,11 @@ password required       pam_deny.so
 session  required       pam_deny.so
 EOF
 
-		make -j${MAKEOPTS} check
+		make -j${BUILD_JOBS} check
 
 		rm -fv /etc/pam.d/other
 	else
 		# Run the tests with the existing /etc/pam.d/other file
-		make -j${MAKEOPTS} check
+		make -j${BUILD_JOBS} check
 	fi
 }

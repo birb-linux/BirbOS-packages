@@ -16,7 +16,7 @@ _build()
 {
 	./configure --prefix=$FAKEROOT/$NAME/usr
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()
@@ -29,7 +29,7 @@ _install()
 
 _test()
 {
-	make -j${MAKEOPTS} -k check
+	make -j${BUILD_JOBS} -k check
 }
 
 # These 32 bit functions get called only if the '32bit' flag is set
@@ -43,7 +43,7 @@ _build32()
 		--prefix=$FAKEROOT/$NAME/usr \
 		--libdir=/usr/lib32
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install32()

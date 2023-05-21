@@ -17,7 +17,7 @@ _build()
 	./configure $XORG_CONFIG \
 		--with-xkb-config-root=/usr/share/X11/xkb
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()
