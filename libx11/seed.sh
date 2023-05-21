@@ -15,7 +15,7 @@ _setup()
 _build()
 {
 	./configure $XORG_CONFIG --docdir=$XORG_PREFIX/share/doc/$NAME-$VERSION
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()
@@ -35,7 +35,7 @@ _build32()
 		--host=i686-pc-linux-gnu \
 		--libdir=/usr/lib32
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install32()

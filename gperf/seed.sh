@@ -16,7 +16,7 @@ _build()
 {
 	./configure --prefix=$FAKEROOT/$NAME/usr --docdir=/usr/share/doc/gperf-${VERSION}
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()

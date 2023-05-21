@@ -17,7 +17,7 @@ _build()
 	sed -i -e "/D_XOPEN/s/5/6/" configure
 
 	./configure $XORG_CONFIG
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()

@@ -20,7 +20,7 @@ _build()
             --docdir=$FAKEROOT/$NAME/usr/share/doc/libxslt-${VERSION} \
             PYTHON=/usr/bin/python3
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()
@@ -30,5 +30,5 @@ _install()
 
 _test()
 {
-	make -j${MAKEOPTS} check
+	make -j${BUILD_JOBS} check
 }

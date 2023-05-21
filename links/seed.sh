@@ -17,7 +17,7 @@ _setup()
 _build()
 {
 	./configure --prefix=$FAKEROOT/$NAME/usr --mandir=$FAKEROOT/$NAME/usr/share/man
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()

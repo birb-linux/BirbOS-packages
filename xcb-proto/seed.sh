@@ -24,5 +24,5 @@ _install()
 
 _test()
 {
-	make -j${MAKEOPTS} check
+	make -j${BUILD_JOBS} check
 }

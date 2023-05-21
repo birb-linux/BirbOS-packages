@@ -18,12 +18,12 @@ _build()
             --docdir=/usr/share/doc/flex-${VERSION} \
             --disable-static
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _test()
 {
-	make -j${MAKEOPTS} check
+	make -j${BUILD_JOBS} check
 }
 
 _install()

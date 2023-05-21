@@ -19,7 +19,7 @@ _build()
             --sysconfdir=/etc \
             --disable-static
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()

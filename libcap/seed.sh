@@ -17,7 +17,7 @@ _build()
 	# Prevent static libraries from being installed
 	sed -i '/install -m.*STA/d' libcap/Makefile
 
-	make -j${MAKEOPTS} prefix=$FAKEROOT/$NAME/usr lib=lib
+	make -j${BUILD_JOBS} prefix=$FAKEROOT/$NAME/usr lib=lib
 }
 
 _install()
@@ -32,7 +32,7 @@ _install()
 # when installing packages
 _test()
 {
-	make -j${MAKEOPTS} test
+	make -j${BUILD_JOBS} test
 }
 
 # These 32 bit functions get called only if the '32bit' flag is set
@@ -41,7 +41,7 @@ _build32()
 {
 	make distclean
 
-	make -j${MAKEOPTS} CC="gcc -m32 -march=i686"
+	make -j${BUILD_JOBS} CC="gcc -m32 -march=i686"
 }
 
 _install32()

@@ -18,7 +18,7 @@ _build()
             --enable-shared \
             --disable-cli
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()

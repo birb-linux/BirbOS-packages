@@ -25,7 +25,7 @@ _build()
              --disable-uuidd         \
              --disable-fsck
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()

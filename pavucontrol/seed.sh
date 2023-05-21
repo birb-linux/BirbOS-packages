@@ -15,7 +15,7 @@ _setup()
 _build()
 {
 	./configure --prefix=$FAKEROOT/$NAME/usr --docdir=$FAKEROOT/$NAME/usr/share/doc/pavucontrol-${VERSION}
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()

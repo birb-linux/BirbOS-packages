@@ -20,7 +20,7 @@ _build()
             --disable-xmlto \
             --with-curses=ncursesw
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()

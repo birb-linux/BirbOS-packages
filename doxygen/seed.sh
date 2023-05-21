@@ -22,7 +22,7 @@ _build()
 		  -DCMAKE_INSTALL_PREFIX=$FAKEROOT/$NAME/usr \
 		  -Wno-dev ..
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()

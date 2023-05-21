@@ -15,7 +15,7 @@ _setup()
 _build()
 {
 	./configure $XORG_CONFIG
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()
@@ -25,5 +25,5 @@ _install()
 
 _test()
 {
-	LD_LIBRARY_PATH=$XORG_PREFIX/lib make -j${MAKEOPTS} check
+	LD_LIBRARY_PATH=$XORG_PREFIX/lib make -j${BUILD_JOBS} check
 }

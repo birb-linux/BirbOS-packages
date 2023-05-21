@@ -14,7 +14,7 @@ _setup()
 
 _build()
 {
-	make -j${MAKEOPTS} lib
+	make -j${BUILD_JOBS} lib
 }
 
 _install()

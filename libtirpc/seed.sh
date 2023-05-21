@@ -21,7 +21,7 @@ _build()
             --disable-static  \
             --disable-gssapi
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()

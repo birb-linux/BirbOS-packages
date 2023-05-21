@@ -20,7 +20,7 @@ _build()
             --disable-docs       \
             --docdir=$FAKEROOT/$NAME/usr/share/doc/fontconfig-${VERSION}
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()

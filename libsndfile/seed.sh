@@ -17,7 +17,7 @@ _build()
 	./configure --prefix=$FAKEROOT/$NAME/usr    \
             --docdir=$FAKEROOT/$NAME/usr/share/doc/libsndfile-${VERSION}
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()
@@ -27,5 +27,5 @@ _install()
 
 _test()
 {
-	make -j${MAKEOPTS} check
+	make -j${BUILD_JOBS} check
 }

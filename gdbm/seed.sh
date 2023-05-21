@@ -18,7 +18,7 @@ _build()
             --disable-static \
             --enable-libgdbm-compat
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()
@@ -28,5 +28,5 @@ _install()
 
 _test()
 {
-	make -j${MAKEOPTS} check
+	make -j${BUILD_JOBS} check
 }

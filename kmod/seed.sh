@@ -21,7 +21,7 @@ _build()
             --with-zstd            \
             --with-zlib
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()
@@ -54,7 +54,7 @@ _build32()
 		--with-zlib                   \
 		--with-rootlibdir=/usr/lib32
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install32()

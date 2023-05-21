@@ -24,7 +24,7 @@ _build()
             --enable-manpages       \
             --disable-static
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 
 	# Create some directories that are needed for tests (and for the installation)
 	mkdir -pv $FAKEROOT/$NAME/usr/lib/udev/rules.d
@@ -44,7 +44,7 @@ _install()
 
 _test()
 {
-	make -j${MAKEOPTS} check
+	make -j${BUILD_JOBS} check
 }
 
 _build32()
@@ -60,7 +60,7 @@ _build32()
 				--disable-manpages             \
 				--disable-static
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install32()

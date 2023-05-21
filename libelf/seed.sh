@@ -18,7 +18,7 @@ _build()
             --disable-debuginfod         \
             --enable-libdebuginfod=dummy
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()
@@ -36,7 +36,7 @@ _install()
 
 _test()
 {
-	make -j${MAKEOPTS} check
+	make -j${BUILD_JOBS} check
 }
 
 # These 32 bit functions get called only if the '32bit' flag is set
@@ -52,7 +52,7 @@ _build32()
 		--disable-debuginfod     \
 		--enable-libdebuginfod=dummy
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install32()

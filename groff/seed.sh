@@ -16,7 +16,7 @@ _build()
 {
 	PAGE=A4 ./configure --prefix=$FAKEROOT/$NAME/usr
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()

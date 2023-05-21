@@ -20,7 +20,7 @@ _build()
 	for i in dmenu dwm dwmblocks slock st
 	do
 		cd $i
-		CC=gcc make -j${MAKEOPTS}
+		CC=gcc make -j${BUILD_JOBS}
 		cd $SRC_ROOT
 	done
 }

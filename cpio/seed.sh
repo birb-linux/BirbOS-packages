@@ -21,7 +21,7 @@ _build()
             --enable-mt   \
             --with-rmt=/usr/libexec/rmt
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 	makeinfo --html            -o doc/html      doc/cpio.texi
 	makeinfo --html --no-split -o doc/cpio.html doc/cpio.texi
 	makeinfo --plaintext       -o doc/cpio.txt  doc/cpio.texi
@@ -39,5 +39,5 @@ _install()
 
 _test()
 {
-	make -j${MAKEOPTS} check
+	make -j${BUILD_JOBS} check
 }

@@ -21,7 +21,7 @@ _build()
 	./configure $XORG_CONFIG     \
 		--with-app-defaults=/etc/X11/app-defaults
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()

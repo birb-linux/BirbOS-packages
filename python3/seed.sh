@@ -20,7 +20,7 @@ _build()
             --with-system-ffi    \
             --enable-optimizations
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()

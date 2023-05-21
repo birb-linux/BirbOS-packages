@@ -16,7 +16,7 @@ _build()
 {
 	./configure --disable-static --prefix=$FAKEROOT/$NAME/usr
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()

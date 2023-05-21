@@ -24,7 +24,7 @@ _build()
             --enable-pcretest-libreadline     \
             --disable-static
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()

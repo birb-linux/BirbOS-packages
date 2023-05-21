@@ -20,13 +20,13 @@ _build()
          shared                \
          zlib-dynamic
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()
 {
 	sed -i '/INSTALL_LIBS/s/libcrypto.a libssl.a//' Makefile
-	make -j${MAKEOPTS} MANSUFFIX=ssl install
+	make -j${BUILD_JOBS} MANSUFFIX=ssl install
 
 	# Add version to the documentation directory name
 	mv -v $FAKEROOT/$NAME/usr/share/doc/openssl $FAKEROOT/$NAME/usr/share/doc/openssl-${VERSION}
@@ -37,7 +37,7 @@ _install()
 
 _test()
 {
-	make -j${MAKEOPTS} test
+	make -j${BUILD_JOBS} test
 }
 
 # These 32 bit functions get called only if the '32bit' flag is set
@@ -54,7 +54,7 @@ _build32()
 			 zlib-dynamic          \
 			 linux-generic32
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install32()

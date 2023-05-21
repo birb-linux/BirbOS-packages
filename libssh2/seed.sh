@@ -18,7 +18,7 @@ _build()
 	patch -Np1 -i $PKG_PATH/libssh2-1.10.0-upstream_fix-1.patch
 
 	./configure --prefix=$FAKEROOT/$NAME/usr --disable-static
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()

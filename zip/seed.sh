@@ -14,7 +14,7 @@ _setup()
 
 _build()
 {
-	make -j${MAKEOPTS} -f unix/Makefile generic_gcc
+	make -j${BUILD_JOBS} -f unix/Makefile generic_gcc
 }
 
 _install()

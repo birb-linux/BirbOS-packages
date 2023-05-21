@@ -36,7 +36,7 @@ _build()
 				--disable-static  \
 				--with-group-name-max-length=32
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()

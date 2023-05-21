@@ -26,7 +26,7 @@ _build()
             --with-screen=ncursesw \
             --enable-locale-charset
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()

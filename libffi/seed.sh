@@ -18,7 +18,7 @@ _build()
             --disable-static       \
             --with-gcc-arch=native
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()
@@ -28,7 +28,7 @@ _install()
 
 _test()
 {
-	make -j${MAKEOPTS} check
+	make -j${BUILD_JOBS} check
 }
 
 # These 32 bit functions get called only if the '32bit' flag is set
@@ -44,13 +44,13 @@ _build32()
 		--disable-static         \
 		--with-gcc-arch=i686
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 # This function gets called if the 'test32' flag has been specified
 _test32()
 {
-	make -j${MAKEOPTS} check
+	make -j${BUILD_JOBS} check
 }
 
 _install32()

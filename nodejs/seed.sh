@@ -22,7 +22,7 @@ _build()
             --shared-zlib          \
             --with-intl=system-icu
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()

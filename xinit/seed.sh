@@ -17,7 +17,7 @@ _build()
 	./configure $XORG_CONFIG \
 		--with-xinitdir=/etc/X11/app-defaults \
 		--with-xserver=/usr/bin/X
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()

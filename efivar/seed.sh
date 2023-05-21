@@ -18,7 +18,7 @@ _build()
 	# to get rebuilt during installation
 	sed '/prep :/a\\ttouch prep' -i src/Makefile
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()

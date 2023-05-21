@@ -22,7 +22,7 @@ _build()
             --enable-swap-16bit-csp \
             --disable-static
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()

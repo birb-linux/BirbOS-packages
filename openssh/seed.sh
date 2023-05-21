@@ -32,7 +32,7 @@ _build()
             --with-superuser-path=/usr/sbin:/usr/bin \
             --with-pid-dir=/run
 
-	make -j${MAKEOPTS}
+	make -j${BUILD_JOBS}
 }
 
 _install()
