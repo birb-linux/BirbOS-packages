@@ -73,7 +73,7 @@ ac_add_options --disable-debug-symbols
 ac_add_options --disable-elf-hack
 
 # The BLFS editors recommend not changing anything below this line:
-ac_add_options --prefix=/var/db/fakeroot/firefox/usr
+ac_add_options --prefix=<fakeroot>
 ac_add_options --enable-application=browser
 ac_add_options --disable-crashreporter
 ac_add_options --disable-updater
@@ -106,6 +106,8 @@ unset MOZ_TELEMETRY_REPORTING
 
 mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/firefox-build-dir
 EOF
+
+	sed -i "s|<fakeroot>|$FAKEROOT/$NAME/usr|" mozconfig
 
 	# Fix an issue with cbindgen
 	sed -i '/ROOT_CLIP_CHAIN/d' gfx/webrender_bindings/webrender_ffi.h
