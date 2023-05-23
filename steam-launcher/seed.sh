@@ -4,7 +4,7 @@ VERSION="1.0.0.76"
 SOURCE="https://repo.steampowered.com/steam/archive/stable/steam_${VERSION}.tar.gz"
 CHECKSUM="9db32c129bac8a40080d97888f028c3b"
 DEPS="pciutils"
-FLAGS=""
+FLAGS="proprietary"
 
 _setup()
 {
