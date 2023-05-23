@@ -22,9 +22,11 @@ _install()
 {
 	make DESTDIR=$FAKEROOT/$NAME PREFIX=/ install
 
+	PERL_VERSION="$(perl --version | awk '/version/ {print $9}' | sed 's/[()v]//g' | grep -o "^[0-9]*\.[0-9]*")"
+
 	# Avoid overwriting any existing perllocal files. The file
 	# isn't needed in BirbOS
-	rm -v $FAKEROOT/$NAME/usr/lib/perl5/5.36/core_perl/perllocal.pod
+	rm -v $FAKEROOT/$NAME/usr/lib/perl5/${PERL_VERSION}/core_perl/perllocal.pod
 
 	# Move the man files to their correct places
 	# and remove the unnecessary nested fakeroot
