@@ -15,7 +15,7 @@ _setup()
 _build()
 {
 	./configure $XORG_CONFIG \
-		--with-xinitdir=/etc/X11/app-defaults \
+		--with-xinitdir=$FAKEROOT/$NAME/etc/X11/app-defaults \
 		--with-xserver=/usr/bin/X
 	make -j${BUILD_JOBS}
 }
