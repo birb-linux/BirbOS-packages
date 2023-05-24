@@ -35,7 +35,7 @@ _build()
 
 _install()
 {
-	# make DESTDIR=$FAKEROOT/$NAME/usr install
+	# make DESTDIR=$FAKEROOT/$NAME install
 }
 
 # If the package has any tests, run them here
