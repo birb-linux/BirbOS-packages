@@ -3,7 +3,7 @@ DESC="X.Org JIS (japanese) fonts"
 VERSION="1.0.4"
 SOURCE="https://gitlab.freedesktop.org/xorg/font/jis-misc/-/archive/font-jis-misc-${VERSION}/jis-misc-font-jis-misc-${VERSION}.tar.gz"
 CHECKSUM="06bfe204d605a7fa9a3908b4fe12bf49"
-DEPS="bdftopcf fontconfig font-util"
+DEPS="bdftopcf font-util"
 FLAGS="font"
 
 _setup()
