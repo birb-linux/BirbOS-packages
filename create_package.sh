@@ -13,7 +13,38 @@ PKG_NAME="$1"
 
 mkdir -pv $PKG_NAME
 
-cat > $PKG_NAME/seed.sh << "EOF"
+# Create different package templates depending on the second argument
+case $2 in
+	python)
+		cat > $PKG_NAME/seed.sh << "EOF"
+NAME="|PACKAGE_NAME|"
+DESC=""
+VERSION=""
+SOURCE=""
+CHECKSUM=""
+DEPS=""
+FLAGS="python"
+
+_setup()
+{
+	tar -xf $DISTFILES/$(basename $SOURCE)
+	cd ${NAME}-${VERSION}
+}
+
+_build()
+{
+	pip3 wheel -w $FAKEROOT/$NAME/$PYTHON_DIST --no-build-isolation --no-deps $PWD
+}
+
+_install()
+{
+	pip3 install --no-index --no-user --find-links $FAKEROOT/$NAME/$PYTHON_DIST $NAME
+}
+EOF
+		;;
+
+	*)
+		cat > $PKG_NAME/seed.sh << "EOF"
 NAME="|PACKAGE_NAME|"
 DESC=""
 VERSION=""
@@ -66,6 +97,8 @@ _install32()
 
 }
 EOF
+		;;
+esac
 
 # Update the package name
 sed -i "s/|PACKAGE_NAME|/$PKG_NAME/g" $PKG_NAME/seed.sh
