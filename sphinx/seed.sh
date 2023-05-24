@@ -3,7 +3,7 @@ DESC="The Sphinx documentation generator"
 VERSION="7.0.1"
 SOURCE="https://github.com/sphinx-doc/sphinx/archive/refs/tags/v${VERSION}.tar.gz"
 CHECKSUM="1bb87f2b84b2fd3401fff53cc9681209"
-DEPS="sphinxcontrib-applehelp sphinxcontrib-devhelp sphinxcontrib-jsmath sphinxcontrib-htmlhelp sphinxcontrib-serializinghtml sphinxcontrib-qthelp jinja pygments docutils snowballstemmer babel alabaster imagesize requests packaging importlib-metadata colorama"
+DEPS="alabaster babel docutils imagesize jinja packaging pygments requests snowballstemmer sphinxcontrib-applehelp sphinxcontrib-devhelp sphinxcontrib-htmlhelp sphinxcontrib-jsmath sphinxcontrib-qthelp sphinxcontrib-serializinghtml"
 FLAGS="python"
 
 _setup()
