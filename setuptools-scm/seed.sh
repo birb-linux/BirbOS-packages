@@ -9,7 +9,7 @@ FLAGS="python"
 _setup()
 {
 	tar -xf $DISTFILES/$(basename $SOURCE)
-	cd ${NAME}-${VERSION}
+	cd setuptools_scm-${VERSION}
 }
 
 _build()
@@ -19,5 +19,5 @@ _build()
 
 _install()
 {
-	pip3 install --no-index --no-user --find-links $FAKEROOT/$NAME/$PYTHON_DIST $NAME
+	pip3 install --no-index --no-user --find-links $FAKEROOT/$NAME/$PYTHON_DIST setuptools_scm
 }
