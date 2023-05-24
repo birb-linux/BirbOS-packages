@@ -14,6 +14,11 @@ _setup()
 
 _build()
 {
+	# Patch the version requirement for sphinxcontrib-serializinghtml
+	# because for some reason its not matching the correctly installed
+	# version of the package in question
+	sed -i 's/"sphinxcontrib-serializinghtml>=1.1.5"/"sphinxcontrib-serializinghtml>=1.1.4"/' pyproject.toml
+
 	pip3 wheel -w $FAKEROOT/$NAME/$PYTHON_DIST --no-build-isolation --no-deps $PWD
 }
 
