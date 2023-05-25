@@ -19,5 +19,5 @@ _build()
 
 _install()
 {
-	make DESTDIR=$FAKEROOT/$NAME install
+	make DESTDIR=$FAKEROOT/$NAME install-newsboat
 }
