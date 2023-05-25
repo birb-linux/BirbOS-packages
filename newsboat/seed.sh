@@ -15,10 +15,10 @@ _setup()
 _build()
 {
 	cargo build --release
-	make -j${BUILD_JOBS} newsboat
+	make -j${BUILD_JOBS}
 }
 
 _install()
 {
-	make -j${BUILD_JOBS} prefix=/usr DESTDIR=$FAKEROOT/$NAME install-newsboat
+	make -j${BUILD_JOBS} prefix=/usr DESTDIR=$FAKEROOT/$NAME install
 }
