@@ -25,11 +25,5 @@ _build()
 
 _install()
 {
-	make DESTDIR=$FAKEROOT/$NAME install
-
-	# The make install command doesn't listen prefix variabels
-	# so move the /usr/local dir to /usr
-	mv -v $FAKEROOT/$NAME/usr/local $FAKEROOT/$NAME/
-	rm -rv $FAKEROOT/$NAME/usr
-	mv -v $FAKEROOT/$NAME/local $FAKEROOT/$NAME/usr
+	make prefix=/usr DESTDIR=$FAKEROOT/$NAME install
 }
