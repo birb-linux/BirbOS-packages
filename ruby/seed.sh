@@ -26,4 +26,7 @@ _build()
 _install()
 {
 	make DESTDIR=$FAKEROOT/$NAME install
+
+	# Avoid birb takeover with the ruby bin directory
+	mkdir -p /usr/lib/ruby/gems/3.2.0/bin
 }
