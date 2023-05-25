@@ -19,7 +19,12 @@ _build()
 
 _install()
 {
-	mkdir -p $FAKEROOT/$NAME/usr/lib/ruby/gems/3.2.0
-	gem install --install-dir $FAKEROOT/$NAME/usr/lib/ruby/gems/3.2.0 asciidoctor-${VERSION}.gem
+	RUBY_VERSION="3.2.0"
+
+	mkdir -p $FAKEROOT/$NAME/usr/lib/ruby/gems/${RUBY_VERSION}
+	gem install --install-dir $FAKEROOT/$NAME/usr/lib/ruby/gems/${RUBY_VERSION} asciidoctor-${VERSION}.gem
 	install -vm644 man/asciidoctor.1 $FAKEROOT/$NAME/usr/share/man/man1
+
+	# Add asciidoctor to /usr/bin
+	ln -srv $FAKEROOT/$NAME/usr/lib/ruby/gems/${RUBY_VERSION}/gems/asciidoctor-${VERSION}/bin/asciidoctor $FAKEROOT/$NAME/usr/bin/
 }
