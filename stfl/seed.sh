@@ -26,4 +26,5 @@ _build()
 _install()
 {
 	make prefix=/usr DESTDIR=$FAKEROOT/$NAME install
+	ln -srv $FAKEROOT/$NAME/usr/lib/libstfl.so $FAKEROOT/$NAME/usr/lib/libstfl.so.0
 }
