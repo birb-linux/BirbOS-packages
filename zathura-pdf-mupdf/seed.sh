@@ -14,6 +14,11 @@ _setup()
 
 _build()
 {
+	# Ignore the mupdf-third dependency, since mupdf doesn't provide
+	# a shared libarry for it anymore and it doesn't seem to be necessary
+	# anyway
+	sed -i '/mupdfthird/d' meson.build
+
 	meson --prefix=/usr build
 	cd build
 
