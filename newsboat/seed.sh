@@ -14,6 +14,9 @@ _setup()
 
 _build()
 {
+	# Remove a --require flag that seems to break asciidoctor
+	sed -i 's/--require=.\/doc\/man.rb//g' Makefile
+
 	cargo build --release
 	make -j${BUILD_JOBS}
 }
