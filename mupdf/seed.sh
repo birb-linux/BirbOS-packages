@@ -37,7 +37,7 @@ USE_SYSTEM_GUMBO := no
 EOF
 
 	export XCFLAGS=-fPIC
-	make -j${BUILD_JOBS} build=release shared=no
+	make -j${BUILD_JOBS} build=release shared=yes
 	unset XCFLAGS
 }
 
