@@ -1,5 +1,5 @@
 NAME="zathura-pdf-mupdf"
-DESC="PDF support (mupdf backend) for zathura"
+DESC="EPUB, PDF and XPS support based on MuPDF"
 VERSION="0.3.9"
 SOURCE="https://git.pwmt.org/pwmt/zathura-pdf-mupdf/-/archive/${VERSION}/zathura-pdf-mupdf-${VERSION}.tar.gz"
 CHECKSUM="42fbef0dd6d90d91168dfeefefa9f21b"
