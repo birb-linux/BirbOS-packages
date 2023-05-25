@@ -22,9 +22,11 @@ source $PKG_NAME/seed.sh
 [ -n "$(echo "$NAME" | grep "[[:space:]]")" ] && echo "Whitespace isn't allowed in package names"
 
 # Prefix mistakes
-grep -i "prefix=/usr" $PKG_NAME/seed.sh && echo "Misconfigured prefix path ^"
-grep -i "bindir=/usr" $PKG_NAME/seed.sh && echo "Misconfigured bindir path ^"
-grep -i "docdir=/usr" $PKG_NAME/seed.sh && echo "Misconfigured docdir path ^"
+if [ -z "$(grep -i "DESTDIR" $PKG_NAME/seed.sh)" ]
+then
+	echo "DESTDIR not detected. Please make sure that prefixe, bindir and docdir variables are set correctly"
+fi
+
 grep -i "\-w dist" $PKG_NAME/seed.sh && echo "Misconfigured pip3 build command ^"
 grep -i "\--find-links dist" $PKG_NAME/seed.sh && echo "Misconfigured pip3 install command ^"
 grep -i "\--find-links=dist" $PKG_NAME/seed.sh && echo "Misconfigured pip3 install command ^"
@@ -35,6 +37,8 @@ grep "ln.* /[A-Za-z]" $PKG_NAME/seed.sh && echo "Possibly misconfigured ln comma
 grep "install.* /[A-Za-z]" $PKG_NAME/seed.sh && echo "Possibly misconfigured install command ^"
 grep "sed.* /[A-Za-z]" $PKG_NAME/seed.sh && echo "Possibly misconfigured sed command ^"
 grep "echo.* /[A-Za-z]" $PKG_NAME/seed.sh && echo "Possibly misconfigured echo command ^"
+grep "\--with-xinitdir=/etc/X11/app-defaults" $PKG_NAME/seed.sh && echo "Possibly misconfigured xinidir path ^"
+grep "\--with-app-defaults=/etc/X11/app-defaults" $PKG_NAME/seed.sh && echo "Possibly misconfigured app-defaults path ^"
 
 
 # Make sure the version variable is used properly

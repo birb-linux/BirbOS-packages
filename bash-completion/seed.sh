@@ -14,13 +14,13 @@ _setup()
 
 _build()
 {
-	./configure --prefix=$FAKEROOT/$NAME/usr
+	./configure --prefix=/usr
 	make -j${BUILD_JOBS}
 }
 
 _install()
 {
-	make install
+	DESTDIR=$FAKEROOT/$NAME make install
 
 	# Move the profile.d script to the correct place
 	mv $FAKEROOT/$NAME/usr/etc/profile.d $FAKEROOT/$NAME/etc/

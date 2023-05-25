@@ -19,7 +19,7 @@ _build()
 
 	TERMINFO=/usr/share/terminfo \
 	./configure $XORG_CONFIG     \
-		--with-app-defaults=/etc/X11/app-defaults
+		--with-app-defaults=$FAKEROOT/$NAME/etc/X11/app-defaults
 
 	make -j${BUILD_JOBS}
 }
