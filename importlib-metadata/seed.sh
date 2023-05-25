@@ -3,7 +3,7 @@ DESC="Backport of the importlib.metadata module"
 VERSION="6.6.0"
 SOURCE="https://github.com/python/importlib_metadata/archive/refs/tags/v${VERSION}.tar.gz"
 CHECKSUM="861c75ca8d33869e9daa03a031f055c6"
-DEPS=""
+DEPS="zipp typing-extensions"
 FLAGS="python"
 
 _setup()
