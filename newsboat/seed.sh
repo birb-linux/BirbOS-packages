@@ -14,10 +14,11 @@ _setup()
 
 _build()
 {
-	make -j${BUILD_JOBS}
+	cargo build --release
+	make -j${BUILD_JOBS} newsboat
 }
 
 _install()
 {
-	make DESTDIR=$FAKEROOT/$NAME install-newsboat
+	make -j${BUILD_JOBS} DESTDIR=$FAKEROOT/$NAME install-newsboat
 }
