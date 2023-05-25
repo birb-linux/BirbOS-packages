@@ -20,5 +20,5 @@ _build()
 
 _install()
 {
-	make -j${BUILD_JOBS} DESTDIR=$FAKEROOT/$NAME install-newsboat
+	make -j${BUILD_JOBS} prefix=/usr DESTDIR=$FAKEROOT/$NAME install-newsboat
 }
