@@ -22,16 +22,18 @@ _build()
 	mkdir -v build
 	cd       build
 
-	mlist=m64,m32
+	multilib_args="--disable-multilib"
+	if has_use "abi_x86_32"; then
+	  multilib_args="--enable-multilib --with-multilib-list=m64,m32"
+	fi
 	../configure --prefix=$FAKEROOT/$NAME/usr \
 				 LD=ld                        \
 				 --enable-languages=c,c++     \
 				 --enable-default-pie         \
 				 --enable-default-ssp         \
-				 --enable-multilib            \
-				 --with-multilib-list=$mlist  \
 				 --disable-bootstrap          \
-				 --with-system-zlib
+				 --with-system-zlib           \
+				 ${multilib_args}
 
 	make -j${BUILD_JOBS}
 }
