@@ -2,7 +2,7 @@ NAME="openblas"
 DESC="Optimized BLAS library based on GotoBLAS2 1.13 BSD version"
 VERSION="0.3.23"
 SOURCE="https://github.com/xianyi/OpenBLAS/releases/download/v${VERSION}/OpenBLAS-${VERSION}.tar.gz"
-CHECKSUM="6c35babfc01534eb04acba653d378839"
+CHECKSUM="115634b39007de71eb7e75cf7591dfb2"
 DEPS=""
 FLAGS=""
 
