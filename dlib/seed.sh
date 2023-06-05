@@ -27,7 +27,7 @@ _install()
 
 	if [ "$(birb_db --is-installed "nvidia-drivers")" == "yes" ]
 	then
-		if [ "$(birb_db --is-installed "nvidia-cuda-toolkit")" == "yes" ]
+		if [ "$(birb_db --is-installed "nvidia-cuda-toolkit")" == "no" ]
 		then
 			NOTES="The NVIDIA drivers seem to be installed, but you are missing the nvidia-cuda-toolkit package. If you need CUDA support, please install the nvidia-cuda-toolkit package and then reinstall this package"
 		fi
