@@ -29,6 +29,12 @@ _install()
 	DESTDIR=$FAKEROOT/$NAME ninja install
 }
 
+_post_install()
+{
+	# Update the mime database
+	update-mime-database /usr/share/mime
+}
+
 _build32()
 {
 	cd ..

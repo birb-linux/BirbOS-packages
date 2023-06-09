@@ -22,3 +22,8 @@ _install()
 	make DESTDIR=$FAKEROOT/$NAME install
 	install -vdm755 $FAKEROOT/$NAME/etc/ssl/local
 }
+
+_post_install()
+{
+	make-ca -g
+}

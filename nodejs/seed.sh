@@ -27,7 +27,7 @@ _build()
 
 _install()
 {
-	make install
+	make -j${BUILD_JOBS} install
 	ln -sf node $FAKEROOT/$NAME/usr/share/doc/node-${VERSION}
 }
 

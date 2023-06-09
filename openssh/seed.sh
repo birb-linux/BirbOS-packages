@@ -18,12 +18,15 @@ _build()
 	install  -v -m700 -d $FAKEROOT/$NAME/var/lib/sshd
 	chown    -v root:sys $FAKEROOT/$NAME/var/lib/sshd
 
-	groupadd -g 50 sshd
-	useradd  -c 'sshd PrivSep' \
-			 -d /var/lib/sshd  \
-			 -g sshd           \
-			 -s /bin/false     \
-			 -u 50 sshd
+	if [ -z "$(grep "sshd:" /etc/passwd)" ]
+	then
+		groupadd -g 50 sshd
+		useradd  -c 'sshd PrivSep' \
+				 -d /var/lib/sshd  \
+				 -g sshd           \
+				 -s /bin/false     \
+				 -u 50 sshd
+	fi
 
 	./configure --prefix=$FAKEROOT/$NAME/usr         \
             --sysconfdir=/etc/ssh                    \
