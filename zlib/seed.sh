@@ -14,14 +14,14 @@ _setup()
 
 _build()
 {
-	./configure --prefix=$FAKEROOT/$NAME/usr
+	./configure --prefix=/usr
 
 	make -j${BUILD_JOBS}
 }
 
 _install()
 {
-	make install
+	make DESTDIR=$FAKEROOT/$NAME install
 
 	# Remove a useless static library
 	rm -fv $FAKEROOT/$NAME/usr/lib/libz.a
