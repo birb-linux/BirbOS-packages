@@ -28,8 +28,11 @@ _build()
 _install()
 {
 	DESTDIR=$FAKEROOT/$NAME ninja install
+}
 
-	$FAKEROOT/$NAME/usr/bin/gdk-pixbuf-query-loaders --update-cache
+_post_install()
+{
+	gdk-pixbuf-query-loaders --update-cache
 }
 
 _test()
