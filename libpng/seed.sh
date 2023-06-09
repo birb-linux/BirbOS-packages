@@ -24,7 +24,7 @@ _build()
 _install()
 {
 	make install
-	mkdir -v $FAKEROOT/$NAME/usr/share/doc/libpng-${VERSION}
+	[ ! -d "$FAKEROOT/$NAME/usr/share/doc/libpng-${VERSION}" ] && mkdir -pv $FAKEROOT/$NAME/usr/share/doc/libpng-${VERSION}
 	cp -v README libpng-manual.txt $FAKEROOT/$NAME/usr/share/doc/libpng-${VERSION}
 }
 
