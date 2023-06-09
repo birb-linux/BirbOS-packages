@@ -45,6 +45,7 @@ _build()
 	# Install compiler-rt into the source tree
 	tar -xf ../compiler-rt-${VERSION}.src.tar.xz -C projects
 	mv projects/compiler-rt-${VERSION}.src projects/compiler-rt
+	ln -sr projects/compiler-rt ../compiler-rt
 
 	# Make sure that python scripts know to call python3
 	grep -rl '#!.*python' | xargs sed -i '1s/python$/python3/'
@@ -66,7 +67,7 @@ _build()
 		  -DLLVM_TARGETS_TO_BUILD="host;AMDGPU;BPF"  \
 		  -DLLVM_BINUTILS_INCDIR=/usr/include        \
 		  -DLLVM_INCLUDE_BENCHMARKS=OFF              \
-          -DLLVM_ENABLE_PROJECTS="clang-tools-extra" \
+          -DLLVM_ENABLE_PROJECTS="clang;clang-tools-extra;compiler-rt" \
 		  -DCLANG_DEFAULT_PIE_ON_LINUX=ON            \
 		  -Wno-dev -G Ninja ..
 	ninja
