@@ -3,7 +3,7 @@ DESC="A very fast and expressive template engine"
 VERSION="3.1.2"
 SOURCE="https://github.com/pallets/jinja/archive/refs/tags/${VERSION}.tar.gz"
 CHECKSUM="bd31ea57df9229c695f7ef755bfcda43"
-DEPS=""
+DEPS="markupsafe"
 FLAGS="python"
 
 _setup()
