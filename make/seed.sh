@@ -22,11 +22,6 @@ _build()
 _install()
 {
 	make install
-
-	# Make sure that the make locale files get overwritten
-	# if there are any leftover from the BirbOS installation
-	# process
-	rm -v /usr/share/locale/*/LC_MESSAGES/make.mo
 }
 
 _test()
