@@ -9,6 +9,11 @@ FLAGS=""
 _setup()
 {
 	tar -xf $DISTFILES/$(basename $SOURCE)
+
+	# Apply some patches to make steghide compile with the current version
+	# of GCC. The patch isn't official or anything, so it might not be
+	# perfect
+	patch -u -Np2 -d ./${NAME}-${VERSION} -i $PKG_PATH/steghide-${VERSION}_fixes.patch
 	cd ${NAME}-${VERSION}
 }
 

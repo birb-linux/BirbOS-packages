@@ -1,0 +1,110 @@
+diff -u b/src/Arguments.h a/src/Arguments.h
+--- a/src/Arguments.h	2023-07-29 22:24:23.259841986 +0300
++++ b/src/Arguments.h	2023-07-29 22:28:50.266720686 +0300
+@@ -100,7 +100,7 @@
+ 	static const VERBOSITY	Default_Verbosity = NORMAL ;
+ 	static const unsigned long	Default_Radius = 0 ; // there is no default radius for all file formats
+ 	static const unsigned int	Max_Algorithm = 3 ;
+-	static constexpr float		Default_Goal = 100.0 ;
++	static const float		Default_Goal = 100.0 ;
+ 	static const DEBUGCOMMAND	Default_DebugCommand = NONE ;
+ 	static const bool		Default_Check = false ;
+ 	static const unsigned int	Default_DebugLevel = 0 ;
+diff -u b/src/AuData.h a/src/AuData.h
+--- a/src/AuData.h	2023-07-29 22:24:23.259841986 +0300
++++ b/src/AuData.h	2023-07-29 22:26:56.823290348 +0300
+@@ -26,22 +26,22 @@
+ 
+ // AuMuLawAudioData
+ typedef AudioDataImpl<AuMuLaw,BYTE> AuMuLawAudioData ;
+-template<> inline BYTE AuMuLawAudioData::readValue (BinaryIO* io) const { return (io->read8()) ; }
+-template<> inline void AuMuLawAudioData::writeValue (BinaryIO* io, BYTE v) const { io->write8(v) ; }
++inline BYTE AuMuLawAudioData::readValue (BinaryIO* io) const { return (io->read8()) ; }
++inline void AuMuLawAudioData::writeValue (BinaryIO* io, BYTE v) const { io->write8(v) ; }
+ 
+ // AuPCM8AudioData
+ typedef AudioDataImpl<AuPCM8,SBYTE> AuPCM8AudioData ;
+-template<> inline SBYTE AuPCM8AudioData::readValue (BinaryIO* io) const { return ((SBYTE) io->read8()) ; }
+-template<> inline void AuPCM8AudioData::writeValue (BinaryIO* io, SBYTE v) const { io->write8((BYTE) v) ; }
++inline SBYTE AuPCM8AudioData::readValue (BinaryIO* io) const { return ((SBYTE) io->read8()) ; }
++inline void AuPCM8AudioData::writeValue (BinaryIO* io, SBYTE v) const { io->write8((BYTE) v) ; }
+ 
+ // AuPCM16AudioData
+ typedef AudioDataImpl<AuPCM16,SWORD16> AuPCM16AudioData ;
+-template<> inline SWORD16 AuPCM16AudioData::readValue (BinaryIO* io) const { return ((SWORD16) io->read16_be()) ; }
+-template<> inline void AuPCM16AudioData::writeValue (BinaryIO* io, SWORD16 v) const { io->write16_be((UWORD16) v) ; }
++inline SWORD16 AuPCM16AudioData::readValue (BinaryIO* io) const { return ((SWORD16) io->read16_be()) ; }
++inline void AuPCM16AudioData::writeValue (BinaryIO* io, SWORD16 v) const { io->write16_be((UWORD16) v) ; }
+ 
+ // AuPCM32AudioData
+ typedef AudioDataImpl<AuPCM32,SWORD32> AuPCM32AudioData ;
+-template<> inline SWORD32 AuPCM32AudioData::readValue (BinaryIO* io) const { return ((SWORD32) io->read32_be()) ; }
+-template<> inline void AuPCM32AudioData::writeValue (BinaryIO* io, SWORD32 v) const { io->write32_be((UWORD32) v) ; }
++inline SWORD32 AuPCM32AudioData::readValue (BinaryIO* io) const { return ((SWORD32) io->read32_be()) ; }
++inline void AuPCM32AudioData::writeValue (BinaryIO* io, SWORD32 v) const { io->write32_be((UWORD32) v) ; }
+ 
+ #endif // ndef SH_AUDATA_H
+diff -u b/src/AuSampleValues.cc a/src/AuSampleValues.cc
+--- a/src/AuSampleValues.cc	2023-07-29 22:24:23.266508658 +0300
++++ b/src/AuSampleValues.cc	2023-07-29 22:25:57.526576791 +0300
+@@ -21,17 +21,17 @@
+ #include "AuSampleValues.h"
+ 
+ // AuMuLawSampleValue
+-template<> const BYTE AuMuLawSampleValue::MinValue = 0 ;
+-template<> const BYTE AuMuLawSampleValue::MaxValue = BYTE_MAX ;
++const BYTE AuMuLawSampleValue::MinValue = 0 ;
++const BYTE AuMuLawSampleValue::MaxValue = BYTE_MAX ;
+ 
+ // AuPCM8SampleValue
+-template<> const SBYTE AuPCM8SampleValue::MinValue = SBYTE_MIN ;
+-template<> const SBYTE AuPCM8SampleValue::MaxValue = SBYTE_MAX ;
++const SBYTE AuPCM8SampleValue::MinValue = SBYTE_MIN ;
++const SBYTE AuPCM8SampleValue::MaxValue = SBYTE_MAX ;
+ 
+ // AuPCM16SampleValue
+-template<> const SWORD16 AuPCM16SampleValue::MinValue = SWORD16_MIN ;
+-template<> const SWORD16 AuPCM16SampleValue::MaxValue = SWORD16_MAX ;
++const SWORD16 AuPCM16SampleValue::MinValue = SWORD16_MIN ;
++const SWORD16 AuPCM16SampleValue::MaxValue = SWORD16_MAX ;
+ 
+ // AuPCM32SampleValue
+-template<> const SWORD32 AuPCM32SampleValue::MinValue = SWORD32_MIN ;
+-template<> const SWORD32 AuPCM32SampleValue::MaxValue = SWORD32_MAX ;
++const SWORD32 AuPCM32SampleValue::MinValue = SWORD32_MIN ;
++const SWORD32 AuPCM32SampleValue::MaxValue = SWORD32_MAX ;
+diff -u b/src/Graph.cc a/src/Graph.cc
+--- a/src/Graph.cc	2023-07-29 22:24:23.269841993 +0300
++++ b/src/Graph.cc	2023-07-29 22:32:07.130240317 +0300
+@@ -19,7 +19,6 @@
+  */
+ 
+ #include <ctime>
+-#include <climits>
+ #include <list>
+ #include <map>
+ #include <vector>
+diff -u b/src/MHashPP.cc a/src/MHashPP.cc
+--- a/src/MHashPP.cc	2023-07-29 22:24:23.263175322 +0300
++++ b/src/MHashPP.cc	2023-07-29 22:30:42.450157782 +0300
+@@ -120,7 +120,7 @@
+ 
+ std::string MHashPP::getAlgorithmName (hashid id)
+ {
+-	char *name = reinterpret_cast<char *>(mhash_get_hash_name (id)) ;
++	char *name = mhash_get_hash_name (id) ;
+ 	std::string retval ;
+ 	if (name == NULL) {
+ 		retval = std::string ("<algorithm not found>") ;
+diff -u b/src/ProgressOutput.h a/src/ProgressOutput.h
+--- a/src/ProgressOutput.h	2023-07-29 22:24:23.256508651 +0300
++++ b/src/ProgressOutput.h	2023-07-29 22:29:45.156770586 +0300
+@@ -64,7 +64,7 @@
+ 	 **/
+ 	void done (float rate, float avgweight = NoAvgWeight) const ;
+ 
+-	static constexpr float NoAvgWeight = -1.0 ;
++	static const float NoAvgWeight = -1.0 ;
+ 
+ 	protected:
+ 	std::string vcompose (const char *msgfmt, va_list ap) const ;
