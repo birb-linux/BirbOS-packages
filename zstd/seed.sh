@@ -14,15 +14,15 @@ _setup()
 
 _build()
 {
-	make -j${BUILD_JOBS} prefix=$FAKEROOT/$NAME/usr
+	make -j${BUILD_JOBS} prefix=/usr
 }
 
 _install()
 {
-	make prefix=$FAKEROOT/$NAME/usr install
+	make DESTDIR=$FAKEROOT/$NAME prefix=/usr install
 
 	# Remove the static library
-	rm -v $FAKEROOT/$NAME/usr/lib/libzstd.a
+	rm -vf $FAKEROOT/$NAME/usr/lib/libzstd.a
 }
 
 _build32()
