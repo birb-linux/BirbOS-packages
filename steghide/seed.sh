@@ -4,7 +4,7 @@ VERSION="0.5.1"
 SOURCE="http://prdownloads.sourceforge.net/steghide/steghide-${VERSION}.tar.gz"
 CHECKSUM="5be490e24807d921045780fd8cc446b3"
 DEPS="libjpeg-turbo mhash libmcrypt zlib"
-FLAGS=""
+FLAGS="wip"
 
 _setup()
 {
