@@ -4,7 +4,7 @@ VERSION="0.189"
 SOURCE="https://sourceware.org/ftp/elfutils/${VERSION}/elfutils-${VERSION}.tar.bz2"
 CHECKSUM="5cfaa711a90cb670406cd495aeaa6030"
 DEPS=""
-FLAGS="32bit test"
+FLAGS="32bit test important"
 
 _setup()
 {

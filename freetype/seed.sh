@@ -4,7 +4,7 @@ VERSION="2.13.0"
 SOURCE="https://downloads.sourceforge.net/freetype/freetype-${VERSION}.tar.xz"
 CHECKSUM="fe73327ebbf0b629f3ad24be656d59de"
 DEPS=""
-FLAGS=""
+FLAGS="important"
 
 _setup()
 {

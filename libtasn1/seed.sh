@@ -4,7 +4,7 @@ VERSION="4.19.0"
 SOURCE="https://ftp.gnu.org/gnu/libtasn1/libtasn1-${VERSION}.tar.gz"
 CHECKSUM="f701ab57eb8e7d9c105b2cd5d809b29a"
 DEPS=""
-FLAGS="test"
+FLAGS="test important"
 
 _setup()
 {

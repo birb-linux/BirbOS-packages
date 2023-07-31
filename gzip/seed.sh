@@ -4,7 +4,7 @@ VERSION="1.12"
 SOURCE="https://ftp.gnu.org/gnu/gzip/gzip-${VERSION}.tar.xz"
 CHECKSUM="9608e4ac5f061b2a6479dc44e917a5db"
 DEPS=""
-FLAGS="test"
+FLAGS="test important"
 
 _setup()
 {

@@ -4,7 +4,7 @@ VERSION="0.40.0"
 SOURCE="https://pypi.org/packages/source/w/wheel/wheel-${VERSION}.tar.gz"
 CHECKSUM="ec5004c46d1905da98bb5bc1a10ddd21"
 DEPS="python3 flit-core"
-FLAGS="python"
+FLAGS="python important"
 
 _setup()
 {

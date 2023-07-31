@@ -4,7 +4,7 @@ VERSION="5.45.4"
 SOURCE="https://prdownloads.sourceforge.net/expect/expect${VERSION}.tar.gz"
 CHECKSUM="00fce8de158422f5ccd2666512329bd2"
 DEPS="tcl"
-FLAGS=""
+FLAGS="important"
 
 _setup()
 {

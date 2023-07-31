@@ -4,7 +4,7 @@ VERSION="6.04"
 SOURCE="https://www.kernel.org/pub/linux/docs/man-pages/man-pages-${VERSION}.tar.xz"
 CHECKSUM="bbce1456edfa75a66c189cc594af6c4d"
 DEPS=""
-FLAGS=""
+FLAGS="important"
 
 _setup()
 {

@@ -4,7 +4,7 @@ VERSION="3.8.0"
 SOURCE="https://pypi.org/packages/source/f/flit-core/flit_core-${VERSION}.tar.gz"
 CHECKSUM="7c41da13273f7787709a24f74e0f5a99"
 DEPS="python3"
-FLAGS="python"
+FLAGS="python important"
 
 _setup()
 {

@@ -4,7 +4,7 @@ VERSION="2.5.1"
 SOURCE="https://www.kernel.org/pub/linux/utils/kbd/kbd-${VERSION}.tar.xz"
 CHECKSUM="10f10c0a9d897807733f2e2419814abb"
 DEPS=""
-FLAGS="test"
+FLAGS="test important"
 
 _setup()
 {

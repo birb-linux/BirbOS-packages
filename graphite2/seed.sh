@@ -4,7 +4,7 @@ VERSION="1.3.14"
 SOURCE="https://github.com/silnrsi/graphite/releases/download/${VERSION}/graphite2-${VERSION}.tgz"
 CHECKSUM="1bccb985a7da01092bfb53bb5041e836"
 DEPS="cmake"
-FLAGS="test"
+FLAGS="test important"
 
 _setup()
 {

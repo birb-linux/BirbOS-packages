@@ -4,7 +4,7 @@ VERSION="2.4.7"
 SOURCE="https://ftp.gnu.org/gnu/libtool/libtool-${VERSION}.tar.xz"
 CHECKSUM="2fc0b6ddcd66a89ed6e45db28fa44232"
 DEPS=""
-FLAGS="32bit test"
+FLAGS="32bit test important"
 
 _setup()
 {

@@ -4,7 +4,7 @@ VERSION="7.1.0"
 SOURCE="https://github.com/harfbuzz/harfbuzz/releases/download/${VERSION}/harfbuzz-${VERSION}.tar.xz"
 CHECKSUM="761fe38814b74eb6d66f450051604a1f"
 DEPS="icu cmake graphite2"
-FLAGS=""
+FLAGS="important"
 
 _setup()
 {

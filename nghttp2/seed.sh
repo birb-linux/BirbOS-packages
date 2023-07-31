@@ -4,7 +4,7 @@ VERSION="1.52.0"
 SOURCE="https://github.com/nghttp2/nghttp2/releases/download/v${VERSION}/nghttp2-${VERSION}.tar.xz"
 CHECKSUM="30cab20160abb7981c713544d31e2d60"
 DEPS="libxml2"
-FLAGS=""
+FLAGS="important"
 
 _setup()
 {

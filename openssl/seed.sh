@@ -4,7 +4,7 @@ VERSION="3.1.0"
 SOURCE="https://www.openssl.org/source/openssl-${VERSION}.tar.gz"
 CHECKSUM="f6c520aa2206d4d1fa71ea30b5e9a56d"
 DEPS="zlib perl"
-FLAGS="test 32bit"
+FLAGS="test 32bit important"
 
 _setup()
 {

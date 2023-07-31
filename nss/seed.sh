@@ -4,7 +4,7 @@ VERSION="3.88.1"
 SOURCE="https://archive.mozilla.org/pub/security/nss/releases/NSS_3_88_1_RTM/src/nss-${VERSION}.tar.gz"
 CHECKSUM="7ca8ff8ed672d82290c3122f38708579"
 DEPS="nspr zlib sqlite"
-FLAGS=""
+FLAGS="important"
 
 _setup()
 {

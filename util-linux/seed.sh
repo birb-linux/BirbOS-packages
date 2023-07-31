@@ -5,7 +5,7 @@ SHORT_VER="$(echo $VERSION | awk -F'.' '{print $1 "." $2}')"
 SOURCE="https://www.kernel.org/pub/linux/utils/util-linux/v${SHORT_VER}/util-linux-${VERSION}.tar.xz"
 CHECKSUM="cd11456f4ddd31f7fbfdd9488c0c0d02"
 DEPS=""
-FLAGS="32bit"
+FLAGS="32bit important"
 
 _setup()
 {

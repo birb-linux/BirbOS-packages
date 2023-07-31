@@ -4,7 +4,7 @@ VERSION="2.68"
 SOURCE="https://www.kernel.org/pub/linux/libs/security/linux-privs/libcap2/libcap-${VERSION}.tar.xz"
 CHECKSUM="ffb9e9c87704f92ac75201327841e753"
 DEPS=""
-FLAGS="32bit test"
+FLAGS="32bit test important"
 
 _setup()
 {

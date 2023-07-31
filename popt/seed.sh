@@ -4,7 +4,7 @@ VERSION="1.19"
 SOURCE="http://ftp.rpm.org/popt/releases/popt-1.x/popt-${VERSION}.tar.gz"
 CHECKSUM="eaa2135fddb6eb03f2c87ee1823e5a78"
 DEPS=""
-FLAGS=""
+FLAGS="important"
 
 _setup()
 {

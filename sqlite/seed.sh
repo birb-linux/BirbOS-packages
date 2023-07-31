@@ -4,7 +4,7 @@ VERSION="3400100"
 SOURCE="https://sqlite.org/2022/sqlite-autoconf-${VERSION}.tar.gz"
 CHECKSUM="42175b1a1d23529cb133bbd2b5900afd"
 DEPS=""
-FLAGS=""
+FLAGS="important"
 
 _setup()
 {

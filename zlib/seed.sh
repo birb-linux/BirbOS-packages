@@ -4,7 +4,7 @@ VERSION="1.2.13"
 SOURCE="https://zlib.net/zlib-${VERSION}.tar.xz"
 CHECKSUM="7d9fc1d78ae2fa3e84fe98b77d006c63"
 DEPS=""
-FLAGS="32bit"
+FLAGS="32bit important"
 
 _setup()
 {

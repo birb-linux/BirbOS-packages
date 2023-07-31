@@ -4,8 +4,7 @@ VERSION="3.2.11"
 SOURCE="https://github.com/eudev-project/eudev/releases/download/v${VERSION}/eudev-${VERSION}.tar.gz"
 CHECKSUM="417ba948335736d4d81874fba47a30f7"
 DEPS=""
-FLAGS="test"
-FLAGS="test 32bit"
+FLAGS="test 32bit important"
 
 _setup()
 {

@@ -4,7 +4,7 @@ VERSION="0.29.2"
 SOURCE="https://pkg-config.freedesktop.org/releases/pkg-config-${VERSION}.tar.gz"
 CHECKSUM="f6e931e319531b736fadc017f470e68a"
 DEPS=""
-FLAGS="test"
+FLAGS="test important"
 
 _setup()
 {

@@ -4,7 +4,7 @@ VERSION="30"
 SOURCE="https://www.kernel.org/pub/linux/utils/kernel/kmod/kmod-${VERSION}.tar.xz"
 CHECKSUM="85202f0740a75eb52f2163c776f9b564"
 DEPS="openssl zstd zlib xz"
-FLAGS="32bit"
+FLAGS="32bit important"
 
 _setup()
 {

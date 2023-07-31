@@ -4,7 +4,7 @@ VERSION="6.2.0"
 SOURCE="https://www.kernel.org/pub/linux/utils/net/iproute2/iproute2-${VERSION}.tar.xz"
 CHECKSUM="85861856a856f6d358c6d9a4fc9088c9"
 DEPS=""
-FLAGS=""
+FLAGS="important"
 
 _setup()
 {

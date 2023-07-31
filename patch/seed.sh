@@ -4,7 +4,7 @@ VERSION="2.7.6"
 SOURCE="https://ftp.gnu.org/gnu/patch/patch-${VERSION}.tar.xz"
 CHECKSUM="78ad9937e4caadcba1526ef1853730d5"
 DEPS=""
-FLAGS="test"
+FLAGS="test important"
 
 _setup()
 {

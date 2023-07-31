@@ -4,7 +4,7 @@ VERSION="1.4.19"
 SOURCE="https://ftp.gnu.org/gnu/m4/m4-${VERSION}.tar.xz"
 CHECKSUM="0d90823e1426f1da2fd872df0311298d"
 DEPS=""
-FLAGS="test"
+FLAGS="test important"
 
 _setup()
 {

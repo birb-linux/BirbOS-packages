@@ -4,7 +4,7 @@ VERSION="73_1"
 SOURCE="https://github.com/unicode-org/icu/releases/download/release-$(echo "$VERSION" | cut -d'_' -f1)-$(echo "$VERSION" | cut -d'_' -f2)/icu4c-${VERSION}-src.tgz"
 CHECKSUM="c1f94c7865846eaecbbef8546aa8126b"
 DEPS=""
-FLAGS="32bit test"
+FLAGS="32bit test important"
 
 _setup()
 {

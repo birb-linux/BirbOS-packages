@@ -4,7 +4,7 @@ VERSION="1.1.0"
 SOURCE="https://github.com/mesonbuild/meson/releases/download/${VERSION}/meson-${VERSION}.tar.gz"
 CHECKSUM="94ea898bcf799470878e60809be80467"
 DEPS="python3 wheel"
-FLAGS="python"
+FLAGS="python important"
 
 _setup()
 {

@@ -4,7 +4,7 @@ VERSION="1.34"
 SOURCE="https://ftp.gnu.org/gnu/tar/tar-${VERSION}.tar.xz"
 CHECKSUM="9a08d29a9ac4727130b5708347c0f5cf"
 DEPS=""
-FLAGS=""
+FLAGS="important"
 
 _setup()
 {

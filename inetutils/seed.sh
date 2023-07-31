@@ -4,7 +4,7 @@ VERSION="2.4"
 SOURCE="https://ftp.gnu.org/gnu/inetutils/inetutils-${VERSION}.tar.xz"
 CHECKSUM="319d65bb5a6f1847c4810651f3b4ba74"
 DEPS=""
-FLAGS="test"
+FLAGS="test important"
 
 _setup()
 {

@@ -4,7 +4,7 @@ VERSION="7.0.3"
 SOURCE="https://ftp.gnu.org/gnu/texinfo/texinfo-${VERSION}.tar.xz"
 CHECKSUM="37bf94fd255729a14d4ea3dda119f81a"
 DEPS="ncurses perl intltool gettext"
-FLAGS="test"
+FLAGS="test important"
 
 _setup()
 {

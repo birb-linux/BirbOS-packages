@@ -4,7 +4,7 @@ VERSION="0.51.0"
 SOURCE="https://launchpad.net/intltool/trunk/${VERSION}/+download/intltool-${VERSION}.tar.gz"
 CHECKSUM="12e517cac2b57a0121cda351570f1e63"
 DEPS=""
-FLAGS="test"
+FLAGS="test important"
 
 _setup()
 {

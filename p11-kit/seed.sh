@@ -4,7 +4,7 @@ VERSION="0.24.1"
 SOURCE="https://github.com/p11-glue/p11-kit/releases/download/${VERSION}/p11-kit-${VERSION}.tar.xz"
 CHECKSUM="67b2539bdca6b4bedaeecc12864d2796"
 DEPS="libtasn1"
-FLAGS="test"
+FLAGS="test important"
 
 _setup()
 {
