@@ -15,8 +15,8 @@ _setup()
 
 _build()
 {
-	mkdir build
-	cd    build
+	mkdir bld
+	cd    bld
 
 	meson --prefix=/usr --buildtype=release ..
 	ninja
