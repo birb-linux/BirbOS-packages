@@ -4,7 +4,7 @@ VERSION="0.1.98"
 SHORT_VERSION="$(echo $VERSION | awk -F'.' '{print $1 "." $2}')"
 SOURCE="https://download.gimp.org/pub/babl/${SHORT_VERSION}/babl-${VERSION}.tar.xz"
 CHECKSUM="0fd5f826e2ef14de04d978c203a3fe28"
-DEPS="librsvg"
+DEPS="librsvg little-cms"
 FLAGS="test"
 
 _setup()
