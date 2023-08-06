@@ -20,6 +20,8 @@ _build()
 _install()
 {
 	install -v -m755 libiniparser.so.1 $FAKEROOT/$NAME/usr/lib
+	install -v -m644 src/{iniparser,dictionary}.h $FAKEROOT/$NAME/usr/include
+
 	ln -srv $FAKEROOT/$NAME/usr/lib/libiniparser.so.1 $FAKEROOT/$NAME/usr/lib/libiniparser.so.0
 	ln -srv $FAKEROOT/$NAME/usr/lib/libiniparser.so.1 $FAKEROOT/$NAME/usr/lib/libiniparser.so
 }
