@@ -21,6 +21,7 @@ _install()
 {
 	install -v -m755 libiniparser.so.1 $FAKEROOT/$NAME/usr/lib
 	ln -srv $FAKEROOT/$NAME/usr/lib/libiniparser.so.1 $FAKEROOT/$NAME/usr/lib/libiniparser.so.0
+	ln -srv $FAKEROOT/$NAME/usr/lib/libiniparser.so.1 $FAKEROOT/$NAME/usr/lib/libiniparser.so
 }
 
 _test()
