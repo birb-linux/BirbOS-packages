@@ -14,6 +14,10 @@ _setup()
 
 _build()
 {
+	# Make sure that LTO is disabled
+	CFLAGS="$CFLAGS -fno-lto"
+	CXXFLAGS="$CXXFLAGS -fno-lto"
+
 	# Install rustc to opt
 	mkdir -pv $FAKEROOT/$NAME/opt/rustc-${VERSION}
 	ln -svfn rustc-${VERSION} /opt/rustc
