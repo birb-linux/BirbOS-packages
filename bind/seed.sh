@@ -6,6 +6,7 @@ SOURCE="https://ftp.isc.org/isc/bind${MAJOR_VERSION}/${VERSION}/bind-${VERSION}.
 CHECKSUM="101a5d919a8d7da1ae98f36e36d1dc9f"
 DEPS="libuv json-c libcap-pam"
 FLAGS=""
+NOTES="If you want to uninstall BIND, you'll need to manually remove the /srv/named directory afterwards"
 
 _setup()
 {
@@ -36,22 +37,22 @@ _post_install()
 	# Create an unprivileged user and group
 	groupadd -g 20 named
 	useradd -c "BIND Owner" -g named -s /bin/false -u 20 named
-	install -d -m770 -o named -g named $FAKEROOT/$NAME/srv/named
+	install -d -m770 -o named -g named /srv/named
 
 	# Setup file and directories needed by bind
-	mkdir -p $FAKEROOT/$NAME/srv/named
-	cd       $FAKEROOT/$NAME/srv/named
+	mkdir -p /srv/named
+	cd       /srv/named
 	mkdir -p dev etc/named/{slave,pz} usr/lib/engines var/run/named
-	mknod $FAKEROOT/$NAME/srv/named/dev/null c 1 3
-	mknod $FAKEROOT/$NAME/srv/named/dev/urandom c 1 9
-	chmod 666 $FAKEROOT/$NAME/srv/named/dev/{null,urandom}
+	mknod /srv/named/dev/null c 1 3
+	mknod /srv/named/dev/urandom c 1 9
+	chmod 666 /srv/named/dev/{null,urandom}
 	cp /etc/localtime etc
 
 	# Generate a key
-	rndc-confgen -a -b 512 -t $FAKEROOT/$NAME/srv/named
+	rndc-confgen -a -b 512 -t /srv/named
 
 	# Create a configuration file for named
-	cat >> $FAKEROOT/$NAME/srv/named/etc/named.conf << "EOF"
+	cat >> /srv/named/etc/named.conf << "EOF"
 options {
     directory "/etc/named";
     pid-file "/var/run/named.pid";
@@ -106,7 +107,7 @@ logging {
 EOF
 
 	# Create a zone file
-	cat > $FAKEROOT/$NAME/srv/named/etc/named/pz/127.0.0 << "EOF"
+	cat > /srv/named/etc/named/pz/127.0.0 << "EOF"
 $TTL 3D
 @      IN      SOA     ns.local.domain. hostmaster.local.domain. (
                         1       ; Serial
@@ -119,7 +120,7 @@ $TTL 3D
 EOF
 
 	# Create root hints
-	cat > $FAKEROOT/$NAME/srv/named/etc/named/root.hints << "EOF"
+	cat > /srv/named/etc/named/root.hints << "EOF"
 .                       6D  IN      NS      A.ROOT-SERVERS.NET.
 .                       6D  IN      NS      B.ROOT-SERVERS.NET.
 .                       6D  IN      NS      C.ROOT-SERVERS.NET.
@@ -162,5 +163,5 @@ M.ROOT-SERVERS.NET.     6D  IN      AAAA    2001:dc3::35
 EOF
 
 	# Set permissions to the chroot jail
-	chown -R named:named $FAKEROOT/$NAME/srv/named
+	chown -R named:named /srv/named
 }
