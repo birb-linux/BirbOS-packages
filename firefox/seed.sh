@@ -14,6 +14,8 @@ _setup()
 
 _build()
 {
+	disable_lto
+
 	# Configure the build
 	cat > mozconfig << "EOF"
 # If you have a multicore machine, all cores will be used by default.
