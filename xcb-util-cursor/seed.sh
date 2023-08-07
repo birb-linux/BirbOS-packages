@@ -14,6 +14,9 @@ _setup()
 
 _build()
 {
+	# Make sure that LTO is disabled
+	export CFLAGS="$CFLAGS -fno-lto"
+
 	./configure $XORG_CONFIG
 	make -j${BUILD_JOBS}
 }
