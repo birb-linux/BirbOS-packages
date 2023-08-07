@@ -14,10 +14,10 @@ _setup()
 
 _build()
 {
-	./configure --prefix=$FAKEROOT/$NAME/usr        \
-            --disable-static                        \
-            --with-openssl                          \
-            --enable-threaded-resolver              \
+	./configure --prefix=/usr              \
+            --disable-static               \
+            --with-openssl                 \
+            --enable-threaded-resolver     \
             --with-ca-path=/etc/ssl/certs
 
 	make
@@ -25,7 +25,7 @@ _build()
 
 _install()
 {
-	make install &&
+	DESTDIR=$FAKEROOT/$NAME make install
 
 	rm -rf docs/examples/.deps
 
