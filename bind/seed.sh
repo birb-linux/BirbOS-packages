@@ -35,8 +35,11 @@ _install()
 _post_install()
 {
 	# Create an unprivileged user and group
-	groupadd -g 20 named
-	useradd -c "BIND Owner" -g named -s /bin/false -u 20 named
+	if [ -z "$(grep "named" /etc/group)" ]
+	then
+		groupadd -g 20 named
+		useradd -c "BIND Owner" -g named -s /bin/false -u 20 named
+	fi
 	install -d -m770 -o named -g named /srv/named
 
 	# Setup file and directories needed by bind
