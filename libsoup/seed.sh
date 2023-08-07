@@ -5,7 +5,7 @@ SHORT_VERSION="$(echo $VERSION | awk -F'.' '{ print $1 "." $2 }')"
 SOURCE="https://download.gnome.org/sources/libsoup/${SHORT_VERSION}/libsoup-${VERSION}.tar.xz"
 CHECKSUM="33902089d52f862d6b39680dd4c4e3aa"
 DEPS="glib-networking libpsl libxml2 nghttp2 sqlite mit-kerberos5"
-FLAGS=""
+FLAGS="wip"
 
 _setup()
 {
