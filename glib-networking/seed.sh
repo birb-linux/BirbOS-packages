@@ -19,8 +19,7 @@ _build()
 	cd    build
 
 	meson --prefix=/usr       \
-		  --openssl=enabled   \
-		  --buildtype=release
+		  --buildtype=release &&
 	ninja
 }
 
