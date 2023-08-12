@@ -14,14 +14,14 @@ _setup()
 
 _build()
 {
-	./configure --prefix=$FAKEROOT/$NAME/usr
+	./configure --prefix=/usr
 
 	make -j${BUILD_JOBS}
 }
 
 _install()
 {
-	make install
+	make DESTDIR=$FAKEROOT/$NAME install
 
 	# Remove a useless static library
 	rm -fv /usr/lib/libltdl.a
@@ -40,7 +40,7 @@ _build32()
 
 	CC="gcc -m32" ./configure \
 		--host=i686-pc-linux-gnu \
-		--prefix=$FAKEROOT/$NAME/usr \
+		--prefix=/usr \
 		--libdir=/usr/lib32
 
 	make -j${BUILD_JOBS}
