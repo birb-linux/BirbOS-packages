@@ -1,8 +1,8 @@
 NAME="xorg-server"
 DESC="The core of the X Window system"
-VERSION="21.1.7"
+VERSION="21.1.8"
 SOURCE="https://www.x.org/pub/individual/xserver/xorg-server-${VERSION}.tar.xz"
-CHECKSUM="277a842f1e223820a31a9bd7887d2aab"
+CHECKSUM="79a6eb04b1b17ad6c7aab46da73944e8"
 DEPS="libxcvt pixman font-util xkeyboard-config elogind polkit libtirpc libepoxy libinput"
 FLAGS=""
 
