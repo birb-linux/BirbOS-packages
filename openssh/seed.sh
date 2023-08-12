@@ -14,6 +14,8 @@ _setup()
 
 _build()
 {
+	disable_lto
+
 	# Create a separate sshd user and files
 	install  -v -m700 -d $FAKEROOT/$NAME/var/lib/sshd
 	chown    -v root:sys $FAKEROOT/$NAME/var/lib/sshd
