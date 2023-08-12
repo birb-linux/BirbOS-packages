@@ -14,6 +14,8 @@ _setup()
 
 _build()
 {
+	disable_lto
+
 	./configure --prefix=$FAKEROOT/$NAME/usr     \
             --sysconfdir=/etc                    \
             --localstatedir=/var                 \
