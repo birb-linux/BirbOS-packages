@@ -14,11 +14,11 @@ _setup()
 
 _build()
 {
-	meson setup build
+	meson setup --prefix=/usr build
 	meson compile -C build
 }
 
 _install()
 {
-	prefix=/usr DESTDIR=$FAKEROOT/$NAME meson install -C build
+	DESTDIR=$FAKEROOT/$NAME meson install -C build
 }
