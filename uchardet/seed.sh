@@ -14,7 +14,7 @@ _setup()
 
 _build()
 {
-	cmake .
+	cmake -DCMAKE_INSTALL_PREFIX=/usr .
 	make -j${BUILD_JOBS}
 }
 
