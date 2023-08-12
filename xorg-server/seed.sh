@@ -35,4 +35,7 @@ _install()
 /tmp/.ICE-unix dir 1777 root root
 /tmp/.X11-unix dir 1777 root root
 EOF
+
+	# Get rid of the input testing driver because it conflicts with libinput
+	rm -r $FAKEROOT/$NAME/usr/lib/xorg/modules/input
 }
