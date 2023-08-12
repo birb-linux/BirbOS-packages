@@ -19,6 +19,8 @@ _setup()
 
 _build()
 {
+	disable_lto
+
 	mkdir -v build
 	cd       build
 

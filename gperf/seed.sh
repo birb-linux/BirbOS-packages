@@ -4,7 +4,7 @@ VERSION="3.1"
 SOURCE="https://ftp.gnu.org/gnu/gperf/gperf-${VERSION}.tar.gz"
 CHECKSUM="9e251c0a618ad0824b51117d5d9db87e"
 DEPS=""
-FLAGS="test"
+FLAGS="test important"
 
 _setup()
 {

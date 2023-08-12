@@ -14,10 +14,11 @@ _setup()
 
 _build()
 {
-	./configure $XORG_CONFIG
+	./configure --prefix=/usr --sysconfdir=/etc \
+		--localstatedir=/var --disable-static
 }
 
 _install()
 {
-	make install
+	make DESTDIR=$FAKEROOT/$NAME install
 }

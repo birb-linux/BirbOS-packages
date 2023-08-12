@@ -4,7 +4,7 @@ VERSION="1.5.7"
 SOURCE="https://download.savannah.gnu.org/releases/libpipeline/libpipeline-${VERSION}.tar.gz"
 CHECKSUM="1a48b5771b9f6c790fb4efdb1ac71342"
 DEPS=""
-FLAGS="test"
+FLAGS="test important"
 
 _setup()
 {

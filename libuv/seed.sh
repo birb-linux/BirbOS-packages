@@ -4,7 +4,7 @@ VERSION="1.44.2"
 SOURCE="https://dist.libuv.org/dist/v${VERSION}/libuv-v${VERSION}.tar.gz"
 CHECKSUM="0addbddcb1098e2c1c99f03f0108e1e7"
 DEPS=""
-FLAGS=""
+FLAGS="important"
 
 _setup()
 {

@@ -1,8 +1,8 @@
 NAME="lua"
 DESC="Powerful light-weight programming language"
-VERSION="5.4.4"
+VERSION="5.4.6"
 SOURCE="https://www.lua.org/ftp/lua-${VERSION}.tar.gz"
-CHECKSUM="bd8ce7069ff99a400efd14cf339a727b"
+CHECKSUM="25a429319dff20dfbfb9956c2b5be911"
 DEPS=""
 FLAGS=""
 

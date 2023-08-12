@@ -4,7 +4,7 @@ VERSION="2.11.2"
 SOURCE="https://download.savannah.gnu.org/releases/man-db/man-db-${VERSION}.tar.xz"
 CHECKSUM="a7d59fb2df6158c44f8f7009dcc6d875"
 DEPS=""
-FLAGS="test"
+FLAGS="test important"
 
 _setup()
 {

@@ -4,7 +4,7 @@ VERSION="1.4.19"
 SOURCE="https://ftp.gnu.org/gnu/m4/m4-${VERSION}.tar.xz"
 CHECKSUM="0d90823e1426f1da2fd872df0311298d"
 DEPS=""
-FLAGS="test"
+FLAGS="test important"
 
 _setup()
 {
@@ -14,7 +14,7 @@ _setup()
 
 _build()
 {
-	./configure --prefix=$FAKEROOT/$NAME/usr
+	./configure --prefix=/usr
 
 	make -j${BUILD_JOBS}
 }
@@ -26,5 +26,5 @@ _test()
 
 _install()
 {
-	make install
+	make DESTDIR=$FAKEROOT/$NAME install
 }

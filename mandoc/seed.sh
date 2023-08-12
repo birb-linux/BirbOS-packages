@@ -4,7 +4,7 @@ VERSION="1.14.6"
 SOURCE="https://mandoc.bsd.lv/snapshots/mandoc-${VERSION}.tar.gz"
 CHECKSUM="f0adf24e8fdef5f3e332191f653e422a"
 DEPS=""
-FLAGS="test"
+FLAGS="test important"
 
 _setup()
 {

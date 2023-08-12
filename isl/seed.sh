@@ -4,7 +4,7 @@ VERSION="0.24"
 SOURCE="https://gcc.gnu.org/pub/gcc/infrastructure/isl-${VERSION}.tar.bz2"
 CHECKSUM="dd2f7b78e118c25bd96134a52aae7f4d"
 DEPS=""
-FLAGS=""
+FLAGS="important"
 
 _setup()
 {

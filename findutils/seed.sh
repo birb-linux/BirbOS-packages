@@ -4,7 +4,7 @@ VERSION="4.9.0"
 SOURCE="https://ftp.gnu.org/gnu/findutils/findutils-${VERSION}.tar.xz"
 CHECKSUM="4a4a547e888a944b2f3af31d789a1137"
 DEPS=""
-FLAGS="test"
+FLAGS="test important"
 
 _setup()
 {

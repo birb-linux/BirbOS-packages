@@ -1,10 +1,11 @@
 NAME="nss"
 DESC="A set of libraries designed to support cross-platform development of security-enabled client and server applications"
-VERSION="3.88.1"
-SOURCE="https://archive.mozilla.org/pub/security/nss/releases/NSS_3_88_1_RTM/src/nss-${VERSION}.tar.gz"
-CHECKSUM="7ca8ff8ed672d82290c3122f38708579"
+VERSION="3.90"
+ALT_VERSION="$(echo $VERSION | sed 's/\./_/g')"
+SOURCE="https://archive.mozilla.org/pub/security/nss/releases/NSS_${ALT_VERSION}_RTM/src/nss-${VERSION}.tar.gz"
+CHECKSUM="d83c24d03fb4f9a7f688b5d7c6938972"
 DEPS="nspr zlib sqlite"
-FLAGS=""
+FLAGS="important"
 
 _setup()
 {

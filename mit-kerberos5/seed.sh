@@ -20,6 +20,9 @@ _build()
 	sed -i -e '/eq 0/{N;s/12 //}'    plugins/kdb/db2/libdb2/test/run.test
 	sed -i '/t_kadm5.py/d'           lib/kadm5/Makefile.in
 
+	# Make sure LTO is disabled
+	export CFLAGS="$CFLAGS -fno-lto"
+
 	./configure --prefix=/usr            \
 				--sysconfdir=/etc        \
 				--localstatedir=/var/lib \

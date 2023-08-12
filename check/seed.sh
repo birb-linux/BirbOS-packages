@@ -4,7 +4,7 @@ VERSION="0.15.2"
 SOURCE="https://github.com/libcheck/check/releases/download/${VERSION}/check-${VERSION}.tar.gz"
 CHECKSUM="50fcafcecde5a380415b12e9c574e0b2"
 DEPS=""
-FLAGS="test"
+FLAGS="test important"
 
 _setup()
 {

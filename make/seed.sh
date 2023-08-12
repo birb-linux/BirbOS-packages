@@ -4,7 +4,7 @@ VERSION="4.4.1"
 SOURCE="https://ftp.gnu.org/gnu/make/make-${VERSION}.tar.gz"
 CHECKSUM="c8469a3713cbbe04d955d4ae4be23eeb"
 DEPS=""
-FLAGS="test"
+FLAGS="test important"
 
 _setup()
 {

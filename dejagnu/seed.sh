@@ -4,7 +4,7 @@ VERSION="1.6.3"
 SOURCE="https://ftp.gnu.org/gnu/dejagnu/dejagnu-${VERSION}.tar.gz"
 CHECKSUM="68c5208c58236eba447d7d6d1326b821"
 DEPS="expect"
-FLAGS=""
+FLAGS="important"
 
 _setup()
 {

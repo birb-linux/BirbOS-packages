@@ -4,7 +4,7 @@ VERSION="2.6.4"
 SOURCE="https://github.com/westes/flex/releases/download/v${VERSION}/flex-${VERSION}.tar.gz"
 CHECKSUM="2882e3179748cc9f9c23ec593d6adc8d"
 DEPS=""
-FLAGS="test"
+FLAGS="test important"
 
 _setup()
 {

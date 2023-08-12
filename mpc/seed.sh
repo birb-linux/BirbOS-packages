@@ -4,7 +4,7 @@ VERSION="1.3.1"
 SOURCE="https://ftp.gnu.org/gnu/mpc/mpc-${VERSION}.tar.gz"
 CHECKSUM="5c9bc658c9fd0f940e8e3e0f09530c62"
 DEPS=""
-FLAGS="test"
+FLAGS="test important"
 
 _setup()
 {

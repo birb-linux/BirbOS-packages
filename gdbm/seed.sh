@@ -4,7 +4,7 @@ VERSION="1.23"
 SOURCE="https://ftp.gnu.org/gnu/gdbm/gdbm-${VERSION}.tar.gz"
 CHECKSUM="8551961e36bf8c70b7500d255d3658ec"
 DEPS=""
-FLAGS="test"
+FLAGS="test important"
 
 _setup()
 {

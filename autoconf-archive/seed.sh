@@ -14,14 +14,14 @@ _setup()
 
 _build()
 {
-	./configure --prefix=$FAKEROOT/$NAME/usr \
-		--bindir=$FAKEROOT/$NAME/usr         \
-		--sbindir=$FAKEROOT/$NAME/usr
+	./configure --prefix=/usr \
+		--bindir=/usr         \
+		--sbindir=/usr
 
 	make -j${BUILD_JOBS}
 }
 
 _install()
 {
-	make install
+	make DESTDIR=$FAKEROOT/$NAME install
 }

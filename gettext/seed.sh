@@ -4,7 +4,7 @@ VERSION="0.21.1"
 SOURCE="https://ftp.gnu.org/gnu/gettext/gettext-${VERSION}.tar.xz"
 CHECKSUM="27fcc8a42dbc8f334f23a08f1f2fe00a"
 DEPS="acl ncurses"
-FLAGS="test"
+FLAGS="test important"
 
 _setup()
 {

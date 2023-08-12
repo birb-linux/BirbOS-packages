@@ -4,7 +4,7 @@ VERSION="2.5.1"
 SOURCE="https://download.savannah.gnu.org/releases/attr/attr-${VERSION}.tar.gz"
 CHECKSUM="ac1c5a7a084f0f83b8cace34211f64d8"
 DEPS=""
-FLAGS="32bit test"
+FLAGS="32bit test important"
 
 _setup()
 {

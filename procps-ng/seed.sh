@@ -4,7 +4,7 @@ VERSION="4.0.3"
 SOURCE="https://sourceforge.net/projects/procps-ng/files/Production/procps-ng-${VERSION}.tar.xz"
 CHECKSUM="22b287bcd758831cbaf3356cd3054fe7"
 DEPS=""
-FLAGS="test"
+FLAGS="test important"
 
 _setup()
 {

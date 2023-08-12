@@ -4,7 +4,7 @@ VERSION="20230405"
 SOURCE="https://github.com/Mic92/iana-etc/releases/download/${VERSION}/iana-etc-${VERSION}.tar.gz"
 CHECKSUM="c8931836fa045c98b3a4eefdd911d54c"
 DEPS=""
-FLAGS=""
+FLAGS="important"
 
 _setup()
 {

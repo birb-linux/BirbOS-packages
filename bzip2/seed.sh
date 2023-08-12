@@ -4,7 +4,7 @@ VERSION="1.0.8"
 SOURCE="https://www.sourceware.org/pub/bzip2/bzip2-${VERSION}.tar.gz"
 CHECKSUM="67e051268d0c475ea773822f7500d0e5"
 DEPS=""
-FLAGS="32bit"
+FLAGS="32bit important"
 
 _setup()
 {

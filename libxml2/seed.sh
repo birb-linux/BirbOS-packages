@@ -4,7 +4,7 @@ VERSION="2.10.4"
 SOURCE="https://download.gnome.org/sources/libxml2/$(echo "$VERSION" | awk -F '.' '{print $1 "." $2}')/libxml2-${VERSION}.tar.xz"
 CHECKSUM="76808c467a58c31e2dbd511e71d5fd13"
 DEPS="icu"
-FLAGS=""
+FLAGS="important"
 
 _setup()
 {

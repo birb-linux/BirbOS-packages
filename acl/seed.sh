@@ -4,7 +4,7 @@ VERSION="2.3.1"
 SOURCE="https://download.savannah.gnu.org/releases/acl/acl-${VERSION}.tar.xz"
 CHECKSUM="95ce715fe09acca7c12d3306d0f076b2"
 DEPS=""
-FLAGS="32bit"
+FLAGS="32bit important"
 
 _setup()
 {

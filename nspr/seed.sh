@@ -4,7 +4,7 @@ VERSION="4.35"
 SOURCE="https://archive.mozilla.org/pub/nspr/releases/v${VERSION}/src/nspr-${VERSION}.tar.gz"
 CHECKSUM="5e0acf9fbdde85181bddd510f4624841"
 DEPS=""
-FLAGS=""
+FLAGS="important"
 
 _setup()
 {

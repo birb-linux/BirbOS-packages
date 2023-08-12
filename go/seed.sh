@@ -32,10 +32,10 @@ _build()
 _install()
 {
 	# Remove any precompiled binaries
-	rm -rf /tmp/birb_package_build/go/go /tmp/birb_package_build/go/go${VERSION}.linux-amd64.tar.gz
+	rm -rf $TEMPORARY_BUILD_DIR/go/go $TEMPORARY_BUILD_DIR/go/go${VERSION}.linux-amd64.tar.gz
 
 	mkdir -p $FAKEROOT/$NAME/opt
-	cp -r /tmp/birb_package_build/go $FAKEROOT/$NAME/opt/go
+	cp -r $TEMPORARY_BUILD_DIR/go $FAKEROOT/$NAME/opt/go
 
 	# Make sure that go gets added to $PATH
 	ln -sfvr $FAKEROOT/$NAME/opt/go/bin/{go,gofmt} $FAKEROOT/$NAME/usr/bin/

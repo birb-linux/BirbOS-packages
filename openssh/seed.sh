@@ -1,8 +1,8 @@
 NAME="openssh"
 DESC="SSH clients and the sshd daemon"
-VERSION="9.2p1"
+VERSION="9.4p1"
 SOURCE="https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-${VERSION}.tar.gz"
-CHECKSUM="f78b2acac4bb299629a8c58ddc3fac63"
+CHECKSUM="4bbd56a7ba51b0cd61debe8f9e77f8bb"
 DEPS=""
 FLAGS=""
 
@@ -14,6 +14,8 @@ _setup()
 
 _build()
 {
+	disable_lto
+
 	# Create a separate sshd user and files
 	install  -v -m700 -d $FAKEROOT/$NAME/var/lib/sshd
 	chown    -v root:sys $FAKEROOT/$NAME/var/lib/sshd

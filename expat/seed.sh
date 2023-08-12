@@ -4,7 +4,7 @@ VERSION="2.5.0"
 SOURCE="https://prdownloads.sourceforge.net/expat/expat-${VERSION}.tar.xz"
 CHECKSUM="ac6677b6d1b95d209ab697ce8b688704"
 DEPS=""
-FLAGS="32bit test"
+FLAGS="32bit test important"
 
 _setup()
 {

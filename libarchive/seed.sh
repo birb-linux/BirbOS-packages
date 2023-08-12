@@ -4,7 +4,7 @@ VERSION="3.6.2"
 SOURCE="https://github.com/libarchive/libarchive/releases/download/v${VERSION}/libarchive-${VERSION}.tar.xz"
 CHECKSUM="72cbb3c085624c825f627bfc8f52ce53"
 DEPS=""
-FLAGS="test"
+FLAGS="test important"
 
 _setup()
 {

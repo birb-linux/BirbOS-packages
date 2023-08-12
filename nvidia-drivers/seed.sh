@@ -4,7 +4,7 @@ VERSION="530.41.03"
 SOURCE="https://us.download.nvidia.com/XFree86/Linux-x86_64/${VERSION}/NVIDIA-Linux-x86_64-${VERSION}.run"
 CHECKSUM="9049dbe01410eac1e05b249de10f6b91"
 DEPS=""
-FLAGS=""
+FLAGS="proprietary"
 
 _setup()
 {

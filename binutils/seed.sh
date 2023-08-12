@@ -4,7 +4,7 @@ VERSION="2.40"
 SOURCE="https://sourceware.org/pub/binutils/releases/binutils-${VERSION}.tar.xz"
 CHECKSUM="007b59bd908a737c06e5a8d3d2c737eb"
 DEPS="zlib"
-FLAGS=""
+FLAGS="important"
 
 _setup()
 {

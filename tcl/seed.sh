@@ -4,7 +4,7 @@ VERSION="8.6.13"
 SOURCE="https://downloads.sourceforge.net/tcl/tcl${VERSION}-src.tar.gz"
 CHECKSUM="0e4358aade2f5db8a8b6f2f6d9481ec2"
 DEPS="zlib"
-FLAGS=""
+FLAGS="important"
 
 _setup()
 {

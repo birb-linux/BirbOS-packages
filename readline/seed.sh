@@ -4,7 +4,7 @@ VERSION="8.2"
 SOURCE="https://ftp.gnu.org/gnu/readline/readline-${VERSION}.tar.gz"
 CHECKSUM="4aa1b31be779e6b84f9a96cb66bc50f6"
 DEPS="ncurses"
-FLAGS="32bit"
+FLAGS="32bit important"
 
 _setup()
 {

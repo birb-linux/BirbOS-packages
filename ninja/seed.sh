@@ -4,7 +4,7 @@ VERSION="1.11.1"
 SOURCE="https://github.com/ninja-build/ninja/archive/v${VERSION}/ninja-${VERSION}.tar.gz"
 CHECKSUM="32151c08211d7ca3c1d832064f6939b0"
 DEPS="python3"
-FLAGS="test"
+FLAGS="test important"
 
 _setup()
 {

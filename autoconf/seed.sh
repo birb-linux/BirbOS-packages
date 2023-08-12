@@ -19,14 +19,14 @@ _build()
 		-e '/BASH_ARGV=/a\        /^SHLVL=/ d' \
 		-i.orig tests/local.at
 
-	./configure --prefix=$FAKEROOT/$NAME/usr
+	./configure --prefix=/usr
 
 	make -j${BUILD_JOBS}
 }
 
 _install()
 {
-	make install
+	make DESTDIR=$FAKEROOT/$NAME install
 }
 
 _test()

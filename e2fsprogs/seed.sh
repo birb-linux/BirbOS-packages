@@ -4,7 +4,7 @@ VERSION="1.47.0"
 SOURCE="https://downloads.sourceforge.net/project/e2fsprogs/e2fsprogs/v${VERSION}/e2fsprogs-${VERSION}.tar.gz"
 CHECKSUM="6b4f18a33873623041857b4963641ee9"
 DEPS=""
-FLAGS="test"
+FLAGS="test important"
 
 _setup()
 {

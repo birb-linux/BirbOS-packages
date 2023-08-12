@@ -4,7 +4,7 @@ VERSION="3.4.4"
 SOURCE="https://github.com/libffi/libffi/releases/download/v${VERSION}/libffi-${VERSION}.tar.gz"
 CHECKSUM="0da1a5ed7786ac12dcbaf0d499d8a049"
 DEPS=""
-FLAGS="test 32bit test32"
+FLAGS="test 32bit test32 important"
 
 _setup()
 {

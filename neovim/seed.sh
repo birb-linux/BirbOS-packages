@@ -14,6 +14,8 @@ _setup()
 
 _build()
 {
+	disable_lto
+
 	make CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX=$FAKEROOT/$NAME/usr" \
 		CMAKE_BUILD_TYPE=Release \
 		-j${BUILD_JOBS}

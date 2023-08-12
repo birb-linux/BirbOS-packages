@@ -4,7 +4,7 @@ VERSION="1.5.5"
 SOURCE="https://github.com/facebook/zstd/releases/download/v${VERSION}/zstd-${VERSION}.tar.gz"
 CHECKSUM="63251602329a106220e0a5ad26ba656f"
 DEPS=""
-FLAGS="32bit"
+FLAGS="32bit important"
 
 _setup()
 {
@@ -14,15 +14,15 @@ _setup()
 
 _build()
 {
-	make -j${BUILD_JOBS} prefix=$FAKEROOT/$NAME/usr
+	make -j${BUILD_JOBS} prefix=/usr
 }
 
 _install()
 {
-	make prefix=$FAKEROOT/$NAME/usr install
+	make DESTDIR=$FAKEROOT/$NAME prefix=/usr install
 
 	# Remove the static library
-	rm -v $FAKEROOT/$NAME/usr/lib/libzstd.a
+	rm -vf $FAKEROOT/$NAME/usr/lib/libzstd.a
 }
 
 _build32()

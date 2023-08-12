@@ -4,7 +4,7 @@ VERSION="3.26.3"
 SOURCE="https://cmake.org/files/v$(echo $VERSION | awk -F '.' '{print $1 "." $2}')/cmake-${VERSION}.tar.gz"
 CHECKSUM="a99c7c7d5d127834ff3923b4cd4a1612"
 DEPS="curl libarchive libuv nghttp2"
-FLAGS="test"
+FLAGS="test important"
 
 _setup()
 {
