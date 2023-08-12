@@ -14,7 +14,7 @@ _setup()
 
 _build()
 {
-	./configure --prefix=$FAKEROOT/$NAME/usr
+	./configure --prefix=/usr
 
 	make -j${BUILD_JOBS}
 }
@@ -26,5 +26,5 @@ _test()
 
 _install()
 {
-	make install
+	make DESTDIR=$FAKEROOT/$NAME install
 }
