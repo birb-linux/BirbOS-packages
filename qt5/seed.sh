@@ -76,7 +76,7 @@ EOF
 
 QT5DIR=/usr
 export QT5DIR
-pathappend $QT5DIR/bin
+export PATH="$PATH:$QT5DIR/bin"
 
 # End /etc/profile.d/qt5.sh
 EOF
