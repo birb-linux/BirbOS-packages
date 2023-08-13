@@ -14,7 +14,7 @@ _setup()
 
 _build()
 {
-	./configure --prefix=/usr --sysconfdir=/etc
+	./configure --prefix=/usr --sysconfdir=/etc --disable-documentation
 	make -j${BUILD_JOBS}
 }
 
