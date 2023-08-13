@@ -36,13 +36,10 @@ _build()
 _install()
 {
 	DESTDIR=$FAKEROOT/$NAME ninja install
-
-	# Can't do this because gtk+ isn't fully installed yet
-	#$FAKEROOT/$NAME/usr/bin/gtk-query-immodules-3.0 --update-cache
-	/usr/bin/glib-compile-schemas /usr/share/glib-2.0/schemas
 }
 
 _post_install()
 {
 	gtk-query-immodules-3.0 --update-cache
+	glib-compile-schemas /usr/share/glib-2.0/schemas
 }
