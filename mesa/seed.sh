@@ -18,7 +18,7 @@ _build()
 	cd    build
 
 	meson setup                   \
-		  --prefix=$XORG_PREFIX   \
+		  --prefix=/usr           \
 		  --buildtype=release     \
 		  -Dplatforms=x11$(expand_use "wayland" ",wayland") \
 		  -Dgallium-drivers=auto  \
@@ -31,7 +31,7 @@ _build()
 
 _install()
 {
-	ninja install
+	DESTDIR=$FAKEROOT/$NAME ninja install
 
 	# Install docs
 	install -v -dm755 $FAKEROOT/$NAME/usr/share/doc/mesa-${VERSION}
