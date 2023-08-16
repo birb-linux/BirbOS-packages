@@ -17,10 +17,18 @@ _build()
 	mkdir build
 	cd    build
 
-	cmake  -DCMAKE_BUILD_TYPE=Release   \
-		   -DCMAKE_INSTALL_PREFIX=/usr  \
-		   -DTESTDATADIR=$PWD/testfiles \
-		   -DENABLE_UNSTABLE_API_ABI_HEADERS=ON \
+	# qt flag enables qt5 support needed for okular
+	cmake  -DCMAKE_BUILD_TYPE=Release                     \
+		   -DCMAKE_INSTALL_PREFIX=/usr                \
+		   -DTESTDATADIR=$PWD/testfiles               \
+		   -DENABLE_QT5=$(expand_use "qt" "ON" "OFF") \
+		   -DENABLE_QT6=off                           \
+		   -DBUILD_QT5_TESTS=off                      \
+		   -DBUILD_QT6_TESTS=off                      \
+		   -DBUILD_GTK_TESTS=off                      \
+		   -DBUILD_CPP_TESTS=off                      \
+		   -DBUILD_MANUAL_TESTS=off                   \
+		   -DENABLE_UNSTABLE_API_ABI_HEADERS=ON       \
 		   ..
 
 	make -j${BUILD_JOBS}
