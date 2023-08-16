@@ -1,8 +1,8 @@
 NAME="birb-utils"
 DESC="Miscellaneous utility scripts and programs made for BirbOS"
-VERSION="0.6.0"
+VERSION="0.6.1"
 SOURCE="https://github.com/Toasterbirb/birb-utils/archive/refs/tags/${VERSION}.tar.gz"
-CHECKSUM="7d372928a53c2741745facd71082d448"
+CHECKSUM="133e930d27e1afe9afd4972e2774c3b3"
 DEPS="file wget curl sudo gnupg"
 FLAGS=""
 
