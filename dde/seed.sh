@@ -1,8 +1,8 @@
 NAME="dde"
 DESC="Dynamic Desktop Environment"
-VERSION="1.0.1"
+VERSION="1.0.2"
 SOURCE="https://github.com/Toasterbirb/dde/archive/refs/tags/${VERSION}.tar.gz"
-CHECKSUM="fa77b80be45df396513cc8625ff327f9"
+CHECKSUM="2f119f35cb6ea693c2729d81dbe39273"
 DEPS="xorg-apps xorg-libs xorg-server pkg-config ncurses fontconfig mononoki xf86-input-libinput xf86-video-fbdev xinit"
 FLAGS=""
 
