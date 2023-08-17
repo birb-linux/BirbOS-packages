@@ -17,8 +17,8 @@ _build()
 	# Fix the location of udev rules in the .pc file
 	sed -i '/udevdir/a udev_dir=${udevdir}' src/udev/udev.pc.in
 
-	./configure --prefix=$FAKEROOT/$NAME/usr \
-            --bindir=$FAKEROOT/$NAME/sbin \
+	./configure --prefix=/usr \
+            --bindir=/sbin \
             --sysconfdir=/etc       \
             --enable-manpages       \
             --disable-static
@@ -32,7 +32,7 @@ _build()
 
 _install()
 {
-	make install
+	make DESTDIR=$FAKEROOT/$NAME install
 
 	# Fix a symlink
 	ln -srfv $FAKEROOT/$NAME/sbin/udevadm $FAKEROOT/$NAME/usr/sbin/udevadm
@@ -52,8 +52,8 @@ _build32()
 
 	LDFLAGS="-L/usr/lib32" CC="gcc -m32" \
 	./configure --host=i686-pc-linux-gnu       \
-				--prefix=$FAKEROOT/$NAME/usr   \
-				--bindir=$FAKEROOT/$NAME/usr/sbin \
+				--prefix=/usr   \
+				--bindir=/usr/sbin \
 				--libdir=/usr/lib32            \
 				--sysconfdir=/etc              \
 				--disable-manpages             \
