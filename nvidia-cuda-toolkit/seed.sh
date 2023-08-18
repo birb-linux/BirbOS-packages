@@ -9,14 +9,9 @@ FLAGS="wip proprietary"
 
 _setup()
 {
-	chmod +x $DISTFILES/$(basename $SOURCE)
+	tty_check
 
-	# Check if X is running
-	if [ -n "$(pgrep -x Xorg)" ]
-	then
-		echo "This package can only be installed in the TTY. Please close Xorg before proceeding"
-		exit 1
-	fi
+	chmod +x $DISTFILES/$(basename $SOURCE)
 }
 
 _build()
