@@ -1,7 +1,7 @@
 NAME="networkmanager"
 DESC="Set of co-operative tools that make networking simple and straightforward"
 VERSION="1.42.0"
-SHORT_VERSION="$(echo $VERSION | awk -F'.' '{print $1 "." $2}')"
+SHORT_VERSION="$(short_version $VERSION)"
 SOURCE="https://download.gnome.org/sources/NetworkManager/${SHORT_VERSION}/NetworkManager-${VERSION}.tar.xz"
 CHECKSUM="cfe8c33493d8d2a9d97415a7042a6fe2"
 DEPS="jansson libndp curl gobject-introspection iptables newt nss polkit pygobject elogind upower vala wpa_supplicant"

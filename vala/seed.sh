@@ -1,7 +1,7 @@
 NAME="vala"
 DESC="Programming language for GNOME developers"
 VERSION="0.56.4"
-SHORT_VERSION="$(echo $VERSION | awk -F'.' '{print $1 "." $2}')"
+SHORT_VERSION="$(short_version $VERSION)"
 SOURCE="https://download.gnome.org/sources/vala/${SHORT_VERSION}/vala-${VERSION}.tar.xz"
 CHECKSUM="dbb3d5b4616211e68093676099d44d56"
 DEPS="glib graphviz"

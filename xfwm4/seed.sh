@@ -1,7 +1,7 @@
 NAME="xfwm4"
 DESC="Window manager for Xfce"
 VERSION="4.18.0"
-SHORT_VERSION="$(echo $VERSION | awk -F'.' '{print $1 "." $2}')"
+SHORT_VERSION="$(short_version $VERSION)"
 SOURCE="https://archive.xfce.org/src/xfce/xfwm4/${SHORT_VERSION}/xfwm4-${VERSION}.tar.bz2"
 CHECKSUM="181415e457c86124fa5f8aa5d715b967"
 DEPS="libwnck libxfce4ui startup-notification"

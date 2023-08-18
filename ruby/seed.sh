@@ -1,7 +1,7 @@
 NAME="ruby"
 DESC="Ruby development environment"
 VERSION="3.2.1"
-SHORT_VERSION="$(echo $VERSION | awk -F'.' '{print $1 "." $2}')"
+SHORT_VERSION="$(short_version $VERSION)"
 SOURCE="https://cache.ruby-lang.org/pub/ruby/${SHORT_VERSION}/ruby-${VERSION}.tar.xz"
 CHECKSUM="23617540ad13c57ed8dd9d4ed32192a5"
 DEPS="libyaml"

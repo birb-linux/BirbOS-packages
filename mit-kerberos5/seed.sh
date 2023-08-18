@@ -1,7 +1,7 @@
 NAME="mit-kerberos5"
 DESC="Free implementation of Kerberos 5, a network authentication protocol"
 VERSION="1.20.1"
-SHORT_VERSION="$(echo $VERSION | awk -F'.' '{print $1 "." $2}')"
+SHORT_VERSION="$(short_version $VERSION)"
 SOURCE="https://kerberos.org/dist/krb5/${SHORT_VERSION}/krb5-${VERSION}.tar.gz"
 CHECKSUM="73f5780e7b587ccd8b8cfc10c965a686"
 DEPS="ntp"

@@ -1,7 +1,7 @@
 NAME="nano"
 DESC="Small, simple text editor"
 VERSION="7.2"
-MAJOR_VERSION="$(echo $VERSION | cut -d'.' -f1)"
+MAJOR_VERSION="$(major_version $VERSION)"
 SOURCE="https://www.nano-editor.org/dist/v${MAJOR_VERSION}/nano-${VERSION}.tar.xz"
 CHECKSUM="13742c686c6ddb0b7b294634f0c13cec"
 DEPS=""

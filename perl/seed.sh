@@ -1,7 +1,7 @@
 NAME="perl"
 DESC="Practical Extraction and Reporting Language"
 VERSION="5.36.0"
-MAJOR_VERSION="5.36"
+SHORT_VERSION="$(short_version $VERSION)"
 SOURCE="https://www.cpan.org/src/5.0/perl-${VERSION}.tar.xz"
 CHECKSUM="826e42da130011699172fd655e49cfa2"
 DEPS="zlib"
@@ -22,12 +22,12 @@ _build()
 	sh Configure -des \
              -Dprefix=$FAKEROOT/$NAME/usr \
              -Dvendorprefix=/usr \
-             -Dprivlib=/usr/lib/perl5/${MAJOR_VERSION}/core_perl      \
-             -Darchlib=/usr/lib/perl5/${MAJOR_VERSION}/core_perl      \
-             -Dsitelib=/usr/lib/perl5/${MAJOR_VERSION}/site_perl      \
-             -Dsitearch=/usr/lib/perl5/${MAJOR_VERSION}/site_perl     \
-             -Dvendorlib=/usr/lib/perl5/${MAJOR_VERSION}/vendor_perl  \
-             -Dvendorarch=/usr/lib/perl5/${MAJOR_VERSION}/vendor_perl \
+             -Dprivlib=/usr/lib/perl5/${SHORT_VERSION}/core_perl      \
+             -Darchlib=/usr/lib/perl5/${SHORT_VERSION}/core_perl      \
+             -Dsitelib=/usr/lib/perl5/${SHORT_VERSION}/site_perl      \
+             -Dsitearch=/usr/lib/perl5/${SHORT_VERSION}/site_perl     \
+             -Dvendorlib=/usr/lib/perl5/${SHORT_VERSION}/vendor_perl  \
+             -Dvendorarch=/usr/lib/perl5/${SHORT_VERSION}/vendor_perl \
              -Dman1dir=$FAKEROOT/$NAME/usr/share/man/man1                \
              -Dman3dir=$FAKEROOT/$NAME/usr/share/man/man3                \
              -Dpager="/usr/bin/less -isR"                 \

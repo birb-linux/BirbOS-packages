@@ -1,7 +1,7 @@
 NAME="bind"
 DESC="DNS server and client utilities"
 VERSION="9.18.12"
-MAJOR_VERSION="$(echo $VERSION | cut -d'.' -f1)"
+MAJOR_VERSION="$(major_version $VERSION)"
 SOURCE="https://ftp.isc.org/isc/bind${MAJOR_VERSION}/${VERSION}/bind-${VERSION}.tar.xz"
 CHECKSUM="101a5d919a8d7da1ae98f36e36d1dc9f"
 DEPS="libuv json-c libcap-pam"

@@ -1,7 +1,7 @@
 NAME="gobject-introspection"
 DESC="The GObject Introspection is used to describe the program APIs and collect them in a uniform, machine readable format"
 VERSION="1.74.0"
-SHORT_VERSION="$(echo ${VERSION} | awk -F'.' '{print $1 "." $2}')"
+SHORT_VERSION="$(short_version $VERSION)"
 SOURCE="https://download.gnome.org/sources/gobject-introspection/${SHORT_VERSION}/gobject-introspection-${VERSION}.tar.xz"
 CHECKSUM="ed4e290c5ca8737a62c9a7f5347ae10d"
 DEPS="glib"

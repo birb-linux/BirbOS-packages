@@ -1,7 +1,7 @@
 NAME="notification-daemon"
 DESC="Daemon that displays passive pop-up notifications"
 VERSION="3.20.0"
-SHORT_VERSION="$(echo $VERSION | awk -F'.' '{print $1 "." $2}')"
+SHORT_VERSION="$(short_version $VERSION)"
 SOURCE="https://download.gnome.org/sources/notification-daemon/${SHORT_VERSION}/notification-daemon-${VERSION}.tar.xz"
 CHECKSUM="2de7f4075352831f1d98d8851b642124"
 DEPS="gtk+ libcanberra"

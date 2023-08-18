@@ -1,7 +1,7 @@
 NAME="cairo"
 DESC="2D graphics library with support for multiple output devices"
 VERSION="1.17.6"
-SHORT_VERSION="$(echo $VERSION | awk -F'.' '{print $1 "." $2}')"
+SHORT_VERSION="$(short_version $VERSION)"
 SOURCE="https://download.gnome.org/sources/cairo/${SHORT_VERSION}/cairo-${VERSION}.tar.xz"
 CHECKSUM="c5a6f255af72a2e5faa8e6a53dd882e2"
 DEPS="xorg-libs libpng pixman fontconfig glib"

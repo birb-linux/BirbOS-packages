@@ -1,7 +1,7 @@
 NAME="qt5"
 DESC="Cross-platform application framework"
 VERSION="5.15.8"
-SHORT_VERSION="$(echo $VERSION | awk -F'.' '{print $1 "." $2}')"
+SHORT_VERSION="$(short_version $VERSION)"
 SOURCE="https://download.qt.io/archive/qt/${SHORT_VERSION}/${VERSION}/single/qt-everywhere-opensource-src-${VERSION}.tar.xz"
 CHECKSUM="86b7b496735df3973a390b0d515c1a0f"
 DEPS="xorg-libs alsa-lib make-ca double-conversion glib gst-plugins-base harfbuzz icu jasper libjpeg-turbo libmng libpng libtiff libwebp libxkbcommon mesa mtdev pcre2 sqlite wayland xcb-util-image xcb-util-keysyms xcb-util-renderutil xcb-util-wm"

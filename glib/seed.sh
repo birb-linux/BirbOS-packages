@@ -1,7 +1,7 @@
 NAME="glib"
 DESC="Bundle of three low-level system libraries written in C"
 VERSION="2.74.5"
-SHORT_VERSION="$(echo "${VERSION}" | awk -F'.' '{print $1 "." $2}')"
+SHORT_VERSION="$(short_version $VERSION)"
 SOURCE="https://download.gnome.org/sources/glib/${SHORT_VERSION}/glib-${VERSION}.tar.xz"
 CHECKSUM="7561501d9f63f3418ddb23d2903cc968"
 DEPS="libxslt pcre2"

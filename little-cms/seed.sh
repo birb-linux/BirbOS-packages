@@ -1,7 +1,7 @@
 NAME="little-cms"
 DESC="A small-footprint color management engine, with special focus on accuracy and performance"
 VERSION="2.14"
-MAJOR_VERSION="$(echo $VERSION | cut -d'.' -f1)"
+MAJOR_VERSION="$(major_version $VERSION)"
 SOURCE="https://github.com/mm2/Little-CMS/releases/download/lcms${VERSION}/lcms${MAJOR_VERSION}-${VERSION}.tar.gz"
 CHECKSUM="7f7baa3e605c961b9301135105ee9a34"
 DEPS="libjpeg-turbo libtiff"
