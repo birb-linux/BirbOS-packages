@@ -1,8 +1,8 @@
 NAME="rs-flip"
 DESC="RuneScape flipping utility to make GE standing more profitable"
-VERSION="1.0"
+VERSION="1.1.0"
 SOURCE="https://github.com/Toasterbirb/RS-Flip/archive/refs/tags/${VERSION}.tar.gz"
-CHECKSUM="f937c60e3d070fe5af418df4c6ae3fd6"
+CHECKSUM="47b75e6a4d4557cd395cf4bcc6c77d04"
 DEPS="cmake"
 FLAGS=""
 
