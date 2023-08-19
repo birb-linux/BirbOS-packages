@@ -1,8 +1,8 @@
 NAME="screenshot"
 DESC="Screenshotting utility built around scrot"
-VERSION="1.0.0"
+VERSION="1.0.1"
 SOURCE="https://github.com/birb-linux/screenshot/archive/refs/tags/${VERSION}.tar.gz"
-CHECKSUM="b362f3b5acdcb29f34fced293ce3f720"
+CHECKSUM="f298797dc61337c73df6b5c10320b3c8"
 DEPS="scrot dragon"
 FLAGS=""
 
