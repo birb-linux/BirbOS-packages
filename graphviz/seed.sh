@@ -18,7 +18,8 @@ _build()
 
 	./autogen.sh
 	./configure --prefix=$FAKEROOT/$NAME/usr \
-				--docdir=$FAKEROOT/$NAME/usr/share/doc/graphviz-${VERSION}
+				--docdir=$FAKEROOT/$NAME/usr/share/doc/graphviz-${VERSION} \
+				--with-qt=$(expand_use "qt" "yes" "no")
 
 	# Fix the build date
 	sed -i "s/0/$(date +%Y%m%d)/" builddate.h

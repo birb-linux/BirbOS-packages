@@ -1,7 +1,7 @@
 NAME="pangomm"
 DESC="C++ interface to Pango"
 VERSION="2.46.3"
-SHORT_VERSION="$(echo $VERSION | awk -F'.' '{print $1 "." $2}')"
+SHORT_VERSION="$(short_version $VERSION)"
 SOURCE="https://download.gnome.org/sources/pangomm/${SHORT_VERSION}/pangomm-${VERSION}.tar.xz"
 CHECKSUM="7af783bb04de766fafaaad26c9ed475a"
 DEPS="libcairomm glibmm pango"

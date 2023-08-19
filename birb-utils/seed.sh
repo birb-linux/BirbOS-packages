@@ -1,9 +1,9 @@
 NAME="birb-utils"
 DESC="Miscellaneous utility scripts and programs made for BirbOS"
-VERSION="0.2.1"
+VERSION="0.6.4"
 SOURCE="https://github.com/Toasterbirb/birb-utils/archive/refs/tags/${VERSION}.tar.gz"
-CHECKSUM="3d4579ea293d2dbbe4ed466e51aa38f9"
-DEPS="file wget sudo"
+CHECKSUM="5de9109dccfd07843b0ec2f63e43cc4d"
+DEPS="file wget curl sudo gnupg"
 FLAGS=""
 
 _setup()
@@ -19,5 +19,5 @@ _build()
 
 _install()
 {
-	make DESTDIR=$FAKEROOT/$NAME/usr install
+	make DESTDIR=$FAKEROOT/$NAME PREFIX=/usr install
 }

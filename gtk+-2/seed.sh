@@ -1,7 +1,7 @@
 NAME="gtk+-2"
 DESC="Libraries used for creating graphical user interfaces for applications"
 VERSION="2.24.33"
-SHORT_VERSION="$(echo $VERSION | awk -F'.' '{print $1 "." $2}')"
+SHORT_VERSION="$(short_version $VERSION)"
 SOURCE="https://download.gnome.org/sources/gtk+/${SHORT_VERSION}/gtk+-${VERSION}.tar.xz"
 CHECKSUM="0118e98dbe0e4dab90ce475f9f0e6c0c"
 DEPS="at-spi2-core gdk-pixbuf pango"

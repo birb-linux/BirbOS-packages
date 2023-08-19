@@ -14,11 +14,11 @@ _setup()
 
 _build()
 {
-	./configure --prefix=$FAKEROOT/$NAME/usr --sysconfdir=/etc
+	./configure --prefix=/usr --sysconfdir=/etc --disable-documentation
 	make -j${BUILD_JOBS}
 }
 
 _install()
 {
-	make install
+	make DESTDIR=$FAKEROOT/$NAME install
 }

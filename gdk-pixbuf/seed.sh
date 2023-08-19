@@ -1,7 +1,7 @@
 NAME="gdk-pixbuf"
 DESC="Toolkit for image loading and pixel buffer manipulation"
 VERSION="2.42.10"
-SHORT_VERSION="$(echo $VERSION | awk -F'.' '{print $1 "." $2}')"
+SHORT_VERSION="$(short_version $VERSION)"
 SOURCE="https://download.gnome.org/sources/gdk-pixbuf/${SHORT_VERSION}/gdk-pixbuf-${VERSION}.tar.xz"
 CHECKSUM="4a62f339cb1424693fba9bb7ffef8150"
 DEPS="glib libjpeg-turbo libpng shared-mime-info libtiff"

@@ -1,7 +1,7 @@
 NAME="gtk+"
 DESC="Libraries used for creating graphical user interfaces for applications"
 VERSION="3.24.36"
-SHORT_VERSION="$(echo $VERSION | awk -F'.' '{print $1 "." $2}')"
+SHORT_VERSION="$(short_version $VERSION)"
 SOURCE="https://download.gnome.org/sources/gtk+/${SHORT_VERSION}/gtk+-${VERSION}.tar.xz"
 CHECKSUM="fd4571a112ffaa2fbbb9d25de8f5b6c0"
 DEPS="at-spi2-core gdk-pixbuf libepoxy pango sassc libxkbcommon"
@@ -36,13 +36,10 @@ _build()
 _install()
 {
 	DESTDIR=$FAKEROOT/$NAME ninja install
-
-	# Can't do this because gtk+ isn't fully installed yet
-	#$FAKEROOT/$NAME/usr/bin/gtk-query-immodules-3.0 --update-cache
-	/usr/bin/glib-compile-schemas /usr/share/glib-2.0/schemas
 }
 
 _post_install()
 {
 	gtk-query-immodules-3.0 --update-cache
+	glib-compile-schemas /usr/share/glib-2.0/schemas
 }

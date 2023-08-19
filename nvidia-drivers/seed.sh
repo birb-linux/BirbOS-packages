@@ -8,6 +8,8 @@ FLAGS="proprietary"
 
 _setup()
 {
+	tty_check
+
 	chmod +x $DISTFILES/$(basename $SOURCE)
 	$DISTFILES/$(basename $SOURCE) -x
 	cd NVIDIA-Linux-x86_64-${VERSION}

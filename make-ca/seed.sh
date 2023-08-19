@@ -26,4 +26,7 @@ _install()
 _post_install()
 {
 	make-ca -g
+
+	# Create a symlink needed to make the Steam launcher working
+	ln -srf /etc/pki/tls/certs/ca-bundle.crt /etc/ssl/certs/ca-certificates.crt
 }
