@@ -4,7 +4,7 @@ VERSION="8.6.13"
 SOURCE="https://downloads.sourceforge.net/tcl/tcl${VERSION}-src.tar.gz"
 CHECKSUM="0e4358aade2f5db8a8b6f2f6d9481ec2"
 DEPS="zlib"
-FLAGS="important"
+FLAGS="important test"
 
 _setup()
 {
@@ -39,9 +39,6 @@ _build()
 		-i pkgs/itcl4.2.3/itclConfig.sh
 
 	unset SRCDIR
-
-	# Run the tests
-	make -j${BUILD_JOBS} test
 }
 
 _install()
@@ -58,4 +55,10 @@ _install()
 
 	# Avoid a man page name conflict with the perl package
 	mv $FAKEROOT/$NAME/usr/share/man/man3/{Thread,Tcl_Thread}.3
+}
+
+_test()
+{
+	# Run the tests
+	make -j${BUILD_JOBS} test
 }
