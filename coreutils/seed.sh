@@ -1,8 +1,8 @@
 NAME="coreutils"
 DESC="Basic utility programs needed by every operating system"
-VERSION="9.2"
+VERSION="9.3"
 SOURCE="https://ftp.gnu.org/gnu/coreutils/coreutils-${VERSION}.tar.xz"
-CHECKSUM="4a8a5097d8d7315ccfd6be7eafc8c862"
+CHECKSUM="040b4b7acaf89499834bfc79609af29f"
 DEPS=""
 FLAGS="important test"
 
@@ -19,7 +19,7 @@ _build()
 
 	autoreconf -fiv
 	FORCE_UNSAFE_CONFIGURE=1 ./configure \
-				--prefix=$FAKEROOT/$NAME/usr \
+				--prefix=/usr \
 				--enable-no-install-program=kill,uptime
 
 	make -j${BUILD_JOBS}
@@ -27,15 +27,16 @@ _build()
 
 _install()
 {
-	make install
+	make DESTDIR=$FAKEROOT/$NAME install
 
 	# Move programs to their correct locations
 	mv -v $FAKEROOT/$NAME/usr/bin/chroot $FAKEROOT/$NAME/usr/sbin
 	mv -v $FAKEROOT/$NAME/usr/share/man/man1/chroot.1 $FAKEROOT/$NAME/usr/share/man/man8/chroot.8
 	sed -i 's/"1"/"8"/' $FAKEROOT/$NAME/usr/share/man/man8/chroot.8
 
-	# Manually symlink some of the coreutils to avoid a catastrophe
-	ln -srfv $FAKEROOT/$NAME/usr/bin/{rm,ls,ln,env,cut} /usr/bin/
+	# Manually symlink/copy some of the coreutils to avoid a catastrophe
+	#ln -srfv $FAKEROOT/$NAME/usr/bin/{rm,ls,ln,env,cut} /usr/bin/
+	cp -f $FAKEROOT/$NAME/usr/bin/{rm,ls,ln,env,cut} /usr/local/bin/
 }
 
 _test()

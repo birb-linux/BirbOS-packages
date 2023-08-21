@@ -23,7 +23,7 @@ _build()
 
 _install()
 {
-	make SBINDIR=$FAKEROOT/$NAME/usr/sbin install
+	make SBINDIR=$FAKEROOT/$NAME/sbin install
 
 	# Install the documentation
 	mkdir -pv             $FAKEROOT/$NAME/usr/share/doc/iproute2-${VERSION}
