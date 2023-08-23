@@ -3,7 +3,7 @@ DESC="Protocol Buffers - Google's data interchange format"
 VERSION="24.0"
 SOURCE="https://github.com/protocolbuffers/protobuf/releases/download/v${VERSION}/protobuf-${VERSION}.tar.gz"
 CHECKSUM="efcc79da4c891186d24b2a70da484da1"
-DEPS="abseil-cpp"
+DEPS="cmake abseil-cpp"
 FLAGS=""
 
 _setup()
