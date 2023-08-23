@@ -3,7 +3,7 @@ DESC="Abseil Common Libraries (C++)"
 VERSION="20230802.0"
 SOURCE="https://github.com/abseil/abseil-cpp/archive/refs/tags/${VERSION}.tar.gz"
 CHECKSUM="f40605e07aa804aa82e7090f12db7e34"
-DEPS=""
+DEPS="cmake"
 FLAGS=""
 
 _setup()

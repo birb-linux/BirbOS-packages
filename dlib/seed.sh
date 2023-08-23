@@ -3,7 +3,7 @@ DESC="Modern C++ toolkit containing machine learning algorithms and tools for cr
 VERSION="19.24"
 SOURCE="http://dlib.net/files/dlib-${VERSION}.tar.bz2"
 CHECKSUM="8a98957a73eebd3cd7431c2bac79665f"
-DEPS="libjpeg-turbo libpng libice libwebp openblas"
+DEPS="cmake libjpeg-turbo libpng libice libwebp openblas"
 FLAGS=""
 
 _setup()

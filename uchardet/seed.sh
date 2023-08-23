@@ -3,7 +3,7 @@ DESC="Encoding detector library"
 VERSION="0.0.8"
 SOURCE="https://www.freedesktop.org/software/uchardet/releases/uchardet-${VERSION}.tar.xz"
 CHECKSUM="9e267be7aee81417e5875086dd9d44fd"
-DEPS=""
+DEPS="cmake"
 FLAGS=""
 
 _setup()
