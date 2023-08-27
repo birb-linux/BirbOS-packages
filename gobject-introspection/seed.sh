@@ -18,11 +18,11 @@ _build()
 	mkdir build
 	cd    build
 
-	meson --prefix=$FAKEROOT/$NAME/usr --buildtype=release ..
+	meson --prefix=/usr --buildtype=release ..
 	ninja
 }
 
 _install()
 {
-	ninja install
+	DESTDIR=$FAKEROOT/$NAME ninja install
 }
