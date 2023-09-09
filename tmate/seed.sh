@@ -4,7 +4,7 @@ VERSION="2.4.0"
 SOURCE="https://github.com/tmate-io/tmate/archive/refs/tags/${VERSION}.tar.gz"
 CHECKSUM="5571be65f5c54a35cc92ca7c9fb031c9"
 DEPS="git libevent ncurses zlib libssh2 automake pkg-config libtool msgpack-c"
-FLAGS=""
+FLAGS="wip"
 
 _setup()
 {
