@@ -19,7 +19,10 @@ _build()
 
 _install()
 {
-	# make DESTDIR=$FAKEROOT/$NAME install
-	mkdir -p "$DESTDIR/$NAME/usr/share/wordlists/SecLists"
-	install -d -m644 {Discovery,Fuzzing,IOCs,Miscellaneous,Passwords,Pattern-Matching,Payloads,Usernames,Web-Shells} $DESTDIR/$NAME/usr/share/wordlists/SecLists/
+	# Make sure that the wordlists directory exists before symlinking
+	mkdir -p /usr/share/wordlists
+
+	SECLISTS_DIR="$FAKEROOT/$NAME/usr/share/wordlists/SecLists"
+	mkdir -p "$SECLISTS_DIR"
+	mv -v {Discovery,Fuzzing,IOCs,Miscellaneous,Passwords,Pattern-Matching,Payloads,Usernames,Web-Shells} "${SECLISTS_DIR:?}"
 }
