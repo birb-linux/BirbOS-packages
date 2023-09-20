@@ -14,7 +14,7 @@ _setup()
 
 _build()
 {
-	./configure --prefix=$FAKEROOT/$NAME/usr \
+	./configure --prefix=/usr \
             --with-gitconfig=/etc/gitconfig \
             --with-python=python3
 
@@ -23,5 +23,5 @@ _build()
 
 _install()
 {
-	make perllibdir=/usr/lib/perl5/5.36/site_perl install
+	make perllibdir=/usr/lib/perl5/5.36/site_perl DESTDIR=$FAKEROOT/$NAME install
 }
