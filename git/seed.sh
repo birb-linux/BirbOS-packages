@@ -23,5 +23,5 @@ _build()
 
 _install()
 {
-	make perllibdir=$FAKEROOT/$NAME/usr/lib/perl5/5.36/site_perl DESTDIR=$FAKEROOT/$NAME install
+	make perllibdir=/usr/lib/perl5/5.36/site_perl DESTDIR=$FAKEROOT/$NAME install
 }
