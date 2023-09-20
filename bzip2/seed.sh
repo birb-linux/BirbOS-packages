@@ -31,7 +31,7 @@ _build()
 
 _install()
 {
-	make PREFIX=/usr DESTDIR=$FAKEROOT/$NAME install
+	make PREFIX=$FAKEROOT/$NAME/usr install
 
 	cp -av libbz2.so.* $FAKEROOT/$NAME/usr/lib
 	ln -sv libbz2.so.${VERSION} $FAKEROOT/$NAME/usr/lib/libbz2.so
