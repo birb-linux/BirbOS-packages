@@ -1,5 +1,4 @@
-NAME="bzip2"
-DESC="Programs for compressing and decompressing files"
+NAME="bzip2" DESC="Programs for compressing and decompressing files"
 VERSION="1.0.8"
 SOURCE="https://www.sourceware.org/pub/bzip2/bzip2-${VERSION}.tar.gz"
 CHECKSUM="67e051268d0c475ea773822f7500d0e5"
@@ -34,7 +33,7 @@ _install()
 	make PREFIX=$FAKEROOT/$NAME/usr install
 
 	cp -av libbz2.so.* $FAKEROOT/$NAME/usr/lib
-	ln -sv libbz2.so.${VERSION} $FAKEROOT/$NAME/usr/lib/libbz2.so
+	ln -sfv libbz2.so.${VERSION} $FAKEROOT/$NAME/usr/lib/libbz2.so
 
 	cp -v bzip2-shared $FAKEROOT/$NAME/usr/bin/bzip2
 	for i in $FAKEROOT/$NAME/usr/bin/{bzcat,bunzip2}; do
