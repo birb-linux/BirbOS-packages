@@ -33,11 +33,11 @@ _install()
 	make PREFIX=$FAKEROOT/$NAME/usr install
 
 	cp -av libbz2.so.* $FAKEROOT/$NAME/usr/lib
-	ln -sfv libbz2.so.${VERSION} $FAKEROOT/$NAME/usr/lib/libbz2.so
+	ln -sfrv libbz2.so.${VERSION} $FAKEROOT/$NAME/usr/lib/libbz2.so
 
 	cp -v bzip2-shared $FAKEROOT/$NAME/usr/bin/bzip2
 	for i in $FAKEROOT/$NAME/usr/bin/{bzcat,bunzip2}; do
-	  ln -sfv bzip2 $i
+	  ln -srfv bzip2 $i
 	done
 
 	# Remove a useless static library
