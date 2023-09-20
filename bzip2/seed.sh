@@ -37,7 +37,7 @@ _install()
 
 	cp -v bzip2-shared $FAKEROOT/$NAME/usr/bin/bzip2
 	for i in $FAKEROOT/$NAME/usr/bin/{bzcat,bunzip2}; do
-	  ln -srfv bzip2 $i
+	  ln -sfv bzip2 $i
 	done
 
 	# Remove a useless static library
