@@ -1,4 +1,5 @@
-NAME="bzip2" DESC="Programs for compressing and decompressing files"
+NAME="bzip2"
+DESC="Programs for compressing and decompressing files"
 VERSION="1.0.8"
 SOURCE="https://www.sourceware.org/pub/bzip2/bzip2-${VERSION}.tar.gz"
 CHECKSUM="67e051268d0c475ea773822f7500d0e5"
