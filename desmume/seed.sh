@@ -1,4 +1,4 @@
-NAME="desmune"
+NAME="desmume"
 DESC="Nintendo DS emulator"
 VERSION="0_9_13"
 SOURCE="https://github.com/TASEmulators/desmume/archive/refs/tags/release_${VERSION}.tar.gz"
