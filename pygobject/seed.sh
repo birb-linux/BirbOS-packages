@@ -4,7 +4,7 @@ VERSION="3.42.2"
 SHORT_VERSION="$(short_version $VERSION)"
 SOURCE="https://download.gnome.org/sources/pygobject/${SHORT_VERSION}/pygobject-${VERSION}.tar.xz"
 CHECKSUM="c5b31bb58156661c0954f1dbfc950fc9"
-DEPS="gobject-introspection pycairo"
+DEPS="gobject-introspection pycairo meson ninja"
 FLAGS=""
 
 _setup()

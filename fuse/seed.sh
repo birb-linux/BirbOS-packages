@@ -3,7 +3,7 @@ DESC="FUSE (Filesystem in Userspace) is a simple interface for userspace program
 VERSION="3.13.1"
 SOURCE="https://github.com/libfuse/libfuse/releases/download/fuse-${VERSION}/fuse-${VERSION}.tar.xz"
 CHECKSUM="f2830b775bcba2ab9cb94f2619c077a4"
-DEPS=""
+DEPS="meson ninja"
 FLAGS=""
 
 _setup()

@@ -3,7 +3,7 @@ DESC="systemd project's 'logind', extracted to be a standalone daemon"
 VERSION="246.10"
 SOURCE="https://github.com/elogind/elogind/archive/v${VERSION}/elogind-${VERSION}.tar.gz"
 CHECKSUM="32ab2201281f14738d9c045f3669c14d"
-DEPS="dbus linux-pam eudev"
+DEPS="dbus linux-pam eudev meson ninja"
 FLAGS="32bit test"
 
 _setup()

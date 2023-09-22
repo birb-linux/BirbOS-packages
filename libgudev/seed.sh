@@ -3,7 +3,7 @@ DESC="GObject bindings for libudev"
 VERSION="237"
 SOURCE="https://download.gnome.org/sources/libgudev/${VERSION}/libgudev-${VERSION}.tar.xz"
 CHECKSUM="a7783083cd74957d3a727ddc4737ee84"
-DEPS="glib"
+DEPS="glib meson ninja"
 FLAGS=""
 
 _setup()

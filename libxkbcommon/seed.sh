@@ -3,7 +3,7 @@ DESC="Keymap compiler and support library which processes a reduced subset of ke
 VERSION="1.5.0"
 SOURCE="https://xkbcommon.org/download/libxkbcommon-${VERSION}.tar.xz"
 CHECKSUM="40f0486b4eb491928ec6616c2ff85120"
-DEPS="xkeyboard-config libxcb"
+DEPS="xkeyboard-config libxcb meson ninja"
 FLAGS="test"
 
 _setup()

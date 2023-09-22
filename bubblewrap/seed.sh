@@ -3,7 +3,7 @@ DESC="Setuid implementation of user namespaces, or sandboxing, that provides acc
 VERSION="0.7.0"
 SOURCE="https://github.com/containers/bubblewrap/releases/download/v${VERSION}/bubblewrap-${VERSION}.tar.xz"
 CHECKSUM="37892167cbc3bd2a54b396033892e2ae"
-DEPS=""
+DEPS="meson ninja"
 FLAGS="test"
 
 _setup()

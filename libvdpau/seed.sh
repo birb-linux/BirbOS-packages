@@ -3,7 +3,7 @@ DESC="Library which implements the VDPAU library"
 VERSION="1.5"
 SOURCE="https://gitlab.freedesktop.org/vdpau/libvdpau/-/archive/${VERSION}/libvdpau-${VERSION}.tar.bz2"
 CHECKSUM="148a192110e7a49d62c0bf9ef916c099"
-DEPS="xorg-libs mesa"
+DEPS="xorg-libs mesa meson ninja"
 FLAGS=""
 
 _setup()

@@ -4,7 +4,7 @@ VERSION="1.50.12"
 SHORT_VERSION="$(short_version $VERSION)"
 SOURCE="https://download.gnome.org/sources/pango/${SHORT_VERSION}/pango-${VERSION}.tar.xz"
 CHECKSUM="fd4b0b23915d6a0255317f811bea4215"
-DEPS="fontconfig freetype harfbuzz fribidi glib cairo xorg-libs"
+DEPS="fontconfig freetype harfbuzz fribidi glib cairo xorg-libs meson ninja"
 FLAGS=""
 
 # TODO: Add gobject-introspection dependency to this package is GNOME support is needed

@@ -3,7 +3,7 @@ DESC="The p11-kit package provides a way to load and enumerate PKCS #11 modules"
 VERSION="0.24.1"
 SOURCE="https://github.com/p11-glue/p11-kit/releases/download/${VERSION}/p11-kit-${VERSION}.tar.xz"
 CHECKSUM="67b2539bdca6b4bedaeecc12864d2796"
-DEPS="libtasn1"
+DEPS="libtasn1 meson ninja"
 FLAGS="test important"
 
 _setup()

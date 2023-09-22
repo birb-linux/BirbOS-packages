@@ -4,7 +4,7 @@ VERSION="2.46.3"
 SHORT_VERSION="$(short_version $VERSION)"
 SOURCE="https://download.gnome.org/sources/pangomm/${SHORT_VERSION}/pangomm-${VERSION}.tar.xz"
 CHECKSUM="7af783bb04de766fafaaad26c9ed475a"
-DEPS="libcairomm glibmm pango"
+DEPS="libcairomm glibmm pango meson ninja"
 FLAGS=""
 
 _setup()
