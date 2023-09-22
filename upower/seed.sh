@@ -3,7 +3,7 @@ DESC="Interface for enumerating power devices, listening to device events and qu
 VERSION="1.90.0"
 SOURCE="https://gitlab.freedesktop.org/upower/upower/-/archive/v${VERSION}/upower-v${VERSION}.tar.bz2"
 CHECKSUM="4fba71838a9ba0db6f140418eddbe2b7"
-DEPS="libgudev libusb polkit"
+DEPS="libgudev libusb polkit meson ninja"
 FLAGS=""
 
 _setup()

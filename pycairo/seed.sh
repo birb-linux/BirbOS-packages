@@ -3,7 +3,7 @@ DESC="Python bindings for Cairo"
 VERSION="1.23.0"
 SOURCE="https://github.com/pygobject/pycairo/releases/download/v${VERSION}/pycairo-${VERSION}.tar.gz"
 CHECKSUM="7a3729d21659098e1b9a411b62e88966"
-DEPS="cairo"
+DEPS="cairo meson ninja"
 FLAGS=""
 
 _setup()

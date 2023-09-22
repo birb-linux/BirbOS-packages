@@ -3,7 +3,7 @@ DESC="A library that provides low-level pixel manipulation features such as imag
 VERSION="0.42.2"
 SOURCE="https://www.cairographics.org/releases/pixman-${VERSION}.tar.gz"
 CHECKSUM="a0f6ab8a1d8e0e2cd80e935525e2a864"
-DEPS=""
+DEPS="meson ninja"
 FLAGS=""
 
 _setup()

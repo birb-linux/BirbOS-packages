@@ -4,7 +4,7 @@ VERSION="1.5.10"
 SHORT_VERSION="$(short_version $VERSION)"
 SOURCE="https://download.gnome.org/sources/libepoxy/${SHORT_VERSION}/libepoxy-${VERSION}.tar.xz"
 CHECKSUM="10c635557904aed5239a4885a7c4efb7"
-DEPS="mesa"
+DEPS="mesa meson ninja"
 FLAGS="test"
 
 _setup()

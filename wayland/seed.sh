@@ -3,7 +3,7 @@ DESC="Compositor protocol"
 VERSION="1.21.0"
 SOURCE="https://gitlab.freedesktop.org/wayland/wayland/-/releases/${VERSION}/downloads/wayland-${VERSION}.tar.xz"
 CHECKSUM="f2653a2293bcd882d756c6a83d278903"
-DEPS="libxml2"
+DEPS="libxml2 meson ninja"
 FLAGS="test"
 
 _setup()

@@ -4,7 +4,7 @@ VERSION="2.28.3"
 SHORT_VERSION="$(short_version $VERSION)"
 SOURCE="https://download.gnome.org/sources/atkmm/${SHORT_VERSION}/atkmm-${VERSION}.tar.xz"
 CHECKSUM="bad12606feaaba28c4d31b8857b7099e"
-DEPS="at-spi2-core glibmm"
+DEPS="at-spi2-core glibmm meson ninja"
 FLAGS=""
 
 _setup()

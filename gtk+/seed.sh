@@ -4,7 +4,7 @@ VERSION="3.24.36"
 SHORT_VERSION="$(short_version $VERSION)"
 SOURCE="https://download.gnome.org/sources/gtk+/${SHORT_VERSION}/gtk+-${VERSION}.tar.xz"
 CHECKSUM="fd4571a112ffaa2fbbb9d25de8f5b6c0"
-DEPS="at-spi2-core gdk-pixbuf libepoxy pango sassc libxkbcommon"
+DEPS="at-spi2-core gdk-pixbuf libepoxy pango sassc libxkbcommon meson ninja"
 FLAGS=""
 
 # TODO: Add gobject-introspection support if GNOME support is needed
