@@ -3,7 +3,7 @@ DESC="Compiler and other tools for the go programming language"
 VERSION="1.20.4"
 SOURCE="https://go.dev/dl/go${VERSION}.src.tar.gz"
 CHECKSUM="2ea74f4e87758e0fbeb4cc6d04d2e020"
-DEPS="wget"
+DEPS=""
 FLAGS=""
 
 _setup()
