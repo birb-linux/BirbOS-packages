@@ -24,4 +24,13 @@ _install()
 	# Fix absolute symlinks
 	ln -sfvr $FAKEROOT/$NAME/usr/lib/steam/bin_steam.sh $FAKEROOT/$NAME/usr/bin/steam
 	ln -sfvr $FAKEROOT/$NAME/usr/lib/steam/bin_steamdeps.sh $FAKEROOT/$NAME/usr/bin/steamdeps
+
+	# Create a runner script that fixes an issue with glibc
+	# To use this script add `steam_run %command` to the games launch options
+	cat >> $FAKEROOT/$NAME/usr/bin/steam_run << "EOF"
+#!/bin/sh
+export LD_PRELOAD="/usr/lib/libc.so.6 /usr/lib32/libc.so.6"
+"$@"
+EOF
+	chmod +x $FAKEROOT/$NAME/usr/bin/steam_run
 }
