@@ -29,6 +29,13 @@ _install()
 	# To use this script add `steam_run %command` to the games launch options
 	cat >> $FAKEROOT/$NAME/usr/bin/steam_run << "EOF"
 #!/bin/sh
+if [ $# -eq 0 ]
+then
+	echo "This script is meant to be used as an launch option for steam games."
+	echo "Usage: steam_run %command%"
+	exit 1
+fi
+
 export LD_PRELOAD="/usr/lib/libc.so.6 /usr/lib32/libc.so.6"
 "$@"
 EOF
