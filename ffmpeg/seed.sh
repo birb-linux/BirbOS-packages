@@ -37,7 +37,7 @@ _build()
 				--enable-libx265     \
 				--enable-openssl     \
 				--enable-libpulse    \
-				--docdir=$FAKEROOT/$NAME/usr/share/doc/ffmpeg-${VERSION}
+				--docdir=/usr/share/doc/ffmpeg-${VERSION}
 
 	make -j${BUILD_JOBS}
 
