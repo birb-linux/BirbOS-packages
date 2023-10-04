@@ -19,6 +19,7 @@ _build()
             --disable-static        \
             --with-history          \
             --with-icu              \
+			--with-python           \
             PYTHON=/usr/bin/python3 \
             --docdir=/usr/share/doc/libxml2-${VERSION}
 
