@@ -1,5 +1,5 @@
 NAME="xlsatoms"
-DESC="List interned	atoms defined on server"
+DESC="List interned atoms defined on server"
 VERSION="1.1.4"
 SOURCE="https://www.x.org/archive//individual/app/xlsatoms-${VERSION}.tar.xz"
 CHECKSUM="da5b7a39702841281e1d86b7349a03ba"
