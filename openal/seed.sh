@@ -16,7 +16,7 @@ _build()
 {
 	mkdir -p build
 	cd build
-	cmake -DCMAKE_INSTALL_PREFIX=/usr ..
+	cmake -DCMAKE_INSTALL_PREFIX=/usr -DALSOFT_EXAMPLES=Off -DALSOFT_INSTALL_EXAMPLES=Off ..
 	make -j${BUILD_JOBS}
 }
 
