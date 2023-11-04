@@ -1,4 +1,4 @@
-NAME="libqrencode"
+NAME="qrencode"
 DESC="Fast and compact library and a CLI application for encoding data in a QR Code symbol"
 VERSION="4.1.1"
 SOURCE="https://fukuchi.org/works/qrencode/qrencode-${VERSION}.tar.gz"
