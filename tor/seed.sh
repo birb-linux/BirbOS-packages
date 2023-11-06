@@ -3,7 +3,7 @@ DESC="The Onion Router"
 VERSION="0.4.8.8"
 SOURCE="https://dist.torproject.org/tor-${VERSION}.tar.gz"
 CHECKSUM="3915a039b0889acd946223d299df0cfd"
-DEPS="asciidoc libseccomp zstd openssl"
+DEPS="asciidoctor libseccomp zstd openssl"
 FLAGS=""
 
 _setup()
