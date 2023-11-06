@@ -16,6 +16,20 @@ _build()
 {
 	./configure --prefix=/usr --disable-unittests
 	make -j${BUILD_JOBS}
+
+	# Create an unprivileged user for tor to use
+	if ! grep "tor:" /etc/passwd
+	then
+		# Create a home directory for the tor user
+		mkdir -p "$FAKEROOT/$NAME/var/lib/tor"
+
+		groupadd -g 200 tor
+		useradd -c 'tor user' 		\
+				-d '/var/lib/tor' 	\
+				-g tor 				\
+				-s /bin/false 		\
+				-u 200 tor
+	fi
 }
 
 _install()
