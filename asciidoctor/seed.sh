@@ -27,4 +27,7 @@ _install()
 
 	# Add asciidoctor to /usr/bin
 	ln -srv $FAKEROOT/$NAME/usr/lib/ruby/gems/${RUBY_VERSION}/gems/asciidoctor-${VERSION}/bin/asciidoctor $FAKEROOT/$NAME/usr/bin/
+
+	# Some programs look for asciidoc instead of asciidoctor
+	ln -srv $FAKEROOT/$NAME/usr/lib/ruby/gems/${RUBY_VERSION}/gems/asciidoctor-${VERSION}/bin/asciidoctor $FAKEROOT/$NAME/usr/bin/asciidoc
 }

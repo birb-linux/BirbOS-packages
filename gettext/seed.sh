@@ -14,16 +14,16 @@ _setup()
 
 _build()
 {
-	./configure --prefix=$FAKEROOT/$NAME/usr \
+	./configure --prefix=/usr \
             --disable-static \
-            --docdir=$FAKEROOT/$NAME/usr/share/doc/gettext-${VERSION}
+            --docdir=/usr/share/doc/gettext-${VERSION}
 
 	make -j${BUILD_JOBS}
 }
 
 _install()
 {
-	make install
+	make DESTDIR=$FAKEROOT/$NAME install
 	chmod -v 0755 $FAKEROOT/$NAME/usr/lib/preloadable_libintl.so
 }
 

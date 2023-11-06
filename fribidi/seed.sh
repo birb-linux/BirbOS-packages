@@ -3,7 +3,7 @@ DESC="Implementation of the Unicode Bidirectional Algorithm (BIDI)"
 VERSION="1.0.12"
 SOURCE="https://github.com/fribidi/fribidi/releases/download/v${VERSION}/fribidi-${VERSION}.tar.xz"
 CHECKSUM="21185b398635a7fc0d3ff0a7578c4791"
-DEPS=""
+DEPS="meson ninja"
 FLAGS="test"
 
 _setup()

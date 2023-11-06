@@ -14,20 +14,21 @@ _setup()
 
 _build()
 {
-	./configure --prefix=$FAKEROOT/$NAME/usr \
+	./configure --prefix=/usr \
             --sysconfdir=/etc       \
             --disable-static        \
             --with-history          \
             --with-icu              \
+			--with-python           \
             PYTHON=/usr/bin/python3 \
-            --docdir=$FAKEROOT/$NAME/usr/share/doc/libxml2-${VERSION}
+            --docdir=/usr/share/doc/libxml2-${VERSION}
 
 	make -j${BUILD_JOBS}
 }
 
 _install()
 {
-	make install
+	make DESTDIR=$FAKEROOT/$NAME install
 }
 
 #_build32()

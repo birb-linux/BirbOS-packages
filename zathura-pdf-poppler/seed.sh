@@ -3,7 +3,7 @@ DESC="PDF support (poppler backend) for zathura"
 VERSION="0.3.0"
 SOURCE="https://git.pwmt.org/pwmt/zathura-pdf-poppler/-/archive/${VERSION}/zathura-pdf-poppler-${VERSION}.tar.gz"
 CHECKSUM="c500be47cfac0e76e81309cfa7847353"
-DEPS="zathura girara poppler poppler-data"
+DEPS="zathura girara poppler poppler-data meson ninja"
 FLAGS=""
 
 _setup()

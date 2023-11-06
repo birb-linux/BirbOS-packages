@@ -1,9 +1,9 @@
 NAME="gnutls"
 DESC="Libraries and userspace tools which provide a secure layer over a reliable transport layer"
-VERSION="3.8.0"
+VERSION="3.8.1"
 SHORT_VERSION="$(short_version $VERSION)"
 SOURCE="https://www.gnupg.org/ftp/gcrypt/gnutls/v${SHORT_VERSION}/gnutls-${VERSION}.tar.xz"
-CHECKSUM="20a662caf20112b6b9ad1f4a64db3a97"
+CHECKSUM="31a4b85586522c527b044597e86870a4"
 DEPS="nettle make-ca libunistring libtasn1 p11-kit"
 FLAGS=""
 

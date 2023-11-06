@@ -14,11 +14,11 @@ _setup()
 
 _build()
 {
-	PYTHON=/usr/bin/python3 ./configure --prefix=$FAKEROOT/$NAME/usr
+	PYTHON=/usr/bin/python3 ./configure --prefix=/usr
 	make -j${BUILD_JOBS}
 }
 
 _install()
 {
-	make install
+	make DESTDIR=$FAKEROOT/$NAME install
 }

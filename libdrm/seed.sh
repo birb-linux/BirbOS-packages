@@ -3,7 +3,7 @@ DESC="Userspace library for accessing the direct rendering manager (DRM)"
 VERSION="2.4.115"
 SOURCE="https://dri.freedesktop.org/libdrm/libdrm-${VERSION}.tar.xz"
 CHECKSUM="5403981a20c964f4c893ff91393652bd"
-DEPS="xorg-libs"
+DEPS="xorg-libs meson ninja"
 FLAGS="32bit"
 
 _setup()

@@ -3,7 +3,7 @@ DESC="A library providing a standalone version of the X server implementation of
 VERSION="0.1.2"
 SOURCE="https://www.x.org/pub/individual/lib/libxcvt-${VERSION}.tar.xz"
 CHECKSUM="b553fdb6024c5a137ff925bf4c337724"
-DEPS=""
+DEPS="meson ninja"
 FLAGS=""
 
 _setup()

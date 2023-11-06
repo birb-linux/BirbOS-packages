@@ -4,7 +4,7 @@ VERSION="2.66.5"
 SHORT_VERSION="$(short_version $VERSION)"
 SOURCE="https://download.gnome.org/sources/glibmm/${SHORT_VERSION}/glibmm-${VERSION}.tar.xz"
 CHECKSUM="b6c2c8ba36abf6c5e43cee459a74b8a1"
-DEPS="glib libsigc++"
+DEPS="glib libsigc++ meson ninja"
 FLAGS=""
 
 _setup()

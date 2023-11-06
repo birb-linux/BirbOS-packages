@@ -4,7 +4,7 @@ VERSION="1.10.8"
 SHORT_VERSION="$(short_version $VERSION)"
 SOURCE="https://download.gnome.org/sources/graphene/${SHORT_VERSION}/graphene-${VERSION}.tar.xz"
 CHECKSUM="169e3c507b5a5c26e9af492412070b81"
-DEPS="glib gobject-introspection"
+DEPS="glib gobject-introspection meson ninja"
 FLAGS="test"
 
 _setup()

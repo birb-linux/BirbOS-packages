@@ -4,7 +4,7 @@ VERSION="43.0"
 MAJOR_VERSION="$(major_version $VERSION)"
 SOURCE="https://download.gnome.org/sources/gsettings-desktop-schemas/${MAJOR_VERSION}/gsettings-desktop-schemas-${VERSION}.tar.xz"
 CHECKSUM="38f3f153be78402cbd18e3d4b44ba0fa"
-DEPS="glib gobject-introspection"
+DEPS="glib gobject-introspection meson ninja"
 FLAGS=""
 
 _setup()

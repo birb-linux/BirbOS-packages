@@ -6,6 +6,8 @@
 # It also looks for common mistakes in the installation instructions
 # to prevent breaking installations
 
+source /usr/lib/birb/birb_funcs
+
 PKG_NAME="$1"
 
 [ ! -d $PKG_NAME ] && echo "Package [$PKG_NAME] doesn't exist..." && exit 1

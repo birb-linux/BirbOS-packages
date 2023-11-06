@@ -3,7 +3,7 @@ DESC="Library that handles input devices for display servers and other applicati
 VERSION="1.22.1"
 SOURCE="https://gitlab.freedesktop.org/libinput/libinput/-/archive/${VERSION}/libinput-${VERSION}.tar.gz"
 CHECKSUM="d164313f9a92162df7af3505b6915c76"
-DEPS="libevdev mtdev"
+DEPS="libevdev mtdev meson ninja"
 FLAGS=""
 
 _setup()

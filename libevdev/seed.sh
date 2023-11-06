@@ -3,7 +3,7 @@ DESC="Common functions for Xorg input drivers"
 VERSION="1.13.0"
 SOURCE="https://www.freedesktop.org/software/libevdev/libevdev-${VERSION}.tar.xz"
 CHECKSUM="5b15b4cf97c4f9f1393e499526a57665"
-DEPS=""
+DEPS="meson ninja"
 FLAGS=""
 
 _setup()

@@ -18,7 +18,7 @@ _build()
 
 	sed -i 's/-lflite"/-lflite -lasound"/' configure
 
-	./configure --prefix=$FAKEROOT/$NAME/usr \
+	./configure --prefix=/usr \
 				--enable-gpl         \
 				--enable-version3    \
 				--enable-nonfree     \
@@ -37,7 +37,7 @@ _build()
 				--enable-libx265     \
 				--enable-openssl     \
 				--enable-libpulse    \
-				--docdir=$FAKEROOT/$NAME/usr/share/doc/ffmpeg-${VERSION}
+				--docdir=/usr/share/doc/ffmpeg-${VERSION}
 
 	make -j${BUILD_JOBS}
 
@@ -46,7 +46,7 @@ _build()
 
 _install()
 {
-	make install
+	make DESTDIR=$FAKEROOT/$NAME install
 
 	install -v -m755    tools/qt-faststart $FAKEROOT/$NAME/usr/bin
 	install -v -m755 -d           $FAKEROOT/$NAME/usr/share/doc/ffmpeg-${VERSION}

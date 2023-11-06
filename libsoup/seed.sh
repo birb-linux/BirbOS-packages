@@ -1,10 +1,10 @@
 NAME="libsoup"
 DESC="HTTP client/server library for GNOME"
-VERSION="3.2.2"
+VERSION="3.4.2"
 SHORT_VERSION="$(short_version $VERSION)"
 SOURCE="https://download.gnome.org/sources/libsoup/${SHORT_VERSION}/libsoup-${VERSION}.tar.xz"
-CHECKSUM="33902089d52f862d6b39680dd4c4e3aa"
-DEPS="glib-networking libpsl libxml2 nghttp2 sqlite mit-kerberos5"
+CHECKSUM="cd8b0fc5d53331b9c0b5b22aabac4294"
+DEPS="glib-networking libpsl libxml2 nghttp2 sqlite mit-kerberos5 meson ninja"
 FLAGS="wip"
 
 _setup()

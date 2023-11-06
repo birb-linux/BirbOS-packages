@@ -1,8 +1,8 @@
 NAME="libwebp"
 DESC="Library and support programs to encode and decode images in WebP format"
-VERSION="1.3.0"
+VERSION="1.3.2"
 SOURCE="http://downloads.webmproject.org/releases/webp/libwebp-${VERSION}.tar.gz"
-CHECKSUM="994cf2efb664ef5140fa0b56b83fa721"
+CHECKSUM="34869086761c0e2da6361035f7b64771"
 DEPS="libjpeg-turbo libpng libtiff"
 FLAGS=""
 

@@ -4,7 +4,7 @@ VERSION="0.1.98"
 SHORT_VERSION="$(short_version $VERSION)"
 SOURCE="https://download.gimp.org/pub/babl/${SHORT_VERSION}/babl-${VERSION}.tar.xz"
 CHECKSUM="0fd5f826e2ef14de04d978c203a3fe28"
-DEPS="librsvg little-cms"
+DEPS="librsvg little-cms meson ninja"
 FLAGS="test"
 
 _setup()

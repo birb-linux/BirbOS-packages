@@ -3,7 +3,7 @@ DESC="Streaming media framework"
 VERSION="1.22.0"
 SOURCE="https://gstreamer.freedesktop.org/src/gstreamer/gstreamer-${VERSION}.tar.xz"
 CHECKSUM="fb69587308e03e15c1b9a026a7b591d6"
-DEPS="glib gobject-introspection"
+DEPS="glib gobject-introspection meson ninja"
 FLAGS="test"
 
 _setup()
