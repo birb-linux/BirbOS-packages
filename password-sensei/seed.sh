@@ -19,5 +19,5 @@ _build()
 
 _install()
 {
-	make DESTDIR=$FAKEROOT/$NAME install
+	make PREFIX=/usr DESTDIR=$FAKEROOT/$NAME install
 }
