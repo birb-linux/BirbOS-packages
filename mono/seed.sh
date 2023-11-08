@@ -8,13 +8,25 @@ FLAGS=""
 
 _setup()
 {
+	# Make sure that /var/tmp/mono doesn't exist
+	rm -rf /var/tmp/mono
+
+	# Build in /var/tmp/mono to avoid going over the /bin/sh arg length limit
+	mkdir -vp /var/tmp/mono
+	cd /var/tmp/mono || exit
+
 	tar -xf $DISTFILES/$(basename $SOURCE)
-	cd ${NAME}-${VERSION}
+
+	# Make the extracted directory name shorter
+	mv -v "$NAME-$VERSION" m
+
+	cd m || exit
 }
 
 _build()
 {
 	./configure --prefix=/usr
+	make get-monolite-latest
 	make -j${BUILD_JOBS}
 }
 
