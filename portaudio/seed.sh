@@ -15,7 +15,7 @@ _setup()
 _build()
 {
 	./configure --prefix=/usr --enable-cxx
-	make -j${BUILD_JOBS}
+	make -j1
 }
 
 _install()
