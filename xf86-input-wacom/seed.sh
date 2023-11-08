@@ -8,7 +8,7 @@ FLAGS=""
 
 _setup()
 {
-	kernel_check "HID_SUPPORT HID HID_WACOM USB_HID USB_SUPPORT USB"
+	kernel_check "CONFIG_HID_WACOM CONFIG_USB_HID CONFIG_HID CONFIG_USB"
 
 	tar -xf $DISTFILES/$(basename $SOURCE)
 	cd ${NAME}-${VERSION}
