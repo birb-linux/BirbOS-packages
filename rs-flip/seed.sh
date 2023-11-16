@@ -9,7 +9,7 @@ FLAGS=""
 _setup()
 {
 	tar -xf $DISTFILES/$(basename $SOURCE)
-	cd RS-Flip
+	cd rs-flip
 }
 
 _build()
