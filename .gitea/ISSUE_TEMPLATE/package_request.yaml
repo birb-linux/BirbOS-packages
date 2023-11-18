@@ -1,0 +1,27 @@
+name: "Package request"
+about: "Request for a new package to be added to the core repository"
+title: "[PACKAGE] "
+ref: "dev"
+labels:
+  - "new package"
+body:
+  - type: input
+    id: package_name
+    attributes:
+      label: Package name
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Link to the project/BLFS page
+      description: A URL where the source code of this package can be downloaded from
+    validations:
+      required: true
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: List of dependencies that need to be installed first
+      description: Links to dependency package requests etc. or the names of the packages are are missing for this package to be possible to install
+    validations:
+      required: false
