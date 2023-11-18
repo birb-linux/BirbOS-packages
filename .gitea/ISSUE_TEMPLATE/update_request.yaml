@@ -1,5 +1,5 @@
-name: "Package request"
-about: "Request for a new package to be added to the core repository"
+name: "Package update request"
+about: "Request an update for a package"
 title: "[PACKAGE] "
 ref: "dev"
 labels:
