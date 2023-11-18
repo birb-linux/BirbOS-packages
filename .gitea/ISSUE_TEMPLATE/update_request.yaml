@@ -1,0 +1,31 @@
+name: "Package request"
+about: "Request for a new package to be added to the core repository"
+title: "[PACKAGE] "
+ref: "dev"
+labels:
+  - "package update"
+body:
+  - type: input
+    id: package_name
+    attributes:
+      label: Package name
+    validations:
+      required: true
+  - type: dropdown
+    id: update_reason
+    attributes:
+      label: Reason for the need to update
+      options:
+        - Security
+        - Missing features
+        - Bugs / other issues
+    validations:
+      required: true
+  - type: textarea
+    id: references
+    attributes:
+      label: References
+      description: Links to references that inform more about the need for this update (gentoo security advisories etc.)
+      placeholder: https://security.gentoo.org/glsa/202311-02
+    validations:
+      required: false
