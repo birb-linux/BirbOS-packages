@@ -20,4 +20,8 @@ _build()
 _install()
 {
 	make PREFIX=/usr DESTDIR=$FAKEROOT/$NAME install
+
+	# Copy the default config over
+	mkdir -pv $FAKEROOT/$NAME/etc/dunst
+	cp -v dunstrc $FAKEROOT/$NAME/etc/dunst/
 }
