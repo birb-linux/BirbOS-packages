@@ -3,7 +3,7 @@ DESC="An OCI container runtime monitor"
 VERSION="2.1.8"
 SOURCE="https://github.com/containers/conmon/archive/refs/tags/v${VERSION}.tar.gz"
 CHECKSUM="753a2d554c6b5c55c93f069a20d9ebf9"
-DEPS="libseccomp pkg-config"
+DEPS="libseccomp pkg-config runc"
 FLAGS=""
 
 _setup()
