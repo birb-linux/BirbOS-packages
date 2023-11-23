@@ -21,5 +21,7 @@ _install()
 {
 	# make DESTDIR=$FAKEROOT/$NAME install
 	cp -v build/texk/web2c/luatex "$FAKEROOT/$NAME/usr/bin/luatex"
-	ln -srfv "$FAKEROOT/$NAME/usr/bin/luatex" "$FAKEROOT/$NAME/usr/bin/{texlua,texluac,lualatex}"
+	ln -srfv "$FAKEROOT/$NAME/usr/bin/luatex" "$FAKEROOT/$NAME/usr/bin/texlua"
+	ln -srfv "$FAKEROOT/$NAME/usr/bin/luatex" "$FAKEROOT/$NAME/usr/bin/texluac"
+	ln -srfv "$FAKEROOT/$NAME/usr/bin/luatex" "$FAKEROOT/$NAME/usr/bin/lualatex"
 }
