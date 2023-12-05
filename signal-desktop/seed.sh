@@ -8,7 +8,6 @@ FLAGS="proprietary"
 
 _setup()
 {
-	cd ${NAME}-${VERSION}
 	ar x $DISTFILES/$(basename $SOURCE)
 }
 
