@@ -19,8 +19,8 @@ _build()
 _install()
 {
 	mkdir -p $FAKEROOT/$NAME/opt
-	mv ./opt/* $FAKEROOT/$NAME/opt/
-	mv ./usr/* $FAKEROOT/$NAME/usr/
+	cp -r ./opt/* $FAKEROOT/$NAME/opt/
+	cp -r ./usr/* $FAKEROOT/$NAME/usr/
 
 	ln -sr $FAKEROOT/$NAME/opt/signal-desktop-beta $FAKEROOT/$NAME/usr/bin/signal-desktop
 }
