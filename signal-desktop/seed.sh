@@ -22,5 +22,5 @@ _install()
 	cp -r ./opt/* $FAKEROOT/$NAME/opt/
 	cp -r ./usr/* $FAKEROOT/$NAME/usr/
 
-	ln -sr $FAKEROOT/$NAME/opt/signal-desktop-beta $FAKEROOT/$NAME/usr/bin/signal-desktop
+	ln -sr $FAKEROOT/$NAME/opt/Signal\ Beta/signal-desktop-beta $FAKEROOT/$NAME/usr/bin/signal-desktop
 }
