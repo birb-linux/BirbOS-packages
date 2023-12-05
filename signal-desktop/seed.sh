@@ -3,7 +3,7 @@ DESC="A private messenger"
 VERSION="6.40.0"
 SOURCE="https://updates.signal.org/desktop/apt/pool/s/signal-desktop-beta/signal-desktop-beta_${VERSION}-beta.2_amd64.deb"
 CHECKSUM="9b315b8a1587df8074714cbb7da0a66b"
-DEPS=""
+DEPS="libnotify libxtst nss xdg-utils libxss cups"
 FLAGS="proprietary"
 
 _setup()
