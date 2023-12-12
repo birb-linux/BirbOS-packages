@@ -1,8 +1,8 @@
 NAME="rustc"
 DESC="Rust compiler"
-VERSION="1.71.0"
+VERSION="1.72.0"
 SOURCE="https://static.rust-lang.org/dist/rustc-${VERSION}-src.tar.xz"
-CHECKSUM="81ae525767680c1680bad985ecc35bff"
+CHECKSUM="4125b8bf1b0bc6a520f8ec21252322e7"
 DEPS="cmake curl libssh2 llvm"
 FLAGS=""
 
