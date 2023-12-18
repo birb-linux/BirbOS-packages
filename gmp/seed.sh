@@ -1,8 +1,8 @@
 NAME="gmp"
 DESC="Math libraries and useful functions for arbitrary precision arithmetic"
-VERSION="6.2.1"
+VERSION="6.3.0"
 SOURCE="https://ftp.gnu.org/gnu/gmp/gmp-${VERSION}.tar.xz"
-CHECKSUM="0b82665c4a92fd2ade7440c13fcaa42b"
+CHECKSUM="956dc04e864001a9c22429f761f2c283"
 DEPS="m4 xz"
 FLAGS="32bit test test32 important"
 
