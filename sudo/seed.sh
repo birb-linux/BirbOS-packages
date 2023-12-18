@@ -14,13 +14,13 @@ _setup()
 
 _build()
 {
-	./configure --prefix=$FAKEROOT/$NAME/usr \
+	./configure --prefix=/usr \
             --libexecdir=/usr/lib      \
             --with-secure-path         \
             --with-all-insults         \
             --with-env-editor          \
             --without-pam              \
-            --docdir=$FAKEROOT/$NAME/usr/share/doc/sudo-${VERSION} \
+            --docdir=/usr/share/doc/sudo-${VERSION} \
             --with-passprompt="[sudo] password for %p: "
 
 	make -j${BUILD_JOBS}
@@ -28,11 +28,11 @@ _build()
 
 _install()
 {
-	make install
+	make DESTDIR=$FAKEROOT/$NAME install
 
 	# Move the sudo lib directory back into the fakeroot, because
 	# sudo doesn't seem to be fully respecting the --prefix variable
-	mv -vf /usr/lib/sudo $FAKEROOT/$NAME/usr/lib/sudo
+	#mv -vf /usr/lib/sudo $FAKEROOT/$NAME/usr/lib/sudo
 	ln -sfv libsudo_util.so.0.0.0 $FAKEROOT/$NAME/usr/lib/sudo/libsudo_util.so.0
 
 	# Allow the members of the wheel group to run commands as the root user
