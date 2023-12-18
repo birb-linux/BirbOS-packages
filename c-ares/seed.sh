@@ -1,8 +1,8 @@
 NAME="c-ares"
 DESC="C library for asynchronous DNS requests"
-VERSION="1.19.0"
+VERSION="1.19.1"
 SOURCE="https://c-ares.haxx.se/download/c-ares-${VERSION}.tar.gz"
-CHECKSUM="2668790bc92603e292d0fbcb25ded39c"
+CHECKSUM="dafc5825a92dc907e144570e4e75a908"
 DEPS="cmake"
 FLAGS=""
 
