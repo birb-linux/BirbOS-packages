@@ -1,8 +1,8 @@
 NAME="less"
 DESC="Text file viewer / pager"
-VERSION="608"
+VERSION="643"
 SOURCE="https://www.greenwoodsoftware.com/less/less-${VERSION}.tar.gz"
-CHECKSUM="1cdec714569d830a68f4cff11203cdba"
+CHECKSUM="cf05e2546a3729492b944b4874dd43dd"
 DEPS=""
 FLAGS=""
 
