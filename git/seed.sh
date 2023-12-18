@@ -1,8 +1,8 @@
 NAME="git"
 DESC="Distributed version control system"
-VERSION="2.39.2"
+VERSION="2.41.0"
 SOURCE="https://www.kernel.org/pub/software/scm/git/git-${VERSION}.tar.xz"
-CHECKSUM="32d34dc65ae0955cc68c7152b5ca8b13"
+CHECKSUM="c1f58a12b891ad73927b8e4a3aa29c7b"
 DEPS="curl zlib"
 FLAGS=""
 
