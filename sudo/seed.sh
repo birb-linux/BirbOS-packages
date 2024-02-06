@@ -1,8 +1,8 @@
 NAME="sudo"
 DESC="Allows users or groups to run commands as other users"
-VERSION="1.9.13p1"
+VERSION="1.9.14p3"
 SOURCE="https://www.sudo.ws/dist/sudo-${VERSION}.tar.gz"
-CHECKSUM="ee3c5e27479be258af23af1bb132e1db"
+CHECKSUM="4cc21cf7c9a89290b230954aed0d1e11"
 DEPS=""
 FLAGS="test"
 
@@ -14,13 +14,13 @@ _setup()
 
 _build()
 {
-	./configure --prefix=$FAKEROOT/$NAME/usr \
+	./configure --prefix=/usr \
             --libexecdir=/usr/lib      \
             --with-secure-path         \
             --with-all-insults         \
             --with-env-editor          \
             --without-pam              \
-            --docdir=$FAKEROOT/$NAME/usr/share/doc/sudo-${VERSION} \
+            --docdir=/usr/share/doc/sudo-${VERSION} \
             --with-passprompt="[sudo] password for %p: "
 
 	make -j${BUILD_JOBS}
@@ -28,11 +28,8 @@ _build()
 
 _install()
 {
-	make install
+	make DESTDIR=$FAKEROOT/$NAME install
 
-	# Move the sudo lib directory back into the fakeroot, because
-	# sudo doesn't seem to be fully respecting the --prefix variable
-	mv -vf /usr/lib/sudo $FAKEROOT/$NAME/usr/lib/sudo
 	ln -sfv libsudo_util.so.0.0.0 $FAKEROOT/$NAME/usr/lib/sudo/libsudo_util.so.0
 
 	# Allow the members of the wheel group to run commands as the root user

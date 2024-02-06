@@ -1,8 +1,8 @@
 NAME="libarchive"
 DESC="Interface for reading/writing various compression formats"
-VERSION="3.6.2"
+VERSION="3.7.1"
 SOURCE="https://github.com/libarchive/libarchive/releases/download/v${VERSION}/libarchive-${VERSION}.tar.xz"
-CHECKSUM="72cbb3c085624c825f627bfc8f52ce53"
+CHECKSUM="11a217b523dcdd178490bdb1f83353f3"
 DEPS=""
 FLAGS="test important"
 

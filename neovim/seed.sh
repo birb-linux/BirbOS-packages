@@ -1,8 +1,8 @@
 NAME="neovim"
 DESC="Vim-fork focused on extensibility and usability"
-VERSION="0.9.0"
+VERSION="0.9.4"
 SOURCE="https://github.com/neovim/neovim/archive/refs/tags/v${VERSION}.tar.gz"
-CHECKSUM="86b762639f29ee92d37f8ec0f78b7074"
+CHECKSUM="3cffcc063c8c6c157356ac555f83418b"
 DEPS="cmake unzip curl gettext"
 FLAGS=""
 

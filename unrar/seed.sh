@@ -1,8 +1,8 @@
 NAME="unrar"
 DESC="RAR extraction utility used for extracting files from RAR archives"
-VERSION="6.2.6"
+VERSION="6.2.10"
 SOURCE="https://www.rarlab.com/rar/unrarsrc-${VERSION}.tar.gz"
-CHECKSUM="6c68f2bbcd9f06f9d37801ad4256e680"
+CHECKSUM="0ab6486347a084e3c5759f4bbf02042f"
 DEPS=""
 FLAGS=""
 

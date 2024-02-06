@@ -1,8 +1,8 @@
 NAME="libsndfile"
 DESC="Library of C routines for reading and writing files containing sampled audio data"
-VERSION="1.2.0"
+VERSION="1.2.2"
 SOURCE="https://github.com/libsndfile/libsndfile/releases/download/${VERSION}/libsndfile-${VERSION}.tar.xz"
-CHECKSUM="00fbf50ce1d7a67a8e6dc0a04f4d8d2e"
+CHECKSUM="04e2e6f726da7c5dc87f8cf72f250d04"
 DEPS="flac opus libvorbis"
 FLAGS="test"
 

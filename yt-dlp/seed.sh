@@ -1,8 +1,8 @@
 NAME="yt-dlp"
 DESC="A youtube-dl fork with additional features and fixes"
-VERSION="2023.10.13"
+VERSION="2023.12.30"
 SOURCE="https://github.com/yt-dlp/yt-dlp/releases/download/${VERSION}/yt-dlp.tar.gz"
-CHECKSUM="91b9c05e543be09278e189f9348b05db"
+CHECKSUM="4a32db6bfe42f651ed9ba4feffc43fec"
 DEPS="ffmpeg"
 FLAGS=""
 
