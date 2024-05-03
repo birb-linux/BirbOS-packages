@@ -1,8 +1,8 @@
 NAME="openssh"
 DESC="SSH clients and the sshd daemon"
-VERSION="9.4p1"
+VERSION="9.7p1"
 SOURCE="https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-${VERSION}.tar.gz"
-CHECKSUM="4bbd56a7ba51b0cd61debe8f9e77f8bb"
+CHECKSUM="1100f170ca1bc669038ca3743e074094"
 DEPS=""
 FLAGS=""
 
