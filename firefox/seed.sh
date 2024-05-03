@@ -1,8 +1,8 @@
 NAME="firefox"
 DESC="Stand-alone browser based on the Mozilla codebase"
-VERSION="115.3.1"
+VERSION="115.9.1"
 SOURCE="https://archive.mozilla.org/pub/firefox/releases/${VERSION}esr/source/firefox-${VERSION}esr.source.tar.xz"
-CHECKSUM="2579d268a892de49d83ac7099543b2a5"
+CHECKSUM="ecd4cba403e3c60e92999ef4d0ee91c0"
 DEPS="autoconf cbindgen dbus-glib gtk+ libnotify llvm nodejs pulseaudio python3 startup-notification unzip yasm zip icu libevent libvpx libwebp nss nspr curl ffmpeg wget pixman zlib libpng"
 FLAGS=""
 
