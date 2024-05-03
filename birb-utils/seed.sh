@@ -3,7 +3,7 @@ DESC="Miscellaneous utility scripts and programs made for BirbOS"
 VERSION="0.7.3"
 SOURCE="https://github.com/Toasterbirb/birb-utils/archive/refs/tags/${VERSION}.tar.gz"
 CHECKSUM="b866a70afa40fba6478be179db985c7b"
-DEPS="file wget curl sudo gnupg"
+DEPS="file wget curl sudo gnupg fzf"
 FLAGS=""
 
 _setup()
