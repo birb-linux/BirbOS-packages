@@ -1,8 +1,8 @@
 NAME="acl"
 DESC="Utilities for administer Access Control Lists"
-VERSION="2.3.1"
+VERSION="2.3.2"
 SOURCE="https://download.savannah.gnu.org/releases/acl/acl-${VERSION}.tar.xz"
-CHECKSUM="95ce715fe09acca7c12d3306d0f076b2"
+CHECKSUM="590765dee95907dbc3c856f7255bd669"
 DEPS=""
 FLAGS="32bit important"
 
