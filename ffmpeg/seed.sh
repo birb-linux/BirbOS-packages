@@ -14,7 +14,7 @@ _setup()
 
 _build()
 {
-	patch -Np1 -i $PKG_PATH/ffmpeg-${VERSION}-chromium_method-1.patch
+	# patch -Np1 -i $PKG_PATH/ffmpeg-${VERSION}-chromium_method-1.patch
 
 	sed -i 's/-lflite"/-lflite -lasound"/' configure
 
