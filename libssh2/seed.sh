@@ -1,8 +1,8 @@
 NAME="libssh2"
 DESC="Client-side C library implementing the SSH2 protocol"
-VERSION="1.10.0"
+VERSION="1.11.0"
 SOURCE="https://www.libssh2.org/download/libssh2-${VERSION}.tar.gz"
-CHECKSUM="f604ba083fad23bf715a9ecccc9f57f4"
+CHECKSUM="a01d543fd891ca48fe47726540d50b17"
 DEPS=""
 FLAGS=""
 
