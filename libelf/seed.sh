@@ -1,8 +1,8 @@
 NAME="libelf"
 DESC="Library for handling ELF (Executable and Linkable Format) files"
-VERSION="0.189"
+VERSION="0.191"
 SOURCE="https://sourceware.org/ftp/elfutils/${VERSION}/elfutils-${VERSION}.tar.bz2"
-CHECKSUM="5cfaa711a90cb670406cd495aeaa6030"
+CHECKSUM="636547248fb3fae58ec48030298d3ef7"
 DEPS=""
 FLAGS="32bit test important"
 
