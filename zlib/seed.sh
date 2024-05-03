@@ -2,7 +2,7 @@ NAME="zlib"
 DESC="Compression and decompression routines used by some programs"
 VERSION="1.3.1"
 SOURCE="https://zlib.net/zlib-${VERSION}.tar.xz"
-CHECKSUM="9855b6d802d7fe5b7bd5b196a2271655"
+CHECKSUM="5e6af153311327e516690d300527ec9e"
 DEPS=""
 FLAGS="32bit important"
 
