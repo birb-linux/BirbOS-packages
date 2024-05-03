@@ -1,8 +1,8 @@
 NAME="nettle"
 DESC="Low-level cryptographic library that is designed to fit easily in many contexts"
-VERSION="3.8.1"
+VERSION="3.9.1"
 SOURCE="https://ftp.gnu.org/gnu/nettle/nettle-${VERSION}.tar.gz"
-CHECKSUM="e15c5fd5cc901f5dde6a271d7f2320d1"
+CHECKSUM="29fcd2dec6bf5b48e5e3ffb3cbc4779e"
 DEPS=""
 FLAGS=""
 
