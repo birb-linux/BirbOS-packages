@@ -1,8 +1,8 @@
 NAME="expat"
 DESC="Stream oriented C library for parsing XML"
-VERSION="2.5.0"
+VERSION="2.6.2"
 SOURCE="https://prdownloads.sourceforge.net/expat/expat-${VERSION}.tar.xz"
-CHECKSUM="ac6677b6d1b95d209ab697ce8b688704"
+CHECKSUM="0cb75c8feb842c0794ba89666b762a2d"
 DEPS=""
 FLAGS="32bit test important"
 
