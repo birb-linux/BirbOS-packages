@@ -1,8 +1,8 @@
 NAME="binutils"
 DESC="Linker, an assembler and other tools for handling object files"
-VERSION="2.40"
+VERSION="2.42"
 SOURCE="https://sourceware.org/pub/binutils/releases/binutils-${VERSION}.tar.xz"
-CHECKSUM="007b59bd908a737c06e5a8d3d2c737eb"
+CHECKSUM="a075178a9646551379bfb64040487715"
 DEPS="zlib"
 FLAGS="important"
 
