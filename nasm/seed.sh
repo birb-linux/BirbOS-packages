@@ -1,8 +1,8 @@
 NAME="nasm"
 DESC="Netwide Assembler"
-VERSION="2.16.01"
+VERSION="2.16.03"
 SOURCE="https://www.nasm.us/pub/nasm/releasebuilds/${VERSION}/nasm-${VERSION}.tar.xz"
-CHECKSUM="d755ba0d16f94616c2907f8cab7c748b"
+CHECKSUM="2b8c72c52eee4f20085065e68ac83b55"
 DEPS=""
 FLAGS=""
 
