@@ -1,8 +1,8 @@
 NAME="meson"
 DESC="Build system designed to be both extremely fast and as user friendly as possible"
-VERSION="1.1.0"
+VERSION="1.4.0"
 SOURCE="https://github.com/mesonbuild/meson/releases/download/${VERSION}/meson-${VERSION}.tar.gz"
-CHECKSUM="94ea898bcf799470878e60809be80467"
+CHECKSUM="a5cddd4299ead830106242c53ea7f10f"
 DEPS="python3 wheel"
 FLAGS="python important"
 
