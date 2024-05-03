@@ -1,8 +1,8 @@
 NAME="freetype"
 DESC="TrueType font rendering library"
-VERSION="2.13.0"
+VERSION="2.13.2"
 SOURCE="https://downloads.sourceforge.net/freetype/freetype-${VERSION}.tar.xz"
-CHECKSUM="fe73327ebbf0b629f3ad24be656d59de"
+CHECKSUM="d41d8cd98f00b204e9800998ecf8427e"
 DEPS=""
 FLAGS="important"
 
