@@ -1,8 +1,8 @@
 NAME="man-pages"
 DESC="The Man-pages package contains over 2,400 man pages."
-VERSION="6.04"
+VERSION="6.7"
 SOURCE="https://www.kernel.org/pub/linux/docs/man-pages/man-pages-${VERSION}.tar.xz"
-CHECKSUM="bbce1456edfa75a66c189cc594af6c4d"
+CHECKSUM="1bd39d60e741f37b550d27f9d4fb1656"
 DEPS=""
 FLAGS="important"
 
