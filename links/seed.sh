@@ -16,13 +16,13 @@ _setup()
 
 _build()
 {
-	./configure --prefix=$FAKEROOT/$NAME/usr --mandir=$FAKEROOT/$NAME/usr/share/man
+	./configure --prefix=/usr --mandir=$FAKEROOT/$NAME/usr/share/man
 	make -j${BUILD_JOBS}
 }
 
 _install()
 {
-	make install
+	make DESTDIR=$FAKEROOT/$NAME install
 	install -v -d -m755 $FAKEROOT/$NAME/usr/share/doc/links-${VERSION}
 	install -v -m644 doc/links_cal/* KEYS BRAILLE_HOWTO \
 		$FAKEROOT/$NAME/usr/share/doc/links-${VERSION}
