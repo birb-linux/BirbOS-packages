@@ -1,8 +1,8 @@
 NAME="cbindgen"
 DESC="Generate C bindings for Rust code"
-VERSION="0.24.3"
+VERSION="0.26.0"
 SOURCE="https://github.com/eqrion/cbindgen/archive/v${VERSION}/cbindgen-${VERSION}.tar.gz"
-CHECKSUM="6aa2991ca8411f9ebf9961e8b873e884"
+CHECKSUM="f3ef70691bc4743b8f76ca6d27847ba4"
 DEPS="rustc"
 FLAGS=""
 
