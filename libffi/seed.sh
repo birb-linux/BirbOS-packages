@@ -1,8 +1,8 @@
 NAME="libffi"
 DESC="Portable, high level programming interface to various calling conventions"
-VERSION="3.4.4"
+VERSION="3.4.6"
 SOURCE="https://github.com/libffi/libffi/releases/download/v${VERSION}/libffi-${VERSION}.tar.gz"
-CHECKSUM="0da1a5ed7786ac12dcbaf0d499d8a049"
+CHECKSUM="b9cac6c5997dca2b3787a59ede34e0eb"
 DEPS=""
 FLAGS="test 32bit test32 important"
 
