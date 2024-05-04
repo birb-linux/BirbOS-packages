@@ -1,8 +1,8 @@
 NAME="wget"
 DESC="Utility useful for non-interactive downloading of files from the interwebs"
-VERSION="1.21.3"
+VERSION="1.21.4"
 SOURCE="https://ftp.gnu.org/gnu/wget/wget-${VERSION}.tar.gz"
-CHECKSUM="e89496b15f8bf039d723926fae4d91f5"
+CHECKSUM="e7f7ca2f215b711f76584756ebd3c853"
 DEPS="make-ca"
 FLAGS="test important"
 
@@ -14,7 +14,7 @@ _setup()
 
 _build()
 {
-	./configure --prefix=$FAKEROOT/$NAME/usr \
+	./configure --prefix=/usr \
             --sysconfdir=/etc  \
             --with-ssl=openssl
 
@@ -23,7 +23,7 @@ _build()
 
 _install()
 {
-	make install
+	make DESTDIR="$FAKEROOT/$NAME" install
 }
 
 _test()
