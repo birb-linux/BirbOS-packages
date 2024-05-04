@@ -1,8 +1,8 @@
 NAME="gzip"
 DESC="Programs for compressing and decompressing files"
-VERSION="1.12"
+VERSION="1.13"
 SOURCE="https://ftp.gnu.org/gnu/gzip/gzip-${VERSION}.tar.xz"
-CHECKSUM="9608e4ac5f061b2a6479dc44e917a5db"
+CHECKSUM="d5c9fc9441288817a4a0be2da0249e29"
 DEPS=""
 FLAGS="test important"
 
