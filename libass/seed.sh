@@ -1,8 +1,8 @@
 NAME="libass"
 DESC="Portable subtitle renderer for the ASS/SSA subtitle format"
-VERSION="0.17.0"
+VERSION="0.17.1"
 SOURCE="https://github.com/libass/libass/releases/download/${VERSION}/libass-${VERSION}.tar.xz"
-CHECKSUM="25f7435779aa28eb7dbd3f76f4d17d15"
+CHECKSUM="73f00a898161be424e05d4bee1962dbb"
 DEPS="freetype fribidi nasm fontconfig"
 FLAGS=""
 
@@ -14,12 +14,12 @@ _setup()
 
 _build()
 {
-	./configure --prefix=$FAKEROOT/$NAME/usr --disable-static
+	./configure --prefix=/usr --disable-static
 
 	make -j${BUILD_JOBS}
 }
 
 _install()
 {
-	make install
+	make DESTDIR="$FAKEROOT/$NAME" install
 }
