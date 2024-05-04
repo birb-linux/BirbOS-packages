@@ -1,9 +1,9 @@
 NAME="mpv"
 DESC="Command line video player"
-VERSION="0.37.0"
+VERSION="0.36.0"
 SOURCE="https://github.com/mpv-player/mpv/archive/refs/tags/v${VERSION}.tar.gz"
-CHECKSUM="54bd6864cc831f1fee6dee693a0421eb"
-DEPS="xorg-libs pulseaudio ffmpeg zlib libass libjpeg-turbo uchardet libxpresent luajit meson libplacebo"
+CHECKSUM="3ac8bb1fec1c09293a574e615446bb3b"
+DEPS="xorg-libs pulseaudio ffmpeg zlib libass libjpeg-turbo uchardet libxpresent luajit meson"
 FLAGS=""
 
 _setup()
