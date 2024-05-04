@@ -28,7 +28,7 @@ _build()
 	if has_use "abi_x86_32"; then
 	  multilib_args="--enable-multilib --with-multilib-list=m64,m32"
 	fi
-	../configure --prefix=$FAKEROOT/$NAME/usr \
+	../configure --prefix=/usr \
 				 LD=ld                        \
 				 --enable-languages=c,c++     \
 				 --enable-default-pie         \
@@ -58,7 +58,7 @@ _test()
 
 _install()
 {
-	make install
+	make DESTDIR=$FAKEROOT/$NAME install
 
 	# Symlink required by the FHS for "historical" reasons
 	ln -sfvr $FAKEROOT/$NAME/usr/bin/cpp $FAKEROOT/$NAME/usr/lib
