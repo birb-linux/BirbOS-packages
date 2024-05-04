@@ -1,8 +1,8 @@
 NAME="gettext"
 DESC="Utilities for internationalization and localization"
-VERSION="0.21.1"
+VERSION="0.22.5"
 SOURCE="https://ftp.gnu.org/gnu/gettext/gettext-${VERSION}.tar.xz"
-CHECKSUM="27fcc8a42dbc8f334f23a08f1f2fe00a"
+CHECKSUM="3ae5580599d84be93e6213930facb2db"
 DEPS="acl ncurses"
 FLAGS="test important"
 
