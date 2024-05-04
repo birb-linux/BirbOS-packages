@@ -1,8 +1,8 @@
 NAME="links"
 DESC="Text and graphics mode WWW browser"
-VERSION="2.28"
+VERSION="2.29"
 SOURCE="http://links.twibright.com/download/links-${VERSION}.tar.bz2"
-CHECKSUM="915c45777f0c9d8e6ec85438cbd7d3df"
+CHECKSUM="f60b87ffee090c5d6820951eba710572"
 DEPS="libevent"
 FLAGS=""
 
