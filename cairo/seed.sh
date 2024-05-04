@@ -1,8 +1,9 @@
 NAME="cairo"
 DESC="2D graphics library with support for multiple output devices"
-VERSION="1.18.0"
-SOURCE="https://www.cairographics.org/releases/cairo-${VERSION}.tar.xz"
-CHECKSUM="3f0685fbadc530606f965b9645bb51d9"
+VERSION="1.17.6"
+SHORT_VERSION="$(short_version $VERSION)"
+SOURCE="https://download.gnome.org/sources/cairo/${SHORT_VERSION}/cairo-${VERSION}.tar.xz"
+CHECKSUM="c5a6f255af72a2e5faa8e6a53dd882e2"
 DEPS="xorg-libs libpng pixman fontconfig glib"
 FLAGS=""
 
@@ -14,14 +15,21 @@ _setup()
 
 _build()
 {
-	mkdir build
-	cd    build
+	# Adapt this package for modern binutils versions
+	sed 's/PTR/void */' -i util/cairo-trace/lookup-symbol.c
 
-	meson setup --prefix=/usr --buildtype=release ..
-	ninja
+	# Fix an issue with pkg-config
+	sed -e "/@prefix@/a exec_prefix=@exec_prefix@" \
+		-i util/cairo-script/cairo-script-interpreter.pc.in
+
+	./configure --prefix=$FAKEROOT/$NAME/usr    \
+            --disable-static \
+            --enable-tee
+
+	make -j${BUILD_JOBS}
 }
 
 _install()
 {
-	DESTDIR="$FAKEROOT/$NAME" ninja install
+	make install
 }
