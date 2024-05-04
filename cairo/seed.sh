@@ -1,9 +1,9 @@
 NAME="cairo"
 DESC="2D graphics library with support for multiple output devices"
-VERSION="1.17.6"
+VERSION="1.18.0"
 SHORT_VERSION="$(short_version $VERSION)"
 SOURCE="https://download.gnome.org/sources/cairo/${SHORT_VERSION}/cairo-${VERSION}.tar.xz"
-CHECKSUM="c5a6f255af72a2e5faa8e6a53dd882e2"
+CHECKSUM="3f0685fbadc530606f965b9645bb51d9"
 DEPS="xorg-libs libpng pixman fontconfig glib"
 FLAGS=""
 
@@ -22,7 +22,7 @@ _build()
 	sed -e "/@prefix@/a exec_prefix=@exec_prefix@" \
 		-i util/cairo-script/cairo-script-interpreter.pc.in
 
-	./configure --prefix=$FAKEROOT/$NAME/usr    \
+	./configure --prefix=/usr    \
             --disable-static \
             --enable-tee
 
@@ -31,5 +31,5 @@ _build()
 
 _install()
 {
-	make install
+	make DESTDIR="$FAKEROOT/$NAME" install
 }
