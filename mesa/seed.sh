@@ -1,8 +1,8 @@
 NAME="mesa"
 DESC="OpenGL compatible 3D graphics library"
-VERSION="22.3.5"
+VERSION="24.0.1"
 SOURCE="https://mesa.freedesktop.org/archive/mesa-${VERSION}.tar.xz"
-CHECKSUM="fdb35ae46968ce517702037710db6a3f"
+CHECKSUM="9e7fa53b68fa6b60dba0bbfa8da7d0a9"
 DEPS="xorg-libs libdrm mako glslang llvm meson ninja"
 FLAGS="32bit"
 
