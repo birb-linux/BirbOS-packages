@@ -21,6 +21,7 @@ _build()
 		  --prefix=/usr       \
 		  --buildtype=release \
 		  -Dtests=true        \
+		  -Dvulkan=disabled   \
 		  -Ddemos=false
 
 	ninja
