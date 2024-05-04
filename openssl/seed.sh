@@ -1,8 +1,8 @@
 NAME="openssl"
 DESC="Management tools and libraries relating to cryptography"
-VERSION="3.1.0"
+VERSION="3.3.0"
 SOURCE="https://www.openssl.org/source/openssl-${VERSION}.tar.gz"
-CHECKSUM="f6c520aa2206d4d1fa71ea30b5e9a56d"
+CHECKSUM="c8b063afbea85d867e161ecb8816cfa9"
 DEPS="zlib perl"
 FLAGS="test 32bit important"
 
