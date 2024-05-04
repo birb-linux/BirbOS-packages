@@ -1,8 +1,8 @@
 NAME="grep"
 DESC="Programs for searching through the contents of a file"
-VERSION="3.10"
+VERSION="3.11"
 SOURCE="https://ftp.gnu.org/gnu/grep/grep-${VERSION}.tar.xz"
-CHECKSUM="ab3f063ad4596b7d094fb5f66cf327d6"
+CHECKSUM="7c9bbd74492131245f7cdb291fa142c0"
 DEPS=""
 FLAGS="test important"
 
