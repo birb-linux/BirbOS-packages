@@ -1,8 +1,8 @@
 NAME="dwm"
 DESC="Dynamic tiling window manager"
-VERSION="2.1.1"
+VERSION="2.2.0"
 SOURCE="http://birbgitfh224rep6tmdofmr6qlo6wx43umqzt3hjubnncr55sdlfmtad.onion/toasterbirb/dwm/archive/${VERSION}.tar.gz"
-CHECKSUM="6f379651cb4f171dc9e33becf1a4fc68"
+CHECKSUM="334e186432f4950d9d2af1539df4f1cb"
 DEPS="dmenu xorg-apps xorg-libs xorg-server pkg-config ncurses fontconfig mononoki xf86-input-libinput xf86-video-fbdev"
 FLAGS=""
 
