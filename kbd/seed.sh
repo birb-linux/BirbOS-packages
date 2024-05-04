@@ -1,8 +1,8 @@
 NAME="kbd"
 DESC="Key-table files, console fonts and keyboard utilities"
-VERSION="2.5.1"
+VERSION="2.6.4"
 SOURCE="https://www.kernel.org/pub/linux/utils/kbd/kbd-${VERSION}.tar.xz"
-CHECKSUM="10f10c0a9d897807733f2e2419814abb"
+CHECKSUM="e2fd7adccf6b1e98eb1ae8d5a1ce5762"
 DEPS=""
 FLAGS="test important"
 
