@@ -1,8 +1,8 @@
 NAME="ffmpeg"
 DESC="A solution to record, convert and stream audio and video"
-VERSION="7.0"
+VERSION="6.1.1"
 SOURCE="https://ffmpeg.org/releases/ffmpeg-${VERSION}.tar.xz"
-CHECKSUM="d2edfc6ec6494c432828876e3102f740"
+CHECKSUM="341d719415b7f95bb59f5016f2864ac6"
 DEPS="libass fdk-aac freetype lame libtheora libvorbis libvpx opus x264 x265 nasm alsa-lib libva libvdpau sdl2 openssl pulseaudio"
 FLAGS=""
 
@@ -14,7 +14,7 @@ _setup()
 
 _build()
 {
-	# patch -Np1 -i $PKG_PATH/ffmpeg-${VERSION}-chromium_method-1.patch
+	patch -Np1 -i $PKG_PATH/ffmpeg-${VERSION}-chromium_method-1.patch
 
 	sed -i 's/-lflite"/-lflite -lasound"/' configure
 
