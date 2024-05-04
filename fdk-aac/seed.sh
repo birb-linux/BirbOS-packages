@@ -1,8 +1,8 @@
 NAME="fdk-aac"
 DESC="Fraunhofer FDK AAC library"
-VERSION="2.0.2"
+VERSION="2.0.3"
 SOURCE="https://downloads.sourceforge.net/opencore-amr/fdk-aac-${VERSION}.tar.gz"
-CHECKSUM="b41222194b31f570b3132bd622a9aef6"
+CHECKSUM="f43e593991caefdce509ad837d3301bd"
 DEPS=""
 FLAGS=""
 
@@ -14,11 +14,11 @@ _setup()
 
 _build()
 {
-	./configure --prefix=$FAKEROOT/$NAME/usr --disable-static
+	./configure --prefix=/usr --disable-static
 	make -j${BUILD_JOBS}
 }
 
 _install()
 {
-	make install
+	make DESTDIR="$FAKEROOT/$NAME" install
 }
