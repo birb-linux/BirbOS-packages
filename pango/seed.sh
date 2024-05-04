@@ -1,9 +1,9 @@
 NAME="pango"
 DESC="Library for laying out and rendering text, with an emphasis on internationalization"
-VERSION="1.50.12"
+VERSION="1.51.2"
 SHORT_VERSION="$(short_version $VERSION)"
 SOURCE="https://download.gnome.org/sources/pango/${SHORT_VERSION}/pango-${VERSION}.tar.xz"
-CHECKSUM="fd4b0b23915d6a0255317f811bea4215"
+CHECKSUM="dad79982a79badc27901d90400a32324"
 DEPS="fontconfig freetype harfbuzz fribidi glib cairo xorg-libs meson ninja"
 FLAGS=""
 
