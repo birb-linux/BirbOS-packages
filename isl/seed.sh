@@ -1,8 +1,8 @@
 NAME="isl"
 DESC="Thread-safe C library for manipulating sets and relations of integer points by affine constraints"
-VERSION="0.24"
+VERSION="0.26"
 SOURCE="https://gcc.gnu.org/pub/gcc/infrastructure/isl-${VERSION}.tar.bz2"
-CHECKSUM="dd2f7b78e118c25bd96134a52aae7f4d"
+CHECKSUM="f2b56e8da688eba89838d414470da85f"
 DEPS=""
 FLAGS="important"
 
