@@ -14,21 +14,14 @@ _setup()
 
 _build()
 {
-	# Adapt this package for modern binutils versions
-	sed 's/PTR/void */' -i util/cairo-trace/lookup-symbol.c
+	mkdir build
+	cd    build
 
-	# Fix an issue with pkg-config
-	sed -e "/@prefix@/a exec_prefix=@exec_prefix@" \
-		-i util/cairo-script/cairo-script-interpreter.pc.in
-
-	./configure --prefix=/usr    \
-            --disable-static \
-            --enable-tee
-
-	make -j${BUILD_JOBS}
+	meson setup --prefix=/usr --buildtype=release ..
+	ninja
 }
 
 _install()
 {
-	make DESTDIR="$FAKEROOT/$NAME" install
+	DESTDIR="$FAKEROOT/$NAME" ninja install
 }
