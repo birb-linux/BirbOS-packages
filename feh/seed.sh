@@ -1,8 +1,8 @@
 NAME="feh"
 DESC="Fast, lightweight image viewer which uses Imlib2"
-VERSION="3.9.1"
+VERSION="3.10.2"
 SOURCE="https://feh.finalrewind.org/feh-${VERSION}.tar.bz2"
-CHECKSUM="d83f1731515d31069908d4bda5f3489b"
+CHECKSUM="0a780bf321c0653d03e3e18410f4d1ba"
 DEPS="libpng imlib2 libjpeg-turbo curl"
 FLAGS=""
 
@@ -15,10 +15,10 @@ _setup()
 _build()
 {
 	sed -i "s:doc/feh:&-${VERSION}:" config.mk
-	make PREFIX=$FAKEROOT/$NAME/usr -j${BUILD_JOBS}
+	make PREFIX=/usr -j${BUILD_JOBS}
 }
 
 _install()
 {
-	make PREFIX=$FAKEROOT/$NAME/usr install
+	make PREFIX=/usr DESTDIR="$FAKEROOT/$NAME" install
 }
