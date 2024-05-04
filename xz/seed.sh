@@ -1,8 +1,8 @@
 NAME="xz"
 DESC="Compression and decompression utilities"
-VERSION="5.4.2"
+VERSION="5.4.6"
 SOURCE="https://tukaani.org/xz/xz-${VERSION}.tar.xz"
-CHECKSUM="1dcdf002d9a69f48ff67be84964af0d8"
+CHECKSUM="7ade7bd1181a731328f875bec62a9377"
 DEPS=""
 FLAGS="32bit important"
 
