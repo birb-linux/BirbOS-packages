@@ -1,8 +1,8 @@
 NAME="zstd"
 DESC="Real-time compression algorithm"
-VERSION="1.5.5"
+VERSION="1.5.6"
 SOURCE="https://github.com/facebook/zstd/releases/download/v${VERSION}/zstd-${VERSION}.tar.gz"
-CHECKSUM="63251602329a106220e0a5ad26ba656f"
+CHECKSUM="5a473726b3445d0e5d6296afd1ab6854"
 DEPS=""
 FLAGS="32bit important"
 
