@@ -1,8 +1,8 @@
 NAME="inetutils"
 DESC="Programs for basic networking"
-VERSION="2.4"
+VERSION="2.5"
 SOURCE="https://ftp.gnu.org/gnu/inetutils/inetutils-${VERSION}.tar.xz"
-CHECKSUM="319d65bb5a6f1847c4810651f3b4ba74"
+CHECKSUM="9e5a6dfd2d794dc056a770e8ad4a9263"
 DEPS=""
 FLAGS="test important"
 
