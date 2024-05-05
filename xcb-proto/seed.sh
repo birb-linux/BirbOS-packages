@@ -20,6 +20,10 @@ _build()
 _install()
 {
 	make install
+
+	# Make xcb-proto available for 32bit packages
+	mkdir -p "$FAKEROOT/$NAME/usr/lib32/pkgconfig"
+	cp -v "$FAKEROOT/$NAME/usr/share/pkgconfig/xcb-proto.pc" "$FAKEROOT/$NAME/usr/lib32/pkgconfig/"
 }
 
 _test()
