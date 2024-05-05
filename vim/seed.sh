@@ -17,14 +17,14 @@ _build()
 	# Set the default vimrc location
 	echo '#define SYS_VIMRC_FILE "/etc/vimrc"' >> src/feature.h
 
-	./configure --prefix=$FAKEROOT/$NAME/usr
+	./configure --prefix=/usr
 
 	make -j${BUILD_JOBS}
 }
 
 _install()
 {
-	make install
+	make DESTDIR="$FAKEROOT/$NAME" install
 
 	# Create a default configuration file
 	cat > /etc/vimrc << "EOF"
