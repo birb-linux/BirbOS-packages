@@ -21,4 +21,8 @@ _build()
 _install()
 {
 	make install
+
+	# Make xtrans available for 32bit packages
+	mkdir -p "$FAKEROOT/$NAME/usr/lib32/pkgconfig"
+	cp -v "$FAKEROOT/$NAME/usr/share/pkgconfig/xtrans.pc" "$FAKEROOT/$NAME/usr/lib32/pkgconfig/"
 }
