@@ -1,5 +1,12 @@
 #!/bin/sh
 
+# Make sure that vim is installed
+if ! command -v vim
+then
+	echo "This script depends on vim"
+	exit 1
+fi
+
 # Create a template package from a package name
 PKG_NAME="$1"
 
