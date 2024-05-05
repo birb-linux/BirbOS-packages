@@ -33,7 +33,6 @@ _build()
 				 --enable-languages=c,c++     \
 				 --enable-default-pie         \
 				 --enable-default-ssp         \
-				 --disable-bootstrap          \
 				 --disable-fixincludes        \
 				 --with-system-zlib           \
 				 ${multilib_args}
