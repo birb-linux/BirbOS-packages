@@ -1,7 +1,7 @@
-#!/bin/sh
+#!/bin/bash
 
 # Make sure that vim is installed
-if ! command -v vim
+if ! command -v vim &> /dev/null
 then
 	echo "This script depends on vim"
 	exit 1
