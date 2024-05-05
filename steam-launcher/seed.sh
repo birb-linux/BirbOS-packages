@@ -19,7 +19,7 @@ _build()
 
 _install()
 {
-	make PREFIX=$FAKEROOT/$NAME/usr install
+	make PREFIX=/usr DESTDIR="$FAKEROOT/$NAME" install
 
 	# Fix absolute symlinks
 	ln -sfvr $FAKEROOT/$NAME/usr/lib/steam/bin_steam.sh $FAKEROOT/$NAME/usr/bin/steam
