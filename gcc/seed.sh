@@ -34,6 +34,7 @@ _build()
 				 --enable-default-pie         \
 				 --enable-default-ssp         \
 				 --disable-fixincludes        \
+				 --disable-bootstrap          \
 				 --with-system-zlib           \
 				 ${multilib_args}
 
@@ -57,10 +58,7 @@ _test()
 
 _install()
 {
-	# There's some funny ld command thingie that fails, lets ignore that for now
-	set +e
 	make DESTDIR=$FAKEROOT/$NAME install
-	set -e
 
 	# Symlink required by the FHS for "historical" reasons
 	ln -sfvr $FAKEROOT/$NAME/usr/bin/cpp $FAKEROOT/$NAME/usr/lib
@@ -69,8 +67,16 @@ _install()
 	ln -sfv ../../libexec/gcc/$(gcc -dumpmachine)/${VERSION}/liblto_plugin.so \
         $FAKEROOT/$NAME/usr/lib/bfd-plugins/
 
-	# Perform a sanity check before proceeding
-	echo "Peforming some sanity checks before proceeding to install..."
+
+	# Move a misplaced file
+	mkdir -pv $FAKEROOT/$NAME/usr/share/gdb/auto-load/usr/lib
+	mv -v $FAKEROOT/$NAME/usr/lib/*gdb.py $FAKEROOT/$NAME/usr/share/gdb/auto-load/usr/lib
+}
+
+_post_install()
+{
+	# Perform a sanity check
+	echo "Peforming some sanity checks..."
 
 	echo 'int main(){}' > dummy.c
 	cc dummy.c -v -Wl,--verbose &> dummy.log
@@ -90,8 +96,4 @@ _install()
 
 	# Make sure GCC is using the correct dynamic linker
 	grep found dummy.log
-
-	# Move a misplaced file
-	mkdir -pv $FAKEROOT/$NAME/usr/share/gdb/auto-load/usr/lib
-	mv -v $FAKEROOT/$NAME/usr/lib/*gdb.py $FAKEROOT/$NAME/usr/share/gdb/auto-load/usr/lib
 }
