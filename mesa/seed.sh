@@ -24,6 +24,7 @@ _build()
 		  -Dgallium-drivers=auto  \
 		  -Dvalgrind=disabled     \
 		  -Dlibunwind=disabled    \
+		  -Dglvnd=true            \
 		  ..
 
 	ninja
@@ -69,6 +70,7 @@ _build32()
 				 -Dgallium-drivers=auto  \
 				 -Dvalgrind=disabled     \
 				 -Dlibunwind=disabled    \
+                 -Dglvnd=true            \
 				 ..
 
 	# meson is stubborn and doesn't want to link against 32bit
