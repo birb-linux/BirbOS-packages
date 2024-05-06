@@ -3,7 +3,7 @@ DESC="OpenGL compatible 3D graphics library"
 VERSION="24.0.1"
 SOURCE="https://mesa.freedesktop.org/archive/mesa-${VERSION}.tar.xz"
 CHECKSUM="9e7fa53b68fa6b60dba0bbfa8da7d0a9"
-DEPS="xorg-libs libdrm mako glslang llvm meson ninja"
+DEPS="xorg-libs libdrm mako glslang llvm meson ninja libglvnd"
 FLAGS="32bit"
 
 _setup()
