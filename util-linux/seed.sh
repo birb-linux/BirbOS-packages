@@ -24,6 +24,7 @@ _build()
             --disable-nologin    \
             --disable-su         \
             --disable-setpriv    \
+			--disable-liblastlog2\
             --disable-runuser    \
             --disable-pylibmount \
             --disable-static     \
@@ -59,6 +60,7 @@ _build32()
 				--disable-nologin        \
 				--disable-su             \
 				--disable-setpriv        \
+				--disable-liblastlog2    \
 				--disable-runuser        \
 				--disable-pylibmount     \
 				--disable-static         \
