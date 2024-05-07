@@ -9,7 +9,7 @@ FLAGS="font"
 
 _setup()
 {
-	tar -xf "$DISTFILES/$(basename $SOURCE)"
+	unzip "$DISTFILES/$(basename $SOURCE)"
 	cd "${NAME}-${VERSION}" || exit 1
 }
 
