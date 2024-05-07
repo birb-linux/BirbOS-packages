@@ -3,7 +3,7 @@ DESC="Utilities and a library for transferring files with URL syntax and lots of
 VERSION="8.6.0"
 SOURCE="https://curl.se/download/curl-${VERSION}.tar.xz"
 CHECKSUM="8f28f7e08c91cc679a45fccf66184fbc"
-DEPS="make-ca openssl"
+DEPS="make-ca openssl libpsl"
 FLAGS="test"
 
 _setup()
