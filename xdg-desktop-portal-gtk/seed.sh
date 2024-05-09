@@ -18,7 +18,9 @@ _build()
 	mkdir build
 	cd    build || exit 1
 
-	meson setup --prefix=/usr --buildtype=release ..
+	meson setup --prefix=/usr --buildtype=release \
+		-Dwallpaper=disabled \
+		..
 	ninja
 }
 
