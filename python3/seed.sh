@@ -42,5 +42,5 @@ EOF
 	# Fix an issue where some python packages get installed to the system root
 	# and in some cases they go to the fakeroot of python3
 	# TODO: Actually fix this issue
-	echo "PYTHONPATH=/usr/lib/python$(short_version $VERSION)/site-packages" > /etc/profile.d/python3.sh
+	echo "export PYTHONPATH=/usr/lib/python$(short_version $VERSION)/site-packages" > /etc/profile.d/python3.sh
 }
