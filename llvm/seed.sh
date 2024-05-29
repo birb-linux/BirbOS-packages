@@ -15,6 +15,9 @@ _setup()
 	wget "https://anduin.linuxfromscratch.org/BLFS/llvm/llvm-cmake-${MAJOR_VERSION}.src.tar.xz"
 	[ "$(md5sum "llvm-cmake-${MAJOR_VERSION}.src.tar.xz" | cut -d' ' -f1)" != "2b75b6446bfd5d0dcc288cd412b6a52a" ] && echo "md5 mismatch with llvm-cmake-${MAJOR_VERSION}.src.tar.xz" && exit 1
 
+	wget "https://anduin.linuxfromscratch.org/BLFS/llvm/llvm-third-party-${MAJOR_VERSION}.src.tar.xz"
+	[ "$(md5sum "llvm-third-party-${MAJOR_VERSION}.src.tar.xz" | cut -d' ' -f1)" != "09c9f2259766dd65b75cd728df11b395" ] && echo "md5 mismatch with llvm-third-party-${MAJOR_VERSION}.src.tar.xz" && exit 1
+
 	wget "https://github.com/llvm/llvm-project/releases/download/llvmorg-${VERSION}/clang-${VERSION}.src.tar.xz"
 	[ "$(md5sum "clang-${VERSION}.src.tar.xz" | cut -d' ' -f1)" != "52ff9f49e064860445474aa21e4a7e40" ] && echo "md5 mismatch with clang-${VERSION}.src.tar.xz" && exit 1
 
@@ -36,6 +39,12 @@ _build()
 	sed "/LLVM_COMMON_CMAKE_UTILS/s@../cmake@cmake-${MAJOR_VERSION}.src@" \
 		-i CMakeLists.txt
 
+	# Third party deps
+	tar -xf ../llvm-third-party-${MAJOR_VERSION}.src.tar.xz
+	sed "/LLVM_THIRD_PARTY_DIR/s@../third-party@llvm-third-party-${MAJOR_VERSION}.src@" \
+		-i cmake/modules/HandleLLVMOptions.cmake
+
+
 	# Install clang into the source tree
 	tar -xf ../clang-${VERSION}.src.tar.xz -C tools
 	mv tools/clang-${VERSION}.src tools/clang
@@ -53,6 +62,10 @@ _build()
 
 	# Apply a clang patch that enables Stack Smash Protection by default in compiled programs
 	patch -Np2 -d tools/clang < "$PKG_PATH/clang-17-enable_default_ssp-1.patch"
+
+	# Fix a broken test case
+	sed 's/clang_dfsan/& -fno-stack-protector/' \
+		-i projects/compiler-rt/test/dfsan/origin_unaligned_memtrans.c
 
 	# Build llvm
 	mkdir -v build
