@@ -32,7 +32,7 @@ _setup()
 _build()
 {
 	# Extract and setup llvm-cmake
-	tar -xf ../llvm-cmake-${VERSION}.src.tar.xz
+	tar -xf ../llvm-cmake-${MAJOR_VERSION}.src.tar.xz
 	sed "/LLVM_COMMON_CMAKE_UTILS/s@../cmake@cmake-${VERSION}.src@" \
 		-i CMakeLists.txt
 
