@@ -5,7 +5,7 @@ VERSION="1.4.0"
 SHORT_VERSION="$(short_version $VERSION)"
 SOURCE="https://github.com/icecc/icecream/releases/download/${SHORT_VERSION}/icecc-${VERSION}.tar.gz"
 CHECKSUM="369d4510168e21bd44e40fa9af08f5c3"
-DEPS="asciidoc libcap-ng lzo zstd libarchive"
+DEPS="asciidoctor libcap-ng lzo zstd libarchive"
 FLAGS=""
 
 _setup()
