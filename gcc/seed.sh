@@ -1,8 +1,8 @@
 NAME="gcc"
 DESC="GNU compiler collection, which includes the C and C++ compilers"
-VERSION="13.2.0"
+VERSION="14.1.0"
 SOURCE="https://ftp.gnu.org/gnu/gcc/gcc-${VERSION}/gcc-${VERSION}.tar.xz"
-CHECKSUM="e0e48554cc6e4f261d55ddee9ab69075"
+CHECKSUM="24195dca80ded5e0551b533f46a4481d"
 DEPS="gmp mpfr mpc zlib"
 FLAGS="test important"
 
