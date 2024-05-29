@@ -55,7 +55,8 @@ _build()
 	# Install compiler-rt into the source tree
 	tar -xf ../compiler-rt-${VERSION}.src.tar.xz -C projects
 	mv projects/compiler-rt-${VERSION}.src projects/compiler-rt
-	ln -sr projects/compiler-rt ../compiler-rt
+	sed '/^set(LLVM_COMMON_CMAKE_UTILS/d'  \
+		-i projects/compiler-rt/CMakeLists.txt
 
 	# Make sure that python scripts know to call python3
 	grep -rl '#!.*python' | xargs sed -i '1s/python$/python3/'
