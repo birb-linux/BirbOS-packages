@@ -1,31 +1,32 @@
 NAME="llvm"
 DESC="A collection of modular and reusable compiler and toolchain technologies"
-VERSION="15.0.7"
+VERSION="17.0.6"
+MAJOR_VERSION="$(major_version $VERSION)"
 SOURCE="https://github.com/llvm/llvm-project/releases/download/llvmorg-${VERSION}/llvm-${VERSION}.src.tar.xz"
-CHECKSUM="c77db4c71e1eb267358204dffe2c6e10"
+CHECKSUM="fd7fc891907e14f8e0ff7e3f87cc89a4"
 DEPS="cmake"
 FLAGS="32bit"
 
 _setup()
 {
-	tar -xf $DISTFILES/$(basename $SOURCE)
+	tar -xf "$DISTFILES/$(basename $SOURCE)"
 
 	println "Downloading some extra stuff that is needed to build LLVM"
-	wget https://anduin.linuxfromscratch.org/BLFS/llvm/llvm-cmake-${VERSION}.src.tar.xz
-	[ "$(md5sum "llvm-cmake-${VERSION}.src.tar.xz" | cut -d' ' -f1)" != "c3647d253f67ce255e1aba014e528f5b" ] && echo "md5 mismatch with llvm-cmake-${VERSION}.src.tar.xz" && exit 1
+	wget "https://anduin.linuxfromscratch.org/BLFS/llvm/llvm-cmake-${MAJOR_VERSION}.src.tar.xz"
+	[ "$(md5sum "llvm-cmake-${VERSION}.src.tar.xz" | cut -d' ' -f1)" != "2b75b6446bfd5d0dcc288cd412b6a52a" ] && echo "md5 mismatch with llvm-cmake-${MAJOR_VERSION}.src.tar.xz" && exit 1
 
-	wget https://github.com/llvm/llvm-project/releases/download/llvmorg-${VERSION}/clang-${VERSION}.src.tar.xz
-	[ "$(md5sum "clang-${VERSION}.src.tar.xz" | cut -d' ' -f1)" != "a6d0141e50b48f5e60c682277dac83b4" ] && echo "md5 mismatch with clang-${VERSION}.src.tar.xz" && exit 1
+	wget "https://github.com/llvm/llvm-project/releases/download/llvmorg-${VERSION}/clang-${VERSION}.src.tar.xz"
+	[ "$(md5sum "clang-${VERSION}.src.tar.xz" | cut -d' ' -f1)" != "52ff9f49e064860445474aa21e4a7e40" ] && echo "md5 mismatch with clang-${VERSION}.src.tar.xz" && exit 1
 
 	wget https://github.com/llvm/llvm-project/releases/download/llvmorg-${VERSION}/compiler-rt-${VERSION}.src.tar.xz
-	[ "$(md5sum "compiler-rt-${VERSION}.src.tar.xz" | cut -d' ' -f1)" != "12e6777354f0121cbe73ef13342a9302" ] && echo "md5 mismatch with compiler-rt-${VERSION}.src.tar.xz" && exit 1
+	[ "$(md5sum "compiler-rt-${VERSION}.src.tar.xz" | cut -d' ' -f1)" != "85d25f04cbc4c1a20e3a1ab2a2c522cd" ] && echo "md5 mismatch with compiler-rt-${VERSION}.src.tar.xz" && exit 1
 
 	wget https://github.com/llvm/llvm-project/releases/download/llvmorg-${VERSION}/clang-tools-extra-${VERSION}.src.tar.xz
-	[ "$(md5sum "clang-tools-extra-${VERSION}.src.tar.xz" | cut -d' ' -f1)" != "68b76dd37b263aca3a5132b5f8c23f80" ] && echo "md5 mismatch with clang-tools-extra-${VERSION}.src.tar.xz" && exit 1
+	[ "$(md5sum "clang-tools-extra-${VERSION}.src.tar.xz" | cut -d' ' -f1)" != "f493311363c1f7dae40624baa7a3642e" ] && echo "md5 mismatch with clang-tools-extra-${VERSION}.src.tar.xz" && exit 1
 	tar -xf clang-tools-extra-${VERSION}.src.tar.xz
 	ln -sv clang-tools-extra-${VERSION}.src clang-tools-extra
 
-	cd ${NAME}-${VERSION}.src
+	cd "${NAME}-${VERSION}.src" || exit 1
 }
 
 _build()
@@ -51,14 +52,14 @@ _build()
 	grep -rl '#!.*python' | xargs sed -i '1s/python$/python3/'
 
 	# Apply a clang patch that enables Stack Smash Protection by default in compiled programs
-	patch -Np2 -d tools/clang < $PKG_PATH/clang-15.0.7-enable_default_ssp-1.patch
+	patch -Np2 -d tools/clang < "$PKG_PATH/clang-17-enable_default_ssp-1.patch"
 
 	# Build llvm
 	mkdir -v build
-	cd       build
+	cd       build || exit 1
 
 	CC=gcc CXX=g++            \
-	cmake -DCMAKE_INSTALL_PREFIX=$FAKEROOT/$NAME/usr \
+	cmake -DCMAKE_INSTALL_PREFIX=/usr \
 		  -DLLVM_ENABLE_FFI=ON                       \
 		  -DCMAKE_BUILD_TYPE=Release                 \
 		  -DLLVM_BUILD_LLVM_DYLIB=ON                 \
@@ -75,8 +76,8 @@ _build()
 
 _install()
 {
-	ninja install
-	cp bin/FileCheck $FAKEROOT/$NAME/usr/bin
+	DESTDIR="$FAKEROOT/$NAME" ninja install
+	cp bin/FileCheck "$FAKEROOT/$NAME/usr/bin"
 }
 
 _build32()
@@ -85,10 +86,10 @@ _build32()
 	cd ..
 	rm -r build
 	mkdir build
-	cd build
+	cd build || exit 1
 
 	LDFLAGS="-L/usr/lib32" CC="gcc -m32" CXX="g++ -m32" \
-	cmake -DCMAKE_INSTALL_PREFIX=$FAKEROOT/$NAME/usr \
+	cmake -DCMAKE_INSTALL_PREFIX=/usr \
 		  -DLLVM_ENABLE_FFI=ON                       \
 		  -DCMAKE_BUILD_TYPE=Release                 \
 		  -DLLVM_BUILD_LLVM_DYLIB=ON                 \
@@ -107,8 +108,8 @@ _build32()
 _install32()
 {
 	DESTDIR=$PWD/DESTDIR ninja install
-	mkdir -pv $FAKEROOT/$NAME/usr/lib32/pkgconfig
-	cp -Rv DESTDIR/$FAKEROOT/$NAME/usr/lib/* $FAKEROOT/$NAME/usr/lib32
-	cp -Rv DESTDIR/$FAKEROOT/$NAME/usr/bin/llvm-config $FAKEROOT/$NAME/usr/bin/llvm-config32
+	mkdir -pv "$FAKEROOT/$NAME/usr/lib32/pkgconfig"
+	cp -Rv DESTDIR/usr/lib/* "$FAKEROOT/$NAME/usr/lib32"
+	cp -Rv DESTDIR/usr/bin/llvm-config "$FAKEROOT/$NAME/usr/bin/llvm-config32"
 	rm -rf DESTDIR
 }
