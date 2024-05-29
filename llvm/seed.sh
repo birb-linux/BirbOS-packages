@@ -36,7 +36,7 @@ _build()
 {
 	# Extract and setup llvm-cmake
 	tar -xf ../llvm-cmake-${MAJOR_VERSION}.src.tar.xz
-	sed "/LLVM_COMMON_CMAKE_UTILS/s@../cmake@cmake-${MAJOR_VERSION}.src@" \
+	sed "/LLVM_COMMON_CMAKE_UTILS/s@../cmake@llvm-cmake-${MAJOR_VERSION}.src@"          \
 		-i CMakeLists.txt
 
 	# Third party deps
@@ -83,7 +83,6 @@ _build()
 		  -DLLVM_TARGETS_TO_BUILD="host;AMDGPU;BPF"  \
 		  -DLLVM_BINUTILS_INCDIR=/usr/include        \
 		  -DLLVM_INCLUDE_BENCHMARKS=OFF              \
-          -DLLVM_ENABLE_PROJECTS="clang;clang-tools-extra;compiler-rt" \
 		  -DCLANG_DEFAULT_PIE_ON_LINUX=ON            \
 		  -Wno-dev -G Ninja ..
 	ninja
@@ -113,7 +112,6 @@ _build32()
 		  -DLLVM_TARGETS_TO_BUILD="host;AMDGPU;BPF;X86" \
 		  -DLLVM_BINUTILS_INCDIR=/usr/include        \
 		  -DLLVM_INCLUDE_BENCHMARKS=OFF              \
-          -DLLVM_ENABLE_PROJECTS="clang-tools-extra" \
 		  -DCLANG_DEFAULT_PIE_ON_LINUX=ON            \
 		  -DLLVM_BUILD_32_BITS=ON                    \
 		  -Wno-dev -G Ninja ..
