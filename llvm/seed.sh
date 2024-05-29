@@ -33,7 +33,7 @@ _build()
 {
 	# Extract and setup llvm-cmake
 	tar -xf ../llvm-cmake-${MAJOR_VERSION}.src.tar.xz
-	sed "/LLVM_COMMON_CMAKE_UTILS/s@../cmake@cmake-${VERSION}.src@" \
+	sed "/LLVM_COMMON_CMAKE_UTILS/s@../cmake@cmake-${MAJOR_VERSION}.src@" \
 		-i CMakeLists.txt
 
 	# Install clang into the source tree
