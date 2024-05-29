@@ -13,7 +13,7 @@ _setup()
 
 	println "Downloading some extra stuff that is needed to build LLVM"
 	wget "https://anduin.linuxfromscratch.org/BLFS/llvm/llvm-cmake-${MAJOR_VERSION}.src.tar.xz"
-	[ "$(md5sum "llvm-cmake-${VERSION}.src.tar.xz" | cut -d' ' -f1)" != "2b75b6446bfd5d0dcc288cd412b6a52a" ] && echo "md5 mismatch with llvm-cmake-${MAJOR_VERSION}.src.tar.xz" && exit 1
+	[ "$(md5sum "llvm-cmake-${MAJOR_VERSION}.src.tar.xz" | cut -d' ' -f1)" != "2b75b6446bfd5d0dcc288cd412b6a52a" ] && echo "md5 mismatch with llvm-cmake-${MAJOR_VERSION}.src.tar.xz" && exit 1
 
 	wget "https://github.com/llvm/llvm-project/releases/download/llvmorg-${VERSION}/clang-${VERSION}.src.tar.xz"
 	[ "$(md5sum "clang-${VERSION}.src.tar.xz" | cut -d' ' -f1)" != "52ff9f49e064860445474aa21e4a7e40" ] && echo "md5 mismatch with clang-${VERSION}.src.tar.xz" && exit 1
