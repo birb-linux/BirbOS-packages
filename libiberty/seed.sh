@@ -10,7 +10,7 @@ FLAGS=""
 _setup()
 {
 	tar -xf "$DISTFILES/$(basename $SOURCE)"
-	cd "${NAME}-${VERSION}" || exit 1
+	cd "gcc-${VERSION}" || exit 1
 }
 
 _build()
