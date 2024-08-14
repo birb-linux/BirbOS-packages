@@ -1,8 +1,8 @@
 NAME="iana-etc"
 DESC="iana-etc provides data for network services and protocols"
-VERSION="20230405"
+VERSION="20240412"
 SOURCE="https://github.com/Mic92/iana-etc/releases/download/${VERSION}/iana-etc-${VERSION}.tar.gz"
-CHECKSUM="c8931836fa045c98b3a4eefdd911d54c"
+CHECKSUM="d53e2729bb4f3ef9f5cdc23a4bbb6739"
 DEPS=""
 FLAGS="important"
 

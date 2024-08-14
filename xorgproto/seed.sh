@@ -1,8 +1,8 @@
 NAME="xorgproto"
 DESC="Header files required to build the X Window system"
-VERSION="2022.2"
+VERSION="2023.2"
 SOURCE="https://xorg.freedesktop.org/archive/individual/proto/xorgproto-${VERSION}.tar.xz"
-CHECKSUM="3fdb11d75f7023db273f7b3e34b58338"
+CHECKSUM="2e266a49ce3f56669d014cf284901e6e"
 DEPS="util-macros meson ninja"
 FLAGS="32bit"
 

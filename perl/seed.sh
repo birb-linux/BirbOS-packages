@@ -1,9 +1,9 @@
 NAME="perl"
 DESC="Practical Extraction and Reporting Language"
-VERSION="5.36.0"
+VERSION="5.38.2"
 SHORT_VERSION="$(short_version $VERSION)"
 SOURCE="https://www.cpan.org/src/5.0/perl-${VERSION}.tar.xz"
-CHECKSUM="826e42da130011699172fd655e49cfa2"
+CHECKSUM="d3957d75042918a23ec0abac4a2b7e0a"
 DEPS="zlib"
 FLAGS="test important"
 

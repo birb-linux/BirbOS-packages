@@ -3,7 +3,7 @@ DESC="Video game digital distribution service and storefront from Valve"
 VERSION="1.0.0.76"
 SOURCE="https://repo.steampowered.com/steam/archive/stable/steam_${VERSION}.tar.gz"
 CHECKSUM="9db32c129bac8a40080d97888f028c3b"
-DEPS="pciutils lsof xdg-user-dirs"
+DEPS="pciutils lsof xdg-user-dirs vulkan-headers vulkan-loader"
 FLAGS="proprietary"
 
 _setup()
@@ -19,11 +19,11 @@ _build()
 
 _install()
 {
-	make PREFIX=$FAKEROOT/$NAME/usr install
+	make PREFIX=/usr DESTDIR="$FAKEROOT/$NAME" install
 
 	# Fix absolute symlinks
 	ln -sfvr $FAKEROOT/$NAME/usr/lib/steam/bin_steam.sh $FAKEROOT/$NAME/usr/bin/steam
-	ln -sfvr $FAKEROOT/$NAME/usr/lib/steam/bin_steamdeps.sh $FAKEROOT/$NAME/usr/bin/steamdeps
+	ln -sfvr $FAKEROOT/$NAME/usr/lib/steam/bin_steamdeps.py $FAKEROOT/$NAME/usr/bin/steamdeps
 
 	# Create a runner script that fixes an issue with glibc
 	# To use this script add `steam_run %command` to the games launch options

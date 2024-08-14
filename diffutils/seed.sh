@@ -1,8 +1,8 @@
 NAME="diffutils"
 DESC="Programs for finding differences between files and directories"
-VERSION="3.9"
+VERSION="3.10"
 SOURCE="https://ftp.gnu.org/gnu/diffutils/diffutils-${VERSION}.tar.xz"
-CHECKSUM="cf0a65266058bf22fe3feb69e57ffc5b"
+CHECKSUM="2745c50f6f4e395e7b7d52f902d075bf"
 DEPS=""
 FLAGS="test important"
 

@@ -1,8 +1,8 @@
 NAME="libraw"
 DESC="Library for reading RAW files obtained from digital photo cameras"
-VERSION="0.21.1"
+VERSION="0.21.2"
 SOURCE="https://www.libraw.org/data/LibRaw-${VERSION}.tar.gz"
-CHECKSUM="2942732de752f46baccd9c6d57823b7b"
+CHECKSUM="0533724bad17c0fde22e642e4594e45d"
 DEPS="libjpeg-turbo jasper little-cms"
 FLAGS=""
 

@@ -1,8 +1,8 @@
 NAME="sudo"
 DESC="Allows users or groups to run commands as other users"
-VERSION="1.9.14p3"
+VERSION="1.9.15p5"
 SOURCE="https://www.sudo.ws/dist/sudo-${VERSION}.tar.gz"
-CHECKSUM="4cc21cf7c9a89290b230954aed0d1e11"
+CHECKSUM="4166279cb188ecb6641c7a2ba5f68270"
 DEPS=""
 FLAGS="test"
 

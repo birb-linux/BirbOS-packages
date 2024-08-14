@@ -1,8 +1,8 @@
 NAME="wheel"
 DESC="Python library that is the reference implementation of the Python wheel packaging standard"
-VERSION="0.40.0"
+VERSION="0.43.0"
 SOURCE="https://pypi.org/packages/source/w/wheel/wheel-${VERSION}.tar.gz"
-CHECKSUM="ec5004c46d1905da98bb5bc1a10ddd21"
+CHECKSUM="387af15d51367a19d834d6db413547d0"
 DEPS="python3 flit-core"
 FLAGS="python important"
 

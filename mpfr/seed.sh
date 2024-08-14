@@ -1,8 +1,8 @@
 NAME="mpfr"
 DESC="Functions for multiple precision math"
-VERSION="4.2.0"
+VERSION="4.2.1"
 SOURCE="https://ftp.gnu.org/gnu/mpfr/mpfr-${VERSION}.tar.xz"
-CHECKSUM="a25091f337f25830c16d2054d74b5af7"
+CHECKSUM="523c50c6318dde6f9dc523bc0244690a"
 DEPS="gmp"
 FLAGS="test important"
 

@@ -1,8 +1,8 @@
 NAME="markupsafe"
 DESC="Python module that implements a XML/HTML/XHTML Markup safe string"
-VERSION="2.1.2"
+VERSION="2.1.5"
 SOURCE="https://files.pythonhosted.org/packages/source/M/MarkupSafe/MarkupSafe-${VERSION}.tar.gz"
-CHECKSUM="02f337b98aef11bd0fee9c5ae860173b"
+CHECKSUM="8fe7227653f2fb9b1ffe7f9f2058998a"
 DEPS=""
 FLAGS="python"
 

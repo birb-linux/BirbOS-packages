@@ -15,9 +15,9 @@ _setup()
 
 _build()
 {
-	./configure --prefix=$FAKEROOT/$NAME/usr \
+	./configure --prefix=/usr \
             --disable-static                 \
-            --docdir=$FAKEROOT/$NAME/usr/share/doc/libxslt-${VERSION} \
+            --docdir=/usr/share/doc/libxslt-${VERSION} \
             PYTHON=/usr/bin/python3
 
 	make -j${BUILD_JOBS}
@@ -25,7 +25,7 @@ _build()
 
 _install()
 {
-	make install
+	make DESTDIR="$FAKEROOT/$NAME" install
 }
 
 _test()

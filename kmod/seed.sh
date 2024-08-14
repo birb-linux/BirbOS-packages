@@ -1,8 +1,8 @@
 NAME="kmod"
 DESC="Libraries and utilities for loading kernel modules"
-VERSION="30"
+VERSION="32"
 SOURCE="https://www.kernel.org/pub/linux/utils/kernel/kmod/kmod-${VERSION}.tar.xz"
-CHECKSUM="85202f0740a75eb52f2163c776f9b564"
+CHECKSUM="1046fda48766fae905f83150d12eec78"
 DEPS="openssl zstd zlib xz"
 FLAGS="32bit important"
 

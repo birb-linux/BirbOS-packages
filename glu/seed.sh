@@ -1,8 +1,8 @@
 NAME="glu"
 DESC="Mesa OpenGL Utility library"
-VERSION="9.0.2"
+VERSION="9.0.3"
 SOURCE="ftp://ftp.freedesktop.org/pub/mesa/glu/glu-${VERSION}.tar.xz"
-CHECKSUM="2b0f13fa5b949bfb3a995927c6e35125"
+CHECKSUM="06a4fff9179a98ea32ef41b6d83f6b19"
 DEPS="mesa meson ninja"
 FLAGS=""
 

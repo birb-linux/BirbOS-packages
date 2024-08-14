@@ -1,8 +1,8 @@
 NAME="attr"
 DESC="Utilities to administer the extended attributes of filesystem objects"
-VERSION="2.5.1"
+VERSION="2.5.2"
 SOURCE="https://download.savannah.gnu.org/releases/attr/attr-${VERSION}.tar.gz"
-CHECKSUM="ac1c5a7a084f0f83b8cace34211f64d8"
+CHECKSUM="227043ec2f6ca03c0948df5517f9c927"
 DEPS=""
 FLAGS="32bit test important"
 

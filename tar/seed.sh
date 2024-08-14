@@ -1,8 +1,8 @@
 NAME="tar"
 DESC="Utility for creating tar archives as well as doing some other archive manipulation"
-VERSION="1.34"
+VERSION="1.35"
 SOURCE="https://ftp.gnu.org/gnu/tar/tar-${VERSION}.tar.xz"
-CHECKSUM="9a08d29a9ac4727130b5708347c0f5cf"
+CHECKSUM="a2d8042658cfd8ea939e6d911eaf4152"
 DEPS=""
 FLAGS="important"
 

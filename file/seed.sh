@@ -1,8 +1,8 @@
 NAME="file"
 DESC="Utility for determining the type of a given file or files"
-VERSION="5.44"
+VERSION="5.45"
 SOURCE="https://astron.com/pub/file/file-${VERSION}.tar.gz"
-CHECKSUM="a60d586d49d015d842b9294864a89c7a"
+CHECKSUM="26b2a96d4e3a8938827a1e572afd527a"
 DEPS=""
 FLAGS="32bit important"
 

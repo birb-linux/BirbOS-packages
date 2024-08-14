@@ -1,8 +1,8 @@
 NAME="libuv"
 DESC="Multi-platform support library with a focus on asynchronous I/O"
-VERSION="1.44.2"
+VERSION="1.48.0"
 SOURCE="https://dist.libuv.org/dist/v${VERSION}/libuv-v${VERSION}.tar.gz"
-CHECKSUM="0addbddcb1098e2c1c99f03f0108e1e7"
+CHECKSUM="a808517c32ebd07c561bf21a4e30aeab"
 DEPS=""
 FLAGS="important"
 

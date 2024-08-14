@@ -1,8 +1,8 @@
 NAME="dmenu"
 DESC="Dynamic menu for X"
-VERSION="1.0.0"
+VERSION="1.1.0"
 SOURCE="https://github.com/Toasterbirb/dmenu/archive/refs/tags/${VERSION}.tar.gz"
-CHECKSUM="ea375a71ad8a78eeea26c3a50e2c05e7"
+CHECKSUM="ded195aa7e4ae0214fdf640842e2d97d"
 DEPS="xorg-libs fontconfig mononoki"
 FLAGS=""
 

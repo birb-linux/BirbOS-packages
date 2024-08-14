@@ -1,9 +1,9 @@
 NAME="util-linux"
 DESC="Miscellaneous utility programs"
-VERSION="2.38.1"
+VERSION="2.40"
 SHORT_VER="$(echo $VERSION | awk -F'.' '{print $1 "." $2}')"
 SOURCE="https://www.kernel.org/pub/linux/utils/util-linux/v${SHORT_VER}/util-linux-${VERSION}.tar.xz"
-CHECKSUM="cd11456f4ddd31f7fbfdd9488c0c0d02"
+CHECKSUM="46d1423122d310dfd022c799e1e4e259"
 DEPS=""
 FLAGS="32bit important"
 
@@ -24,6 +24,7 @@ _build()
             --disable-nologin    \
             --disable-su         \
             --disable-setpriv    \
+			--disable-liblastlog2\
             --disable-runuser    \
             --disable-pylibmount \
             --disable-static     \
@@ -59,6 +60,7 @@ _build32()
 				--disable-nologin        \
 				--disable-su             \
 				--disable-setpriv        \
+				--disable-liblastlog2    \
 				--disable-runuser        \
 				--disable-pylibmount     \
 				--disable-static         \

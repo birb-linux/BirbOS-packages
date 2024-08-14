@@ -1,8 +1,8 @@
 NAME="libcap"
 DESC="Userspace interface to the POSIX 1003.1e capabilities in Linux kernels (root privilege stuff)"
-VERSION="2.68"
+VERSION="2.69"
 SOURCE="https://www.kernel.org/pub/linux/libs/security/linux-privs/libcap2/libcap-${VERSION}.tar.xz"
-CHECKSUM="ffb9e9c87704f92ac75201327841e753"
+CHECKSUM="4667bacb837f9ac4adb4a1a0266f4b65"
 DEPS=""
 FLAGS="32bit test important"
 

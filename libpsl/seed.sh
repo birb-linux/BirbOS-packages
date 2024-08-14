@@ -1,8 +1,8 @@
 NAME="libpsl"
 DESC="A library for accessing and resolving information from the Public Suffix List (PSL)"
-VERSION="0.21.2"
+VERSION="0.21.5"
 SOURCE="https://github.com/rockdaboot/libpsl/releases/download/${VERSION}/libpsl-${VERSION}.tar.gz"
-CHECKSUM="2864d3eb744b378d68f5c4da25603459"
+CHECKSUM="870a798ee9860b6e77896548428dba7b"
 DEPS="libidn2"
 FLAGS="test"
 

@@ -1,8 +1,8 @@
 NAME="nmap"
 DESC="Utility for network exploration and security auditing"
-VERSION="7.93"
+VERSION="7.94"
 SOURCE="https://nmap.org/dist/nmap-${VERSION}.tar.bz2"
-CHECKSUM="9027eac4b8ca57574012cb061ba9ce4d"
+CHECKSUM="4f65e08148d1eaac6b1a1482e7185e1d"
 DEPS="libpcap lua pcre liblinear"
 FLAGS=""
 
@@ -14,12 +14,12 @@ _setup()
 
 _build()
 {
-	./configure --prefix=$FAKEROOT/$NAME/usr
+	./configure --prefix=/usr
 
 	make -j${BUILD_JOBS}
 }
 
 _install()
 {
-	make install
+	make DESTDIR="$FAKEROOT/$NAME" install
 }

@@ -1,8 +1,8 @@
 NAME="ffmpeg"
 DESC="A solution to record, convert and stream audio and video"
-VERSION="5.1.2"
+VERSION="6.1.1"
 SOURCE="https://ffmpeg.org/releases/ffmpeg-${VERSION}.tar.xz"
-CHECKSUM="fa847c43407315c27231b9f883e62c0e"
+CHECKSUM="341d719415b7f95bb59f5016f2864ac6"
 DEPS="libass fdk-aac freetype lame libtheora libvorbis libvpx opus x264 x265 nasm alsa-lib libva libvdpau sdl2 openssl pulseaudio"
 FLAGS=""
 

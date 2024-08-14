@@ -1,8 +1,8 @@
 NAME="gawk"
 DESC="Programs for manipulating text files"
-VERSION="5.2.1"
+VERSION="5.3.0"
 SOURCE="https://ftp.gnu.org/gnu/gawk/gawk-${VERSION}.tar.xz"
-CHECKSUM="02956bc5d117a7437bb4f7039f23b964"
+CHECKSUM="97c5a7d83f91a7e1b2035ebbe6ac7abd"
 DEPS=""
 FLAGS="test important"
 

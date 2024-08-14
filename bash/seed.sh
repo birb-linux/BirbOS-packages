@@ -1,8 +1,8 @@
 NAME="bash"
 DESC="Bourne-Again Shell"
-VERSION="5.2.15"
+VERSION="5.2.21"
 SOURCE="https://ftp.gnu.org/gnu/bash/bash-${VERSION}.tar.gz"
-CHECKSUM="4281bb43497f3905a308430a8d6a30a5"
+CHECKSUM="ad5b38410e3bf0e9bcc20e2765f5e3f9"
 DEPS="readline"
 FLAGS="test important"
 

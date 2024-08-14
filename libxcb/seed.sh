@@ -1,8 +1,8 @@
 NAME="libxcb"
 DESC="Interface to the X Window System protocol"
-VERSION="1.15"
+VERSION="1.16"
 SOURCE="https://xorg.freedesktop.org/archive/individual/lib/libxcb-${VERSION}.tar.xz"
-CHECKSUM="39c0fc337e738ad6c908e7cce90957d0"
+CHECKSUM="c769f93c254263077df62404661b710d"
 DEPS="libxau xcb-proto libxdmcp"
 FLAGS="32bit test"
 

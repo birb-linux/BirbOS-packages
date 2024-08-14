@@ -1,3 +1,4 @@
+# shellcheck disable=SC2034
 NAME="vim"
 DESC="The best text editor created so far"
 VERSION="9.0.1452"
@@ -8,8 +9,8 @@ FLAGS=""
 
 _setup()
 {
-	tar -xf $DISTFILES/$(basename $SOURCE)
-	cd ${NAME}-${VERSION}
+	tar -xf "$DISTFILES/$(basename $SOURCE)"
+	cd "${NAME}-${VERSION}" || exit 1
 }
 
 _build()
@@ -17,14 +18,17 @@ _build()
 	# Set the default vimrc location
 	echo '#define SYS_VIMRC_FILE "/etc/vimrc"' >> src/feature.h
 
-	./configure --prefix=$FAKEROOT/$NAME/usr
+	./configure --prefix=/usr
 
-	make -j${BUILD_JOBS}
+	make -j "${BUILD_JOBS}"
 }
 
 _install()
 {
-	make install
+	make DESTDIR="$FAKEROOT/$NAME" install
+
+	# Don't install xxd with the vim package, there will be a separate package for that
+	rm -v "$FAKEROOT/$NAME/usr/bin/xxd"
 
 	# Create a default configuration file
 	cat > /etc/vimrc << "EOF"

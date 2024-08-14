@@ -1,8 +1,8 @@
 NAME="flit-core"
 DESC="Distribution-building parts of Flit (a packaging tool for simple Python modules)"
-VERSION="3.8.0"
+VERSION="3.9.0"
 SOURCE="https://pypi.org/packages/source/f/flit-core/flit_core-${VERSION}.tar.gz"
-CHECKSUM="7c41da13273f7787709a24f74e0f5a99"
+CHECKSUM="3bc52f1952b9a78361114147da63c35b"
 DEPS="python3"
 FLAGS="python important"
 

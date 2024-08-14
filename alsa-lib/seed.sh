@@ -1,8 +1,8 @@
 NAME="alsa-lib"
 DESC="ALSA library used by programs (including ALSA Utilities) requiring access to the ALSA sound interface"
-VERSION="1.2.8"
+VERSION="1.2.11"
 SOURCE="https://www.alsa-project.org/files/pub/lib/alsa-lib-${VERSION}.tar.bz2"
-CHECKSUM="ab32de4b6054d7ab23723f8d85e50a27"
+CHECKSUM="1c5870770047b6a520d18a43f49e42ea"
 DEPS=""
 FLAGS="test"
 
@@ -16,14 +16,14 @@ _setup()
 
 _build()
 {
-	./configure --prefix=$FAKEROOT/$NAME/usr
+	./configure --prefix=/usr
 
 	make -j${BUILD_JOBS}
 }
 
 _install()
 {
-	make install
+	make DESTDIR="$FAKEROOT/$NAME" install
 }
 
 _test()

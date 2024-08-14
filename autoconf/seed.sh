@@ -1,8 +1,8 @@
 NAME="autoconf"
 DESC="Programs for producing shell scripts that can automatically configure source code"
-VERSION="2.71"
+VERSION="2.72"
 SOURCE="https://ftp.gnu.org/gnu/autoconf/autoconf-${VERSION}.tar.xz"
-CHECKSUM="12cfa1687ffa2606337efe1a64416106"
+CHECKSUM="1be79f7106ab6767f18391c5e22be701"
 DEPS=""
 FLAGS="important test"
 

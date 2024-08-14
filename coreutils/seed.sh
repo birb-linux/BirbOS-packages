@@ -1,8 +1,8 @@
 NAME="coreutils"
 DESC="Basic utility programs needed by every operating system"
-VERSION="9.3"
+VERSION="9.5"
 SOURCE="https://ftp.gnu.org/gnu/coreutils/coreutils-${VERSION}.tar.xz"
-CHECKSUM="040b4b7acaf89499834bfc79609af29f"
+CHECKSUM="e99adfa059a63db3503cc71f3d151e31"
 DEPS=""
 FLAGS="important test"
 

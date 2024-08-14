@@ -1,9 +1,9 @@
 NAME="mesa"
 DESC="OpenGL compatible 3D graphics library"
-VERSION="22.3.5"
+VERSION="24.0.1"
 SOURCE="https://mesa.freedesktop.org/archive/mesa-${VERSION}.tar.xz"
-CHECKSUM="fdb35ae46968ce517702037710db6a3f"
-DEPS="xorg-libs libdrm mako glslang llvm meson ninja"
+CHECKSUM="9e7fa53b68fa6b60dba0bbfa8da7d0a9"
+DEPS="xorg-libs libdrm mako glslang llvm meson ninja libglvnd"
 FLAGS="32bit"
 
 _setup()
@@ -24,6 +24,7 @@ _build()
 		  -Dgallium-drivers=auto  \
 		  -Dvalgrind=disabled     \
 		  -Dlibunwind=disabled    \
+		  -Dglvnd=true            \
 		  ..
 
 	ninja
@@ -69,6 +70,7 @@ _build32()
 				 -Dgallium-drivers=auto  \
 				 -Dvalgrind=disabled     \
 				 -Dlibunwind=disabled    \
+                 -Dglvnd=true            \
 				 ..
 
 	# meson is stubborn and doesn't want to link against 32bit

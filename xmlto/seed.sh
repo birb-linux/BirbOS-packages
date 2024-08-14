@@ -15,13 +15,13 @@ _setup()
 _build()
 {
 	LINKS="/usr/bin/links" \
-	./configure --prefix=$FAKEROOT/$NAME/usr
+	./configure --prefix=/usr
 	make -j${BUILD_JOBS}
 }
 
 _install()
 {
-	make install
+	make DESTDIR="$FAKEROOT/$NAME" install
 }
 
 _test()

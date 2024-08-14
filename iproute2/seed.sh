@@ -1,8 +1,8 @@
 NAME="iproute2"
 DESC="IPV4-based networking utilities"
-VERSION="6.2.0"
+VERSION="6.8.0"
 SOURCE="https://www.kernel.org/pub/linux/utils/net/iproute2/iproute2-${VERSION}.tar.xz"
-CHECKSUM="85861856a856f6d358c6d9a4fc9088c9"
+CHECKSUM="9d6ea453986900d98e3b6bcb868815cd"
 DEPS=""
 FLAGS="important"
 
