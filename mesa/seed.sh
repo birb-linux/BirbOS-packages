@@ -39,7 +39,7 @@ _install()
 	cp -rfv ../docs/* $FAKEROOT/$NAME/usr/share/doc/mesa-${VERSION}
 
 	# If the nvidia drivers have been installed, skip installing some libraries
-	if [ "$(birb_db --is-installed "nvidia-drivers")" == "yes" ]
+	if birb --list-installed | grep -q "nvidia-drivers"
 	then
 		rm -v $FAKEROOT/$NAME/usr/lib/libEGL.so
 		rm -v $FAKEROOT/$NAME/usr/lib/libEGL.so.1
@@ -87,7 +87,7 @@ _install32()
 	rm -rf DESTDIR
 
 	# If the nvidia drivers have been installed, skip installing some libraries
-	if [ "$(birb_db --is-installed "nvidia-drivers")" == "yes" ]
+	if birb --list-installed | grep -q "nvidia-drivers"
 	then
 		rm -v $FAKEROOT/$NAME/usr/lib32/libEGL.so
 		rm -v $FAKEROOT/$NAME/usr/lib32/libEGL.so.1
